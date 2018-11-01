@@ -4,12 +4,14 @@ Author: Code Apes.
 -->
 <html>
 <head>
-	<title>Sign In Your Account</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-	<link type="text/css" rel="stylesheet" href="css/loginPage.css">
-</head>
+<title>Sign In or Register</title>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<link type="text/css" rel="stylesheet" href="css/loginPage.css">
+<style>
+</style>
+</head>
 <body>
 <div class="wrapper">
 	<nav class="topnav">
@@ -35,6 +37,19 @@ Author: Code Apes.
 	<input type="password" id="password" name="password" placeholder="Your password.."
 	title="No longer than 16 characters.">
 	<br>
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+	<br>
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+	<br>
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender">
+      <option value="Unwilling to Disclose">Unwilling to Disclose</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+	  <option value="Other">Other</option>
+    </select>
     <input type="submit" value="Confirm">
   </form>
 </div>
