@@ -1,0 +1,267 @@
+body{
+	position: relative;	
+	font-family:Verdana, Geneva, sans-serif;
+	overflow:auto; 
+}
+
+h1, h2, h3, h4, h5, h6, .heading{font-family:Georgia, "Times New Roman", Times, serif;}
+
+/* definition list: style list items */
+dt{
+	font-weight:bolder;
+}
+
+/* definition list: style description details */
+dd{
+	padding-bottom:10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+tr:hover {background-color:#f5f5f5;}
+
+img{width:auto; max-width:100%; height:auto; margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
+
+/*
+The "hoc" class is a generic class used to centre a containing element horizontally
+It should be used in conjunction with a second class or ID
+*/
+.hoc{display:block; margin:0 auto;}
+
+.clear{display:block;clear:both;}
+
+/* initialize a wrapper's style*/
+.wrapper{
+	display:block; 
+	text-align:left; 
+}
+
+/* padding a sub-setion page */
+.container{padding:110px 120px 100px 80px;}
+
+/* convenient for element's position justify */
+.fl_left, .imgl{float:left;}
+.fl_right, .imgr{float:right;}
+.center{text-align:center;}
+
+
+.mid{
+	display:block; width:100%; margin:0; padding:0; text-align:left; word-wrap:break-word;
+	margin-bottom:80px;
+	color:#151517;
+	background-color:#FFFFFF;
+	}
+	
+.mid h2, p{margin:0; padding:0; list-style:none;}
+.group{display:block;}
+
+.first{margin-left:0; clear:left;}
+
+.topnav{
+	padding: 0px;
+	background-color: #fff;
+	position:fixed!important;
+    top: 0px;
+    width: 100%;
+	max-width:100%;
+	box-shadow: 3px 2px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#logo{
+	padding: 0px 10px 0px 0px;
+	margin: 5px 20px;
+}
+
+#logo img{
+	height:55px; 
+	width:78px;
+}
+
+.topmenu li{
+	display: inline-block;
+}
+
+.topmenu a{
+	display: inline-block;
+	text-decoration: none;
+	color: #151517;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 1.3px;
+	text-transform: uppercase;
+	position: relative;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	padding: 23px 20px 23px 15px;
+}
+
+.topmenu a:after{
+	content: "";
+	position: absolute;
+	height: 4px;
+	background-color: #BB4348;
+	width: 0;
+	left: 50%;
+	bottom: 0px;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	-webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+
+.topmenu a:hover, .sidebar a:hover{
+	background-color:#fff;
+	color:#BB4348;
+}
+
+
+.topmenu a:hover:after {
+	width: 100%;
+}
+
+
+.img{
+	display:block; 
+	width:100%;
+	height:100%;
+	margin:0; 
+	padding:80px 0;
+	background-image: url("../img/backgrounds/xiamen.jpg");
+	background-position:center; 
+	background-repeat:no-repeat; 
+	background-size:cover;
+}
+
+#intro{
+	padding: 90px 100px;
+	font-weight: bold;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	color:#FFFFFF;
+	text-align:left; 
+}
+
+#intro article {}
+#intro article h2{
+	font-size:52px; 
+	font-family: Verdana, sans-serif;
+	color: #fff;
+}
+
+#intro article p{
+	margin: 0;
+	font-size: 20px; 
+	margin: 15px 0px; 
+}
+#intro article footer{margin-top:30px;}
+
+.button, .button-inverse{
+	display:inline-block; 
+	padding:5px 20px; 
+	border:3px solid;
+	text-decoration:none;
+	font-weight: bold;
+}
+
+.button, .button-inverse:hover{color:#FFFFFF; background-color:#BB4348; border-color:#FFFFFF;}
+.button:hover, .button-inverse{color:inherit; background-color:transparent; border-color:#BB4348;}
+
+
+/* left float sidebar */
+.sidebar{
+	height:auto;
+	width:auto;
+	position:fixed!important;
+	z-index:1;
+	overflow:auto; 
+	font-weight: bold;
+    letter-spacing: 1px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sidebar ul{
+	background-color:#BB4348;
+	list-style-type: none;
+	margin : 0;
+	padding: 0; 
+}
+
+.sidebar li{
+	
+}
+
+.sidebar a{
+	display: block; 
+	text-decoration: none; 
+	color: #fff;
+	padding: 22px;
+	border-top: 1px solid #F0F0F0;
+}
+
+.sidebar a:hover{
+	box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.sidebar h3{
+	color: #BB4348;
+	text-align: center;
+	padding-bottom:10px;
+	padding-top:10px;
+}
+
+.content {
+	margin-left:30%;
+	background-color: #FFFFFF;
+	color: #151517;
+	line-height: 200%;
+	overflow: auto; 
+}
+
+.content img {
+	box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.content h2{
+	padding-top:10px;
+}
+
+.imgl, .imgr{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 33%;
+	width: 33%;
+}
+.imgl{margin-right:30px;}
+.imgr{margin-left:30px;}
+
+
+.btm { 
+  position: absolute;
+  bottom: 0;
+  padding: 0.6rem 0;
+  width:100%;
+  background-color: #151517;
+  text-align: center;
+}
+
+#copyright{
+	font-size: 14px;
+	color: #fff;
+}
+
+.current a{
+	color: #BB4348;
+	background-color: #fff;
+}

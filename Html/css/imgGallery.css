@@ -1,0 +1,46 @@
+/* Clear floats after a row */
+.row {
+	display: block;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Two column in a row */
+.column {
+    float: left;
+    width: 46%;
+    padding: 5px 15px 0px 10px;
+}
+
+/* images style inside the grid */
+.column img {
+	border-radius: 10px;
+	width:335px;
+	height:215px;
+    opacity: 1; 
+    cursor: pointer;
+}
+
+/* show text on image when hovering */
+
+
+.column img:hover {
+    opacity: 0.8; 
+	color: #fff; 
+}
+
+.text {
+	position: relative;
+    top: -40px;
+    left: 20px;
+	font-weight: bolder;
+}
+
+a{
+	text-decoration: none;
+	color: #fff;
+}

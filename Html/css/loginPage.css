@@ -1,0 +1,124 @@
+body{
+	position: relative;	
+	font-family:Verdana, Geneva, sans-serif;
+	overflow:auto; 
+}
+
+h1, h2, h3, h4, h5, h6, .heading{font-family:Georgia, "Times New Roman", Times, serif;}
+
+.topnav{
+	padding: 0px;
+	background-color: #fff;
+	position:fixed!important;
+    top: 0px;
+    width: 100%;
+	max-width:100%;
+	box-shadow: 3px 2px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.topmenu li{
+	display: inline-block;
+}
+.topmenu a{
+	display: inline-block;
+	text-decoration: none;
+	color: #151517;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 1.3px;
+	text-transform: uppercase;
+	position: relative;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	padding: 23px 20px 23px 15px;
+}
+
+.topmenu a:after{
+	content: "";
+	position: absolute;
+	height: 4px;
+	background-color: #BB4348;
+	width: 0;
+	left: 50%;
+	bottom: 0px;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	-webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+
+.topmenu a:hover, .sidebar a:hover{
+	background-color:#fff;
+	color:#BB4348;
+}
+
+
+.topmenu a:hover:after {
+	width: 100%;
+}
+input[type=text], input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.input_container{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 110px 120px 100px 80px;
+}
+
+#logo{
+	padding: 0px 10px 0px 0px;
+	margin: 5px 20px;
+}
+
+#logo img{
+	height:55px; 
+	width:78px;
+}
+#copyright{
+	font-size: 14px;
+	color: #fff;
+}
+.hoc{display:block; margin:0 auto;}
+
+.clear{display:block;clear:both;}
+
+.wrapper{
+	display:block; 
+	text-align:left; 
+}
+.container{padding:110px 120px 100px 80px;}
+
+.fl_left, .imgl{float:left;}
+.fl_right, .imgr{float:right;}
+.center{text-align:center;}
+.btm { 
+  position: absolute;
+  bottom: 0;
+  padding: 0.6rem 0;
+  width:100%;
+  background-color: #151517;
+  text-align: center;
+}

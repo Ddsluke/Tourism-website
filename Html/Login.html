@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+Author: Code Apes.
+-->
+<html>
+<head>
+<title>Sign In or Register</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<link type="text/css" rel="stylesheet" href="css/loginPage.css">
+<style>
+</style>
+</head>
+<body>
+<div class="wrapper">
+	<nav class="topnav">
+		<div id="logo" class="fl_left">
+			<a href="Homepage.html"><img src="img/logo.png" alt="Homepage"></a>
+		</div>
+		<div class="topmenu">
+			<li class="current"><a href="Homepage.html">Home</a></li>
+			<li><a href="travel-attractions.html">Travel</a></li>
+			<li><a href="food-what.html">Food</a></li>
+			<li><a href="accommodation.html">Accommodation</a></li>
+			<li><a href="about.html">About</a></li>
+		</div>
+	</nav>
+</div>
+<div class="input_container">
+  <form action="/action_page.php">
+	<label for="uname">Username</label>
+	<input type="text" id="username" name="username" placeholder="Your username.." 
+	title="No longer than 8 characters">
+	<br>
+	<label for="psword">Password</label>
+	<input type="password" id="password" name="password" placeholder="Your password.."
+	title="No longer than 16 characters.">
+	<br>
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+	<br>
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+	<br>
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender">
+      <option value="Unwilling to Disclose">Unwilling to Disclose</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+	  <option value="Other">Other</option>
+    </select>
+    <input type="submit" value="Confirm">
+  </form>
+</div>
+	
+<footer>
+	<div class="wrapper btm">
+		<div id="copyright" class="hoc clear">
+			<p>Copyright © 2018 #. All Rights Reserved.</p>
+		</div>
+	</div>
+</footer>
+
+</body>
+
+</html>
