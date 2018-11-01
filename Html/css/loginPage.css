@@ -7,6 +7,7 @@ body{
 h1, h2, h3, h4, h5, h6, .heading{font-family:Georgia, "Times New Roman", Times, serif;}
 
 .topnav{
+	z-index:999;
 	padding: 0px;
 	background-color: #fff;
 	position:fixed!important;
@@ -58,6 +59,7 @@ h1, h2, h3, h4, h5, h6, .heading{font-family:Georgia, "Times New Roman", Times, 
 	width: 100%;
 }
 input[type=text], input[type=password], select {
+	font-family:Verdana, Geneva, sans-serif;
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -68,6 +70,8 @@ input[type=text], input[type=password], select {
 }
 
 input[type=submit] {
+	font-family:Verdana, Geneva, sans-serif;
+	font-weight: bold;
     width: 100%;
     background-color: #4CAF50;
     color: white;
@@ -79,13 +83,17 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
+	font-weight: bold;
     background-color: #45a049;
 }
 
 .input_container{
+	position: relative;
+	line-height: 200%;
+	top: 50px;
     border-radius: 5px;
     background-color: #f2f2f2;
-    padding: 110px 120px 100px 80px;
+    padding: 100px 120px 140px 80px;
 }
 
 #logo{
@@ -107,7 +115,7 @@ input[type=submit]:hover {
 
 .wrapper{
 	display:block; 
-	text-align:left; 
+	text-align:center; 
 }
 .container{padding:110px 120px 100px 80px;}
 
@@ -115,7 +123,7 @@ input[type=submit]:hover {
 .fl_right, .imgr{float:right;}
 .center{text-align:center;}
 .btm { 
-  position: absolute;
+  position: relative;
   bottom: 0;
   padding: 0.6rem 0;
   width:100%;

@@ -4,7 +4,7 @@ Author: Code Apes.
 -->
 <html>
 <head>
-	<title>Sign In or Register</title>
+	<title>Sign Up for A New Account</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link type="text/css" rel="stylesheet" href="css/loginPage.css">
@@ -25,14 +25,19 @@ Author: Code Apes.
 	</nav>
 </div>
 <div class="input_container">
+  <h1>Create Your Account</h1>
   <form action="/action_page.php">
 	<label for="uname">Username</label>
 	<input type="text" id="username" name="username" placeholder="Your username.." 
-	title="No longer than 8 characters">
+	title="No longer than 8 characters" maxlength="16">
 	<br>
 	<label for="psword">Password</label>
 	<input type="password" id="password" name="password" placeholder="Your password.."
-	title="No longer than 16 characters.">
+	title="No longer than 16 characters." maxlength="16">
+	<br>
+	<label for="psword">Confirm Your Password</label>
+	<input type="password" id="password" name="password" placeholder="Confirm Your password.."
+	title="No longer than 16 characters." maxlength="16">
 	<br>
     <label for="fname">First Name</label>
     <input type="text" id="fname" name="firstname" placeholder="Your name..">
