@@ -1,0 +1,8 @@
+Name html/css files in lowercase.
+
+For html: Put '#' in uncertain place, so that we can directy search # to modify.
+e.g. <a href="#.html">; <img src="img/#.jpg" ...>
+And remember to replace all '#' in the end.
+
+
+more...
