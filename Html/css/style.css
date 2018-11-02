@@ -44,7 +44,6 @@ It should be used in conjunction with a second class or ID
 /* initialize a wrapper's style*/
 .wrapper{
 	display:block; 
-	text-align:left; 
 }
 
 /* padding a sub-setion page */
@@ -73,14 +72,16 @@ It should be used in conjunction with a second class or ID
 	background-color: #fff;
 	position:fixed!important;
     top: 0px;
+	left: 0px;
     width: 100%;
 	max-width:100%;
 	box-shadow: 3px 2px 20px 0 rgba(0, 0, 0, 0.19);
+	text-align:center; 
 }
 
 #logo{
-	padding: 0px 10px 0px 0px;
-	margin: 5px 20px;
+	padding: 0px 25px 0px 0px;
+	margin: 5px 15px;
 }
 
 #logo img{
@@ -88,8 +89,15 @@ It should be used in conjunction with a second class or ID
 	width:78px;
 }
 
+#account img{
+	height: 35px; 
+	width: 35px;
+	padding-right: 10px;
+}
+
 .topmenu li{
 	display: inline-block;
+	margin: 0px auto;
 }
 
 .topmenu a{
@@ -98,12 +106,12 @@ It should be used in conjunction with a second class or ID
 	color: #151517;
 	font-size: 15px;
 	font-weight: bold;
-	letter-spacing: 1.3px;
+	letter-spacing: 1.2px;
 	text-transform: uppercase;
 	position: relative;
 	-webkit-transition: all 0.4s ease;
 	transition: all 0.4s ease;
-	padding: 23px 20px 23px 15px;
+	padding: 23px 18px;
 }
 
 .topmenu a:after{
@@ -113,9 +121,9 @@ It should be used in conjunction with a second class or ID
 	background-color: #BB4348;
 	width: 0;
 	left: 50%;
-	bottom: 0px;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
+	bottom: 0;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
 	transform: translateX(-50%);
 	-webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
   	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
@@ -138,7 +146,7 @@ It should be used in conjunction with a second class or ID
 	height:100%;
 	margin:0; 
 	padding:80px 0;
-	background-image: url("../img/backgrounds/xiamen.jpg");
+	background-image: url("../img/background.jpg");
 	background-position:center; 
 	background-repeat:no-repeat; 
 	background-size:cover;
@@ -249,11 +257,11 @@ It should be used in conjunction with a second class or ID
 
 .btm { 
   position: absolute;
-  bottom: 0;
-  padding: 0.6rem 0;
-  width:100%;
+  padding: 0.5rem 0;
+  width: 100%;
   background-color: #151517;
   text-align: center;
+  margin-top: 50px;
 }
 
 #copyright{
