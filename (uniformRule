@@ -1,4 +1,4 @@
-Name all files (html, css, img, ...) in lowercase, use '_' to seperate words if necessary.
+Name html/img files in lowercase, use '_' to seperate words if necessary.
 
 For html: Put '#' in uncertain place, so that we can directy search # to modify.
 e.g. <a href="#.html">; <img src="img/#.jpg" ...>
