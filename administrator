@@ -5,4 +5,5 @@ administrator
   WHERE condition(e.g  HName="hotel icon")
   
 # view part of the information
+  SELECT Name, 
   
