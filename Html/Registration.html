@@ -8,30 +8,41 @@ Author: Code Apes.
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link type="text/css" rel="stylesheet" href="css/loginPage.css">
+	<script>
+	<!-- Space for javascript uses-->
+	</script>
 </head>
 <body>
 <div class="wrapper">
-	<nav class="topnav">
-		<div id="logo" class="fl_left">
-			<a href="Homepage.html"><img src="img/logo.png" alt="Homepage"></a>
-		</div>
-		<div class="topmenu">
-			<li class="current"><a href="Homepage.html">Home</a></li>
-			<li><a href="travel-attractions.html">Travel</a></li>
-			<li><a href="food-what.html">Food</a></li>
-			<li><a href="accommodation.html">Accommodation</a></li>
-			<li><a href="about.html">About</a></li>
-		</div>
-	</nav>
+		<nav class="topnav">
+			<div id="logo" class="fl_left">
+				<a href="home.html"><img src="img/web_logo.png" alt="Homepage"></a>
+			</div>
+			<div class="topmenu">
+				<li class="current"><a href="home.html">Home</a></li>
+				<li><a href="attractions.html">Attractions</a></li>
+				<li><a href="accommodation.html">Accommodation</a></li>
+				<li><a href="food.html">Food</a></li>
+				<li><a href="#.html">Plan?</a></li>
+				<li><a href="about.html">About</a></li>
+			  <div id="account" class="fl_right">
+			    <li>
+				  <a href="Login.html"><img src="img/account_icon.png" alt="account"></a>
+			    </li>
+			  </div>
+			</div>
+
+		</nav>
 </div>
+
 <div class="input_container">
   <h1>Create Your Account</h1>
   <form action="/action_page.php">
-	<label for="uname">Username</label>
+	<label for="uname" title='(Do not include the following characters:\/:*?"<><|)'>Username</label>
 	<input type="text" id="username" name="username" placeholder="Your username.." 
-	title="No longer than 8 characters" maxlength="16">
+	title="No longer than 8 characters" maxlength="8">
 	<br>
-	<label for="psword">Password</label>
+	<label for="psword" title='(Do not include the following characters:\/:*?"<><|)'>Password</label>
 	<input type="password" id="password" name="password" placeholder="Your password.."
 	title="No longer than 16 characters." maxlength="16">
 	<br>
@@ -47,6 +58,7 @@ Author: Code Apes.
 	<br>
     <label for="gender">Gender</label>
     <select id="gender" name="gender">
+	  <option></option>
       <option value="Unwilling to Disclose">Unwilling to Disclose</option>
       <option value="Male">Male</option>
       <option value="Female">Female</option>

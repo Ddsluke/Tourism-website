@@ -109,6 +109,12 @@ input[type=submit]:hover {
 	font-size: 14px;
 	color: #fff;
 }
+
+#account img{
+	height: 35px; 
+	width: 35px;
+	padding-right: 10px;
+}
 .hoc{display:block; margin:0 auto;}
 
 .clear{display:block;clear:both;}
@@ -119,7 +125,7 @@ input[type=submit]:hover {
 }
 .container{padding:110px 120px 100px 80px;}
 
-.fl_left, .imgl{float:left;}
+.fl_left, .imgl{float:top;}
 .fl_right, .imgr{float:right;}
 .center{text-align:center;}
 .btm { 
