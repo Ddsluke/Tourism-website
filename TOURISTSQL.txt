@@ -1,0 +1,82 @@
+1) user information
+SELECT Id,Name,Depature AS DEPATURE
+FROM Tourists
+WHERE Id='XXXXXXXX';
+
+2)UPDATE USER INFORMATION
+1 CHANGE FROM/NAME
+
+UPDATE Tourists
+SET Name='XXXXXXX'
+WHERE Id='XXXXXXXX';
+
+UPDATE Tourists
+SET Depature='XXXXX'
+WHERE Id='XXXXXXXX';
+
+2 CHANGE PASSWORD
+
+UPDATE Tourists
+SET Password='   '
+WHERE Id='XXXXXXXX';
+
+3)REGISTERED
+
+INSERET INTO Tourists(ID,Password,Name,Depature)
+VALUES( , , ,);
+
+4)NEW TRAVELPLAN 
+INSERT INTO Arange(Id,ArriveDay,LeaveDay,Activate)
+VALUES(, , ,'YES');
+INSERT INTO RecommandRes(Id,Date,Time,RName)
+VALUES(,,,NULL);
+INSERT INTO RecommandAttraction(Id,Date,Time,AName)
+VALUES(,,,NULL);
+INSERT INTO RecommandHotel(Id,Date,HName)
+VALUES(,,NULL);
+
+5)SHOW TRAVEL PLAN
+1 GENARAL INFORMATION
+SELECT Name,ArriveDay,LeaveDay
+FROM Tourists AND Arrange
+WHERE ID='XXXXXXXX' AND Arrange.Activate='YES';
+
+2DETAILED INFORMATION
+
+SELECT AName,RName,Date, Time
+FROM RecommandRes AS R AND RecommandAttraction AS A
+WHERE Id='XXXXXXXX' AND R.Id=A.Id AND R.Date=A.Date AND R.Time=A.Time;
+
+6) TOURIST UPDATE RECOMMANDTION
+1SHOW AVALIABLE CHOICES(Res as an example)
+SELECT RName
+FROM Restaurant
+WHERE Area=' ';
+
+SELECT RName,Area,FoodType
+FROM Restaurant
+ORDER BY AveragePrice,Area,FoodType;
+
+2 UPDATE RES/ATTRACTION/Hotel
+UPDATE RecommandRes
+SET RName=' '
+WHERE Id='xxxxxxxx' AND Date='xxxx/xx/xx' AND Time='XXXX';
+
+UPDATE RecommandAttraction
+SET RName=' '
+WHERE Id='xxxxxxxx' AND Date='xxxx/xx/xx' AND Time='XXXX';
+
+UPDATE RecommandHotel
+SET HName=' '
+WHERE Id='xxxxxxxx' AND Date='xxxxxxxx';
+
+7)AutoRecommand???
+
+
+
+
+
+
+
+
+
