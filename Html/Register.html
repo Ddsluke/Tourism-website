@@ -1,0 +1,58 @@
+<html> 
+<head>
+	<title>Welcome to Code Apes!</title> 
+	<meta http-equiv="name="viewport" content="width=device-width, initial-scale=1; charset=UTF-8">
+	<link href="css/register.css" rel="stylesheet" type="text/css">
+	<script>}
+	</script>
+</head>
+<body>
+<center>
+	<h1>Create your account !</h1>
+	<h1>Register</h1>
+</center>
+<form method="POST" name="register" action="/action_page.php">
+	<table align="center" valign="middle" width="30%" height="150">
+	<tr>
+		<td>NameID:</td>
+		<td><input type="text" name="name" placeholder="Your name id.." title="No longer than 8 characters" maxlength="8" required="required"></td>
+	</tr>
+	<tr>
+		<td>Gender</td>
+		<td><select name="gender"><option value="Male">Male</option><option value="Female">Female</option><option value="Other">Other</option></select></td>
+	</tr>
+	<tr>
+		<td>Email:</td>
+		<td><input type="email" name="email" placeholder="Your email.." required="required"></td>
+	</tr>
+	<tr>
+		<td>Password:</td>
+		<td><input type="password" name="psw" placeholder="Your password.. title="No longer than 16 characters." maxlength="16" required="required"></td>
+	</tr>
+	<tr>
+		<td>Confirm Password:</td>
+		<td><input type="password" name="cpsw" placeholder="Confirm Your password.." title="No longer than 16 characters." maxlength="16" required="required"></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<textarea rows="15" cols="50">
+Privacy Statement:
+1.
+2.
+3.
+		</textarea>
+		</td>
+	</tr>
+	<tr>
+	<td colspan="2">By registering a CodeApes.com account, I acknowledge that I have read and agree to CodeApes.com's Term of Use and Privacy Statement.</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center"><input type="submit" value="Agree and Register"></td>
+	</tr>
+	<tr>
+		<td>Already a member?</td>
+		<td><input type="submit" value="Sign in"></td>
+	</tr>
+</form>
+</body> 
+</html>
