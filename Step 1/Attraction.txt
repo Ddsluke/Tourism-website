@@ -1,0 +1,19 @@
+insert into Attractions(AName, Area, Type,Price) values ('Disnyland', 'Disnyland', 'entertainment', '500');
+
+insert into Attractions(AName, Area, Type,Price) values ('Ocean Park','Ocean Park','entertainment', '400');
+
+insert into Attractions(AName, Area, Type,Price) values ('Sky Wheel', 'Causeway Bay','viewing', '20');
+
+insert into Attractions(AName, Area, Type,Price) values ('Victoria Peak','Victoria Peak','viewing', '70');
+
+insert into Attractions(AName, Area, Type,Price) values ('Wax Work Museum','Victoria Peak','viewing', '300');
+
+insert into Attractions(AName, Area, Type,Price) values ('The Star Ferry', 'Tsim Sha Tsui','viewing', '10');
+
+insert into Attractions(AName, Area, Type,Price) values ('Langham Place', 'Mong Kok','shopping', '0');
+
+insert into Attractions(AName, Area, Type,Price) values ('Hong Kong Polyu', 'Hung Hom','viewing', '0');
+
+insert into Attractions(AName, Area, Type,Price) values ('Victoria Harbour','Homantin','viewing', '0');
+
+insert into Attractions(AName, Area, Type,Price) values ('Harbor City','Tsim Sha Tsui','shopping', '0');

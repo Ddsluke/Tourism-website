@@ -1,0 +1,5 @@
+insert into Users(Id,Type,Password) values ('00000001','TOURISTS','00000001');
+insert into Users(Id,Type,Password) values ('00000002','TOURISTS','00000002');
+insert into Users(Id,Type,Password) values ('00000003','TOURISTS','00000003');
+insert into Users(Id,Type,Password) values ('00000004','TOURISTS','00000004');
+insert into Users(Id,Type,Password) values ('00000005','TOURISTS','00000005');

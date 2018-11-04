@@ -1,0 +1,9 @@
+CREATE TABLE Restaurant(RName varchar(20),Area varchar(20), FoodType varchar(20), AveragePrice int);
+CREATE TABLE Hotel(HName varchar(40),Area varchar(20), Level enum("1","2","3","4","5"), PricePerNight int);
+CREATE TABLE Attractions(AName varchar(20),Area varchar(20), Type varchar(20), Price int);
+CREATE TABLE RecommandRes(ID char(8),Date date,Time enum("MORN","EVEN"), RName varchar(20));
+CREATE TABLE RecommandHotel(ID char(8),Date date,HName varchar(20));
+CREATE TABLE RecommandAttraction(ID char(8),Date date,Time enum("MORN","EVEN"),AName varchar(20));
+CREATE TABLE Arrange(Id char(8),ArriveDay date,LeaveDay date,Activate enum("YES","NO"));
+CREATE TABLE Tourists(Id char(8),Password varchar(20),Name varchar(20),Departure varchar(20));
+CREATE TABLE Administor(Id char(8),Password varchar(20),Name varchar(20));

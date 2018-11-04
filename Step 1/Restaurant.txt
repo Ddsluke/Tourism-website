@@ -1,0 +1,38 @@
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('Disney Restaurant', 'Disneyland', 'Western-style ', '500');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('Chef Mickey', 'Disneyland', 'Western-style ', '300');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('Teakha', 'Victoria Peak', 'Western-style ', '100');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('AGanShrimp ', 'Victoria Peak', 'Western-style ', '200');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('Kum Kee Restaurant', 'Hung Hom', 'Cantonese style', '50');
+
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('Steam Fresh', 'Hung Hom', 'Korean style', '150');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('Ajisen Ramen', 'Homantin', 'Japanese style', '100');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('Tuxedos Resturant','Ocean Park', 'Weatern-style', '150');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('Neptunes Restaurant','Ocean Park', 'Weatern-style', '300');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('Hot Dog Link', 'Homantin', 'German style', '50');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('The Spaghetti House', 'Mong Kok', 'Italian style', '150');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('Yadllie Plate', 'Mong Kok', 'Korean style', '150');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('Lazy Pot', 'Yau Ma Tei', 'Hong Kong style', '150');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('Haidilao Hot Pot', 'Yau Ma Tei', 'Sichuan style', '300');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('Burgeroom', 'Causeway Bay', 'American style', '100');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('Shika Teppan-Yaki', 'Causeway Bay', 'Japanese style', '500');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('Shanghai Min 1987', 'Tsim Sha Tsui', 'Shanghai style', '300');
+
+insert into Restaurant(RName, Area, FoodType,AveragePrice) values ('LAB EAT Restaurant', 'Tsim Sha Tsui', 'Western-style', '300');
+
+

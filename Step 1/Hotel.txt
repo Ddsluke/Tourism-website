@@ -1,0 +1,22 @@
+insert into Hotel(HName, Area, Level,PricePerNight) values ('Tai Hing Hotel', 'Mong Kok', '2', '225');
+
+insert into Hotel(HName, Area, Level,PricePerNight) values ('Mirador Hotel', 'Tsim Sha Tsui', '2', '400');
+
+insert into Hotel(HName, Area, Level,PricePerNight) values ('Palazzo Holiday  Hotel', 'Causeway Bay', '2', '265');
+
+insert into Hotel(HName, Area, Level,PricePerNight) values ('Regal Oriental Hotel','Hung Hom', '3', '600');
+
+insert into Hotel(HName, Area, Level,PricePerNight) values ('Harbour Plaza Metropolis','Hung Hom', '4', '700');
+
+insert into Hotel(HName, Area, Level,PricePerNight) values ('Bridal Tea House  Hotel', 'Homantin', '3', '450');
+
+insert into Hotel(HName, Area, Level,PricePerNight) values ('Disney Explorers Lodge','Disneyland', '5', '1700');
+
+insert into Hotel(HName, Area, Level,PricePerNight) values ('Disneys Hollywood Hotel', 'Disneyland', '3', '1000');
+
+insert into Hotel(HName, Area, Level,PricePerNight) values ('Iclub Sheung Wan Hotel','Victoria Peak', '3', '1000');
+
+insert into Hotel(HName, Area, Level,PricePerNight) values ('Rosedale Hotel', 'Causeway Bay', '3', '800');
+
+insert into Hotel(HName, Area, Level,PricePerNight) values ('L-hotel Island South', 'Ocean park', '4', '700');
+

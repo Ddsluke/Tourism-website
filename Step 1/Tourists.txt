@@ -1,0 +1,5 @@
+INSERT INTO Tourists(Id,Password,Name,Departure) VALUES ('00000001','00000001','00000001','WuHan');
+INSERT INTO Tourists(Id,Password,Name,Departure) VALUES ('00000002','00000002','00000002','ShangHai')
+INSERT INTO Tourists(Id,Password,Name,Departure) VALUES ('00000003','00000003','00000003','HuNan')
+INSERT INTO Tourists(Id,Password,Name,Departure) VALUES ('00000004','00000004','00000004','ShanTou')
+INSERT INTO Tourists(Id,Password,Name,Departure) VALUES ('00000005','00000005','00000005','WuHan')
