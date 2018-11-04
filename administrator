@@ -1,1 +1,8 @@
 administrator
+# update the new information
+  UPDATE Hotel/Attractions/Restaurant
+  SET (e.g Area="kowloon")
+  WHERE condition(e.g  HName="hotel icon")
+  
+# view part of the information
+  
