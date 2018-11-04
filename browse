@@ -1,12 +1,14 @@
 Browse (before registration)
 Default page: SELECT *
               FROM Attractions
-Filter1: (for the user to enter the specific attraction)
+Filter1: (for the user to enter the specific attraction/hotel/restaurant)
         LET theVar= INPUT(‘enter string #’ , input box);
         SQL SELECT* 
         FROM (SELECT *
-        FROM Attractions
-        WHERE Aname LIKE $(theVar%);
+        FROM Attractions,Hotel,Restaurant
+        WHERE Attractions.Aname LIKE $(theVar%);
+           OR Hotel.Hname LIKE $(theVar%);
+           OR Restaurant.Rname LIKE $(theVar%);
 Filter2:（for the choice of users for specific theme/area)
        LET theVar=INPUT(# the choice from user)
        SQL SELECT *
