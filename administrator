@@ -1,9 +1,31 @@
-administrator
+Administrator
+# registration
+  INSERT INTO Admin (Name, Password) VALUES ('XX','XX')
+
 # update the new information
   UPDATE Hotel/Attractions/Restaurant
   SET (e.g Area="kowloon")
   WHERE condition(e.g  HName="hotel icon")
   
 # view part of the information
-  SELECT Name, 
+  CREATE VIEW [tourists information] AS
+  SELECT Name, ArriveDay, LeaveDay, Depature
+  FROM Arrange, Tourists, 
+  WHERE Arrange.Id=Tourists.Id
   
+# change the tourists information
+  UPDATE Tourists
+  SET
+  WHERE condition(the user name or behavious have some violation)
+ 
+# to active the status
+   UPDATE Arrange
+   SET Activate="Yes"
+   WHERE CurrentDay<LeaveDay
+   
+   UPDATE Arrange
+   SET Activate="No"
+   WHERE CurrentDay>LeaveDay
+
+# summary
+  to be added
