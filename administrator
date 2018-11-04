@@ -28,4 +28,11 @@ Administrator
    WHERE CurrentDay>LeaveDay
 
 # summary
-  to be added
+  SELECT HName/RName/AName, SUM(Name)
+  FROM RecommandHotel/RecommandRes/RecommandAttractions, Tourists
+  WHERE RecommandHotel/RecommandRes/RecommandAttractions.Id=Tourists.Id
+  GROUP BY Hname/RName/AName
+  
+  SELECT Activate, SUM(Id)
+  FROM Arrange
+  GROUP BY Activate
