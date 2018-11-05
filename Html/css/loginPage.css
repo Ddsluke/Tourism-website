@@ -1,7 +1,7 @@
 body{
 	position: relative;	
 	font-family:Verdana, Geneva, sans-serif;
-	overflow:auto; 
+	overflow:auto;
 }
 
 h1, h2, h3, h4, h5, h6, .heading{font-family:Georgia, "Times New Roman", Times, serif;}
@@ -125,7 +125,7 @@ input[type=submit]:hover {
 }
 .container{padding:110px 120px 100px 80px;}
 
-.fl_left, .imgl{float:top;}
+.fl_left, .imgl{float:left;}
 .fl_right, .imgr{float:right;}
 .center{text-align:center;}
 .btm { 

@@ -10,6 +10,14 @@ Author: Code Apes.
 	<link type="text/css" rel="stylesheet" href="css/loginPage.css">
 	<script>
 	<!-- Space for javascript uses-->
+	function checkPassword(){
+		if (document.getElementById("password").value != document.getElementById("con_password").value){
+			document.getElementById("password-error").style.display='block';
+		}
+		else{
+			document.getElementById("password-error").style.display='none';
+		}
+	}
 	</script>
 </head>
 <body>
@@ -38,25 +46,25 @@ Author: Code Apes.
 <div class="input_container">
   <h1>Create Your Account</h1>
   <form action="/action_page.php">
-	<label for="uname" title='(Do not include the following characters:\/:*?"<><|)'>Username</label>
+	<br>Email
+    <input type="text" name="email" placeholder="Your email.." required="required">
+	<br>
+	<label for="uname" title='(Do not include the following characters:\/:*?"<>|)'>Username</label>
 	<input type="text" id="username" name="username" placeholder="Your username.." 
 	title="No longer than 8 characters" maxlength="8">
 	<br>
-	<label for="psword" title='(Do not include the following characters:\/:*?"<><|)'>Password</label>
+	<label for="psword" title='(Do not include the following characters:\/:*?"<>|)'>Password</label>
 	<input type="password" id="password" name="password" placeholder="Your password.."
 	title="No longer than 16 characters." maxlength="16">
-	<br>
-	<label for="psword">Confirm Your Password</label>
-	<input type="password" id="password" name="password" placeholder="Confirm Your password.."
-	title="No longer than 16 characters." maxlength="16">
-	<br>
-    <label for="fname">First Name</label>
+	<br>Confirm Your Password
+	<input type="password" id="con_password" name="con_password" placeholder="Confirm Your password.."
+	title="No longer than 16 characters." maxlength="16" onchange="checkPassword()">
+	<div id="password-error" style="display:none">The password you have entered is inconsistent.</div>
+	<br>First Name
     <input type="text" id="fname" name="firstname" placeholder="Your name..">
-	<br>
-    <label for="lname">Last Name</label>
+	<br>Last Name
     <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-	<br>
-    <label for="gender">Gender</label>
+	<br>Gender
     <select id="gender" name="gender">
 	  <option></option>
       <option value="Unwilling to Disclose">Unwilling to Disclose</option>
