@@ -19,13 +19,13 @@ header("Content-Type: text/html; charset=utf8");
     }//check if we have "submit" action
 
     include('connect.php');//connect to database
-    $Id = $_POST['Id'];//get user's name
-    $Passowrd = $_POST['Password'];//get user's password
+    $Id = $_POST['username'];//get user's name
+    $Passowrd = $_POST['password'];//get user's password
 
 	
 
     if ($Id && $passowrd){//if both name and passowrd are not null
-             $sql = "select * from Tourists where Id = '$Id' and Password='$Passowrd'";//to check with database
+             $sql = "select * from Tourists where Id = '$username' and Password='$password'";//to check with database
              $result = mysql_query($sql);//get result form sql
              $rows=mysql_num_rows($result);//return the number of row
              if($rows){//0 false 1 true
@@ -35,7 +35,7 @@ header("Content-Type: text/html; charset=utf8");
 				 
 				 ?>
 				 
-				 Tourists Id or password is wrong, Please 
+				 Tourists username or password is wrong, Please 
 				 <a href="login.html">
 				 try again.
 				 </a>.
