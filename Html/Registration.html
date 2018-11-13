@@ -20,6 +20,7 @@ Author: Code Apes.
 	}
 	</script>
 </head>
+
 <body>
 <div class="wrapper">
 		<nav class="topnav">
@@ -39,12 +40,12 @@ Author: Code Apes.
 			    </li>
 			  </div>
 			</div>
-
 		</nav>
 </div>
 
 <div class="input_container">
   <h1>Create Your Account</h1>
+  <a href="Login.html"><h4>Already a member?</h4></a>
   <form action="/action_page.php">
 	<br>Email
     <input type="text" name="email" placeholder="Your email.." required="required">
@@ -60,18 +61,7 @@ Author: Code Apes.
 	<input type="password" id="con_password" name="con_password" placeholder="Confirm Your password.."
 	title="No longer than 16 characters." maxlength="16" onchange="checkPassword()">
 	<div id="password-error" style="display:none">The password you have entered is inconsistent.</div>
-	<br>First Name
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-	<br>Last Name
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-	<br>Gender
-    <select id="gender" name="gender">
-	  <option></option>
-      <option value="Unwilling to Disclose">Unwilling to Disclose</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-	  <option value="Other">Other</option>
-    </select>
+	<br>
     <input type="submit" value="Confirm">
   </form>
 </div>
