@@ -2,6 +2,7 @@ body{
 	position: relative;	
 	font-family:Verdana, Geneva, sans-serif;
 	overflow:auto; 
+	margin: 0px;
 }
 
 h1, h2, h3, h4, h5, h6, .heading{font-family:Georgia, "Times New Roman", Times, serif;}
@@ -72,8 +73,6 @@ It should be used in conjunction with a second class or ID
 	background-color: #fff;
 	position:fixed;
     z-index: 100;
-    top: 0px;
-	left: 0px;
     width: 100%;
 	max-width:100%;
 	box-shadow: 3px 2px 20px 0 rgba(0, 0, 0, 0.19);
@@ -264,21 +263,12 @@ It should be used in conjunction with a second class or ID
 .imgr{margin-left:30px;}
 
 
-.btm { 
-  position: absolute;
+.footer { 
   padding: 0.5rem 0;
   width: 100%;
   background-color: #151517;
   text-align: center;
   margin-top: 50px;
-}
-
-.fixed-btm {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1030;
 }
 
 #copyright{
