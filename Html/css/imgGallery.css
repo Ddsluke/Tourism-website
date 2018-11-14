@@ -40,6 +40,12 @@
 	font-weight: bolder;
 }
 
+.button{
+    margin-top: -20px;
+	margin-bottom: 30px;
+	float: right;
+}
+
 a{
 	text-decoration: none;
 	color: #fff;
