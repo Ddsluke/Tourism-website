@@ -70,7 +70,8 @@ It should be used in conjunction with a second class or ID
 .topnav{
 	padding: 0px;
 	background-color: #fff;
-	position:fixed!important;
+	position:fixed;
+    z-index: 100;
     top: 0px;
 	left: 0px;
     width: 100%;
@@ -174,7 +175,7 @@ It should be used in conjunction with a second class or ID
 }
 #intro article footer{margin-top:30px;}
 
-.button, .button-inverse{
+.btn, .btn-inverse{
 	display:inline-block; 
 	padding:5px 20px; 
 	border:3px solid;
@@ -182,8 +183,16 @@ It should be used in conjunction with a second class or ID
 	font-weight: bold;
 }
 
-.button, .button-inverse:hover{color:#FFFFFF; background-color:#BB4348; border-color:#FFFFFF;}
-.button:hover, .button-inverse{color:inherit; background-color:transparent; border-color:#BB4348;}
+.btn-small{
+	display:inline-block; 
+	padding:4px 15px; 
+	font-size: 14px;
+	text-decoration:none;
+}
+
+.btn, .btn-inverse:hover{color:#FFFFFF; background-color:#BB4348; border-color:#FFFFFF;}
+.btn:hover, .btn-inverse{color:inherit; background-color:transparent; border-color:#BB4348;}
+
 
 
 /* left float sidebar */
@@ -262,6 +271,14 @@ It should be used in conjunction with a second class or ID
   background-color: #151517;
   text-align: center;
   margin-top: 50px;
+}
+
+.fixed-btm {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
 }
 
 #copyright{
