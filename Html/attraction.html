@@ -6,7 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 	<link type="text/css" rel="stylesheet" href="css/imgGallery.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 
+	
 </head>
 
 <body>
@@ -26,11 +29,11 @@
 					<li><a href="Login.html"><img src="img/account_icon.png" alt="account"></a></li>
 				</div>
 			</div>
-			<div class="navbar">  
+			<div class="searchbar">  
 				<div class="search-container">
-					<form action="/action_page.php">
-					  <input type="text" placeholder="Search.." name="search">
-					  <button type="submit"></button>
+					<form action="/action_page#.php">
+					  <input type="text" placeholder="Keyword..." name="search">
+					  <button type="submit">Search</button>
 					</form>
 				</div>
 			</div>
@@ -38,14 +41,22 @@
 </div>
 <div class="wrapper" id="top">
 	<!-- main body -->
-	<main class="hoc container clear">
+	<main class="container">
 		<div class="sidebar">
 			<h3>Attraction</h3>
-			<ul>
-			  <li><a href="#">All</a></li>
-			  <li><a href="#">By Theme</a></li>
-			  <li><a href="#">By Region</a></li>
-			</ul>
+			<a href="#">All</a>
+			<a class="dropdown">By Theme<i class="fa fa-caret-down"></i></a>
+			 	<div class="dropdown-container">
+					<a href="#">Viewing</a>
+					<a href="#">Entertainment</a>
+					<a href="#">Shopping</a>
+				 </div>
+			<a class="dropdown">By Region<i class="fa fa-caret-down"></i></a>
+			 	<div class="dropdown-container">
+					<a href="#">Hong Kong Island</a>
+					<a href="#">Kowloon</a>
+					<a href="#">New Territories</a>
+				 </div>
 		</div>
   
 		<div class="content">
@@ -93,6 +104,25 @@
 <!-- end footer -->
 
 
+
+
+	<script>
+	/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+	var dropdown = document.getElementsByClassName("dropdown");
+	var i;
+
+	for (i = 0; i < dropdown.length; i++) {
+	  dropdown[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+		var dropdownContent = this.nextElementSibling;
+		if (dropdownContent.style.display === "block") {
+		  dropdownContent.style.display = "none";
+		} else {
+		  dropdownContent.style.display = "block";
+		}
+	  });
+	}
+	</script>
 
 </body>
 </html>
