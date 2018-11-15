@@ -5,7 +5,7 @@ body{
 	margin: 0px;
 }
 
-h1, h2, h3, h4, h5, h6, .heading{font-family:Georgia, "Times New Roman", Times, serif;}
+h1, h2, h3, h4, h5, h6, .heading, .sidebar{font-family:Georgia, "Times New Roman", Times, serif;}
 
 /* definition list: style list items */
 dt{
@@ -48,7 +48,7 @@ It should be used in conjunction with a second class or ID
 }
 
 /* padding a sub-setion page */
-.container{padding:110px 120px 100px 80px;}
+.container{padding:150px 120px 100px 80px;}
 
 /* convenient for element's position justify */
 .fl_left, .imgl{float:left;}
@@ -79,43 +79,32 @@ It should be used in conjunction with a second class or ID
 	text-align:center; 
 }
 
-.navbar {
+.searchbar {
   position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   padding: 0.5rem 1rem;
   background-color: #f8f9fa !important;
+  text-align:right;
 }
 
-.navbar .search-container {
-  float: right;
-}
-
-.navbar input[type=text] {
-  padding: 6px;
+.searchbar input[type=text] {
+  padding: 5px;
   font-size: 17px;
   border: none;
 }
 
-.navbar .search-container button {
-  float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background: #ddd;
+.searchbar .search-container button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  color:#FFFFFF; 
+  background-color:#BB4348;
   font-size: 17px;
   border: none;
   cursor: pointer;
+	text-decoration:none;
 }
 
 #logo{
-	padding: 0px 25px 0px 0px;
+	padding: 0px 25px 0px 10px;
 	margin: 10px;
 }
 
@@ -124,10 +113,13 @@ It should be used in conjunction with a second class or ID
 	width:55px;
 }
 
+#account {
+	margin-right: 20px;
+}
+
 #account img{
 	height: 30px; 
 	width: 30px;
-	padding-right: 10px;
 	margin-bottom: -8px;
 	margin-top: -8px;
 }
@@ -234,7 +226,7 @@ It should be used in conjunction with a second class or ID
 /* left float sidebar */
 .sidebar{
 	height:auto;
-	width:auto;
+	width:190px;
 	position:fixed!important;
 	z-index:1;
 	overflow:auto; 
@@ -243,39 +235,46 @@ It should be used in conjunction with a second class or ID
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.sidebar ul{
-	background-color:#BB4348;
-	list-style-type: none;
-	margin : 0;
-	padding: 0; 
-}
-
-.sidebar li{
-	
-}
-
 .sidebar a{
+	background-color:#BB4348;
 	display: block; 
 	text-decoration: none; 
 	color: #fff;
-	padding: 22px;
+	padding: 15px 20px;
 	border-top: 1px solid #F0F0F0;
+	font-size:15px;
+	text-align: center;
 }
 
 .sidebar a:hover{
 	box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.2);
-
 }
 
 .sidebar h3{
 	color: #BB4348;
 	text-align: center;
-	padding-bottom:10px;
-	padding-top:10px;
+	padding:5px;
+}
+
+.dropdown {
+    cursor: pointer;
+}
+
+.dropdown-container {
+    display: none;
+    background-color: #BB4348;
+    padding-left: 8px;
+}
+
+.dropdown-container a{
+	color: #151517;
+	padding: 10px;
+	background-color: #FFF;
+	text-align: left;
 }
 
 .content {
-	margin-left:30%;
+	margin-left:28%;
 	background-color: #FFFFFF;
 	color: #151517;
 	line-height: 200%;
