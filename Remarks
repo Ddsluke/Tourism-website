@@ -1,0 +1,28 @@
+1. Name html/img files in lowercase
+
+2. For html: Put '#' in uncertain place, so that we can directy search # to modify.
+e.g. <a href="#.html">; <img src="img/#.jpg" ...>
+And remember to replace all '#' in the end.
+
+
+3. php template
+
+	1)top menu:
+<?php
+require('topnav.php');
+?>
+	
+	2)top menu+search box:
+<?php
+require('topbar.php');
+?>
+	
+	3)footer:
+<?php
+require('footer.php');
+?>
+	
+	4)sidebar:
+<?php
+require('sidebar.php');
+?>
