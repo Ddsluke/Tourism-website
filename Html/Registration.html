@@ -8,16 +8,30 @@ Author: Code Apes.
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link type="text/css" rel="stylesheet" href="css/loginPage.css">
+	<link type="text/css" rel="stylesheet" href="css/style.css">
 	<script>
 	<!-- Space for javascript uses-->
 	function checkPassword(){
 		if (document.getElementById("password").value != document.getElementById("con_password").value){
-			document.getElementById("password-error").style.display='block';
+			document.getElementById("password_error").style.display='block';
+			document.getElementById("confirm").disabled = true;
 		}
 		else{
-			document.getElementById("password-error").style.display='none';
+			document.getElementById("password_error").style.display='none';
+			document.getElementById("confirm").disabled = false;
 		}
 	}
+	function checkGender(){
+		if (document.getElementById("gender").value == "default"){
+			document.getElementById("gender_error").style.display='block';
+			document.getElementById("confirm").disabled = true;
+		}
+		else{
+			document.getElementById("gender_error").style.display='none';
+			document.getElementById("confirm").disabled = false;
+		}
+	}
+	
 	</script>
 </head>
 
@@ -50,19 +64,52 @@ Author: Code Apes.
 	<br>Email
     <input type="text" name="email" placeholder="Your email.." required="required">
 	<br>
+	Full Name(e.g. Chan Taiman)
+	<input type="text" id="fullname" placeholder="Your fullname.." 
+	title="No longer than 16 characters" maxlength="16">
+	<br>
+	Gender
+	<select id="gender" onchange="checkGender()">
+		<option value="default">--Please choose--</option>
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+		<option value="other">Other</option>
+	</select>
+	<div id="gender_error" style=
+	"display:none;
+	font-family:Verdana, Geneva, sans-serif;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	border-color: #8b0000;
+    background-color:#FA8072;">
+	Please choose a gender.</div>
 	<label for="uname" title='(Do not include the following characters:\/:*?"<>|)'>Username</label>
 	<input type="text" id="username" name="username" placeholder="Your username.." 
-	title="No longer than 8 characters" maxlength="8">
+	title="No longer than 8 characters" maxlength="8" required="required">
 	<br>
 	<label for="psword" title='(Do not include the following characters:\/:*?"<>|)'>Password</label>
 	<input type="password" id="password" name="password" placeholder="Your password.."
-	title="No longer than 16 characters." maxlength="16">
+	title="No longer than 16 characters." maxlength="16" onchange="checkPassword()" required="required">
 	<br>Confirm Your Password
 	<input type="password" id="con_password" name="con_password" placeholder="Confirm Your password.."
-	title="No longer than 16 characters." maxlength="16" onchange="checkPassword()">
-	<div id="password-error" style="display:none">The password you have entered is inconsistent.</div>
-	<br>
-    <input type="submit" value="Confirm">
+	title="No longer than 16 characters." maxlength="16" onchange="checkPassword()"required="required">
+	<div id="password_error" style=
+	"display:none;
+	font-family:Verdana, Geneva, sans-serif;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	border-color: #8b0000;
+    background-color:#FA8072;">
+	The password you have entered is incorrect.</div>
+    <input id="confirm" type="submit" value="Confirm">
   </form>
 </div>
 <footer>
