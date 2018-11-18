@@ -11,6 +11,20 @@ Author: Code Apes.
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 	<script>
 	<!-- Space for javascript uses-->
+	function checkEmail() {
+		var email = document.getElementById("email").value;
+		atpos = email.indexOf("@");
+		dotpos = email.lastIndexOf(".");
+		if (atpos < 1 || ( dotpos - atpos < 2 ))
+		{
+			document.getElementById("email_error").style.display='block';
+			document.getElementById("confirm").disabled = true;
+		}
+		else{
+			document.getElementById("email_error").style.display='none';
+			document.getElementById("confirm").disabled = false;
+		}  
+	}
 	function checkPassword(){
 		if (document.getElementById("password").value != document.getElementById("con_password").value){
 			document.getElementById("password_error").style.display='block';
@@ -41,7 +55,6 @@ Author: Code Apes.
 			document.getElementById("confirm").disabled = false;
 		}
 	}
-	
 	</script>
 </head>
 
@@ -72,7 +85,15 @@ Author: Code Apes.
   <a href="Login.html"><h4>Already a member?</h4></a>
   <form action="/action_page.php">
 	<br>Email
-    <input type="text" name="email" placeholder="Your email.." required="required">
+	<input type="text" id="email" name="email" placeholder="Your email.." onchange="checkEmail()"required="required">
+	<div id="email_error" style=
+	"display:none;
+	font-family:Verdana, Geneva, sans-serif;    width: 100%;
+    padding: 12px 20px;    margin: 8px 0;
+    border: 1px solid #ccc;    border-radius: 4px;
+    box-sizing: border-box;	border-color: #8b0000;
+    background-color:#FA8072;">
+	You email is not valid.</div>
 	<br>
 	Full Name(e.g. Chan Taiman)
 	<input type="text" id="fullname" placeholder="Your fullname.." 
@@ -120,7 +141,7 @@ Author: Code Apes.
     border: 1px solid #ccc;    border-radius: 4px;
     box-sizing: border-box;	border-color: #8b0000;
     background-color:#FA8072;">
-	The password you have entered is incorrect.</div>
+	Two passwords didn't match. Please try again.</div>
     <input id="confirm" type="submit" value="Confirm">
   </form>
 </div>
