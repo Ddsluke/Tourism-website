@@ -8,13 +8,28 @@ Author: Code Apes.
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<script>
+	function Edit()
+	</script>
+	<style>
+input[type=button]{
+	padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+	</style>
+	
 </head>
 
 <body>
 <div class="wrapper">
 		<nav class="topnav">
 			<div id="logo" class="fl_left">
-				<a href="home.html"><img src="img/web_logo.png" alt="Homepage"></a>
+				<a href="home.html"><img src="img/logo.jpg" alt="Homepage"></a>
 			</div>
 			<div class="topmenu">
 				<li><a href="home.html">Home</a></li>
@@ -39,11 +54,34 @@ Author: Code Apes.
 	  </div>
 		<div class="content" style="text-align:center;">
 		<h1>Account Information</h1><hr>
-		<h2>User ID: #UserID</h2>
-		<h2>Username: #Username</h2>
-		<h2>Name: #Name</h2>
-		<h2>Gender: #Gender</h2>
-		<h2>My Plan<a href="plan.html">(Click here to view and edit)</a></h2>
+		<tr>
+		  <td><h3>User ID:</h3><h3 name="userid"></td>
+		  <td>#UserID </td>
+		  <td><input type="button" value="Edit" onclick=></h3></td>
+		</tr>
+		<tr>
+		  <td><h3>Username:</h3><h3 name="username"></td>
+		  <td>#Username </td>
+		  <td><input type="button" value="Edit" onclick=></h3></td>
+		</tr>
+		<tr>
+		  <td><h3>Full Name:</h3><h3 name="name"></td>
+		  <td>#Name </td>
+		  <td><input type="button" value="Edit" onclick=></h3></td>
+		</tr>
+		<tr>
+		  <td><h3>Gender:</h3><h3 name="gender"></td>
+		  <td>#Gender </td>
+		  <td><input type="button" value="Edit" onclick=></h3></td>
+		</tr>
+		<tr>
+		  <td><h3>Age:</h3><h3 name="age"></td>
+		  <td>#Age </td>
+		  <td><input type="button" value="Edit" onclick=></h3></td>
+		</tr>
+		<tr>
+		  <td><h3>My Plan<a href="plan.html"></td><td>(Click here to view and edit)</td></a></h3>
+		</tr>
 		</div>
 	</main>
 </div>
