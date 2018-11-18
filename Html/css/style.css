@@ -104,7 +104,7 @@ It should be used in conjunction with a second class or ID
 }
 
 #logo{
-	margin: -5px 25px 25px 20px;
+	margin: -5px 20px 0px 25px;
 }
 
 #logo img{
@@ -311,7 +311,12 @@ It should be used in conjunction with a second class or ID
 	color: #fff;
 }
 
-.current a{
+li.active > a {
+	color: #BB4348;
+	background-color: #fff;
+}
+
+.active a{
 	color: #BB4348;
 	background-color: #fff;
 }
