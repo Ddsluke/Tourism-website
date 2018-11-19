@@ -96,8 +96,7 @@ Author: Code Apes.
 	You email is not valid.</div>
 	<br>
 	Full Name(e.g. Chan Taiman)
-	<input type="text" id="fullname" placeholder="Your fullname.." 
-	title="No longer than 16 characters" maxlength="16">
+	<input type="text" id="fullname" placeholder="Your fullname.." >
 	<br>
 	Gender
 	<select id="gender" onclick="checkGender()">
@@ -126,14 +125,12 @@ Author: Code Apes.
 	Please choose an age.</div><br>
 	<label for="uname" title='(Do not include the following characters:\/:*?"<>|)'>Username</label>
 	<input type="text" id="username" name="username" placeholder="Your username.." 
-	title="No longer than 8 characters" maxlength="8" required="required">
+	title="No longer than 16 characters" maxlength="16" required="required">
 	<br>
 	<label for="psword" title='(Do not include the following characters:\/:*?"<>|)'>Password</label>
-	<input type="password" id="password" name="password" placeholder="Your password.."
-	title="No longer than 16 characters." maxlength="16" onchange="checkPassword()" required="required">
+	<input type="password" id="password" name="password" placeholder="Your password.." onchange="checkPassword()" required="required">
 	<br>Confirm Your Password
-	<input type="password" id="con_password" name="con_password" placeholder="Confirm Your password.."
-	title="No longer than 16 characters." maxlength="16" onchange="checkPassword()"required="required">
+	<input type="password" id="con_password" name="con_password" placeholder="Confirm Your password.." onchange="checkPassword()"required="required">
 	<div id="password_error" style=
 	"display:none;
 	font-family:Verdana, Geneva, sans-serif;    width: 100%;
@@ -141,7 +138,7 @@ Author: Code Apes.
     border: 1px solid #ccc;    border-radius: 4px;
     box-sizing: border-box;	border-color: #8b0000;
     background-color:#FA8072;">
-	Two passwords didn't match. Please try again.</div>
+	Two passwords don't match. Please try again.</div>
     <input id="confirm" type="submit" value="Confirm">
   </form>
 </div>
