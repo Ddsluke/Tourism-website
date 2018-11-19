@@ -1,0 +1,21 @@
+/* Clear floats after a row */
+.item {
+	display: inline-block;
+	padding-bottom: 50px;
+}
+
+.item img {
+	float: left;
+	border-radius: 10px;
+	width:260px;
+	height:180px;
+	margin-right: 50px;
+}
+
+.button{
+	margin-top: 30px;
+}
+
+.right-block {
+	display: inline-block;
+}
