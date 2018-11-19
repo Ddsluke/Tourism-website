@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link type="text/css" rel="stylesheet" href="css/style.css">
-	<link type="text/css" rel="stylesheet" href="css/imgGallery.css">
+	<link type="text/css" rel="stylesheet" href="css/itemDisplay.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -43,32 +43,26 @@
   
 		<div class="content">
 			<h1>All Accommodations</h1><hr><br>
-			<div class="card-deck">
-				<div class="row">
-					<div class="column">
-						<img src="img/attractions/baicheng.jpg" alt="#">
-						<div class="text"><a href="#">#attraction name</a></div>
-						<div class="button"><a href="#" class="btn btn-small">+ Add to Plan</a></div> 
-					</div>
-					<div class="column">
-						<img src="img/attractions/baicheng.jpg" alt="#">
-						<div class="text"><a href="#">#attraction name</a></div>
+
+				<div class="item">
+					<img src="img/attractions/baicheng.jpg" alt="#">
+					<div class="right-block">
+						<h2>#accommodation name</h2>
 						<div class="button"><a href="#" class="btn btn-small">+ Add to Plan</a></div> 
 					</div>
 				</div>
-				<div class="row">
-					<div class="column">
-						<img src="img/attractions/baicheng.jpg" alt="#">
-						<div class="text"><a href="#">#attraction name</a></div>
-						<div class="button"><a href="#" class="btn btn-small">+ Add to Plan</a></div> 			
-					</div>
-					<div class="column">
-						<img src="img/attractions/baicheng.jpg" alt="#">
-						<div class="text"><a href="#">#attraction name</a></div> 
+				<!-- use this <div class=""item" in php while loop -->
+				
+				<!-- copy for demo, delete it after add php&sql -->
+				<div class="item">
+					<img src="img/attractions/baicheng.jpg" alt="#">
+					<div class="right-block">
+						<h2>#accommodation name</h2>
 						<div class="button"><a href="#" class="btn btn-small">+ Add to Plan</a></div> 
 					</div>
 				</div>
-			</div>
+				<!-- copy for demo, delete it after add php&sql -->
+			
 		</div>
 	</main> 
 	<!-- end main body -->
