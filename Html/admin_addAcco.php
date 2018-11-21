@@ -91,7 +91,7 @@ Author: Code Apes.
         <label for="" onclick="checkPrice()">Price</label>
 		<input type="text" id="price" placeholder="Attraction's price (e.g. 100.00).." title="No longer than 50 characters" maxlength="50">
 		-->
-		<label>Average Price HK$</label>
+		<label>Price HK$</label>
 		<input name="price" type="number" onlick="checkPrice()" placeholder="0" required name="price" min="0" value="0" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$">
 		</li>
 
