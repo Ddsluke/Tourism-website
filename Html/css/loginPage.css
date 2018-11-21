@@ -13,7 +13,7 @@ input[type=submit] {
 	font-family:Verdana, Geneva, sans-serif;
 	font-weight: bold;
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #BB4348;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -22,9 +22,20 @@ input[type=submit] {
     cursor: pointer;
 }
 
+button{
+	font-family:Verdana, Geneva, sans-serif;
+	background-color: #BB4348;
+	color: white;
+	padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 input[type=submit]:hover {
 	font-weight: bold;
-    background-color: #45a049;
+    background-color: #a83c40;
 }
 
 .input_container{
