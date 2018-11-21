@@ -11,27 +11,31 @@ Author: Code Apes.
 	<link type="text/css" rel="stylesheet" href="css/loginPage.css">
 	<script>
 	function EditUname(){
+		var content = document.getElementById("uname").innerHTML;
 		document.getElementById("unameEdit").innerHTML=
 		'<div class="button btn btn-small" onclick="RevertUname()">Confirm</div>';
 		document.getElementById("uname").innerHTML=
 		'<input type="text" id="unameInput" maxlength="16" placeholder="Your username.." onkeydown="if(event.keyCode==13){RevertUname()}" onchange="RevertUname()">';
+		document.getElementById("unameInput").value=content;
 	}
 	function RevertUname(){
 		document.getElementById("unameEdit").innerHTML= 
-		'<div class="button btn btn-small" onclick="EditUname()">Edit..</div>';
+		'<div class="button btn btn-small" onclick="EditUname()">Edit</div>';
 		document.getElementById("uname").innerHTML = document.getElementById("unameInput").value;
 		// And send it to database, or else throw error;
 	}
 	
 	function EditFname(){
-	document.getElementById("fnameEdit").innerHTML=
+		var content = document.getElementById("fname").innerHTML;
+		document.getElementById("fnameEdit").innerHTML=
 		'<div class="button btn btn-small" onclick="RevertFname()">Confirm</div>'
 		document.getElementById("fname").innerHTML = 
 		'<input type="text" id="fnameInput" maxlength="16" placeholder="Your full name.." onkeydown="if(event.keyCode==13){RevertFname()}" onchange="RevertFname()">';
+		document.getElementById("fnameInput").value=content;
 	}
 	function RevertFname(){
 		document.getElementById("fnameEdit").innerHTML= 
-		'<div class="button btn btn-small" onclick="EditFname()">Edit..</div>';
+		'<div class="button btn btn-small" onclick="EditFname()">Edit</div>';
 		document.getElementById("fname").innerHTML = document.getElementById("fnameInput").value;
 		// And send it to database, or else throw error, and return the value before;
 	}
@@ -48,7 +52,7 @@ Author: Code Apes.
 	}
 	function RevertGender(){
 		document.getElementById("genderEdit").innerHTML= 
-		'<div class="button btn btn-small" onclick="EditGender()">Edit..</div>';
+		'<div class="button btn btn-small" onclick="EditGender()">Edit</div>';
 		document.getElementById("gender").innerHTML = document.getElementById("genderInput").value;
 		// And send it to database, or else throw error;
 	}
@@ -63,7 +67,7 @@ Author: Code Apes.
 	}
 	function RevertAge(){
 		document.getElementById("ageEdit").innerHTML= 
-		'<div class="button btn btn-small" onclick="EditAge()">Edit..</div>';
+		'<div class="button btn btn-small" onclick="EditAge()">Edit</div>';
 		document.getElementById("age").innerHTML = document.getElementById("ageInput").value;
 		// And send it to database, or else throw error;
 	}
@@ -131,6 +135,7 @@ Author: Code Apes.
 		  <td> </td>
 		</tr>
 		</table><br>
+		<div class="button btn btn-small" onclick="logOut()">Log out</div><br>
 		<h1>Notice Board</h1><hr>
 		<p>Curretly nothing here..<p>
 		</div>
