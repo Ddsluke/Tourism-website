@@ -25,7 +25,7 @@
 	<div class="sidebar">
 		<h3>Attraction</h3>
 		<a href="#">All</a>
-		<a class="dropdown">By Theme<i class="fa fa-caret-down"></i></a>
+		<a class="dropdown">By Type<i class="fa fa-caret-down"></i></a>
 			<div class="dropdown-container">
 				<a href="#">Viewing</a>
 				<a href="#">Entertainment</a>
