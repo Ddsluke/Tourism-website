@@ -25,7 +25,20 @@ Author: Code Apes.
 	}
 </script>
 </head>
-
+<script>
+	function change(){// also need to change php
+		document.getElementById("loginLabel").innerHTML = "Administrator";
+		document.getElementById("button").innerHTML = "For Tourist";
+		document.getElementById("button").onclick = revert;
+		document.getElementById("reg").innerHTML="";
+	}
+	function revert(){
+		document.getElementById("loginLabel").innerHTML = "Tourist";
+		document.getElementById("button").innerHTML = "For Admin";
+		document.getElementById("button").onclick = change;
+		document.getElementById("reg").innerHTML="<h4>Register Now!</h4>";
+	}
+</script>
 <body>
 <div class="wrapper">
 	<nav class="topnav">
