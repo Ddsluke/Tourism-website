@@ -5,28 +5,32 @@ $servername = "mysql.comp.polyu.edu.hk";
 $username = "17083686d"; //your student Id
 $password = "fdtwjmfn";
 // Create connection
-$conn = mysql_connect($servername, $username, $password);
+$link = mysqli_connect($servername, $username, $password);
 // Check connection
-if (!$conn) {
-die("Connection failed: " . mysql_error());
+if (!$link) {
+    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+	mysqli_close($link);
+    exit;
 }
-echo "Connected successfully";
+echo "<p>Connected successfully</p>";
 
 //Registr Administor
 header("Content-Type: text/html; charset=utf8");
-    if(!isset($_POST["submit"])){
+    if(isset($_POST["submit"])){
         exit("error ");
     }//check if we have "submit" action
 
     include('connect.php');//connect to database
-	$Id = $_POST['Id'];//get Administor's Id
+	$AdmID = $_POST['AdmID'];//get Administor's ID
 	
     $Name = $_POST['Name'];//get Administor's name
     $Passowrd = $_POST['Password'];//get Administor's password
 	
 	include('connect.php');//connect with database
-    $in="insert into Administor(id,Name,Password) values (‘$Id','$password','$Name')";//insert
-    $reslut=mysql_query($in,$con);//
+    $in="insert into Administrator(AdmID,Name,Password) values (‘$AdmID','$password','$Name')";//insert
+    $reslut=mysqli_query($link,$in);//
     
     if (!$reslut){
         die('Error: ' );//error
@@ -36,7 +40,7 @@ header("Content-Type: text/html; charset=utf8");
 
     
 
-    mysql_close($con);//close database
+    mysqli_close($link);//close database
 
 
 ?>

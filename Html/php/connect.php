@@ -4,12 +4,16 @@
 	$password = "fdtwjmfn";
 
    // Create connection
-	$conn = mysql_connect($servername, $username, $password);
+	$link = mysqli_connect($servername, $username, $password);
 	// Check connection
-	if (!$conn) {
-	die("Connection failed: " . mysql_error());
-	}
-	echo "Connected successfully";
+	if (!$link) {
+    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+	mysqli_close($link);
+    exit;
+}
+echo "<p>Connected successfully</p>";
 
-    mysql_select_db('17083686d',$con);//Select database
+    mysqli_select_db($link,'17083686d');//Select database
 ?>

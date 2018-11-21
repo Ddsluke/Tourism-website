@@ -5,38 +5,45 @@ $servername = "mysql.comp.polyu.edu.hk";
 $username = "17083686d"; //your student Id
 $password = "fdtwjmfn";
 // Create connection
-$conn = mysql_connect($servername, $username, $password);
+$link = mysqli_connect($servername, $username, $password);
 // Check connection
-if (!$conn) {
-die("Connection failed: " . mysql_error());
+if (!$link) {
+    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+	mysqli_close($link);
+    exit;
 }
-echo "Connected successfully";
+echo "<p>Connected successfully</p>";
 
 //Registr Tourists
 header("Content-Type: text/html; charset=utf8");
-    if(!isset($_POST["submit"])){
-        exit("error ");
-    }//check if we have "submit" action
+    /*if(!isset($_POST["submit"])){
+        exit("Error");
+    }//check if we have "submit" action*/
 
     include('connect.php');//connect to database
-	$Id = $_POST['Id'];//get Tourists's Id
-	$Departure = $_POST['Departure'];//get Tourists's departure
-    $Name = $_POST['Name'];//get Tourists's name
-    $Passowrd = $_POST['Password'];//get Tourists's password
+	$TouriID = $_POST['TouriID'];//get Tourists's Id
+	$Username = $_POST['username'];//get Tourists's Username
+    $Name = $_POST['fullname'];//get Tourists's name
+    $Passowrd = $_POST['password'];//get Tourists's password
+	$Email = $_POST['email'];//get Tourists's Email
+	$Age=$_POST['age'];//get Tourists's Age
+	$Gender=$_POST['gender'];//get Tourists's Age
 	
 	include('connect.php');//connect with database
-    $in="insert into Tourists(id,Name,Password,Departure) values (‘$Id','$password','$Name','$Departure')";//insert
-    $reslut=mysql_query($in,$con);//
+    $in="insert into Tourists(TouriID,Email,Passowrd,Gender,Age,Name,Username) values ('$TouristsID','$Email','$password','$Gender','$Age''$Name','$Username')";//insert
+    $reslut=mysqli_query($link,$in);//
     
     if (!$reslut){
-        die('Error: ' );//error
+        echo "Error: " . mysqli_error($link);//error
     }else{
-        echo "Registr successfully";//success
+        echo "Register successfully";//success
     }
 
     
 
-    mysql_close($con);//close database
+    mysqli_close($link);//close database
 
 
 ?>
