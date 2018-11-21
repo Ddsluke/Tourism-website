@@ -22,9 +22,23 @@
 	<main class="container">
 	
 	<!-- sidebar navigation menu -->
-	<?php
-	require('sidebar.php');
-	?>
+	<div class="sidebar">
+		<h3>Accommodation</h3>
+		<a href="accommodation.php?level=all">All</a>
+		<a class="dropdown">By Level<i class="fa fa-caret-down"></i></a>
+			<div class="dropdown-container">
+				<a href="accommodation.php?level=2">Level 2</a>
+				<a href="#">Level 3</a>
+				<a href="#">Level 4</a>
+				<a href="#">Level 5</a>
+			 </div>
+		<a class="dropdown">By Region<i class="fa fa-caret-down"></i></a>
+			<div class="dropdown-container">
+				<a href="#">Hong Kong Island</a>
+				<a href="#">Kowloon</a>
+				<a href="#">New Territories</a>
+			</div>
+	</div>
 	<!-- end sidebar -->
   
   <?php
@@ -34,9 +48,9 @@
   }
   
   if($level = 'all'){
- $query = "select id,name from tab;";	  
+ $query = "select id,name from tab;"	  
   } else {
- $query = "select id,name from tab where level = $level;";
+ $query = "select id,name from tab where level = $level;"
   }
   mysqli_query($link, $query);
   ?>
