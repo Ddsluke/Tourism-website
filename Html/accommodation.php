@@ -24,10 +24,10 @@
 	<!-- sidebar navigation menu -->
 	<div class="sidebar">
 		<h3>Accommodation</h3>
-		<a href="#">All</a>
+		<a href="accommodation.php?level=all">All</a>
 		<a class="dropdown">By Level<i class="fa fa-caret-down"></i></a>
 			<div class="dropdown-container">
-				<a href="#">Level 2</a>
+				<a href="accommodation.php?level=2">Level 2</a>
 				<a href="#">Level 3</a>
 				<a href="#">Level 4</a>
 				<a href="#">Level 5</a>
@@ -41,6 +41,19 @@
 	</div>
 	<!-- end sidebar -->
   
+  <?php
+  $level = $_GET['level'];
+  if(!isset($level)){
+	  $level = 'all';
+  }
+  
+  if($level = 'all'){
+ $query = "select id,name from tab;"	  
+  } else {
+ $query = "select id,name from tab where level = $level;"
+  }
+  mysqli_query($link, $query);
+  ?>
 		<div class="content">
 			<h1>All Accommodations</h1><hr><br>
 

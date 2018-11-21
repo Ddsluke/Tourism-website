@@ -40,6 +40,21 @@
 	</div>
 	<!-- end sidebar -->
   
+  <?php
+  $level = $_GET['level'];
+  if(!isset($level)){
+	  $level = 'all';
+  }
+  
+  if($level = 'all'){
+ $query = "select id,name from tab;"	  
+  } else {
+ $query = "select id,name from tab where level = $level;"
+  }
+  mysqli_query($link, $query);
+  ?>
+  
+  
 		<div class="content">
 			<h1>All Attractions</h1><hr><br>
 			
@@ -73,6 +88,8 @@
 require('footer.php');
 ?>
 <!-- end footer -->
+
+<script src="js/dropdown.js"></script>
 
 </body>
 </html>
