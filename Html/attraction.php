@@ -22,22 +22,9 @@
 	<main class="container">
 	
 	<!-- sidebar navigation menu -->
-	<div class="sidebar">
-		<h3>Attraction</h3>
-		<a href="#">All</a>
-		<a class="dropdown">By Type<i class="fa fa-caret-down"></i></a>
-			<div class="dropdown-container">
-				<a href="#">Viewing</a>
-				<a href="#">Entertainment</a>
-				<a href="#">Shopping</a>
-			 </div>
-		<a class="dropdown">By Region<i class="fa fa-caret-down"></i></a>
-			<div class="dropdown-container">
-				<a href="#">Hong Kong Island</a>
-				<a href="#">Kowloon</a>
-				<a href="#">New Territories</a>
-			</div>
-	</div>
+	<?php
+	require('sidebar.php');
+	?>
 	<!-- end sidebar -->
   
 		<div class="content">
