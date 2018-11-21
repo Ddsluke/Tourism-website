@@ -6,8 +6,8 @@
 			<div class="topmenu" id="topmenu">
 				<li><a href="index.php">Home</a></li>
 				<li><a href="attraction.php">Attraction</a></li>
+				<li><a href="restaurant.php">Restaurant</a></li>
 				<li><a href="accommodation.php">Accommodation</a></li>
-				<li><a href="food.php">Food</a></li>
 				<li><a href="plan.php">Plan</a></li>
 				<li><a href="about.php">About</a></li>
 				<div id="account" class="fl_right">

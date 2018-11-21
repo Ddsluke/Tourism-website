@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Attractions#</title>
+	<title>Attraction</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link type="text/css" rel="stylesheet" href="css/style.css">
@@ -39,21 +39,6 @@
 			</div>
 	</div>
 	<!-- end sidebar -->
-  
-  <?php
-  $level = $_GET['level'];
-  if(!isset($level)){
-	  $level = 'all';
-  }
-  
-  if($level = 'all'){
- $query = "select id,name from tab;"	  
-  } else {
- $query = "select id,name from tab where level = $level;"
-  }
-  mysqli_query($link, $query);
-  ?>
-  
   
 		<div class="content">
 			<h1>All Attractions</h1><hr><br>
