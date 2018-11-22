@@ -20,21 +20,21 @@ echo "<p>Connected successfully</p>";
 header("Content-Type: text/html; charset=utf8");
 
 //check if we have "submit" action
-if(!isset($_POST["submit"])){
+/*if(!isset($_POST["submit"])){
 	http_response_code(400);
     exit("Bad Request: only support POST Method.");
-}
+}*/
 
     include('connect.php');//connect to database
-   $TouristsID = $_POST['Tourists'];//get user's ID
-    $Password = $_POST['Password'];//get user's password
-	$Username = $_POST['Username'];//get user's Username
+   $TouristsID = $_POST['userid'];//get user's ID
+    $Password = $_POST['password'];//get user's password
+	/*$Username = $_POST['Username'];//get user's Username*/
 
 
 	
 
 	//if missing name or passowrd 
-    if (!($TouristsID && $Passowrd && $Username)){
+    if (!($TouristsID && $Password)){
 		?>
 				 
 				 Missing Tourists ID or Password or Username, Please 
@@ -46,14 +46,14 @@ if(!isset($_POST["submit"])){
 		exit;
 	}
 	
-	if (!($stmt = mysqli_prepare($link, "select count(*) as count from Tourists where TouristsID = ? and Password = ? and Username=?;"))) {
+	if (!($stmt = mysqli_prepare($link, "select count(*) as count from Tourists where TouristsID = ? and Password = ?;"))) {
 		echo "Failed to query: ".mysqli_error($link);
 		mysqli_close($link);
 		exit;
 	}
 
     /* bind parameters for markers */
-    mysqli_stmt_bind_param($stmt, "iss", $TouristsID, $Passowrd,$Username);
+    mysqli_stmt_bind_param($stmt, "iss", $TouristsID, $Password);
 
     /* execute query */
     mysqli_stmt_execute($stmt);
@@ -77,7 +77,7 @@ if(!isset($_POST["submit"])){
 	
 		?>
 				 
-				 Tourists Id or password or Username is wrong, Please 
+				 Tourists ID or password or Username is wrong, Please 
 				 <a href="login.html">
 				 try again.
 				 </a>.

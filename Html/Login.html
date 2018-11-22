@@ -64,9 +64,9 @@ Author: Code Apes.
   <h1>Login as <label id="loginLabel">Tourist</label></h1>
   <button id="button" onclick='change()'>For Admin</button>
   <a id="reg" href="Registration.html"><h4>Register Now!</h4></a>
-  <form action="php/login_Tourists.php">
-	<label for="uname">Username</label>
-	<input type="text" id="username" name="username" placeholder="Your username.." 
+  <form action="login_Tourists.php" method="post">
+	<label for="uid">UserID</label>
+	<input type="text" id="userid" name="userid" placeholder="Your username.." 
 	maxlength="16" required="required">
 	<br>
 	<label for="psword">Password</label>

@@ -18,28 +18,27 @@ echo "<p>Connected successfully</p>";
 
 //Registr Tourists
 header("Content-Type: text/html; charset=utf8");
-    /*if(!isset($_POST["submit"])){
-        exit("Error");
-    }//check if we have "submit" action*/
-
     include('connect.php');//connect to database
-	$TouriID = $_POST['TouriID'];//get Tourists's Id
+	//get Tourists's Id
 	$Username = $_POST['username'];//get Tourists's Username
-    $Name = $_POST['fullname'];//get Tourists's name
-    $Passowrd = $_POST['password'];//get Tourists's password
-	$Email = $_POST['email'];//get Tourists's Email
+    $Name =$_POST['fullname'];//get Tourists's name
+    $Password = $_POST['password'];//get Tourists's password
+	$Email =$_POST['email'];//get Tourists's Email
 	$Age=$_POST['age'];//get Tourists's Age
-	$Gender=$_POST['gender'];//get Tourists's Age
+	$Gender=$_POST['gender'];//get Tourists's Gender
 	
-	include('connect.php');//connect with database
-    $in="insert into Tourists(TouriID,Email,Passowrd,Gender,Age,Name,Username) values ('$TouristsID','$Email','$password','$Gender','$Age''$Name','$Username')";//insert
+
+	include_once('connect.php');//connect with database
+    $in="insert into Tourists(Email,Password,Gender,Age,Name,Username) values ('$Email','$Password','$Gender',$Age,'$Name','$Username')";//insert
     $reslut=mysqli_query($link,$in);//
-    
-    if (!$reslut){
-        echo "Error: " . mysqli_error($link);//error
+	if (!$reslut){
+		echo 'Failed to insert tourist: ', mysqli_error($link);
+		mysqli_close($link);
+		exit;
     }else{
         echo "Register successfully";//success
     }
+
 
     
 
