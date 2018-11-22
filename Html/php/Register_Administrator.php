@@ -18,7 +18,7 @@ echo "<p>Connected successfully</p>";
 
 //Registr Administor
 header("Content-Type: text/html; charset=utf8");
-    if(isset($_POST["submit"])){
+    if(!isset($_POST["submit"])){
         exit("error ");
     }//check if we have "submit" action
 
@@ -26,14 +26,16 @@ header("Content-Type: text/html; charset=utf8");
 	$AdmID = $_POST['AdmID'];//get Administor's ID
 	
     $Name = $_POST['Name'];//get Administor's name
-    $Passowrd = $_POST['Password'];//get Administor's password
+    $Password = $_POST['Password'];//get Administor's password
 	
 	include('connect.php');//connect with database
-    $in="insert into Administrator(AdmID,Name,Password) values (‘$AdmID','$password','$Name')";//insert
+    $in="insert into Administrator(AdmID,Name,Password) values ($AdmID,'$password','$Name')";//insert
     $reslut=mysqli_query($link,$in);//
     
     if (!$reslut){
-        die('Error: ' );//error
+       	echo 'Failed to insert tourist: ', mysqli_error($link);
+		mysqli_close($link);
+		exit;
     }else{
         echo "Registr successfully";//success
     }

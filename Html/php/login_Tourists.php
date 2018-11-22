@@ -19,21 +19,15 @@ echo "<p>Connected successfully</p>";
 //login Tourists
 header("Content-Type: text/html; charset=utf8");
 
-//check if we have "submit" action
-/*if(!isset($_POST["submit"])){
-	http_response_code(400);
-    exit("Bad Request: only support POST Method.");
-}*/
-
     include('connect.php');//connect to database
    $TouristsID = $_POST['userid'];//get user's ID
     $Password = $_POST['password'];//get user's password
-	/*$Username = $_POST['Username'];//get user's Username*/
+	/*$Username = $_POST['username'];//get user's Username*/
 
 
 	
 
-	//if missing name or passowrd 
+	//if missing name or password 
     if (!($TouristsID && $Password)){
 		?>
 				 
@@ -53,7 +47,7 @@ header("Content-Type: text/html; charset=utf8");
 	}
 
     /* bind parameters for markers */
-    mysqli_stmt_bind_param($stmt, "iss", $TouristsID, $Password);
+    mysqli_stmt_bind_param($stmt, "is", $TouristsID, $Password);
 
     /* execute query */
     mysqli_stmt_execute($stmt);
@@ -71,13 +65,13 @@ header("Content-Type: text/html; charset=utf8");
 	mysqli_close($link);
 	
 	if($count == 1) {
-		header("refresh:0;url=welcome.html");//jump to welcome.html
-		die('login success');
+		header("refresh:0;url=PersonInfo.html");//jump to welcome.html
+		die('login successful');
 	}
 	
 		?>
 				 
-				 Tourists ID or password or Username is wrong, Please 
+				 Tourists Id or password or Username is wrong, Please 
 				 <a href="login.html">
 				 try again.
 				 </a>.

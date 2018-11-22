@@ -19,20 +19,14 @@ echo "<p>Connected successfully</p>";
 //login Administor
 header("Content-Type: text/html; charset=utf8");
 
-//check if we have "submit" action
-if(!isset($_POST["submit"])){
-	http_response_code(400);
-    exit("Bad Request: only support POST Method.");
-}
-
     include('connect.php');//connect to database
-    $AdmID=$_POST['AdmID'];//get Administor's ID
-    $Passowrd = $_POST['Passowrd'];//get Administor's password
+    $AdmID=$_POST['userid'];//get Administor's ID
+    $Password = $_POST['password'];//get Administor's password
 
 	
 
 	//if missing name or passowrd 
-    if (!($AdmID && $Passowrd)){
+    if (!($AdmID && $Password)){
 		?>
 				 
 				 Missing Admin ID or Password, Please 
@@ -46,7 +40,7 @@ if(!isset($_POST["submit"])){
 	if ($stmt = mysqli_prepare($link, "select count(*) as count from Administrator where AdmID = ? and Password = ?;")) {
 
     /* bind parameters for markers */
-    mysqli_stmt_bind_param($stmt, "is", $AdmID, $Passowrd);
+    mysqli_stmt_bind_param($stmt, "is", $AdmID, $Password);
 
     /* execute query */
     mysqli_stmt_execute($stmt);
@@ -64,7 +58,7 @@ if(!isset($_POST["submit"])){
 	mysqli_close($link);
 	
 	if($count == 1) {
-		header("refresh:0;url=welcome.html");//jump to welcome.html
+		header("refresh:0;url=Admin.html");//jump to welcome.html
 		die('login success');
 	}
 	
