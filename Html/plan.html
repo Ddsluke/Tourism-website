@@ -1,90 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset='utf-8' />
-	<link type="text/css" rel="stylesheet" href="css/loginPage.css">
-	<link type="text/css" rel="stylesheet" href="css/about.css">
-	<link type="text/css" rel="stylesheet" href="css/style.css">
-	<link href='css/fullcalendar.min.css' rel='stylesheet' />
-	<link href='css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
-	<script src='css/moment.min.js'></script>
-	<script src='css/jquery.min.js'></script>
-	<script src='css/fullcalendar.min.js'></script>
-	<script>
+<meta charset='utf-8' />
+<link type="text/css" rel="stylesheet" href="/Users/yolandaqinyaxue/Desktop/2411 project/css/loginPage.css">
+	<link type="text/css" rel="stylesheet" href="/Users/yolandaqinyaxue/Desktop/2411 project/css/about.css">
+	<link type="text/css" rel="stylesheet" href="/Users/yolandaqinyaxue/Desktop/2411 project/css/style.css">
+<link href='/Users/yolandaqinyaxue/Desktop/fullcalendar/calendar/fullcalendar.min.css' rel='stylesheet' />
+<link href='/Users/yolandaqinyaxue/Desktop/fullcalendar/calendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<script src='/Users/yolandaqinyaxue/Desktop/fullcalendar/lib/moment.min.js'></script>
+<script src='/Users/yolandaqinyaxue/Desktop/fullcalendar/lib/jquery.min.js'></script>
+<script src='/Users/yolandaqinyaxue/Desktop/fullcalendar/calendar/fullcalendar.min.js'></script>
+<script>
 
   $(document).ready(function() {
-
-    $('#calendar').fullCalendar({
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay,listWeek'
-      },
-      defaultDate: '2018-03-12',
-      navLinks: true, // can click day/week names to navigate views
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2018-03-01',
-        },
-        {
-          title: 'Long Event',
-          start: '2018-03-07',
-          end: '2018-03-10'
-        },
-        {
-          id: 999,
-          title: 'Repeating Event',
-          start: '2018-03-09T16:00:00'
-        },
-        {
-          id: 999,
-          title: 'Repeating Event',
-          start: '2018-03-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2018-03-11',
-          end: '2018-03-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2018-03-12T10:30:00',
-          end: '2018-03-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2018-03-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2018-03-12T14:30:00'
-        },
-        {
-          title: 'Happy Hour',
-          start: '2018-03-12T17:30:00'
-        },
-        {
-          title: 'Dinner',
-          start: '2018-03-12T20:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2018-03-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2018-03-28'
-        }
-      ]
-    });
-
+   var calendar = $('#calendar').fullCalendar({
+    editable:true,
+    header:{
+     left:'prev,next today',
+     center:'title',
+     right:'month,agendaWeek,agendaDay, listWeek'
+    },
+    events: 'load.php',
+    selectable:true,
+    selectHelper:true,
+    select: function(start, end, allDay)
+    {
+     var title = prompt("Enter Event Title");
+     if(title)
+     {
+      var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+      var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+      $.ajax({
+       url:"insert.php",
+       type:"POST",
+       data:{title:title, start:start, end:end},
+       success:function()
+       {
+        calendar.fullCalendar('refetchEvents');
+        alert("Added Successfully");
+       }
+      })
+     }
+    },
+    editable:true,
+    eventResize:function(event)
+    {
+     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+     var title = event.title;
+     var id = event.id;
+     $.ajax({
+      url:"update.php",
+      type:"POST",
+      data:{title:title, start:start, end:end, id:id},
+      success:function(){
+       calendar.fullCalendar('refetchEvents');
+       alert('Event Update');
+      }
+     })
+    },
+    eventDrop:function(event)
+    {
+     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+     var title = event.title;
+     var id = event.id;
+     $.ajax({
+      url:"update.php",
+      type:"POST",
+      data:{title:title, start:start, end:end, id:id},
+      success:function()
+      {
+       calendar.fullCalendar('refetchEvents');
+       alert("Event Updated");
+      }
+     });
+    },
+    eventClick:function(event)
+    {
+     if(confirm("Are you sure you want to remove it?"))
+     {
+      var id = event.id;
+      $.ajax({
+       url:"delete.php",
+       type:"POST",
+       data:{id:id},
+       success:function()
+       {
+        calendar.fullCalendar('refetchEvents');
+        alert("Event Removed");
+       }
+      })
+     }
+    },
+   });
   });
 
-	</script>
+</script>
 <style>
 
   body {
@@ -105,17 +117,17 @@
 <div class="wrapper">
 		<nav class="topnav">
 			<div id="logo" class="fl_left">
-				<a href="home.html"><img src="img/web_logo.png" alt="Homepage"></a>
+				<a href="/Users/yolandaqinyaxue/Desktop/2411 project/home.html"><img src="/Users/yolandaqinyaxue/Desktop/2411 project/web_logo.png" alt="Homepage"></a>
 			</div>
 			<div class="topmenu">
-				<li><a href="home.html">Home</a></li>
-				<li><a href="attractions.html">Attraction</a></li>
-				<li><a href="accommodation.html">Accommodation</a></li>
-				<li><a href="food.html">Food</a></li>
-				<li class = "current"><a href="plan.html">Plan</a></li>
-				<li><a href="about.html">About</a></li>
+				<li><a href="/Users/yolandaqinyaxue/Desktop/2411 project/home.html">Home</a></li>
+				<li><a href="/Users/yolandaqinyaxue/Desktop/2411 project/attractions.html">Attractions</a></li>
+				<li><a href="/Users/yolandaqinyaxue/Desktop/2411 project/accommodation.html">Accommodation</a></li>
+				<li><a href="/Users/yolandaqinyaxue/Desktop/2411 project/food.html">Food</a></li>
+				<li class = "current"><a href="/Users/yolandaqinyaxue/Desktop/2411 project/plan.html">Plan?</a></li>
+				<li><a href="/Users/yolandaqinyaxue/Desktop/2411 project/about.html">About</a></li>
 			<div id="account" class="fl_right"><li>
-				<a href="Login.html"><img src="img/account_icon.png" alt="account"></a>
+				<a href="/Users/yolandaqinyaxue/Desktop/2411 project/Login.html"><img src="/Users/yolandaqinyaxue/Desktop/2411 project/account_icon.png" alt="account"></a>
 			</li></div>
 				</div>
 		</nav>
@@ -135,7 +147,7 @@
   
 		<div class="content"> <!-- The main content of the page -->
 			<h1>Plan Schedule</h1><hr>
-		<div id='calendar'></div>
+<div id='calendar'></div>
 
 		</div>
 	</main> 
@@ -144,8 +156,8 @@
   
 
 <footer>
-	<div class="footer">
-		<div id="copyright">
+	<div class="wrapper btm">
+		<div id="copyright" class="hoc clear">
 			<p>Copyright © 2018 #. All Rights Reserved.</p>
 		</div>
 	</div>
