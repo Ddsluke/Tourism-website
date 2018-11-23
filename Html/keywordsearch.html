@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<link type="text/css" rel="stylesheet" href="css/itemDisplay.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>keyword</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<link rel="stylesheet" type="text/css" href="jquery.multiselect2side.css" />
+<style type="text/css">
+.demo{width:600px; margin:20px auto; color:#424242; background:#fff}
+.demo p span{margin:4px; color:#f30}
+#sel{margin-top:10px}
+</style>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.multiselect2side.js"></script>
+<link rel="stylesheet" type="text/css" href="jquery.multiselect2side.css" /> 
+<script type="text/javascript">
+$(function(){
+   $("#liOption").multiselect2side({
+	    selectedPosition: 'right',
+	    moveOptions: false,
+		labelsx: 'result',
+		labeldx: 'chosen'
+   });
+   $("#searchOption").click(function(){
+		var keys=$("#keys").val();
+		$.ajax({
+              type: "POST",
+              url: "action.php",
+              data: "title="+keys,
+              success: function(msg){
+				  if(msg==1){
+					  $("#msg_ser").show().html("no result");
+				  }else{
+					  $("#liOptionms2side__sx").html(msg);
+					  $("#msg_ser").html("");
+				  }
+					//alert(msg);
+             }
+       });
+	   $("#msg_ser").ajaxSend(function(event, request, settings){
+           $(this).html("<img src='loading.gif' alt=''/>");
+       });
+   });
+});
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="wrapper">
+		<nav class="topnav">
+			<div id="logo" class="fl_left">
+				<a href="index.html"><img src="img/logo.jpg" alt="Homepage"></a>
+			</div>
+			<div class="topmenu" id="topmenu">
+				<li><a href="index.php">Home</a></li>
+				<li><a href="attraction.php">Attraction</a></li>
+				<li><a href="accommodation.php">Accommodation</a></li>
+				<li><a href="food.php">Food</a></li>
+				<li><a href="plan.php">Plan</a></li>
+				<li><a href="about.php">About</a></li>
+				<div id="account" class="fl_right">
+					<li><a href="Login.html"><img src="img/account_icon.png" alt="account"></a></li>
+				</div>
+			</div>
+		
+			</div>
+		</nav>
+</div>
+
+<script type="text/javascript">
+// Add active class to the current button (highlight it)
+$( ".wrapper .topnav .topmenu a" ).on( "click", function () {
+	$( ".wrapper .topnav .topmenu" ).find( "li.active" ).removeClass( "active" );
+	$( this ).parent( "li" ).addClass( "active" );
+});
+</script>
+</div>
+
+<div id="main"style="float:center">
+  <div class="container">
+    <form id="sel_form" action="post.php" method="post">
+    <p><input type="text" class="input" style="width:200px" name="keys" id="keys" value="input the keyword of name" onclick="this.value=''" />
+      <input type="button" id="searchOption" class="btn" value="search" /> <span id="msg_ser"></span></p>
+     <div id="sel">
+      <select name="liOption[]" id='liOption' multiple='multiple' size='8'>
+      </select>
+     </div>
+     <input type="submit" class="btn" value="submit" />
+     </form>
+  </div>
+</div>
+<p id="stat"><script type="text/javascript" src="http://js.tongji.linezing.com/1870888/tongji.js"></script></p>
+</body>
+</html>
