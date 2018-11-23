@@ -316,11 +316,11 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `17083686d`;
-INSERT INTO `17083686d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (00000001, '\'00000001@qq.com\'', '00000001', 'M', 023, '\'00000001\'', '\'DingDing\'');
-INSERT INTO `17083686d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (00000002, '\'00000002@qq.com\'', '00000002', 'M', 44, '\'00000002\'', '\'YuYu\'');
-INSERT INTO `17083686d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (00000003, '\'00000003@qq.com\'', '00000002', 'F', 25, '\'00000003\'', '\'GaoGao\'');
-INSERT INTO `17083686d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (00000004, '\'00000004@qq.com\'', '00000002', 'F', 56, '\'00000004\'', '\'DaiDai\'');
-INSERT INTO `17083686d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (00000005, '\'00000005@qq.com\'', '00000002', 'M', 36, '\'00000005\'', '\'QinQin\'');
+INSERT INTO `17083686d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (00000001, '00000001@qq.com', '00000001', 'M', 023, '00000001', 'DingDing');
+INSERT INTO `17083686d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (00000002, '00000002@qq.com', '00000002', 'M', 44, '00000002', 'YuYu');
+INSERT INTO `17083686d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (00000003, '00000003@qq.com', '00000002', 'F', 25, '00000003', 'GaoGao');
+INSERT INTO `17083686d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (00000004, '00000004@qq.com', '00000002', 'F', 56, '00000004', 'DaiDai');
+INSERT INTO `17083686d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (00000005, '00000005@qq.com', '00000002', 'M', 36, '00000005', 'QinQin');
 
 COMMIT;
 
@@ -330,10 +330,10 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `17083686d`;
-INSERT INTO `17083686d`.`Administrator` (`AdmID`, `Name`, `Password`) VALUES (00000006, '\'00000006\'', '00000006');
-INSERT INTO `17083686d`.`Administrator` (`AdmID`, `Name`, `Password`) VALUES (00000007, '\'00000007\'', '00000007');
-INSERT INTO `17083686d`.`Administrator` (`AdmID`, `Name`, `Password`) VALUES (00000008, '\'00000008\'', '00000008');
-INSERT INTO `17083686d`.`Administrator` (`AdmID`, `Name`, `Password`) VALUES (00000009, '\'00000009\'', '00000009');
+INSERT INTO `17083686d`.`Administrator` (`AdmID`, `Name`, `Password`) VALUES (00000006, '00000006', '00000006');
+INSERT INTO `17083686d`.`Administrator` (`AdmID`, `Name`, `Password`) VALUES (00000007, '00000007', '00000007');
+INSERT INTO `17083686d`.`Administrator` (`AdmID`, `Name`, `Password`) VALUES (00000008, '00000008', '00000008');
+INSERT INTO `17083686d`.`Administrator` (`AdmID`, `Name`, `Password`) VALUES (00000009, '00000009', '00000009');
 
 COMMIT;
 
@@ -343,8 +343,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `17083686d`;
-INSERT INTO `17083686d`.`Message` (`MID`, `Message`, `creat_time`, `AdmID`, `TouristsID`) VALUES (1, '\'111\'', DEFAULT, 00000006, 00000001);
-INSERT INTO `17083686d`.`Message` (`MID`, `Message`, `creat_time`, `AdmID`, `TouristsID`) VALUES (2, '\'222\'', DEFAULT, 00000007, 00000002);
+INSERT INTO `17083686d`.`Message` (`MID`, `Message`, `creat_time`, `AdmID`, `TouristsID`) VALUES (1, '111', NOW(), 00000006, 00000001);
+INSERT INTO `17083686d`.`Message` (`MID`, `Message`, `creat_time`, `AdmID`, `TouristsID`) VALUES (2, '222', NOW(), 00000007, 00000002);
 
 COMMIT;
 
@@ -354,24 +354,24 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `17083686d`;
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000001, '\'Disney Restaurant\'', '\'Disney Restaurant\'', 500.50, 'restaurant/disney_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000002, '\'Chef Mickey\'', '\'Disneyland\'', 300.54, 'restaurant/disney_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000003, '\'Teakha\'', ' \'Victoria Peak\'', 100.00, 'restaurant/victoria_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000004, '\'AGanShrimp \'', ' \'Victoria Peak\'', 200.00, 'restaurant/victoria_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000005, '\'Kum Kee Restaurant\'', ' \'Hung Hom\'', 50.00, 'restaurant/hunghom_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000006, '\'Steam Fresh\'', '\'Hung Hom\'', 150.34, 'restaurant/hunghom_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000007, '\'Ajisen Ramen\'', ' \'Homantin\'', 100.00, 'restaurant/homantin_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000008, '\'Tuxedos Resturant\'', '\'Ocean Park\'', 150.55, 'restaurant/oceanpark_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000009, '\'Neptunes Restaurant\'', '\'Ocean Park\'', 300.77, 'restaurant/oceanpark_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000010, '\'Hot Dog Link\'', '\'Homantin\'', 50.99, 'restaurant/homantin_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000011, '\'The Spaghetti House\'', ' \'Mong Kok\'', 150.66, 'restaurant/mongkok_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000012, '\'Yadllie Plate\'', ' \'Mong Kok\'', 150.23, 'restaurant/mongkok_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000013, '\'Lazy Pot\'', '\'Yau Ma Tei\'', 150.78, 'restaurant/yaumatei_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000014, '\'Haidilao Hot Pot\'', '\'Yau Ma Tei\'', 100.56, 'restaurant/yaumatei_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000015, '\'Burgeroom\'', '\'Causeway Bay\'', 100.00, 'restaurant/causewaybay_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000016, '\'Shika Teppan-Yaki\'', '\'Causeway Bay\'', 500.88, 'restaurant/causewaybay_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000017, '\'Shanghai Min 1987\'', '\'Tsim Sha Tsui\'', 300.00, 'restaurant/tsimshatsui_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000018, '\'LAB EAT Restaurant\'', '\'Tsim Sha Tsui\'', 300.55, 'restaurant/tsimshatsui_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000001, 'Disney Restaurant', 'Disney Restaurant', 500.50, 'restaurant/disney_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000002, 'Chef Mickey', 'Disneyland', 300.54, 'restaurant/disney_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000003, 'Teakha', ' Victoria Peak', 100.00, 'restaurant/victoria_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000004, 'AGanShrimp ', ' Victoria Peak', 200.00, 'restaurant/victoria_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000005, 'Kum Kee Restaurant', ' Hung Hom', 50.00, 'restaurant/hunghom_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000006, 'Steam Fresh', 'Hung Hom', 150.34, 'restaurant/hunghom_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000007, 'Ajisen Ramen', ' Homantin', 100.00, 'restaurant/homantin_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000008, 'Tuxedos Resturant', 'Ocean Park', 150.55, 'restaurant/oceanpark_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000009, 'Neptunes Restaurant', 'Ocean Park', 300.77, 'restaurant/oceanpark_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000010, 'Hot Dog Link', 'Homantin', 50.99, 'restaurant/homantin_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000011, 'The Spaghetti House', ' Mong Kok', 150.66, 'restaurant/mongkok_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000012, 'Yadllie Plate', ' Mong Kok', 150.23, 'restaurant/mongkok_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000013, 'Lazy Pot', 'Yau Ma Tei', 150.78, 'restaurant/yaumatei_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000014, 'Haidilao Hot Pot', 'Yau Ma Tei', 100.56, 'restaurant/yaumatei_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000015, 'Burgeroom', 'Causeway Bay', 100.00, 'restaurant/causewaybay_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000016, 'Shika Teppan-Yaki', 'Causeway Bay', 500.88, 'restaurant/causewaybay_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000017, 'Shanghai Min 1987', 'Tsim Sha Tsui', 300.00, 'restaurant/tsimshatsui_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000018, 'LAB EAT Restaurant', 'Tsim Sha Tsui', 300.55, 'restaurant/tsimshatsui_restaurant.jpg');
 
 COMMIT;
 
@@ -381,16 +381,16 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `17083686d`;
-INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000001, '\'Western-style \'');
-INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000002, '\'Cantonese style\'');
-INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000003, '\'Korean style\'');
-INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000004, '\'Hong Kong style\'');
-INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000005, '\'Japanese style\'');
-INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000006, '\'German style\'');
-INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000007, '\'Italian style\'');
-INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000008, '\'Sichuan style\'');
-INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000009, '\'American style\'');
-INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000010, '\'Shanghai style\'');
+INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000001, 'Western-style ');
+INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000002, 'Cantonese style');
+INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000003, 'Korean style');
+INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000004, 'Hong Kong style');
+INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000005, 'Japanese style');
+INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000006, 'German style');
+INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000007, 'Italian style');
+INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000008, 'Sichuan style');
+INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000009, 'American style');
+INSERT INTO `17083686d`.`FoodType` (`FID`, `FoodType`) VALUES (00000010, 'Shanghai style');
 
 COMMIT;
 
@@ -429,17 +429,17 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `17083686d`;
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000001, '\'Tai Hing Hotel\'', '\'Mong Kok\'', '2', 'hotel\\mongkok_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000002, '\'Mirador Hotel\'', '\'Tsim Sha Tsui\'', '2', 'hotel\\tsimshatsui_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000003, '\'Palazzo Holiday  Hotel\'', '\'Causeway Bay\'', '2', 'hotel\\causewaybay_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000004, '\'Regal Oriental Hotel\'', '\'Hung Hom\'', '3', 'hotel\\hunghom_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000005, '\'Harbour Plaza Metropolis\'', '\'Hung Hom\'', '4', 'hotel\\hunghom_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000006, '\'Bridal Tea House  Hotel\'', ' \'Homantin\'', '3', 'hotel\\homantin_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000007, '\'Disney Explorers Lodge\'', '\'Disneyland\'', '5', 'hotel\\disneyland_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000008, '\'Disneys Hollywood Hotel\'', '\'Disneyland\'', '3', 'hotel\\disneyland_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000009, '\'Iclub Sheung Wan Hotel\'', '\'Victoria Peak\'', '3', 'hotel\\victoriapeak_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000010, '\'Rosedale Hotel\'', '\'Causeway Bay\'', '3', 'hotel\\causewaybay_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000011, '\'L-hotel Island South\'', ' \'Ocean park\'', '4', 'hotel\\oceanpark_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000001, 'Tai Hing Hotel', 'Mong Kok', '2', 'hotel\\mongkok_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000002, 'Mirador Hotel', 'Tsim Sha Tsui', '2', 'hotel\\tsimshatsui_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000003, 'Palazzo Holiday  Hotel', 'Causeway Bay', '2', 'hotel\\causewaybay_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000004, 'Regal Oriental Hotel', 'Hung Hom', '3', 'hotel\\hunghom_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000005, 'Harbour Plaza Metropolis', 'Hung Hom', '4', 'hotel\\hunghom_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000006, 'Bridal Tea House  Hotel', ' Homantin', '3', 'hotel\\homantin_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000007, 'Disney Explorers Lodge', 'Disneyland', '5', 'hotel\\disneyland_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000008, 'Disneys Hollywood Hotel', 'Disneyland', '3', 'hotel\\disneyland_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000009, 'Iclub Sheung Wan Hotel', 'Victoria Peak', '3', 'hotel\\victoriapeak_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000010, 'Rosedale Hotel', 'Causeway Bay', '3', 'hotel\\causewaybay_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000011, 'L-hotel Island South', ' Ocean park', '4', 'hotel\\oceanpark_hotel.jpg');
 
 COMMIT;
 
@@ -449,19 +449,19 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `17083686d`;
-INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000001, '\'Single room\'', 225.5, 00000001);
-INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000002, '\'Single room\'', 400.00, 00000002);
-INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000003, '\'Double room\'', 265.00, 00000003);
-INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000004, '\'Single room\'', 600.00, 00000004);
-INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000005, '\'Single room\'', 700.00, 00000005);
-INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000006, '\'Double room\'', 450.00, 00000006);
-INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000007, '\'Single room\'', 1700.00, 00000007);
-INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000008, '\'Single room\'', 1000.78, 00000008);
-INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000009, '\'Double room\'', 1000.55, 00000009);
-INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000010, '\'Single room\'', 800.54, 0000010);
-INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000011, '\'Single room\'', 700.25, 000000011);
-INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000012, '\'Double room\'', 650, 000000011);
-INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000013, '\'Double room\'', 850.99, 00000010);
+INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000001, 'Single room', 225.5, 00000001);
+INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000002, 'Single room', 400.00, 00000002);
+INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000003, 'Double room', 265.00, 00000003);
+INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000004, 'Single room', 600.00, 00000004);
+INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000005, 'Single room', 700.00, 00000005);
+INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000006, 'Double room', 450.00, 00000006);
+INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000007, 'Single room', 1700.00, 00000007);
+INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000008, 'Single room', 1000.78, 00000008);
+INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000009, 'Double room', 1000.55, 00000009);
+INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000010, 'Single room', 800.54, 0000010);
+INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000011, 'Single room', 700.25, 000000011);
+INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000012, 'Double room', 650, 000000011);
+INSERT INTO `17083686d`.`RoomInfor` (`RMID`, `RoomType`, `Price`, `Hotel_HID`) VALUES (00000013, 'Double room', 850.99, 00000010);
 
 COMMIT;
 
@@ -471,16 +471,16 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `17083686d`;
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000001, '\'Disnyland\'', 500.00, 'attraction\\disnyland_attraction.jpg', '\'Disnyland\'');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000002, '\'Ocean Park\'', 400.00, 'attraction\\oceanpark_attraction.jpg', '\'Ocean Park\'');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000003, '\'Sky Wheel\'', 23.23, 'attraction\\causewaybay_attraction.jpg', ' \'Causeway Bay\'');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000004, '\'Victoria Peak\'', 77.67, 'attraction\\victoriapeak_attraction.jpg', '\'Victoria Peak\'');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000005, '\'Wax Work Museum\'', 300.89, 'attraction\\victoriapeak_attraction.jpg', '\'Victoria Peak\'');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000006, '\'The Star Ferry\'', 10.99, 'attraction\\tsimshatsui_attraction.jpg', '\'Tsim Sha Tsui\'');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000007, '\'Langham Place\'', 23.11, 'attraction\\mongkok_attraction.jpg', '\'Mong Kok\'');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000008, '\'Hong Kong Polyu\'', 13.22, 'attraction\\hunghom_attraction.jpg', '\'Hung Hom\'');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000009, '\'Victoria Harbour\'', 14.55, 'attraction\\homantin_attraction.jpg', '\'Homantin\'');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000010, '\'Homantin\'', 45.66, 'attraction\\tsimshatsui_attraction.jpg', '\'Tsim Sha Tsui\'');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000001, 'Disnyland', 500.00, 'attraction\\disnyland_attraction.jpg', 'Disnyland');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000002, 'Ocean Park', 400.00, 'attraction\\oceanpark_attraction.jpg', 'Ocean Park');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000003, 'Sky Wheel', 23.23, 'attraction\\causewaybay_attraction.jpg', ' Causeway Bay');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000004, 'Victoria Peak', 77.67, 'attraction\\victoriapeak_attraction.jpg', 'Victoria Peak');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000005, 'Wax Work Museum', 300.89, 'attraction\\victoriapeak_attraction.jpg', 'Victoria Peak');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000006, 'The Star Ferry', 10.99, 'attraction\\tsimshatsui_attraction.jpg', 'Tsim Sha Tsui');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000007, 'Langham Place', 23.11, 'attraction\\mongkok_attraction.jpg', 'Mong Kok');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000008, 'Hong Kong Polyu', 13.22, 'attraction\\hunghom_attraction.jpg', 'Hung Hom');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000009, 'Victoria Harbour', 14.55, 'attraction\\homantin_attraction.jpg', 'Homantin');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000010, 'Homantin', 45.66, 'attraction\\tsimshatsui_attraction.jpg', 'Tsim Sha Tsui');
 
 COMMIT;
 
@@ -490,9 +490,9 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `17083686d`;
-INSERT INTO `17083686d`.`AttractionsType` (`ATID`, `Type`) VALUES (1, '\'entertainment\'');
-INSERT INTO `17083686d`.`AttractionsType` (`ATID`, `Type`) VALUES (2, '\'viewing\'');
-INSERT INTO `17083686d`.`AttractionsType` (`ATID`, `Type`) VALUES (3, '\'shopping\'');
+INSERT INTO `17083686d`.`AttractionsType` (`ATID`, `Type`) VALUES (1, 'entertainment');
+INSERT INTO `17083686d`.`AttractionsType` (`ATID`, `Type`) VALUES (2, 'viewing');
+INSERT INTO `17083686d`.`AttractionsType` (`ATID`, `Type`) VALUES (3, 'shopping');
 
 COMMIT;
 
