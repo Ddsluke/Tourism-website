@@ -65,7 +65,7 @@ Author: Code Apes.
 				<a href="home.html"><img src="img/logo.jpg" alt="Homepage"></a>
 			</div>
 			<div class="topmenu">
-				<li><a href="home.html">Home</a></li>
+				<li><a href="index.php">Home</a></li>
 				<li><a href="attraction.html">Attractions</a></li>
 				<li><a href="accommodation.html">Accommodation</a></li>
 				<li><a href="food.html">Food</a></li>
@@ -73,7 +73,7 @@ Author: Code Apes.
 				<li><a href="about.html">About</a></li>
 			  <div id="account" class="fl_right">
 			    <li>
-				  <a href="Login.html"><img src="img/account_icon.png" alt="account"></a>
+				  <a href="Login.php"><img src="img/account_icon.png" alt="account"></a>
 			    </li>
 			  </div>
 			</div>
@@ -83,7 +83,7 @@ Author: Code Apes.
 <div class="input_container">
   <h1>Create Your Account</h1>
   <a href="Login.html"><h4>Already a member?</h4></a>
-  <form action="Register_Tourists.php" method="post">
+  <form action="php/Register_Tourists.php" method="post">
 	<br>Email
 	<input type="text" id="email" name="email" placeholder="Your email.." onchange="checkEmail()"required="required">
 	<div id="email_error" style=

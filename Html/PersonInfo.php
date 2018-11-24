@@ -78,7 +78,7 @@ Author: Code Apes.
 <div class="wrapper">
 		<nav class="topnav">
 			<div id="logo" class="fl_left">
-				<a href="home.html"><img src="img/logo.jpg" alt="Homepage"></a>
+				<a href="index.php"><img src="img/logo.jpg" alt="Homepage"></a>
 			</div>
 			<div class="topmenu">
 				<li><a href="home.html">Home</a></li>
@@ -89,7 +89,7 @@ Author: Code Apes.
 				<li><a href="about.html">About</a></li>
 			  <div id="account" class="fl_right">
 			    <li>
-				  <a href="Login.html"><img src="img/account_icon.png" alt="account"></a>
+				  <a href="Login.php"><img src="img/account_icon.png" alt="account"></a>
 			    </li>
 			  </div>
 			</div>
@@ -135,7 +135,7 @@ Author: Code Apes.
 		  <td> </td>
 		</tr>
 		</table><br>
-		<div class="button btn btn-small" onclick="logOut()">Log out</div><br>
+		<a href="php/logout.php"><div class="button btn btn-small">Log out</div></a><br>
 		<h1>Notice Board</h1><hr>
 		<p>Curretly nothing here..<p>
 		</div>

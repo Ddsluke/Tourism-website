@@ -1,4 +1,5 @@
 <?php
+session_start();
 //connection
 
 $servername = "mysql.comp.polyu.edu.hk";
@@ -20,8 +21,8 @@ echo "<p>Connected successfully</p>";
 header("Content-Type: text/html; charset=utf8");
 
     include('connect.php');//connect to database
-    $AdmID=$_POST['userid'];//get Administor's ID
-    $Password = $_POST['password'];//get Administor's password
+    $AdmID=$_POST['userid'];//get Administrator's ID
+    $Password = $_POST['password'];//get Administrator's password
 
 	
 
@@ -30,7 +31,7 @@ header("Content-Type: text/html; charset=utf8");
 		?>
 				 
 				 Missing Admin ID or Password, Please 
-				 <a href="login.html">
+				 <a href="login.php">
 				 try again.
 				 </a>.
 				 
@@ -49,7 +50,7 @@ header("Content-Type: text/html; charset=utf8");
     mysqli_stmt_bind_result($stmt, $count);
 
     /* fetch value */
-    mysqli_stmt_fetch($stmt);
+    $user=mysqli_stmt_fetch($stmt);
 	
     /* close statement */
 	mysqli_stmt_close($stmt);
@@ -58,14 +59,15 @@ header("Content-Type: text/html; charset=utf8");
 	mysqli_close($link);
 	
 	if($count == 1) {
-		header("refresh:0;url=Admin.html");//jump to welcome.html
+		$_SESSION['login_admin'] = $AdmID;
+		header("refresh:0;url=../Admin.php");//jump to Admin.php
 		die('login success');
 	}
 	
 		?>
 				 
 				 Administor Id or password is wrong, Please 
-				 <a href="login.html">
+				 <a href="login.php">
 				 try again.
 				 </a>.
 				 

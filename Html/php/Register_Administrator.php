@@ -37,7 +37,7 @@ header("Content-Type: text/html; charset=utf8");
 		mysqli_close($link);
 		exit;
     }else{
-        echo "Registr successfully";//success
+        echo "Register successfully";//success
     }
 
     

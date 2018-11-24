@@ -1,9 +1,7 @@
 <?php
+session_start();
 // remove all session variables
-session_unset();
-// destroy the session
 session_destroy();
-
 echo "Log out successfully!";
 ?>
 
@@ -12,6 +10,6 @@ echo "Log out successfully!";
 <head>
     <meta charset="UTF-8">
     <!-- refresh after 2 second -->
-    <meta http-equiv="refresh" content="2;url=login.php">
+    <meta http-equiv="refresh" content="2;url=../Login.php">
     <title>Logout successfully...</title>
 </head>

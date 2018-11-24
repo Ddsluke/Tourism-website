@@ -1,4 +1,5 @@
 <?php
+session_start();
 //connection
 
 $servername = "mysql.comp.polyu.edu.hk";
@@ -32,7 +33,7 @@ header("Content-Type: text/html; charset=utf8");
 		?>
 				 
 				 Missing Tourists ID or Password or Username, Please 
-				 <a href="login.html">
+				 <a href="../login.php">
 				 try again.
 				 </a>.
 				 
@@ -57,7 +58,7 @@ header("Content-Type: text/html; charset=utf8");
 
     /* fetch value */
     mysqli_stmt_fetch($stmt);
-	
+
     /* close statement */
 	mysqli_stmt_close($stmt);
 	
@@ -65,14 +66,15 @@ header("Content-Type: text/html; charset=utf8");
 	mysqli_close($link);
 	
 	if($count == 1) {
-		header("refresh:0;url=PersonInfo.html");//jump to welcome.html
+		$_SESSION['login_tourist'] = $TouristsID;
+		header("refresh:0;url=../PersonInfo.php");//jump to PersonInfo.php
 		die('login successful');
 	}
 	
 		?>
 				 
 				 Tourists Id or password or Username is wrong, Please 
-				 <a href="login.html">
+				 <a href="../login.php">
 				 try again.
 				 </a>.
 				 

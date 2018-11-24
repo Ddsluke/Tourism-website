@@ -18,17 +18,17 @@ Author: Code Apes.
 <div class="wrapper">
 		<nav class="topnav">
 			<div id="logo" class="fl_left">
-				<a href="home.html"><img src="img/logo.jpg" alt="Homepage"></a>
+				<a href="index.php"><img src="img/logo.jpg" alt="Homepage"></a>
 			</div>
 			<div class="topmenu">
-				<li><a href="home.html">Home</a></li>
+				<li><a href="index.php">Home</a></li>
 				<a href="attraction.html">Attraction</a></li>
 				<li><a href="accommodation.html">Accommodation</a></li>
 				<li><a href="food.html">Food</a></li>
 				<li><a href="plan.html">Plan</a></li>
 				<li><a href="about.html">About</a></li>
 				<div id="account" class="fl_right">
-					<li><a href="Login.html"><img src="img/account_icon.png" alt="account"></a></li>
+					<li><a href="Login.php"><img src="img/account_icon.png" alt="account"></a></li>
 				</div>
 			</div>
 		</nav>
