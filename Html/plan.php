@@ -18,7 +18,7 @@
         center: 'title',
         right: 'month,agendaWeek,agendaDay,listWeek'
       },
-      defaultDate: '2018-03-12',
+      defaultDate: '2018-11-22',
       navLinks: true, // can click day/week names to navigate views
       editable: true,
       eventLimit: true, // allow "more" link when too many events
@@ -26,7 +26,7 @@
  
       <?php
 	  session_start();
-	  $conn = new mysqli("mysql.comp.polyu.edu.hk", "16098537d", "iqdobdiy", "16098537d");
+	  $conn = new mysqli("mysql.comp.polyu.edu.hk", "17083686d", "fdtwjmfn", "17083686d");
 	  $key = $_SESSION['login_tourist'];
 	  
 	  $sql="SELECT AName, Date, Time

@@ -41,24 +41,9 @@ if (isset($_SESSION['login_admin'])){
 <body>
 
 <div class="wrapper">
-	<nav class="topnav">
-		<div id="logo" class="fl_left">
-			<a href="index.php"><img src="img/logo.jpg" alt="Homepage"></a>
-		</div>
-		<div class="topmenu">
-			<li><a href="index.php">Home</a></li>
-			<li><a href="attraction.html">Attractions</a></li>
-			<li><a href="accommodation.html">Accommodation</a></li>
-			<li><a href="food.html">Food</a></li>
-			<li><a href="plan.html">Plan</a></li>
-			<li><a href="about.html">About</a></li>
-			<div id="account" class="fl_right">
-			  <li>
-				<a href="Login.php"><img src="img/account_icon.png" alt="account"></a>
-			  </li>
-			</div>
-		</div>
-	</nav>
+<?php
+require('topnav.php');
+?>
 </div>
 <div class="input_container">
   <h1>Login as <label id="loginLabel">Tourist</label></h1>
@@ -77,13 +62,9 @@ if (isset($_SESSION['login_admin'])){
   </form>
 </div>
 
-<footer>
-	<div class="wrapper btm">
-		<div id="copyright" class="hoc clear">
-			<p>Copyright © 2018 #. All Rights Reserved.</p>
-		</div>
-	</div>
-</footer>
+<?php
+require('footer.php');
+?>
 
 </body>
 

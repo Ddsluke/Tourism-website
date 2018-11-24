@@ -11,7 +11,7 @@
 				<li><a href="plan.php">Plan</a></li>
 				<li><a href="about.php">About</a></li>
 				<div id="account" class="fl_right">
-					<li><a href="Login.html"><img src="img/account_icon.png" alt="account"></a></li>
+					<li><a href="Login.php"><img src="img/account_icon.png" alt="account"></a></li>
 				</div>
 			</div>
 			<div class="searchbar">  

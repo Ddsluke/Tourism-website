@@ -84,24 +84,9 @@ Author: Code Apes.
 </head>
 <body>
 <div class="wrapper">
-		<nav class="topnav">
-			<div id="logo" class="fl_left">
-				<a href="index.php"><img src="img/logo.jpg" alt="Homepage"></a>
-			</div>
-			<div class="topmenu">
-				<li><a href="home.html">Home</a></li>
-				<li><a href="attractions.html">Attractions</a></li>
-				<li><a href="accommodation.html">Accommodation</a></li>
-				<li><a href="food.html">Food</a></li>
-				<li><a href="plan.html">Plan</a></li>
-				<li><a href="about.html">About</a></li>
-			  <div id="account" class="fl_right">
-			    <li>
-				  <a href="Login.php"><img src="img/account_icon.png" alt="account"></a>
-			    </li>
-			  </div>
-			</div>
-		</nav>
+<?php
+require('topnav.php');
+?>
 </div>
 <div class="wrapper">
 	<!-- main body -->
@@ -149,12 +134,8 @@ Author: Code Apes.
 		</div>
 	</main>
 </div>
-<footer>
-	<div class="footer">
-		<div id="copyright">
-			<p>Copyright © 2018 #. All Rights Reserved.</p>
-		</div>
-	</div>
-</footer>
+<?php
+require('footer.php');
+?>
 </body>
 </html>

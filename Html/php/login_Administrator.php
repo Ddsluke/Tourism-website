@@ -49,7 +49,7 @@ header("Content-Type: text/html; charset=utf8");
     mysqli_stmt_bind_result($stmt, $count);
 
     /* fetch value */
-    $user=mysqli_stmt_fetch($stmt);
+    mysqli_stmt_fetch($stmt);
 	
     /* close statement */
 	mysqli_stmt_close($stmt);
