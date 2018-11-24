@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!(isset($_SESSION['login_tourist']) || isset($_SESSION['login_admin']))){
+	header("Location:Login.php");
+}
+?>
+
 <!DOCTYPE html>
 <!--
 Author: Code Apes.
@@ -39,6 +46,7 @@ Author: Code Apes.
 	    <h3 style="font-weight:bolder;">Information Management</h3><!-- To be added later-->
 	  </div>
     <div class="content">
+			<a href="php/logout.php"><div class="button btn btn-small">Log out</div></a>
 			<h1>User</h1><hr>
 			<div class="searchbar">  
 				<div class="search-container">

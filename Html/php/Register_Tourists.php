@@ -38,11 +38,13 @@ header("Content-Type: text/html; charset=utf8");
     }else{
         echo "Register successfully";//success
     }
-
-
-    
-
     mysqli_close($link);//close database
-
-
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- refresh after 2 second -->
+    <meta http-equiv="refresh" content="2;url=../Login.php">
+    <title>Logout successfully...</title>
+</head>

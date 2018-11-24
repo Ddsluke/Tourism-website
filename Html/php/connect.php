@@ -13,7 +13,7 @@
 	mysqli_close($link);
     exit;
 }
-echo "<p>Connected successfully</p>";
+/*echo "<p>Connected successfully</p>";*/
 
     mysqli_select_db($link,'17083686d');//Select database
 ?>

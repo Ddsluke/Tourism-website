@@ -1,3 +1,11 @@
+ <?php
+session_start();
+if (!(isset($_SESSION['login_tourist']) || isset($_SESSION['login_admin']))){
+	header("Location:Login.php");
+}
+?>
+
+
 <!DOCTYPE html>
 <!--
 Author: Code Apes.

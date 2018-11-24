@@ -15,7 +15,6 @@ if (!$link) {
 	mysqli_close($link);
     exit;
 }
-echo "<p>Connected successfully</p>";
 
 //login Tourists
 header("Content-Type: text/html; charset=utf8");
@@ -68,7 +67,7 @@ header("Content-Type: text/html; charset=utf8");
 	if($count == 1) {
 		$_SESSION['login_tourist'] = $TouristsID;
 		header("refresh:0;url=../PersonInfo.php");//jump to PersonInfo.php
-		die('login successful');
+		die('Jumping..');
 	}
 	
 		?>

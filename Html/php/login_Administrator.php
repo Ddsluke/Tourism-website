@@ -15,7 +15,6 @@ if (!$link) {
 	mysqli_close($link);
     exit;
 }
-echo "<p>Connected successfully</p>";
 
 //login Administor
 header("Content-Type: text/html; charset=utf8");
@@ -61,7 +60,7 @@ header("Content-Type: text/html; charset=utf8");
 	if($count == 1) {
 		$_SESSION['login_admin'] = $AdmID;
 		header("refresh:0;url=../Admin.php");//jump to Admin.php
-		die('login success');
+		die('Jumping..');
 	}
 	
 		?>
