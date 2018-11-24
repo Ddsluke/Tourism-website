@@ -8,11 +8,11 @@ Author: Code Apes.
 session_start();
 if (isset($_SESSION['login_tourist'])){
 	$id = $_SESSION['login_tourist'];
-	header("Location:PersonInfo.html?$id");
+	header("Location:PersonInfo.php?$id");
 }
 if (isset($_SESSION['login_admin'])){
 	$id = $_SESSION['login_admin'];
-	header("Location:Admin.html?$id");
+	header("Location:Admin.php?$id");
 }
 ?>
 	<title>Sign In Your Account</title>
