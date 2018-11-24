@@ -46,5 +46,5 @@ header("Content-Type: text/html; charset=utf8");
     <meta charset="UTF-8">
     <!-- refresh after 2 second -->
     <meta http-equiv="refresh" content="2;url=../Login.php">
-    <title>Logout successfully...</title>
+    <title>Jumping...</title>
 </head>
