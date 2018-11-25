@@ -8,9 +8,9 @@
     
     $AName=$_POST['AName'];
     $Area=$_POST['Area'];
-    $AveragePrice=$_POST['AveragePrice'];
+    $Price=$_POST['Price'];
     
-    mysqli_query($con," insert into Attraction (AName,Area,AveragePrice) values ('$AName','$Area','$AveragePrice')");
+    mysqli_query($con," insert into Attraction (AName,Area,Price) values ('$AName','$Area','$Price')");
     
     // Print auto-generated id
     echo "New record has id: " . mysqli_insert_id($con);

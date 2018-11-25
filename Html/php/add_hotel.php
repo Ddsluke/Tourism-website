@@ -6,9 +6,9 @@
     {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
-    $HName=$_POST["HName"];
-    $Area=$_POST["Area"];
-    $Level=$_POST["Level"];
+    $HName=$_POST['HName'];
+    $Area=$_POST['Area'];
+    $Level=$_POST['Level'];
     
     mysqli_query($con," insert into Hotel (HName,Area,Level) values ('$HName','$Area','$Level')");
                  

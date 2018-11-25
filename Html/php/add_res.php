@@ -7,9 +7,9 @@
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
     
-    $RName=$_POST["RName"];
-    $Area=$_POST["Area"];
-    $AveragePrice=$_POST["AveragePrice"];
+    $RName=$_POST['RName'];
+    $Area=$_POST['Area'];
+    $AveragePrice=$_POST['AveragePrice'];
     
     mysqli_query($con,"insert into Restaurant (RName,Area,AveragePrice) values ('$RName','$Area','$AveragePrice')");
     
