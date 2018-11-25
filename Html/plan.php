@@ -18,7 +18,7 @@
         center: 'title',
         right: 'month,agendaWeek,agendaDay,listWeek'
       },
-      defaultDate: '2018-11-22',
+      defaultDate: '2018-11-25',
       navLinks: true, // can click day/week names to navigate views
       editable: true,
       eventLimit: true, // allow "more" link when too many events

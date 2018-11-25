@@ -430,17 +430,17 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `17083686d`;
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000001, 'Tai Hing Hotel', 'Mong Kok', '2', 'hotel\\taihing_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000002, 'Mirador Hotel', 'Tsim Sha Tsui', '2', 'hotel\\mirador_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000003, 'Palazzo Holiday  Hotel', 'Causeway Bay', '2', 'hotel\\palazzoholiday_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000004, 'Regal Oriental Hotel', 'Hung Hom', '3', 'hotel\\regaloriental_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000005, 'Harbour Plaza Metropolis', 'Hung Hom', '4', 'hotel\\harbourplazametropolis_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000006, 'Bridal Tea House  Hotel', ' Homantin', '3', 'hotel\\bridalteahouse_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000007, 'Disney Explorers Lodge', 'Disneyland', '5', 'hotel\\disneyland_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000008, 'Disneys Hollywood Hotel', 'Disneyland', '3', 'hotel\\disneylandhollywood_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000009, 'Iclub Sheung Wan Hotel', 'Victoria Peak', '3', 'hotel\\iclubsheungwan_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000010, 'Rosedale Hotel', 'Causeway Bay', '3', 'hotel\\rosedale_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000011, 'L-hotel Island South', ' Ocean park', '4', 'hotel\\lhotelislandsouth_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000001, 'Tai Hing Hotel', 'Mong Kok', '2', 'hotel/taihing_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000002, 'Mirador Hotel', 'Tsim Sha Tsui', '2', 'hotel/mirador_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000003, 'Palazzo Holiday  Hotel', 'Causeway Bay', '2', 'hotel/palazzoholiday_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000004, 'Regal Oriental Hotel', 'Hung Hom', '3', 'hotel/regaloriental_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000005, 'Harbour Plaza Metropolis', 'Hung Hom', '4', 'hotel/harbourplazametropolis_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000006, 'Bridal Tea House  Hotel', ' Homantin', '3', 'hotel/bridalteahouse_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000007, 'Disney Explorers Lodge', 'Disneyland', '5', 'hotel/disneyland_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000008, 'Disneys Hollywood Hotel', 'Disneyland', '3', 'hotel/disneylandhollywood_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000009, 'Iclub Sheung Wan Hotel', 'Victoria Peak', '3', 'hotel/iclubsheungwan_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000010, 'Rosedale Hotel', 'Causeway Bay', '3', 'hotel/rosedale_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000011, 'L-hotel Island South', ' Ocean park', '4', 'hotel/lhotelislandsouth_hotel.jpg');
 
 COMMIT;
 
@@ -472,16 +472,16 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `17083686d`;
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000001, 'Disnyland', 500.00, 'attraction\\disnyland_attraction.jpg', 'Disnyland');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000002, 'Ocean Park', 400.00, 'attraction\\oceanpark_attraction.jpg', 'Ocean Park');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000003, 'Sky Wheel', 23.23, 'attraction\\skywheel_attraction.jpg', ' Causeway Bay');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000004, 'Victoria Peak', 77.67, 'attraction\\victoriapeak_attraction.jpg', 'Victoria Peak');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000005, 'Wax Work Museum', 300.89, 'attraction\\waxworkmuseum_attraction.jpg', 'Victoria Peak');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000006, 'The Star Ferry', 10.99, 'attraction\\thestarferry_attraction.jpg', 'Tsim Sha Tsui');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000007, 'Langham Place', 23.11, 'attraction\\langhamplace_attraction.jpg', 'Mong Kok');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000008, 'Hong Kong Polyu', 13.22, 'attraction\\hongkongpolyu_attraction.jpg', 'Hung Hom');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000009, 'Victoria Harbour', 14.55, 'attraction\\victoriaharbour_attraction.jpg', 'Homantin');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000010, 'Harbor City', 45.66, 'attraction\\harborcity_attraction.jpg', 'Tsim Sha Tsui');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000001, 'Disnyland', 500.00, 'attraction/disnyland_attraction.jpg', 'Disnyland');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000002, 'Ocean Park', 400.00, 'attraction/oceanpark_attraction.jpg', 'Ocean Park');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000003, 'Sky Wheel', 23.23, 'attraction/skywheel_attraction.jpg', ' Causeway Bay');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000004, 'Victoria Peak', 77.67, 'attraction/victoriapeak_attraction.jpg', 'Victoria Peak');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000005, 'Wax Work Museum', 300.89, 'attraction/waxworkmuseum_attraction.jpg', 'Victoria Peak');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000006, 'The Star Ferry', 10.99, 'attraction/thestarferry_attraction.jpg', 'Tsim Sha Tsui');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000007, 'Langham Place', 23.11, 'attraction/langhamplace_attraction.jpg', 'Mong Kok');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000008, 'Hong Kong Polyu', 13.22, 'attraction/hongkongpolyu_attraction.jpg', 'Hung Hom');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000009, 'Victoria Harbour', 14.55, 'attraction/victoriaharbour_attraction.jpg', 'Homantin');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000010, 'Harbor City', 45.66, 'attraction/harborcity_attraction.jpg', 'Tsim Sha Tsui');
 
 COMMIT;
 
