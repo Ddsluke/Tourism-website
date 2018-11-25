@@ -158,20 +158,20 @@ CREATE TABLE IF NOT EXISTS `17083686d`.`RecommandRes` (
   `RecRID` INT NOT NULL AUTO_INCREMENT,
   `Date` DATE NOT NULL,
   `Time` ENUM('MORN', 'EVEN') NOT NULL,
-  `ArrangeId` INT(8) NOT NULL,
-  `Restaurant_Foodtype_RID` INT NOT NULL,
-  `Restaurant_Foodtype_FID` INT NOT NULL,
+  `ArrangeId` INT NULL,
+  `RID` INT NOT NULL,
   PRIMARY KEY (`RecRID`),
   INDEX `ArrangeId_idx` (`ArrangeId` ASC) ,
-  INDEX `fk_RecommandRes_Restaurant_Foodtype1_idx` (`Restaurant_Foodtype_RID` ASC, `Restaurant_Foodtype_FID` ASC) ,
-  CONSTRAINT `RecommandRes__ArrangeId`
+  INDEX `RId_idx` (`RId` ASC) ,
+  CONSTRAINT `fk_RecommandRes_ArrangeId`
     FOREIGN KEY (`ArrangeId`)
     REFERENCES `17083686d`.`Arrange` (`ArrangeId`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
-  CONSTRAINT `fk_RecommandRes_Restaurant_Foodtype1`
-    FOREIGN KEY (`Restaurant_Foodtype_RID` , `Restaurant_Foodtype_FID`)
-    REFERENCES `17083686d`.`Restaurant_Foodtype` (`RID` , `FID`)
+  
+  CONSTRAINT `fk_RecommandRes_RId`
+    FOREIGN KEY (`RID`)
+    REFERENCES `17083686d`.`Restaurant` (`RID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
@@ -198,18 +198,19 @@ DROP TABLE IF EXISTS `17083686d`.`RecommandHotel` ;
 CREATE TABLE IF NOT EXISTS `17083686d`.`RecommandHotel` (
   `RecHID` INT NOT NULL AUTO_INCREMENT,
   `Date` DATE NOT NULL,
-  `ArrangeId` INT NOT NULL,
-  `Hotel_HID` INT NOT NULL,
+  `ArrangeId` INT NULL,
+  `HID` INT NOT NULL,
   PRIMARY KEY (`RecHID`),
   INDEX `ArrangeId_idx` (`ArrangeId` ASC) ,
-  INDEX `fk_RecommandHotel_Hotel1_idx` (`Hotel_HID` ASC) ,
-  CONSTRAINT `RecommandHotel__ArrangeId`
+  INDEX `HId_idx` (`HId` ASC) ,
+  CONSTRAINT `fk_RecommandHotel_ArrangeId`
     FOREIGN KEY (`ArrangeId`)
     REFERENCES `17083686d`.`Arrange` (`ArrangeId`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
-  CONSTRAINT `fk_RecommandHotel_Hotel1`
-    FOREIGN KEY (`Hotel_HID`)
+  
+  CONSTRAINT `fk_RecommandHotel_HId`
+    FOREIGN KEY (`HID`)
     REFERENCES `17083686d`.`Hotel` (`HID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
@@ -291,18 +292,19 @@ CREATE TABLE IF NOT EXISTS `17083686d`.`RecommandAttraction` (
   `Date` DATE NOT NULL,
   `Time` ENUM('MORN', 'EVEN') NOT NULL,
   `ArrangeId` INT NULL,
-  `Attractions_Type_AID` INT NOT NULL,
+  `AID` INT NOT NULL,
   PRIMARY KEY (`RecAID`),
   INDEX `ArrangeId_idx` (`ArrangeId` ASC) ,
-  INDEX `fk_RecommandAttraction_Attractions_Type1_idx` (`Attractions_Type_AID` ASC) ,
-  CONSTRAINT `RecommandAttraction__ArrangeId`
+  INDEX `AId_idx` (`AId` ASC) ,
+  CONSTRAINT `fk_RecommandAttraction_ArrangeId`
     FOREIGN KEY (`ArrangeId`)
     REFERENCES `17083686d`.`Arrange` (`ArrangeId`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
-  CONSTRAINT `fk_RecommandAttraction_Attractions_Type1`
-    FOREIGN KEY (`Attractions_Type_AID`)
-    REFERENCES `17083686d`.`Attractions_Type` (`AID`)
+  
+  CONSTRAINT `fk_RecommandAttraction_AId`
+    FOREIGN KEY (`AID`)
+    REFERENCES `17083686d`.`Attraction` (`AID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
@@ -514,3 +516,61 @@ INSERT INTO `17083686d`.`Attractions_Type` (`AID`, `ATID`) VALUES (00000010, 3);
 
 COMMIT;
 
+
+-- -----------------------------------------------------
+-- Data for table `17083686d`.`Arrange`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `17083686d`;
+INSERT INTO `17083686d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('1', '2018-11-24', '2018-11-27', '0', '2');
+
+COMMIT;
+
+
+
+-- -----------------------------------------------------
+-- Data for table `17083686d`.`RecommandAttraction`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `17083686d`;
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('1', '2018-11-24', 'MORN', '1', '1');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('2', '2018-11-24', 'EVEN', '1', '2');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('3', '2018-11-24', 'MORN', '1', '3');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('4', '2018-11-25', 'MORN', '1', '4');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('5', '2018-11-25', 'EVEN', '1', '5');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('6', '2018-11-26', 'MORN', '1', '6');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('7', '2018-11-26', 'EVEN', '1', '7');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('8', '2018-11-27', 'MORN', '1', '8');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('9', '2018-11-27', 'EVEN', '1', '9');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `17083686d`.`RecommandRes`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `17083686d`;
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('1', '2018-11-24', 'MORN', '1', '1');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('2', '2018-11-24', 'EVEN', '1', '2');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('3', '2018-11-24', 'MORN', '1', '3');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('4', '2018-11-25', 'MORN', '1', '4');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('5', '2018-11-25', 'EVEN', '1', '5');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('6', '2018-11-26', 'MORN', '1', '6');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('7', '2018-11-26', 'EVEN', '1', '7');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('8', '2018-11-27', 'MORN', '1', '8');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('9', '2018-11-27', 'EVEN', '1', '9');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `17083686d`.`RecommandHotel`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `17083686d`;
+INSERT INTO `17083686d`.`RecommandHotel` (`RecHID`, `Date`, `ArrangeId`, `HID`) VALUES ('1', '2018-11-24', '1', '1');
+INSERT INTO `17083686d`.`RecommandHotel` (`RecHID`, `Date`, `ArrangeId`, `HID`) VALUES ('2', '2018-11-25', '1', '1');
+INSERT INTO `17083686d`.`RecommandHotel` (`RecHID`, `Date`, `ArrangeId`, `HID`) VALUES ('3', '2018-11-26', '1', '2');
+INSERT INTO `17083686d`.`RecommandHotel` (`RecHID`, `Date`, `ArrangeId`, `HID`) VALUES ('4', '2018-11-27', '1', '2');
+COMMIT; 
