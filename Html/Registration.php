@@ -82,7 +82,7 @@ Author: Code Apes.
 
 <div class="input_container">
   <h1>Create Your Account</h1>
-  <a href="Login.html"><h4>Already a member?</h4></a>
+  <a href="Login.php"><h4>Already a member?</h4></a>
   <form action="php/Register_Tourists.php" method="post">
 	<br>Email
 	<input type="text" id="email" name="email" placeholder="Your email.." onchange="checkEmail()"required="required">
