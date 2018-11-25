@@ -50,7 +50,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `17083686d`.`Administrator` ;
 
 CREATE TABLE IF NOT EXISTS `17083686d`.`Administrator` (
-  `AdmID` INT NOT NULL,
+  `AdmID` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(50) NOT NULL,
   `Password` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`AdmID`));
@@ -88,14 +88,14 @@ CREATE TABLE IF NOT EXISTS `17083686d`.`Message` (
 DROP TABLE IF EXISTS `17083686d`.`Arrange` ;
 
 CREATE TABLE IF NOT EXISTS `17083686d`.`Arrange` (
-  `ArrangeId` INT NOT NULL,
+  `ArrangeId` INT NOT NULL AUTO_INCREMENT,
   `ArriveDay` DATE NOT NULL,
   `LeaveDay` DATE NOT NULL,
-  `Activate` CHAR(3) NOT NULL,
+  `Activate` BOOLEAN NOT NULL,
   `TouristsID` INT NOT NULL,
   PRIMARY KEY (`ArrangeId`),
   INDEX `TouristsID_idx` (`TouristsID` ASC) ,
-  CONSTRAINT `Arrange__TouristsID`
+  CONSTRAINT `Arrange_TouristsID`
     FOREIGN KEY (`TouristsID`)
     REFERENCES `17083686d`.`Tourists` (`TouristsID`)
     ON DELETE RESTRICT
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `17083686d`.`Arrange` (
 DROP TABLE IF EXISTS `17083686d`.`Restaurant` ;
 
 CREATE TABLE IF NOT EXISTS `17083686d`.`Restaurant` (
-  `RID` INT NOT NULL,
+  `RID` INT NOT NULL AUTO_INCREMENT,
   `RName` VARCHAR(50) NOT NULL,
   `Area` VARCHAR(50) NOT NULL,
   `AveragePrice` FLOAT NOT NULL,
@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `17083686d`.`Restaurant` (
 DROP TABLE IF EXISTS `17083686d`.`FoodType` ;
 
 CREATE TABLE IF NOT EXISTS `17083686d`.`FoodType` (
-  `FID` INT NOT NULL,
+  `FID` INT NOT NULL AUTO_INCREMENT,
   `FoodType` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`FID`));
 
@@ -133,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `17083686d`.`FoodType` (
 DROP TABLE IF EXISTS `17083686d`.`Restaurant_Foodtype` ;
 
 CREATE TABLE IF NOT EXISTS `17083686d`.`Restaurant_Foodtype` (
-  `RID` INT NOT NULL,
+  `RID` INT NOT NULL AUTO_INCREMENT,
   `FID` INT NOT NULL,
   PRIMARY KEY (`RID`, `FID`),
   INDEX `FID_idx` (`FID` ASC) ,
@@ -155,23 +155,23 @@ CREATE TABLE IF NOT EXISTS `17083686d`.`Restaurant_Foodtype` (
 DROP TABLE IF EXISTS `17083686d`.`RecommandRes` ;
 
 CREATE TABLE IF NOT EXISTS `17083686d`.`RecommandRes` (
-  `RecRID` INT NOT NULL,
+  `RecRID` INT NOT NULL AUTO_INCREMENT,
   `Date` DATE NOT NULL,
   `Time` ENUM('MORN', 'EVEN') NOT NULL,
-  `ArrangeId` INT(8) NOT NULL,
-  `Restaurant_Foodtype_RID` INT NOT NULL,
-  `Restaurant_Foodtype_FID` INT NOT NULL,
+  `ArrangeId` INT NULL,
+  `RID` INT NOT NULL,
   PRIMARY KEY (`RecRID`),
   INDEX `ArrangeId_idx` (`ArrangeId` ASC) ,
-  INDEX `fk_RecommandRes_Restaurant_Foodtype1_idx` (`Restaurant_Foodtype_RID` ASC, `Restaurant_Foodtype_FID` ASC) ,
-  CONSTRAINT `RecommandRes__ArrangeId`
+  INDEX `RId_idx` (`RId` ASC) ,
+  CONSTRAINT `fk_RecommandRes_ArrangeId`
     FOREIGN KEY (`ArrangeId`)
     REFERENCES `17083686d`.`Arrange` (`ArrangeId`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
-  CONSTRAINT `fk_RecommandRes_Restaurant_Foodtype1`
-    FOREIGN KEY (`Restaurant_Foodtype_RID` , `Restaurant_Foodtype_FID`)
-    REFERENCES `17083686d`.`Restaurant_Foodtype` (`RID` , `FID`)
+  
+  CONSTRAINT `fk_RecommandRes_RId`
+    FOREIGN KEY (`RID`)
+    REFERENCES `17083686d`.`Restaurant` (`RID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
@@ -182,7 +182,7 @@ CREATE TABLE IF NOT EXISTS `17083686d`.`RecommandRes` (
 DROP TABLE IF EXISTS `17083686d`.`Hotel` ;
 
 CREATE TABLE IF NOT EXISTS `17083686d`.`Hotel` (
-  `HID` INT NOT NULL,
+  `HID` INT NOT NULL AUTO_INCREMENT,
   `HName` VARCHAR(50) NOT NULL,
   `Area` VARCHAR(50) NOT NULL,
   `Level` ENUM('1', '2', '3', '4', '5') NOT NULL,
@@ -196,20 +196,21 @@ CREATE TABLE IF NOT EXISTS `17083686d`.`Hotel` (
 DROP TABLE IF EXISTS `17083686d`.`RecommandHotel` ;
 
 CREATE TABLE IF NOT EXISTS `17083686d`.`RecommandHotel` (
-  `RecHID` INT NOT NULL,
+  `RecHID` INT NOT NULL AUTO_INCREMENT,
   `Date` DATE NOT NULL,
-  `ArrangeId` INT NOT NULL,
-  `Hotel_HID` INT NOT NULL,
+  `ArrangeId` INT NULL,
+  `HID` INT NOT NULL,
   PRIMARY KEY (`RecHID`),
   INDEX `ArrangeId_idx` (`ArrangeId` ASC) ,
-  INDEX `fk_RecommandHotel_Hotel1_idx` (`Hotel_HID` ASC) ,
-  CONSTRAINT `RecommandHotel__ArrangeId`
+  INDEX `HId_idx` (`HId` ASC) ,
+  CONSTRAINT `fk_RecommandHotel_ArrangeId`
     FOREIGN KEY (`ArrangeId`)
     REFERENCES `17083686d`.`Arrange` (`ArrangeId`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
-  CONSTRAINT `fk_RecommandHotel_Hotel1`
-    FOREIGN KEY (`Hotel_HID`)
+  
+  CONSTRAINT `fk_RecommandHotel_HId`
+    FOREIGN KEY (`HID`)
     REFERENCES `17083686d`.`Hotel` (`HID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
@@ -221,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `17083686d`.`RecommandHotel` (
 DROP TABLE IF EXISTS `17083686d`.`RoomInfor` ;
 
 CREATE TABLE IF NOT EXISTS `17083686d`.`RoomInfor` (
-  `RMID` INT NOT NULL,
+  `RMID` INT NOT NULL AUTO_INCREMENT,
   `RoomType` VARCHAR(50) NOT NULL,
   `Price` FLOAT NOT NULL,
   `Hotel_HID` INT NOT NULL,
@@ -240,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `17083686d`.`RoomInfor` (
 DROP TABLE IF EXISTS `17083686d`.`Attraction` ;
 
 CREATE TABLE IF NOT EXISTS `17083686d`.`Attraction` (
-  `AID` INT NOT NULL,
+  `AID` INT NOT NULL AUTO_INCREMENT,
   `AName` VARCHAR(50) NOT NULL,
   `Price` FLOAT NOT NULL,
   `AImage` VARCHAR(500) NOT NULL,
@@ -254,7 +255,7 @@ CREATE TABLE IF NOT EXISTS `17083686d`.`Attraction` (
 DROP TABLE IF EXISTS `17083686d`.`AttractionsType` ;
 
 CREATE TABLE IF NOT EXISTS `17083686d`.`AttractionsType` (
-  `ATID` INT NOT NULL,
+  `ATID` INT NOT NULL AUTO_INCREMENT,
   `Type` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`ATID`));
 
@@ -265,7 +266,7 @@ CREATE TABLE IF NOT EXISTS `17083686d`.`AttractionsType` (
 DROP TABLE IF EXISTS `17083686d`.`Attractions_Type` ;
 
 CREATE TABLE IF NOT EXISTS `17083686d`.`Attractions_Type` (
-  `AID` INT NOT NULL,
+  `AID` INT NOT NULL AUTO_INCREMENT,
   `ATID` INT NOT NULL,
   PRIMARY KEY (`AID`),
   INDEX `ATID_idx` (`ATID` ASC) ,
@@ -287,22 +288,23 @@ CREATE TABLE IF NOT EXISTS `17083686d`.`Attractions_Type` (
 DROP TABLE IF EXISTS `17083686d`.`RecommandAttraction` ;
 
 CREATE TABLE IF NOT EXISTS `17083686d`.`RecommandAttraction` (
-  `RecAID` INT NOT NULL,
+  `RecAID` INT NOT NULL AUTO_INCREMENT,
   `Date` DATE NOT NULL,
   `Time` ENUM('MORN', 'EVEN') NOT NULL,
   `ArrangeId` INT NULL,
-  `Attractions_Type_AID` INT NOT NULL,
+  `AID` INT NOT NULL,
   PRIMARY KEY (`RecAID`),
   INDEX `ArrangeId_idx` (`ArrangeId` ASC) ,
-  INDEX `fk_RecommandAttraction_Attractions_Type1_idx` (`Attractions_Type_AID` ASC) ,
-  CONSTRAINT `RecommandAttraction__ArrangeId`
+  INDEX `AId_idx` (`AId` ASC) ,
+  CONSTRAINT `fk_RecommandAttraction_ArrangeId`
     FOREIGN KEY (`ArrangeId`)
     REFERENCES `17083686d`.`Arrange` (`ArrangeId`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
-  CONSTRAINT `fk_RecommandAttraction_Attractions_Type1`
-    FOREIGN KEY (`Attractions_Type_AID`)
-    REFERENCES `17083686d`.`Attractions_Type` (`AID`)
+  
+  CONSTRAINT `fk_RecommandAttraction_AId`
+    FOREIGN KEY (`AID`)
+    REFERENCES `17083686d`.`Attraction` (`AID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
@@ -354,24 +356,24 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `17083686d`;
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000001, 'Disney Restaurant', 'Disney Restaurant', 500.50, 'restaurant/disney_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000002, 'Chef Mickey', 'Disneyland', 300.54, 'restaurant/disney_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000003, 'Teakha', ' Victoria Peak', 100.00, 'restaurant/victoria_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000004, 'AGanShrimp ', ' Victoria Peak', 200.00, 'restaurant/victoria_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000005, 'Kum Kee Restaurant', ' Hung Hom', 50.00, 'restaurant/hunghom_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000006, 'Steam Fresh', 'Hung Hom', 150.34, 'restaurant/hunghom_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000007, 'Ajisen Ramen', ' Homantin', 100.00, 'restaurant/homantin_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000008, 'Tuxedos Resturant', 'Ocean Park', 150.55, 'restaurant/oceanpark_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000009, 'Neptunes Restaurant', 'Ocean Park', 300.77, 'restaurant/oceanpark_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000010, 'Hot Dog Link', 'Homantin', 50.99, 'restaurant/homantin_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000011, 'The Spaghetti House', ' Mong Kok', 150.66, 'restaurant/mongkok_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000012, 'Yadllie Plate', ' Mong Kok', 150.23, 'restaurant/mongkok_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000013, 'Lazy Pot', 'Yau Ma Tei', 150.78, 'restaurant/yaumatei_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000014, 'Haidilao Hot Pot', 'Yau Ma Tei', 100.56, 'restaurant/yaumatei_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000015, 'Burgeroom', 'Causeway Bay', 100.00, 'restaurant/causewaybay_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000016, 'Shika Teppan-Yaki', 'Causeway Bay', 500.88, 'restaurant/causewaybay_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000017, 'Shanghai Min 1987', 'Tsim Sha Tsui', 300.00, 'restaurant/tsimshatsui_restaurant.jpg');
-INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000018, 'LAB EAT Restaurant', 'Tsim Sha Tsui', 300.55, 'restaurant/tsimshatsui_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000001, 'Disney Restaurant', 'Disneyland', 500.50, 'restaurant/disney_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000002, 'Chef Mickey', 'Disneyland', 300.54, 'restaurant/chefmickey_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000003, 'Teakha', ' Victoria Peak', 100.00, 'restaurant/teakha_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000004, 'AGanShrimp ', ' Victoria Peak', 200.00, 'restaurant/aganshrimp_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000005, 'Kum Kee Restaurant', ' Hung Hom', 50.00, 'restaurant/kumkee_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000006, 'Steam Fresh', 'Hung Hom', 150.34, 'restaurant/steamfresh_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000007, 'Ajisen Ramen', ' Homantin', 100.00, 'restaurant/ajisenramen_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000008, 'Tuxedos Resturant', 'Ocean Park', 150.55, 'restaurant/tuxedos_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000009, 'Neptunes Restaurant', 'Ocean Park', 300.77, 'restaurant/neptunes_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000010, 'Hot Dog Link', 'Homantin', 50.99, 'restaurant/hotdoglink_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000011, 'The Spaghetti House', ' Mong Kok', 150.66, 'restaurant/spaghettihouse_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000012, 'Yadllie Plate', ' Mong Kok', 150.23, 'restaurant/yadlliepllate_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000013, 'Lazy Pot', 'Yau Ma Tei', 150.78, 'restaurant/lazypot_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000014, 'Haidilao Hot Pot', 'Yau Ma Tei', 100.56, 'restaurant/haidilaohotpot_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000015, 'Burgeroom', 'Causeway Bay', 100.00, 'restaurant/burgeroomy_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000016, 'Shika Teppan-Yaki', 'Causeway Bay', 500.88, 'restaurant/shikateppantaki_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000017, 'Shanghai Min 1987', 'Tsim Sha Tsui', 300.00, 'restaurant/shanghaimin_restaurant.jpg');
+INSERT INTO `17083686d`.`Restaurant` (`RID`, `RName`, `Area`, `AveragePrice`, `RImage`) VALUES (00000018, 'LAB EAT Restaurant', 'Tsim Sha Tsui', 300.55, 'restaurant/labeat_restaurant.jpg');
 
 COMMIT;
 
@@ -429,17 +431,17 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `17083686d`;
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000001, 'Tai Hing Hotel', 'Mong Kok', '2', 'hotel\\mongkok_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000002, 'Mirador Hotel', 'Tsim Sha Tsui', '2', 'hotel\\tsimshatsui_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000003, 'Palazzo Holiday  Hotel', 'Causeway Bay', '2', 'hotel\\causewaybay_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000004, 'Regal Oriental Hotel', 'Hung Hom', '3', 'hotel\\hunghom_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000005, 'Harbour Plaza Metropolis', 'Hung Hom', '4', 'hotel\\hunghom_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000006, 'Bridal Tea House  Hotel', ' Homantin', '3', 'hotel\\homantin_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000007, 'Disney Explorers Lodge', 'Disneyland', '5', 'hotel\\disneyland_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000008, 'Disneys Hollywood Hotel', 'Disneyland', '3', 'hotel\\disneyland_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000009, 'Iclub Sheung Wan Hotel', 'Victoria Peak', '3', 'hotel\\victoriapeak_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000010, 'Rosedale Hotel', 'Causeway Bay', '3', 'hotel\\causewaybay_hotel.jpg');
-INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000011, 'L-hotel Island South', ' Ocean park', '4', 'hotel\\oceanpark_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000001, 'Tai Hing Hotel', 'Mong Kok', '2', 'hotel/taihing_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000002, 'Mirador Hotel', 'Tsim Sha Tsui', '2', 'hotel/mirador_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000003, 'Palazzo Holiday  Hotel', 'Causeway Bay', '2', 'hotel/palazzoholiday_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000004, 'Regal Oriental Hotel', 'Hung Hom', '3', 'hotel/regaloriental_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000005, 'Harbour Plaza Metropolis', 'Hung Hom', '4', 'hotel/harbourplazametropolis_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000006, 'Bridal Tea House  Hotel', ' Homantin', '3', 'hotel/bridalteahouse_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000007, 'Disney Explorers Lodge', 'Disneyland', '5', 'hotel/disneyland_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000008, 'Disneys Hollywood Hotel', 'Disneyland', '3', 'hotel/disneylandhollywood_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000009, 'Iclub Sheung Wan Hotel', 'Victoria Peak', '3', 'hotel/iclubsheungwan_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000010, 'Rosedale Hotel', 'Causeway Bay', '3', 'hotel/rosedale_hotel.jpg');
+INSERT INTO `17083686d`.`Hotel` (`HID`, `HName`, `Area`, `Level`, `HImage`) VALUES (00000011, 'L-hotel Island South', ' Ocean park', '4', 'hotel/lhotelislandsouth_hotel.jpg');
 
 COMMIT;
 
@@ -471,16 +473,16 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `17083686d`;
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000001, 'Disnyland', 500.00, 'attraction\\disnyland_attraction.jpg', 'Disnyland');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000002, 'Ocean Park', 400.00, 'attraction\\oceanpark_attraction.jpg', 'Ocean Park');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000003, 'Sky Wheel', 23.23, 'attraction\\causewaybay_attraction.jpg', ' Causeway Bay');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000004, 'Victoria Peak', 77.67, 'attraction\\victoriapeak_attraction.jpg', 'Victoria Peak');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000005, 'Wax Work Museum', 300.89, 'attraction\\victoriapeak_attraction.jpg', 'Victoria Peak');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000006, 'The Star Ferry', 10.99, 'attraction\\tsimshatsui_attraction.jpg', 'Tsim Sha Tsui');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000007, 'Langham Place', 23.11, 'attraction\\mongkok_attraction.jpg', 'Mong Kok');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000008, 'Hong Kong Polyu', 13.22, 'attraction\\hunghom_attraction.jpg', 'Hung Hom');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000009, 'Victoria Harbour', 14.55, 'attraction\\homantin_attraction.jpg', 'Homantin');
-INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000010, 'Homantin', 45.66, 'attraction\\tsimshatsui_attraction.jpg', 'Tsim Sha Tsui');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000001, 'Disnyland', 500.00, 'attraction/disnyland_attraction.jpg', 'Disnyland');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000002, 'Ocean Park', 400.00, 'attraction/oceanpark_attraction.jpg', 'Ocean Park');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000003, 'Sky Wheel', 23.23, 'attraction/skywheel_attraction.jpg', ' Causeway Bay');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000004, 'Victoria Peak', 77.67, 'attraction/victoriapeak_attraction.jpg', 'Victoria Peak');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000005, 'Wax Work Museum', 300.89, 'attraction/waxworkmuseum_attraction.jpg', 'Victoria Peak');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000006, 'The Star Ferry', 10.99, 'attraction/thestarferry_attraction.jpg', 'Tsim Sha Tsui');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000007, 'Langham Place', 23.11, 'attraction/langhamplace_attraction.jpg', 'Mong Kok');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000008, 'Hong Kong Polyu', 13.22, 'attraction/hongkongpolyu_attraction.jpg', 'Hung Hom');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000009, 'Victoria Harbour', 14.55, 'attraction/victoriaharbour_attraction.jpg', 'Homantin');
+INSERT INTO `17083686d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000010, 'Harbor City', 45.66, 'attraction/harborcity_attraction.jpg', 'Tsim Sha Tsui');
 
 COMMIT;
 
@@ -515,3 +517,62 @@ INSERT INTO `17083686d`.`Attractions_Type` (`AID`, `ATID`) VALUES (00000010, 3);
 
 COMMIT;
 
+
+
+-- -----------------------------------------------------
+-- Data for table `17083686d`.`Arrange`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `17083686d`;
+INSERT INTO `17083686d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('1', '2018-11-24', '2018-11-27', '0', '2');
+
+COMMIT;
+
+
+
+-- -----------------------------------------------------
+-- Data for table `17083686d`.`RecommandAttraction`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `17083686d`;
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('1', '2018-11-24', 'MORN', '1', '1');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('2', '2018-11-24', 'EVEN', '1', '2');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('3', '2018-11-24', 'MORN', '1', '3');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('4', '2018-11-25', 'MORN', '1', '4');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('5', '2018-11-25', 'EVEN', '1', '5');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('6', '2018-11-26', 'MORN', '1', '6');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('7', '2018-11-26', 'EVEN', '1', '7');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('8', '2018-11-27', 'MORN', '1', '8');
+INSERT INTO `17083686d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('9', '2018-11-27', 'EVEN', '1', '9');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `17083686d`.`RecommandRes`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `17083686d`;
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('1', '2018-11-24', 'MORN', '1', '1');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('2', '2018-11-24', 'EVEN', '1', '2');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('3', '2018-11-24', 'MORN', '1', '3');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('4', '2018-11-25', 'MORN', '1', '4');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('5', '2018-11-25', 'EVEN', '1', '5');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('6', '2018-11-26', 'MORN', '1', '6');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('7', '2018-11-26', 'EVEN', '1', '7');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('8', '2018-11-27', 'MORN', '1', '8');
+INSERT INTO `17083686d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('9', '2018-11-27', 'EVEN', '1', '9');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `17083686d`.`RecommandHotel`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `17083686d`;
+INSERT INTO `17083686d`.`RecommandHotel` (`RecHID`, `Date`, `ArrangeId`, `HID`) VALUES ('1', '2018-11-24', '1', '1');
+INSERT INTO `17083686d`.`RecommandHotel` (`RecHID`, `Date`, `ArrangeId`, `HID`) VALUES ('2', '2018-11-25', '1', '1');
+INSERT INTO `17083686d`.`RecommandHotel` (`RecHID`, `Date`, `ArrangeId`, `HID`) VALUES ('3', '2018-11-26', '1', '2');
+INSERT INTO `17083686d`.`RecommandHotel` (`RecHID`, `Date`, `ArrangeId`, `HID`) VALUES ('4', '2018-11-27', '1', '2');
+COMMIT; 
