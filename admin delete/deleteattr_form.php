@@ -48,9 +48,9 @@ function checkPrice() {
 
 <body>
 <div class="wrapper">
-//<?php
-//    require('topnav.php');
-//    ?>
+<?php
+    require('topnav.php');
+    ?>
 </div>
 
 <div class="form_container">

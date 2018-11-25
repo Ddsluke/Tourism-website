@@ -9,12 +9,9 @@
     
     $RID=$_POST["RID"];
     
-    mysqli_query($con,"DELETE FROM Hotel WHERE RID='$RID'");
+    mysqli_query($con,"DELETE FROM Restaurant WHERE RID='$RID'");
     
-    if (mysqli_connect_errno()){
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();}
-    else{
-        echo "New record has been created successfuly";}
+    echo "Record deleted successfully";
     
     mysqli_close($con);
     ?>

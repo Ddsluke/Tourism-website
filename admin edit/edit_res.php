@@ -11,13 +11,16 @@
     $RName=$_POST["RName"];
     $Area=$_POST["Area"];
     $AveragePrice=$_POST["AveragePrice"];
+    $FID=$_POST["FID"];
     
-    mysqli_query($con,"insert into Restaurant (RName,Area,AveragePrice) values ('$RName','$Area','$AveragePrice')");
+    mysqli_autocommit($con,FALSE);
     
-    if (mysqli_connect_errno()){
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();}
-    else{
-        echo "New record has been created successfuly";}
+    mysqli_query($con,"UPDATE Restaurant SET RName='$RName' Area='$Area' AveragePrice='$AveragePrice' where RID='$RID'");
+    mysqli_query($con,"UPDATE Restaurant_Foodtype SET FID='$FID' where RID='$RID'");
+    
+    echo "Record edited successfully";
+    
+    mysqli_commit($con);
     
     mysqli_close($con);
     ?>

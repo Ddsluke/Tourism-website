@@ -10,13 +10,17 @@
     $HName=$_POST["HName"];
     $Area=$_POST["Area"];
     $Level=$_POST["Level"];
+    $RoomType=$_POST["RoomType"];
+    
+    mysqli_autocommit($con,FALSE);
     
     mysqli_query($con,"UPDATE Hotel SET HName='$HName' Area='$Area' Level='$Level' where HID='$HID'");
-                 
-    if (mysqli_connect_errno()){
-         echo "Failed to connect to MySQL: " . mysqli_connect_error();}
-    else{
-         echo "New record has been created successfuly";}
-                 
+    mysqli_query($con,"UPDATE RoomInfor SET RoomType='$RoomType' where HID='$HID'");
+    
+
+    echo "Record edited successfully";
+    
+    mysqli_commit($con);
+    
     mysqli_close($con);
     ?>
