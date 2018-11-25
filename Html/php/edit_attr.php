@@ -11,7 +11,7 @@
     $Area=$_POST["Area"];
     $AveragePrice=$_POST["AveragePrice"];
     
-    mysqli_query($con,"UPDATE Attraction SET AName='$AName' Area='$Area' AveragePrice='$AveragePrice' where AID='$AID');
+    mysqli_query($con,"UPDATE Attraction SET AName='$AName' Area='$Area' AveragePrice='$AveragePrice' where AID='$AID'");
                  
                  if (mysqli_connect_errno()){
                  echo "Failed to connect to MySQL: " . mysqli_connect_error();}

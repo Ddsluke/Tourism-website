@@ -64,7 +64,7 @@ Author: Code Apes.
 				<td><h2>Name</h2></td>
 				<td><h2>Gender</h2></td>
 				<td><h2>Age</h2></td>
-				<td><div class="button"><a href="admin_addAttr.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
+				<td></td><td></td>
 			  </tr>
 			  <tr>
 				<td><h3>#UserID</h3></td>
@@ -102,7 +102,7 @@ Author: Code Apes.
 				<td><h2>Name</h2></td>
 				<td><h2>Area</h2></td>
 				<td><h2>Level</h2></td>
-				<td><div class="button"><a href="admin_addAttr.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
+				<td><div class="button"><a href="addattr_form.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
 			  </tr>
 			  <tr>
 				<td><h3>#Name1</h3></td>
@@ -133,7 +133,7 @@ Author: Code Apes.
 				<td><h2>Name</h2></td>
 				<td><h2>Area</h2></td>
 				<td><h2>Price</h2></td>
-				<td><div class="button"><a href="admin_addAttr.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
+				<td><div class="button"><a href="addres_form.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
 			  </tr>
 			  <tr>
 				<td><h3>#Name1</h3></td>
@@ -165,7 +165,7 @@ Author: Code Apes.
 				<td><h2>Area</h2></td>
 				<td><h2>AvgPrice</h2></td>
 				<td><h2>Type</h2></td>
-				<td><div class="button"><a href="admin_addAttr.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
+				<td><div class="button"><a href="addhotel_form.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
 			  </tr>
 			  <tr>
 				<td><h3>#Name1</h3></td>

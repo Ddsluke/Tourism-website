@@ -6,9 +6,9 @@
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
     
-    $AName=$_POST["AName"];
-    $Area=$_POST["Area"];
-    $AveragePrice=$_POST["AveragePrice"];
+    $AName=$_POST['AName'];
+    $Area=$_POST['Area'];
+    $AveragePrice=$_POST['AveragePrice'];
     
     mysqli_query($con," insert into Attraction (AName,Area,AveragePrice) values ('$AName','$Area','$AveragePrice')");
     

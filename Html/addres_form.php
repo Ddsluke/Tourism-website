@@ -4,14 +4,14 @@ Author: Code Apes.
 -->
 <html>
 <head>
-<title>Add Item</title>
+<title>add Item</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link type="text/css" rel="stylesheet" href="css/style.css">
 <link type="text/css" rel="stylesheet" href="css/formStyle.css">
 <script>
 <!-- Space for javascript uses-->
-function checkLevel(){
+function checkType(){
     if (document.getElementById("type").value == "default"){
         document.getElementById("type_error").style.display='block';
         document.getElementById("confirm").disabled = true;
@@ -54,26 +54,14 @@ function checkPrice() {
 </div>
 
 <div class="form_container">
-<h1>Add hotel information</h1>
-<form action="add_hotel.php" method="post">
+<h1>Add restaurant information</h1>
+<form action="php/add_res.php" method="post">
 <ul class="form_input">
 <li>
 <label for="">Name</label>
-<input type="text" id="name" name="HName" placeholder="Hotel's name.." title="No longer than 50 characters" maxlength="50">
+<input type="text" id="name" name="RName" placeholder="restaurant's name.." title="No longer than 50 characters" maxlength="50">
 </li>
 
-<li>
-<label for="">Level</label>
-<select id="level" name="Level" onclick="checkLevel()">
-<option value="default">--Please choose--</option>
-<option value="1">Level 1</option>
-<option value="2">Level 2</option>
-<option value="3">Level 3</option>
-<option value="4">Level 4</option>
-<option value="5">Level 5</option>
-</select>
-<div id="level_error" class="error">Please choose a level.</div>
-</li>
 
 <li>
 <label for="">Region</label>
@@ -88,6 +76,14 @@ function checkPrice() {
 <div id="area_error" class="error">Please choose a region.</div>
 </li>
 
+<li>
+<!--
+<label for="" onclick="checkPrice()">Price</label>
+<input type="text" id="price" name="AveragePrice" placeholder="restaurant's price (e.g. 100.00).." title="No longer than 50 characters" maxlength="50">
+-->
+<label>Price HK$</label>
+<input id="price" type="number" name="AveragePrice" onlick="checkPrice()" placeholder="0" required name="price" min="0" value="0" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$">
+</li>
 
 <div id="submit">
 <input type="submit" value="Submit"/>
