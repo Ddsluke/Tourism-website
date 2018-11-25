@@ -103,7 +103,7 @@ $sql = "select AName,Area,AImage from Attraction join AttractionsType join Attra
   {
           ?>
           <div class="item">
-					<img src=<?php "img/".$row['AImage']?> alt="#">
+					<img src=<?php echo "img/".$row['AImage']?> alt="#">
 					<div class="right-block">
 						<h2><?php echo $row['AName'] ?></h2>
                                                 <h3>Region: <?php echo $row['Area'] ?></h3>
@@ -121,7 +121,7 @@ $conn->close();
   
 <!-- footer -->
 <?php
-require('footer.php');
+#require('footer.php');
 ?>
 <!-- end footer -->
 

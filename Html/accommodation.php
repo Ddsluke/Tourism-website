@@ -105,7 +105,7 @@ $sql = "select HName,Area,HImage,Level from Hotel WHERE Level=$Level;";
   {
    ?>
           <div class="item">
-					<img src=<?php "img/".$row['HImage']?> alt="#">
+					<img src=<?php echo "img/".$row['HImage']?> alt="#">
 					<div class="right-block">
 						<h2><?php echo $row['HName'] ?></h2>
                                                 <h3>Region: <?php echo $row['Area'] ?></h3>
@@ -123,7 +123,7 @@ $conn->close();
   
 <!-- footer -->
 <?php
-require('footer.php');
+#require('footer.php');
 ?>
 <!-- end footer -->
 

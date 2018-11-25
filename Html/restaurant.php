@@ -24,29 +24,29 @@
 	<!-- sidebar navigation menu -->
 	<div class="sidebar">
 		<h3>Restaurant</h3>
-                <a href="food.php">All</a>
+                <a href="restaurant.php">All</a>
 		<a class="dropdown">By Type<i class="fa fa-caret-down"></i></a>
 			<div class="dropdown-container">
-				<a href="food.php?Type= 'Western-style '"> Western-style</a>
-				<a href="food.php?Type='Cantonese style'">Cantonese style</a>
-				<a href="food.php?Type='Korean style'">Korean style</a>
-				<a href="food.php?Type= 'Hong Kong style'">Hong Kong style</a>
-                                <a href="food.php?Type= 'Japanese style'">Japanese style</a>
-                                <a href="food.php?Type= 'German style'">German style</a>
-                                <a href="food.php?Type= 'Italian style'">Italian style</a>
-                                <a href="food.php?Type= 'Sichuan style'">Sichuan style</a>
-                                <a href="food.php?Type= 'American style'">American style</a>
-                                <a href="food.php?Type= 'Shanghai style'">Shanghai style</a>
+				<a href="restaurant.php?Type= 'Western-style '"> Western-style</a>
+				<a href="restaurant.php?Type='Cantonese style'">Cantonese style</a>
+				<a href="restaurant.php?Type='Korean style'">Korean style</a>
+				<a href="restaurant.php?Type= 'Hong Kong style'">Hong Kong style</a>
+                                <a href="restaurant.php?Type= 'Japanese style'">Japanese style</a>
+                                <a href="restaurant.php?Type= 'German style'">German style</a>
+                                <a href="restaurant.php?Type= 'Italian style'">Italian style</a>
+                                <a href="restaurant.php?Type= 'Sichuan style'">Sichuan style</a>
+                                <a href="restaurant.php?Type= 'American style'">American style</a>
+                                <a href="restaurant.php?Type= 'Shanghai style'">Shanghai style</a>
 			 </div>
 		<a class="dropdown">By Region<i class="fa fa-caret-down"></i></a>
 			<div class="dropdown-container">
-				<a href="food.php?Area='Hung Hom'">Hung Hom</a>
-				<a href="food.php?Area='Disneyland'">Disnyland</a>
-				<a href="food.php?Area='Homantin'">Homantin</a>
-                                <a href="food.php?Area='Mong Kok'">Mong Kok</a>
-                                <a href="food.php?Area='Ocean park'">Ocean Park</a>
-                                <a href="food.php?Area='Tsim Sha Tsui'">Tsim Sha Tsui</a>
-                                <a href="food.php?Area='Victoria Peak'">Victoria Peak</a>
+				<a href="restaurant.php?Area='Hung Hom'">Hung Hom</a>
+				<a href="restaurant.php?Area='Disneyland'">Disnyland</a>
+				<a href="restaurant.php?Area='Homantin'">Homantin</a>
+                                <a href="restaurant.php?Area='Mong Kok'">Mong Kok</a>
+                                <a href="restaurant.php?Area='Ocean park'">Ocean Park</a>
+                                <a href="restaurant.php?Area='Tsim Sha Tsui'">Tsim Sha Tsui</a>
+                                <a href="restaurant.php?Area='Victoria Peak'">Victoria Peak</a>
 			</div>
 	</div>
 	<!-- end sidebar -->
@@ -111,11 +111,11 @@ $sql = "select * from Restaurant join Restaurant_Foodtype join FoodType where Re
   {
    ?>
           <div class="item">
-					<img src=<?php "img/".$row['RImage']?> alt="#">
+					<img src=<?php echo "img/".$row['RImage']?> alt="#">
 					<div class="right-block">
 						<h2><?php echo $row['RName'] ?></h2>
                                                 <h3>Region: <?php echo $row['Area'] ?></h3>
-                                                <h3>FOODTYPE: <?php echo $row['FoodType'] ?></h3>
+                                                <h3>Food Type: <?php echo $row['FoodType'] ?></h3>
 						<div class="button"><a href="selectDate.html" class="btn btn-small">+ Add to Plan</a></div> 
 					</div>
 				</div>
@@ -130,7 +130,7 @@ $conn->close();
   
 <!-- footer -->
 <?php
-require('footer.php');
+#require('footer.php');
 ?>
 <!-- end footer -->
 
