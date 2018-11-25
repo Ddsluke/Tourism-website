@@ -45,16 +45,16 @@ Author: Code Apes.
 
 <div class="form_container">
   <h1>Advanced Search</h1>
-  <form action="/action_page.php" mothod="post">
+  <form action="advan.php" method="post">
 	<ul class="form_input">
 	
 		<li>
 		<label for="">Type</label>
 		<select id="type" name="type" onclick="checkType()">
 			<option value="default">--Please choose--</option>
-			<option value="male">Attractions</option>
-			<option value="female">Restaurants</option>
-			<option value="other">Accommodations</option>
+			<option value="male" >Attractions</option>
+			<option value="other">Restaurants</option>
+			<option value="female">Accommodations</option>
 		</select>
 		<div id="type_error" class="error">Please choose a type you want to search.</div>
 		</li>
@@ -66,17 +66,17 @@ Author: Code Apes.
 	
 		<li>
 		<label for="">Region</label>
-		<input type="checkbox" name="area" value="hk">Hong Kong Island<br>
-		<input type="checkbox" name="area" value="kl">Kowloon<br>
-		<input type="checkbox" name="area" value="nt">New Territorie
+		<input type="checkbox" name="area[]" value="Hung Hom">Hung Hom<br>
+		<input type="checkbox" name="area[]" value="Disnyland">Disnyland<br>
+		<input type="checkbox" name="area[]" value="Homantin">Homantin
 		</li>
 		
 		<li>
 		<label for="">Price Range</label>
-		<input type="checkbox" name="price" value="200">1~300 
-		<input type="checkbox" name="price" value="500">300~600 <br>
-		<input type="checkbox" name="price" value="1000">600~1000 
-		<input type="checkbox" name="price" value="more">>1000 
+		<input type="checkbox" name="price" value="300">0~300 
+		<input type="checkbox" name="price" value="600">300~600 <br>
+		<input type="checkbox" name="price" value="1000">600~900 
+		<input type="checkbox" name="price" value="901">>1000 
 		</li>
 
 	    <div id="submit">
@@ -86,6 +86,8 @@ Author: Code Apes.
 	</ul>
   </form>
 </div>
+        <?PHP
+        ?>
 
 </body>
 

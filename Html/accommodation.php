@@ -99,8 +99,10 @@ $sql = "select HName,Area,HImage,Level from Hotel WHERE Level=$Level;";
  }
  
    
-   elseif (mysqli_num_rows($result) > 0)
+   elseif ($num=mysqli_num_rows($result) > 0)
   {
+       $name=array($num);
+       $i=0;
       while($row = mysqli_fetch_assoc($result))
   {
    ?>
@@ -109,21 +111,41 @@ $sql = "select HName,Area,HImage,Level from Hotel WHERE Level=$Level;";
 					<div class="right-block">
 						<h2><?php echo $row['HName'] ?></h2>
                                                 <h3>Region: <?php echo $row['Area'] ?></h3>
-						<div class="button"><a href="#" class="btn btn-small">+ Add to Plan</a></div> 
 					</div>
 				</div>
+  <?php
+       $name[$i]=$row['HName'];
+       $i=$i+1;
+       ?>
      <?php               
                     
     }     
   } else
       echo "NO RESULT FOUND";
-      
+  ?>
+  <P>SELECT WHAT YOU LIKE REMEMBER TO CHOOSE THE DATE</P>
+
+  <form action="insertacc.php" method="post">
+      Date: <input type="date" name="date" />
+           <select id="type" name="accname" onclick="checkType()">
+               <?php 
+               for($i=0;$i<count($name);$i++)
+               {
+               echo"<option value='$name[$i]'>--$name[$i]--</option>";
+               }
+               ?>
+               </select>
+      <div id="submit">
+	<input type="submit" value="add"/>
+     
+			
+ <?php        
 $conn->close();
   ?>
   
 <!-- footer -->
 <?php
-#require('footer.php');
+//require('footer.php');
 ?>
 <!-- end footer -->
 

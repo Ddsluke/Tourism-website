@@ -12,15 +12,15 @@
 /* Two column in a row */
 .column {
     float: left;
-    width: 46%;
+    width: 40%;
     padding: 5px 15px 0px 10px;
 }
 
 /* images style inside the grid */
 .column img {
 	border-radius: 10px;
-	width:335px;
-	height:215px;
+	width:320px;
+	height:200px;
     opacity: 1; 
     cursor: pointer;
 }

@@ -48,9 +48,9 @@
   
   <?php
 $servername = "mysql.comp.polyu.edu.hk";
-$username = "16098537d";//need to change to xiajialu's
-$password = "iqdobdiy";
-$dbname="16098537d";
+$username = "17083686d";//need to change to xiajialu's
+$password = "fdtwjmfn";
+$dbname="17083686d";
  
 // CONNECT
 $conn = new mysqli($servername, $username, $password,$dbname);
@@ -97,8 +97,10 @@ $sql = "select AName,Area,AImage from Attraction join AttractionsType join Attra
  }
  
    
-   elseif (mysqli_num_rows($result) > 0)
+   elseif ($num=mysqli_num_rows($result) > 0)
   {
+       $name=array($num);
+       $i=0;
       while($row = mysqli_fetch_assoc($result))
   {
           ?>
@@ -107,21 +109,48 @@ $sql = "select AName,Area,AImage from Attraction join AttractionsType join Attra
 					<div class="right-block">
 						<h2><?php echo $row['AName'] ?></h2>
                                                 <h3>Region: <?php echo $row['Area'] ?></h3>
-						<div class="button"><a href="#" class="btn btn-small">+ Add to Plan</a></div> 
+					
 					</div>
 				</div>
-     <?php               
+     <?php
+       $name[$i]=$row['AName'];
+       $i=$i+1;
+       ?>
+     <?php        
+     
     }     
   } else
       echo "NO RESULT FOUND";
+    ?>  
+   <P>SELECT WHAT YOU LIKE REMEMBER TO CHOOSE THE DATE</P>
+
+  <form action="insertatr.php" method="post">
+      Date: <input type="date" name="date" />
+      <select id="type" name="time">
+          <option value="MORN">morning</option>
+          <option value="EVEN">afternoon</option>
+      </select>
       
+           <select id="type" name="atrname" onclick="checkType()">
+               <?php 
+               for($i=0;$i<count($name);$i++)
+               {
+               echo"<option value='$name[$i]'>--$name[$i]--</option>";
+               }
+               ?>
+               </select>
+      <div id="submit">
+	<input type="submit" value="add"/>
+     
+			
+ <?php        
 $conn->close();
   ?>
   
   
 <!-- footer -->
 <?php
-#require('footer.php');
+//require('footer.php');
 ?>
 <!-- end footer -->
 

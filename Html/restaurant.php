@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Attractions#</title>
+	<title>Restaurant</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link type="text/css" rel="stylesheet" href="css/style.css">
@@ -54,9 +54,9 @@
 
  <?php
 $servername = "mysql.comp.polyu.edu.hk";
-$username = "16098537d";//need to change to xiajialu's
-$password = "iqdobdiy";
-$dbname="16098537d";
+$username = "17083686d";//need to change to xiajialu's
+$password = "fdtwjmfn";
+$dbname="17083686d";
  
 // CONNECT
 $conn = new mysqli($servername, $username, $password,$dbname);
@@ -105,10 +105,12 @@ $sql = "select * from Restaurant join Restaurant_Foodtype join FoodType where Re
  }
  
    
-   elseif (mysqli_num_rows($result) > 0)
+   elseif ($num=mysqli_num_rows($result) > 0)
   {
       while($row = mysqli_fetch_assoc($result))
   {
+             $name=array($num);
+             $i=0;
    ?>
           <div class="item">
 					<img src=<?php echo "img/".$row['RImage']?> alt="#">
@@ -116,21 +118,42 @@ $sql = "select * from Restaurant join Restaurant_Foodtype join FoodType where Re
 						<h2><?php echo $row['RName'] ?></h2>
                                                 <h3>Region: <?php echo $row['Area'] ?></h3>
                                                 <h3>Food Type: <?php echo $row['FoodType'] ?></h3>
-						<div class="button"><a href="selectDate.html" class="btn btn-small">+ Add to Plan</a></div> 
 					</div>
 				</div>
-     <?php               
+     <?php
+       $name[$i]=$row['RName'];
+       $i=$i+1;
+       ?>
+     <?php                   
                     
     }     
   } else
       echo "NO RESULT FOUND";
+  ?>
+ <P>SELECT WHAT YOU LIKE REMEMBER TO CHOOSE THE DATE</P>
+
+  <form action="insertrec.php" method="post">
+      Date: <input type="date" name="date" />
+           <select id="type" name="recname" onclick="checkType()">
+               <?php 
+               for($i=0;$i<count($name);$i++)
+               {
+               echo"<option value='$name[$i]'>--$name[$i]--</option>";
+               }
+               ?>
+               </select>
+      <div id="submit">
+	<input type="submit" value="add"/>
+     
+			
+ <?php        
       
 $conn->close();
   ?>
   
 <!-- footer -->
 <?php
-#require('footer.php');
+require('footer.php');
 ?>
 <!-- end footer -->
 
