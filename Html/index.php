@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>#title_here</title>
+<title>Home</title>
 
 <!-- metadata -->
 <meta charset="utf-8">

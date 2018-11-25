@@ -43,7 +43,7 @@ Author: Code Apes.
 <div class="wrapper">
   <main class="container">
 	  <div class="sidebar">
-	    <h3 style="font-weight:bolder;">Information Management</h3><!-- To be added later-->
+	    <h3 style="font-weight:bolder;">Administration</h3><!-- To be added later-->
 	  </div>
     <div class="content">
 			<a href="php/logout.php"><div class="button btn btn-small">Log out</div></a>
