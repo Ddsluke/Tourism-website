@@ -20,7 +20,12 @@
     mysqli_close($con);
     ?>
 
-<script type='text/javascript'>
-     self.close();
-</script>
+<script type="text/javascript">
+ function closeWindow() {
+    setTimeout(function() {
+    window.close();
+    }, 2000);
+    }
 
+    window.onload = closeWindow();
+    </script>

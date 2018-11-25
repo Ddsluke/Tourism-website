@@ -6,11 +6,11 @@
     {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
-    $HID=$_POST["HID"];
-    $HName=$_POST["HName"];
-    $Area=$_POST["Area"];
-    $Level=$_POST["Level"];
-    $RoomType=$_POST["RoomType"];
+    $HID=$_POST['HID'];
+    $HName=$_POST['HName'];
+    $Area=$_POST['Area'];
+    $Level=$_POST['Level'];
+    $RoomType=$_POST['RoomType'];
     
     mysqli_autocommit($con,FALSE);
     
@@ -24,6 +24,12 @@
     
     mysqli_close($con);
     ?>
-<script type='text/javascript'>
-     self.close();
-</script>
+<script type="text/javascript">
+ function closeWindow() {
+    setTimeout(function() {
+    window.close();
+    }, 2000);
+    }
+
+    window.onload = closeWindow();
+    </script>

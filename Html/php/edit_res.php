@@ -7,11 +7,11 @@
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
     
-    $RID=$_POST["RID"];
-    $RName=$_POST["RName"];
-    $Area=$_POST["Area"];
-    $AveragePrice=$_POST["AveragePrice"];
-    $FID=$_POST["FID"];
+    $RID=$_POST['RID'];
+    $RName=$_POST['RName'];
+    $Area=$_POST['Area'];
+    $AveragePrice=$_POST['AveragePrice'];
+    $FID=$_POST['FID'];
     
     mysqli_autocommit($con,FALSE);
     
@@ -24,6 +24,12 @@
     
     mysqli_close($con);
     ?>
-<script type='text/javascript'>
-     self.close();
-</script>
+<script type="text/javascript">
+ function closeWindow() {
+    setTimeout(function() {
+    window.close();
+    }, 2000);
+    }
+
+    window.onload = closeWindow();
+    </script>

@@ -6,7 +6,7 @@
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
     
-    $AID=$_POST["AID"];
+    $AID=$_POST['AID'];
     
     mysqli_query($con,"DELETE FROM Hotel WHERE RID='$AID'");
     
@@ -14,6 +14,12 @@
     
     mysqli_close($con);
     ?>
-<script type='text/javascript'>
-     self.close();
-</script>
+<script type="text/javascript">
+ function closeWindow() {
+    setTimeout(function() {
+    window.close();
+    }, 2000);
+    }
+
+    window.onload = closeWindow();
+    </script>

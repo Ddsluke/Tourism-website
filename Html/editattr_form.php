@@ -88,7 +88,7 @@ function checkPrice() {
 <input type="text" id="price" name="AveragePrice" placeholder="restaurant's price (e.g. 100.00).." title="No longer than 50 characters" maxlength="50">
 -->
 <label>Price HK$</label>
-<input id="price" type="number" name="AveragePrice" onlick="checkPrice()" placeholder="0" required name="price" min="0" value="0" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$">
+<input id="price" type="number" name="Price" onclick="checkPrice()" placeholder="0" required name="price" min="0" value="0" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$">
 </li>
 
 <li>
