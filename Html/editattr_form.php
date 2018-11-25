@@ -91,6 +91,11 @@ function checkPrice() {
 <input id="price" type="number" name="AveragePrice" onlick="checkPrice()" placeholder="0" required name="price" min="0" value="0" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$">
 </li>
 
+<li>
+<label for="">attractiontypeID</label>
+<input type="text" id="atid" name="ATID" placeholder="AttractionType's ID.." title="No longer than 8 characters" maxlength="8">
+</li>
+
 <div id="submit">
 <input type="submit" value="Submit"/>
 </div>

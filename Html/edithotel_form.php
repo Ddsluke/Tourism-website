@@ -31,6 +31,17 @@ function checkArea(){
         document.getElementById("confirm").disabled = false;
     }
 }
+function checkroomtype(){
+    if (document.getElementById("roomtype").value == "default"){
+        document.getElementById("roomtype_error").style.display='block';
+        document.getElementById("confirm").disabled = true;
+    }
+    else{
+        document.getElementById("roomtype").style.display='none';
+        document.getElementById("confirm").disabled = false;
+    }
+}
+
 function checkPrice() {
     var n = document.getElementById("price").value;
     if (!isNaN(parseFloat(n)) && isFinite(n)) {
@@ -94,6 +105,16 @@ function checkPrice() {
 <div id="area_error" class="error">Please choose a region.</div>
 </li>
 
+<li>
+<label for="">RoomType</label>
+<select id="roomtype" name="RoomType" onclick="checkroomtype()">
+<option value="default">--Please choose--</option>
+<option value="Double room">Double room</option>
+<option value="Single room">Single room</option>
+<option value="other">other</option>
+</select>
+<div id="area_error" class="error">Please choose a roomtype.</div>
+</li>
 
 <div id="submit">
 <input type="submit" value="Submit"/>

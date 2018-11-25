@@ -13,7 +13,11 @@
     mysqli_query($con," insert into Attraction (AName,Area,Price) values ('$AName','$Area','$Price')");
     
     // Print auto-generated id
+	echo "New item inserted!";
     echo "New record has id: " . mysqli_insert_id($con);
     
     mysqli_close($con);
     ?>
+<script type='text/javascript'>
+     self.close();
+</script>

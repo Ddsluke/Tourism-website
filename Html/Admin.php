@@ -73,8 +73,8 @@ Author: Code Apes.
 				<td><h3>#Name</h3></td>
 				<td><h3>#Gender</h3></td>
 				<td><h3>#Age</h3></td>
-				<td id="Edit1"><div class="button btn btn-small" onclick="EditAge()">Edit</div></td>
-				<td id="Delete1"><div class="button btn btn-small" onclick="DeleteAge()">Delete</div></td>
+				<td id="Edit1"><div class="button btn btn-small">Edit</div></td>
+				<td id="Delete1"><div class="button btn btn-small">Delete</div></td>
 			  </tr>
 			  <tr>
 			    <td><h3>#UserID</h3></td>
@@ -83,8 +83,8 @@ Author: Code Apes.
 				<td><h3>#Name</h3></td>
 				<td><h3>#Gender</h3></td>
 				<td><h3>#Age</h3></td>
-				<td id="Edit1"><div class="button btn btn-small" onclick="EditAge()">Edit</div></td>
-				<td id="Delete1"><div class="button btn btn-small" onclick="DeleteAge()">Delete</div></td>
+				<td id="Edit1"><div class="button btn btn-small">Edit</div></td>
+				<td id="Delete1"><div class="button btn btn-small">Delete</div></td>
 			  </tr>
 			</table>
 			
@@ -99,27 +99,12 @@ Author: Code Apes.
 			</div><br>
 			<table>
 			  <tr>
-				<td><h2>Name</h2></td>
-				<td><h2>Area</h2></td>
-				<td><h2>Level</h2></td>
-				<td><div class="button"><a href="addattr_form.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
-			  </tr>
-			  <tr>
-				<td><h3>#Name1</h3></td>
-				<td><h3>#Area1</h3></td>
-				<td><h3>#Level1</h3></td>
-				<td id="Edit1"><div class="button btn btn-small" onclick="EditAge()">Edit</div></td>
-				<td id="Delete1"><div class="button btn btn-small" onclick="DeleteAge()">Delete</div></td>
-			  </tr>
-			  <tr>
-			    <td><h3>#Name2</h3></td>
-				<td><h3>#Area2</h3></td>
-				<td><h3>#Level2</h3></td>
-				<td id="Edit2"><div class="button btn btn-small" onclick="EditAge()">Edit</div></td>
-				<td id="Delete2"><div class="button btn btn-small" onclick="DeleteAge()">Delete</div></td>
+				<td><div class="button"><a href="php/addattr_form.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
+				<td><a href="php/editattr_form.php"><div class="button btn btn-small">Edit</div></a></td>
+				<td><a href="php/deleteattr_form.php"><div class="button btn btn-small">Delete</div></a></td>
 			  </tr>
 			</table>
-			<h1>Restaurant</h1><a href="restaurant.html"><h4>Click here for reference</h4></a><hr>
+			<h1>Restaurant</h1><a href="restaurant.php"><h4>Click here for reference</h4></a><hr>
 			<div class="searchbar">  
 				<div class="search-container">
 				<form action="/action_page#.php">
@@ -130,24 +115,9 @@ Author: Code Apes.
 			</div><br> 
 			<table>
 			  <tr>
-				<td><h2>Name</h2></td>
-				<td><h2>Area</h2></td>
-				<td><h2>Price</h2></td>
-				<td><div class="button"><a href="addres_form.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
-			  </tr>
-			  <tr>
-				<td><h3>#Name1</h3></td>
-				<td><h3>#Area1</h3></td>
-				<td><h3>#Price1</h3></td>
-				<td id="Edit1"><div class="button btn btn-small" onclick="EditAge()">Edit</div></td>
-				<td id="Delete1"><div class="button btn btn-small" onclick="DeleteAge()">Delete</div></td>
-			  </tr>
-			  <tr>
-			    <td><h3>#Name2</h3></td>
-				<td><h3>#Area2</h3></td>
-				<td><h3>#Price2</h3></td>
-				<td id="Edit2"><div class="button btn btn-small" onclick="EditAge()">Edit</div></td>
-				<td id="Delete2"><div class="button btn btn-small" onclick="DeleteAge()">Delete</div></td>
+				<td><div class="button"><a href="php/addres_form.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
+				<td><a href="php/editres_form.php"><div class="button btn btn-small">Edit</div></a></td>
+				<td><a href="php/deleteres_form.php"><div class="button btn btn-small">Delete</div></a></td>
 			  </tr>
 			</table>
 			<h1>Accommodation</h1><a href="accommodation.php"><h4>Click here for reference</h4></a><hr>
@@ -161,27 +131,9 @@ Author: Code Apes.
 			</div><br> 
 			<table>
 			  <tr>
-				<td><h2>Name</h2></td>
-				<td><h2>Area</h2></td>
-				<td><h2>AvgPrice</h2></td>
-				<td><h2>Type</h2></td>
-				<td><div class="button"><a href="addhotel_form.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
-			  </tr>
-			  <tr>
-				<td><h3>#Name1</h3></td>
-				<td><h3>#Area1</h3></td>
-				<td><h3>#AvgPrice1</h3></td>
-				<td><h3>#Type1</h3></td>
-				<td id="Edit1"><div class="button btn btn-small" onclick="EditAge()">Edit</div></td>
-				<td id="Delete1"><div class="button btn btn-small" onclick="DeleteAge()">Delete</div></td>
-			  </tr>
-			  <tr>
-			    <td><h3>#Name2</h3></td>
-				<td><h3>#Area2</h3></td>
-				<td><h3>#AvgPrice2</h3></td>
-				<td><h3>#Type1</h3></td>
-				<td id="Edit2"><div class="button btn btn-small" onclick="EditAge()">Edit</div></td>
-				<td id="Delete2"><div class="button btn btn-small" onclick="DeleteAge()">Delete</div></td>
+				<td><div class="button"><a href="php/addhotel_form.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
+				<td><a href="php/edithotel_form.php"><div class="button btn btn-small">Edit</div></a></td>
+				<td><a href="php/deletehotel_form.php"><div class="button btn btn-small">Delete</div></a></td>
 			  </tr>
 			</table>
 	</div>

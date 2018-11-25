@@ -55,7 +55,7 @@ function checkPrice() {
 
 <div class="form_container">
 <h1>Edit restaurant information</h1>
-<form action="edit_res.php" method="post">
+<form action="delete_res.php" method="post">
 <ul class="form_input">
 
 <li>
@@ -63,38 +63,6 @@ function checkPrice() {
 <input type="text" id="id" name="RID" placeholder="restaurant's ID.." title="No longer than 8 characters" maxlength="8">
 </li>
 
-<li>
-<label for="">Name</label>
-<input type="text" id="name" name="RName" placeholder="restaurant's name.." title="No longer than 50 characters" maxlength="50">
-</li>
-
-
-<li>
-<label for="">Region</label>
-<select id="area" name="Area" onclick="checkArea()">
-<option value="default">--Please choose--</option>
-<option value="Hung Hom">Hung Hom</option>
-<option value="Homantin">Homantin</option>
-<option value="Mong Kok">Mong Kok</option>
-<option value="Causeway Bay">Causeway Bay</option>
-<option value="other">other</option>
-</select>
-<div id="area_error" class="error">Please choose a region.</div>
-</li>
-
-<li>
-<!--
-<label for="" onclick="checkPrice()">Price</label>
-<input type="text" id="price" name="AveragePrice" placeholder="restaurant's price (e.g. 100.00).." title="No longer than 50 characters" maxlength="50">
--->
-<label>Price HK$</label>
-<input id="price" type="number" name="AveragePrice" onlick="checkPrice()" placeholder="0" required name="price" min="0" value="0" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$">
-</li>
-
-<li>
-<label for="">foodID</label>
-<input type="text" id="id" name="FID" placeholder="foodtype's ID.." title="No longer than 8 characters" maxlength="8">
-</li>
 
 <div id="submit">
 <input type="submit" value="Submit"/>

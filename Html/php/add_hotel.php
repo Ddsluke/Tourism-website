@@ -13,7 +13,11 @@
     mysqli_query($con," insert into Hotel (HName,Area,Level) values ('$HName','$Area','$Level')");
                  
                  // Print auto-generated id
+	echo "New item inserted!";
     echo "New record has id: " . mysqli_insert_id($con);
                  
     mysqli_close($con);
     ?>
+<script type='text/javascript'>
+     self.close();
+</script>
