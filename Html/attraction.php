@@ -43,6 +43,8 @@
 			</div>
 	</div>
 	<!-- end sidebar -->
+        <div class="content">
+			
   
   <?php
 $servername = "mysql.comp.polyu.edu.hk";
@@ -73,19 +75,21 @@ if(!isset($_GET['Area']))
     
   if($type == 'all'&& $area=='all')
           {$sql = "select AName,Area,AImage from Attraction join Attractions_Type where Attraction.AID=Attractions_Type.AID;";
-     
+     $title="All Attraction";
           } 
           else if($area=='all' && $type!='all'){
-         
+         $title="search by type";
 $sql = "select AName,Area,AImage from Attraction join AttractionsType join Attractions_Type where Type= $type and Attraction.AID=Attractions_Type.AID and Attractions_Type.ATID=AttractionsType.ATID;";
              
  }
  else if($area!='all' && $type=='all')
- {
+ {$title="search by area";
      $sql = "select AName,Area,Type,AImage from Attraction join AttractionsType join Attractions_Type where Area=$area and Attraction.AID=Attractions_Type.AID and Attractions_Type.ATID=AttractionsType.ATID;";
      
  }
- 
+ ?>
+  <h1><?php echo $title?></h1><hr><br>
+ <?php
  $result = mysqli_query($conn, $sql);
  if(!$result)
  {
@@ -97,23 +101,16 @@ $sql = "select AName,Area,AImage from Attraction join AttractionsType join Attra
   {
       while($row = mysqli_fetch_assoc($result))
   {
-   echo"
-       <table align='center'>
-       <tr>
-       <td>
-           <h2 align='center'>{$row['AName']}</h2>
-            <p align='center'>{$row['Area']}</p>
-        </td>
-      </tr>
-            </table>
-            <a  href='insert.php'><button align='center'> 
-        Add to plan
-        </button></a>";
-            
- 
-   $src=$row['AImage'];
-           echo '<img src=$src,alt="#">'; 
-                    
+          ?>
+          <div class="item">
+					<img src=<?php "img/".$row['AImage']?> alt="#">
+					<div class="right-block">
+						<h2><?php echo $row['AName'] ?></h2>
+                                                <h3>Region: <?php echo $row['Area'] ?></h3>
+						<div class="button"><a href="#" class="btn btn-small">+ Add to Plan</a></div> 
+					</div>
+				</div>
+     <?php               
     }     
   } else
       echo "NO RESULT FOUND";
