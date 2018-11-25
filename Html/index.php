@@ -49,17 +49,20 @@ require('topnav.php');
   <main>
 	<div class="row">
 		<div class="column">
-			<a href="attractions.html"><img src="img/attractions/baicheng.jpg" alt="Travel"></a>
-			<div class="text"><a href="travel-attractions.html">Attractions</a></div>
+			<a href="attractions.html"><img src="img/attraction/victoriapeak_attraction.jpg" alt="Attraction"></a>
+			<div class="text"><a href="attraction.php">Attractions</a></div>
 		</div>
+		
 		<div class="column">
-			<a href="accommodation.html"><img src="img/accommodations/hotel4.jpg" alt="Accommodation"></a>
-			<div class="text"><a href="accommodation.html">Accommodation</a></div> 
+			<a href="food.html"><img src="img/accommodation/iclubsheungwan_hotel.jpg" alt="Food"></a>
+			<div class="text"><a href="restaurant.php">Restaurant</a></div>
 		</div>
+		
 		<div class="column">
-			<a href="food.html"><img src="img/food/seafood.jpg" alt="Food"></a>
-			<div class="text"><a href="food.html">Food</a></div>
+			<a href="accommodation.html"><img src="img/restaurant/yadlliepllate_restaurant.jpg" alt="Accommodation"></a>
+			<div class="text"><a href="accommodation.php">Accommodation</a></div> 
 		</div>
+
 	</div>
 	
   </main>
