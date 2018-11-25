@@ -67,28 +67,30 @@ Author: Code Apes.
 				<td><h2>Name</h2></td>
 				<td><h2>Gender</h2></td>
 				<td><h2>Age</h2></td>
-				<td></td><td></td>
 			  </tr>
+			  <?php 
+			  require('php/connect.php');
+			  $sql="select * from Tourists";
+			  $result = mysqli_query($link, $sql);
+			  while($row = mysqli_fetch_assoc($result)){
+				  
+				  $UserID = $row['TouristsID'];
+				  $Username = $row['Username'];
+				  $Email = $row['Email'];
+				  $Name = $row['Name'];
+				  $Gender = $row['Gender'];
+				  $Age = $row['Age'];
+			  echo "
 			  <tr>
-				<td><h3>#UserID</h3></td>
-				<td><h3>#Username</h3></td>
-				<td><h3>#Email</h3></td>
-				<td><h3>#Name</h3></td>
-				<td><h3>#Gender</h3></td>
-				<td><h3>#Age</h3></td>
-				<td id="Edit1"><div class="button btn btn-small">Edit</div></td>
-				<td id="Delete1"><div class="button btn btn-small">Delete</div></td>
-			  </tr>
-			  <tr>
-			    <td><h3>#UserID</h3></td>
-				<td><h3>#Username</h3></td>
-				<td><h3>#Email</h3></td>
-				<td><h3>#Name</h3></td>
-				<td><h3>#Gender</h3></td>
-				<td><h3>#Age</h3></td>
-				<td id="Edit1"><div class="button btn btn-small">Edit</div></td>
-				<td id="Delete1"><div class="button btn btn-small">Delete</div></td>
-			  </tr>
+				<td><h3>$UserID</h3></td>
+				<td><h3>$Username</h3></td>
+				<td><h3>$Email</h3></td>
+				<td><h3>$Name</h3></td>
+				<td><h3>$Gender</h3></td>
+				<td><h3>$Age</h3></td>
+			  </tr>";
+			  }
+			  ?>
 			</table><br>
 			<h1>Data</h1><hr>
 			<h2>Attraction<a href="attraction.php">(Click here for reference)</a></h2>
