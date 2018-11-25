@@ -55,7 +55,7 @@ function checkPrice() {
 
 <div class="form_container">
 <h1>Edit restaurant information</h1>
-<form action="edit_res.php" method="post">
+<form action="php/edit_res.php" method="post">
 <ul class="form_input">
 
 <li>

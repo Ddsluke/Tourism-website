@@ -10,9 +10,10 @@
     
     mysqli_query($con,"DELETE FROM Hotel WHERE HID='$HID'");
 
-    echo "Record deleted successfully";
-    
-    
+    echo "Record deleted successfully";    
     
     mysqli_close($con);
     ?>
+<script type='text/javascript'>
+     self.close();
+</script>

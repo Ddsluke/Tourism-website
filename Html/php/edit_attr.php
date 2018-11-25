@@ -23,3 +23,6 @@
     
     mysqli_close($con);
     ?>
+<script type='text/javascript'>
+     self.close();
+</script>

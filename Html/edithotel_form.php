@@ -66,7 +66,7 @@ function checkPrice() {
 
 <div class="form_container">
 <h1>Edit hotel information</h1>
-<form action="edit_hotel.php" method="post">
+<form action="php/edit_hotel.php" method="post">
 <ul class="form_input">
 
 <li>

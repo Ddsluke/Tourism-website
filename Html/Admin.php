@@ -46,6 +46,9 @@ Author: Code Apes.
 	    <h3 style="font-weight:bolder;">Administration</h3><!-- To be added later-->
 	  </div>
     <div class="content">
+			<h1>Admin ID: <?php 
+			$ID = $_SESSION['login_admin'];
+			echo "$ID"?></h1>
 			<a href="php/logout.php"><div class="button btn btn-small">Log out</div></a>
 			<h1>User</h1><hr>
 			<div class="searchbar">  
@@ -55,7 +58,7 @@ Author: Code Apes.
 					<button type="submit">Search</button>
 				</form>
 				</div>
-			</div><br>
+			</div>
 			<table>
 			  <tr>
 				<td><h2>UserID</h2></td>
@@ -87,8 +90,8 @@ Author: Code Apes.
 				<td id="Delete1"><div class="button btn btn-small">Delete</div></td>
 			  </tr>
 			</table>
-			
-			<h1>Attraction</h1><a href="attraction.php"><h4>Click here for reference</h4></a><hr>
+			<h1>Data</h1><hr><br>
+			<h2>Attraction</h2><a href="attraction.php"><h4>Click here for reference</h4></a>
 			<div class="searchbar">  
 				<div class="search-container">
 				<form action="/action_page#.php">
@@ -96,31 +99,31 @@ Author: Code Apes.
 					<button type="submit">Search</button>
 				</form>
 				</div>
-			</div><br>
+			</div>
 			<table>
 			  <tr>
-				<td><div class="button"><a href="php/addattr_form.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
-				<td><a href="php/editattr_form.php"><div class="button btn btn-small">Edit</div></a></td>
-				<td><a href="php/deleteattr_form.php"><div class="button btn btn-small">Delete</div></a></td>
+				<td><div class="button"><a href="addattr_form.php" target="_blank" class="btn btn-small">Add</a></div></td><td></td>
+				<td><a href="editattr_form.php" target="_blank"><div class="button btn btn-small">Edit</div></a></td>
+				<td><a href="deleteattr_form.php" target="_blank"><div class="button btn btn-small">Delete</div></a></td>
 			  </tr>
 			</table>
-			<h1>Restaurant</h1><a href="restaurant.php"><h4>Click here for reference</h4></a><hr>
-			<div class="searchbar">  
+			<h2>Restaurant</h2><a href="restaurant.php"><h4>Click here for reference</h4></a>
+			<div class="searchbar">
 				<div class="search-container">
 				<form action="/action_page#.php">
 					<input type="text" placeholder="Keyword..." name="search">
 					<button type="submit">Search</button>
 				</form>
 				</div>
-			</div><br> 
+			</div>
 			<table>
 			  <tr>
-				<td><div class="button"><a href="php/addres_form.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
-				<td><a href="php/editres_form.php"><div class="button btn btn-small">Edit</div></a></td>
-				<td><a href="php/deleteres_form.php"><div class="button btn btn-small">Delete</div></a></td>
+				<td><div class="button"><a href="addres_form.php" target="_blank" class="btn btn-small">Add</a></div></td><td></td>
+				<td><a href="editres_form.php" target="_blank"><div class="button btn btn-small">Edit</div></a></td>
+				<td><a href="deleteres_form.php" target="_blank"><div class="button btn btn-small">Delete</div></a></td>
 			  </tr>
 			</table>
-			<h1>Accommodation</h1><a href="accommodation.php"><h4>Click here for reference</h4></a><hr>
+			<h2>Accommodation<a href="accommodation.php">(Click here for reference)</a></h2>
 			<div class="searchbar">  
 				<div class="search-container">
 				<form action="/action_page#.php">
@@ -128,12 +131,12 @@ Author: Code Apes.
 					<button type="submit">Search</button>
 				</form>
 				</div>
-			</div><br> 
+			</div> 
 			<table>
 			  <tr>
-				<td><div class="button"><a href="php/addhotel_form.php" target="_blank" class="btn btn-small">+</a></div></td><td></td>
-				<td><a href="php/edithotel_form.php"><div class="button btn btn-small">Edit</div></a></td>
-				<td><a href="php/deletehotel_form.php"><div class="button btn btn-small">Delete</div></a></td>
+				<td><div class="button"><a href="addhotel_form.php" target="_blank" class="btn btn-small">Add</a></div></td><td></td>
+				<td><a href="edithotel_form.php" target="_blank"><div class="button btn btn-small">Edit</div></a></td>
+				<td><a href="deletehotel_form.php" target="_blank"><div class="button btn btn-small">Delete</div></a></td>
 			  </tr>
 			</table>
 	</div>

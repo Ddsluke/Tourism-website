@@ -55,7 +55,7 @@ function checkPrice() {
 
 <div class="form_container">
 <h1>delete Attraction information</h1>
-<form action="delete_attr.php" method="post">
+<form action="php/delete_attr.php" method="post">
 <ul class="form_input">
 
 <li>

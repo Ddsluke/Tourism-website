@@ -55,7 +55,7 @@ function checkPrice() {
 
 <div class="form_container">
 <h1>edit Attraction information</h1>
-<form action="edit_attr.php" method="post">
+<form action="php/edit_attr.php" method="post">
 <ul class="form_input">
 
 <li>

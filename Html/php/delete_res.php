@@ -1,4 +1,3 @@
-
 <?php
     $con=mysqli_connect("mysql.comp.polyu.edu.hk","17083686d","fdtwjmfn","17083686d");
     // Check connection
@@ -15,3 +14,6 @@
     
     mysqli_close($con);
     ?>
+<script type='text/javascript'>
+     self.close();
+</script>
