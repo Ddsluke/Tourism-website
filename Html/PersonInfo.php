@@ -99,27 +99,36 @@ require('topnav.php');
 		<table>
 		<tr>
 		  <td><h3>User ID:</h3></td>
-		  <td><h3 id="uid">#User ID </h3></td><!-- User ID cannot be changed-->
+		  <td><h3 id="uid"><?php 
+		  $ID = $_SESSION['login_tourist'];
+		  echo "$ID";
+		  ?></h3></td><!-- User ID cannot be changed-->
 		  <td></td>
 		</tr>
+		<?php 
+		require('php/connect.php');
+		$sql=" select * from Tourists where TouristsID = $ID";
+		$result = mysqli_query($link,$sql);
+		$row = mysqli_fetch_assoc($result);
+		?>
 		<tr>
 		  <td><h3>Username:</h3></td>
-		  <td><h3 id="uname">#Username</h3></td>
+		  <td><h3 id="uname"><?php echo $row['Username']?></h3></td>
 		  <td id="unameEdit"><div class="button btn btn-small" onclick="EditUname()">Edit</div></td>
 		</tr>
 		<tr>
 		  <td><h3>Full name:</h3></td>
-		  <td><h3 id="fname">#Full name </h3></td>
+		  <td><h3 id="fname"><?php echo $row['Name']?></h3></td>
 		  <td id="fnameEdit"><div class="button btn btn-small" onclick="EditFname()">Edit</div></td>
 		</tr>
 		<tr>
 		  <td><h3>Gender:</h3></td>
-		  <td><h3 id="gender">#Gender </h3></td>
+		  <td><h3 id="gender"><?php echo $row['Gender']?></h3></td>
 		  <td id="genderEdit"><div class="button btn btn-small" onclick="EditGender()">Edit</div></td>
 		</tr>
 		<tr>
 		  <td><h3>Age:</h3></td>
-		  <td><h3 id="age">#Age </h3></td>
+		  <td><h3 id="age"><?php echo $row['Age']?></h3></td>
 		  <td id="ageEdit"><div class="button btn btn-small" onclick="EditAge()">Edit</div></td>
 		</tr>
 		<tr>
@@ -130,7 +139,7 @@ require('topnav.php');
 		</table><br>
 		<a href="php/logout.php"><div class="button btn btn-small">Log out</div></a><br>
 		<h1>Notice Board</h1><hr>
-		<p>Curretly nothing here..<p>
+		<p>Currently nothing here..<p>
 		</div>
 	</main>
 </div>

@@ -45,7 +45,7 @@ Author: Code Apes.
 	  <div class="sidebar">
 	    <h3 style="font-weight:bolder;">Administration</h3><!-- To be added later-->
 	  </div>
-    <div class="content">
+    <div class="content" style="overflow-x:hidden">
 			<h1>Admin ID: <?php 
 			$ID = $_SESSION['login_admin'];
 			echo "$ID"?></h1>
@@ -89,9 +89,9 @@ Author: Code Apes.
 				<td id="Edit1"><div class="button btn btn-small">Edit</div></td>
 				<td id="Delete1"><div class="button btn btn-small">Delete</div></td>
 			  </tr>
-			</table>
-			<h1>Data</h1><hr><br>
-			<h2>Attraction</h2><a href="attraction.php"><h4>Click here for reference</h4></a>
+			</table><br>
+			<h1>Data</h1><hr>
+			<h2>Attraction<a href="attraction.php">(Click here for reference)</a></h2>
 			<div class="searchbar">  
 				<div class="search-container">
 				<form action="/action_page#.php">
@@ -107,7 +107,7 @@ Author: Code Apes.
 				<td><a href="deleteattr_form.php" target="_blank"><div class="button btn btn-small">Delete</div></a></td>
 			  </tr>
 			</table>
-			<h2>Restaurant</h2><a href="restaurant.php"><h4>Click here for reference</h4></a>
+			<h2>Restaurant<a href="restaurant.php">(Click here for reference)</a></h2>
 			<div class="searchbar">
 				<div class="search-container">
 				<form action="/action_page#.php">
