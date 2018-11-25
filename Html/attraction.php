@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Attraction</title>
+	<title>Attractions#</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link type="text/css" rel="stylesheet" href="css/style.css">
@@ -24,49 +24,103 @@
 	<!-- sidebar navigation menu -->
 	<div class="sidebar">
 		<h3>Attraction</h3>
-		<a href="#">All</a>
-		<a class="dropdown">By Type<i class="fa fa-caret-down"></i></a>
+		<a href="attraction.php">All</a>
+		<a class="dropdown">By Theme<i class="fa fa-caret-down"></i></a>
 			<div class="dropdown-container">
-				<a href="#">Viewing</a>
-				<a href="#">Entertainment</a>
-				<a href="#">Shopping</a>
+                            <a href="attraction.php?Type='viewing'">Viewing</a>
+                            <a href="attraction.php?Type='entertainment'">Entertainment</a>
+                            <a href="attraction.php?Type='shopping'">Shopping</a>
 			 </div>
 		<a class="dropdown">By Region<i class="fa fa-caret-down"></i></a>
 			<div class="dropdown-container">
-				<a href="#">Hong Kong Island</a>
-				<a href="#">Kowloon</a>
-				<a href="#">New Territories</a>
+                            <a href="attraction.php?Area='Hung Hom'">Hung Hom</a>
+				<a href="attraction.php?Area='Disnyland'">Disnyland</a>
+				<a href="attraction.php?Area='Homantin'">Homantin</a>
+                                <a href="attraction.php?Area='Mong Kok'">Mong Kok</a>
+                                <a href="attraction.php?Area='Ocean Park'">Ocean Park</a>
+                                <a href="attraction.php?Area='Tsim Sha Tsui'">Tsim Sha Tsui</a>
+                                <a href="attraction.php?Area='Victoria Peak'">Victoria Peak</a>
 			</div>
 	</div>
 	<!-- end sidebar -->
   
-		<div class="content">
-			<h1>All Attractions</h1><hr><br>
-			
-				<!-- use this <div class=""item" in php while loop -->
-				<div class="item">
-					<img src="img/attractions/baicheng.jpg" alt="#">
-					<div class="right-block">
-						<h2>#attraction name</h2>
-						<div class="button"><a href="#" class="btn btn-small">+ Add to Plan</a></div> 
-					</div>
-				</div>
-				<!-- use this <div class=""item" in php while loop -->
-				
-				<!-- copy for demo, delete it after add php&sql -->
-				<div class="item">
-					<img src="img/attractions/baicheng.jpg" alt="#">
-					<div class="right-block">
-						<h2>#attraction name</h2>
-						<div class="button"><a href="#" class="btn btn-small">+ Add to Plan</a></div> 
-					</div>
-				</div>
-				<!-- copy for demo, delete it after add php&sql -->
-
-		</div>
-	</main> 
-	<!-- end main body -->
-</div>
+  <?php
+$servername = "mysql.comp.polyu.edu.hk";
+$username = "16098537d";//need to change to xiajialu's
+$password = "iqdobdiy";
+$dbname="16098537d";
+ 
+// CONNECT
+$conn = new mysqli($servername, $username, $password,$dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("CAN'T CONNECT : " . $conn->connect_error);
+} 
+  if(!isset($_GET['Type'])){
+	  $type = 'all';
+       
+  }
+  else
+  {
+      $type=$_GET['Type'];
+  }
+if(!isset($_GET['Area']))
+{
+    $area='all';
+}
+    else {$area=$_GET['Area'];}
+    
+    
+  if($type == 'all'&& $area=='all')
+          {$sql = "select AName,Area,AImage from Attraction join Attractions_Type where Attraction.AID=Attractions_Type.AID;";
+     
+          } 
+          else if($area=='all' && $type!='all'){
+         
+$sql = "select AName,Area,AImage from Attraction join AttractionsType join Attractions_Type where Type= $type and Attraction.AID=Attractions_Type.AID and Attractions_Type.ATID=AttractionsType.ATID;";
+             
+ }
+ else if($area!='all' && $type=='all')
+ {
+     $sql = "select AName,Area,Type,AImage from Attraction join AttractionsType join Attractions_Type where Area=$area and Attraction.AID=Attractions_Type.AID and Attractions_Type.ATID=AttractionsType.ATID;";
+     
+ }
+ 
+ $result = mysqli_query($conn, $sql);
+ if(!$result)
+ {
+     echo "No result";
+ }
+ 
+   
+   elseif (mysqli_num_rows($result) > 0)
+  {
+      while($row = mysqli_fetch_assoc($result))
+  {
+   echo"
+       <table align='center'>
+       <tr>
+       <td>
+           <h2 align='center'>{$row['AName']}</h2>
+            <p align='center'>{$row['Area']}</p>
+        </td>
+      </tr>
+            </table>
+            <a  href='insert.php'><button align='center'> 
+        Add to plan
+        </button></a>";
+            
+ 
+   $src=$row['AImage'];
+           echo '<img src=$src,alt="#">'; 
+                    
+    }     
+  } else
+      echo "NO RESULT FOUND";
+      
+$conn->close();
+  ?>
+  
   
 <!-- footer -->
 <?php
