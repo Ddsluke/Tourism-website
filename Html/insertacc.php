@@ -45,3 +45,11 @@ $sql="INSERT INTO RecommandHotel (Date,ArrangeId,HID)VALUES('$day',$arrangeid,$r
 mysqli_query($conn, $sql);
 echo "done";
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- refresh after 2 second -->
+    <meta http-equiv="refresh" content="2;url=../attraction.php">
+    <title>Jumping...</title>
+</head>

@@ -19,12 +19,13 @@
 </div>
     <?PHP
     $servername = "mysql.comp.polyu.edu.hk";
-    $username = "17083686d";//need to change to xiajialu's
-$password = "fdtwjmfn";
-$dbname="17083686d";
+    $username = "16098537d";//need to change to xiajialu's
+$password = "iqdobdiy";
+$dbname="16098537d";
  
 // CONNECT
 $conn = new mysqli($servername, $username, $password,$dbname);
+
 // Check connection
 if ($conn->connect_error) {
     die("CAN'T CONNECT : " . $conn->connect_error);
@@ -101,13 +102,13 @@ if($stype=="male")
         </td>
       </tr>
             </table>
-            <a  href='insert.php'><button align='center'> 
+            <a href='insert.php'><button align='center'> 
         Add to plan
         </button></a>";
             
  
    $src=$row['AImage'];
-           echo '<img src=$src,alt="#">'; 
+           echo '<img src=img/$src,alt="#">'; 
                     
     }     
   } 

@@ -26,7 +26,8 @@
  
       <?php
 	  session_start();
-	  $conn = new mysqli("mysql.comp.polyu.edu.hk", "17083686d", "fdtwjmfn", "17083686d");
+
+	  $conn = new mysqli("mysql.comp.polyu.edu.hk", "16098537d", "iqdobdiy", "16098537d");
 	  $key = $_SESSION['login_tourist'];
 	  
 	  $sql="SELECT AName, Date, Time

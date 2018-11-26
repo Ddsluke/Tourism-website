@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Attractions#</title>
+	<title>Attractions</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link type="text/css" rel="stylesheet" href="css/style.css">
@@ -47,10 +47,10 @@
 			
   
   <?php
-$servername = "mysql.comp.polyu.edu.hk";
-$username = "17083686d";//need to change to xiajialu's
-$password = "fdtwjmfn";
-$dbname="17083686d";
+    $servername = "mysql.comp.polyu.edu.hk";
+    $username = "16098537d";//need to change to xiajialu's
+$password = "iqdobdiy";
+$dbname="16098537d";
  
 // CONNECT
 $conn = new mysqli($servername, $username, $password,$dbname);

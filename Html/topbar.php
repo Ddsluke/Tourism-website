@@ -19,7 +19,7 @@
 					<form action="/action_page#.php">
 					  <input type="text" placeholder="Keyword..." name="search">
 					  <button type="submit">Search</button>
-					  <button href="advancedSearch.php">Advanced Search</button>
+					  <button><a href="advancedSearch.php">Advanced Search</a></button>
 					</form>
 				</div>
 			</div>

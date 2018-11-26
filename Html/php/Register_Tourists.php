@@ -1,9 +1,9 @@
 <?php
 //connection
+    $servername = "mysql.comp.polyu.edu.hk";
+    $username = "16098537d";//need to change to xiajialu's
+$password = "iqdobdiy";
 
-$servername = "mysql.comp.polyu.edu.hk";
-$username = "17083686d"; //your student Id
-$password = "fdtwjmfn";
 // Create connection
 $link = mysqli_connect($servername, $username, $password);
 // Check connection
@@ -36,7 +36,15 @@ header("Content-Type: text/html; charset=utf8");
 		mysqli_close($link);
 		exit;
     }else{
-        echo "Register successfully";//success
+		$USERID = mysqli_insert_id($link);
+        echo "Register successfully<br>";//success
+		echo "Your UserId for Login is: " . $USERID;//success
+    }
+	$result=mysqli_query($link,"insert into Arrange(ArriveDay,LeaveDay,Activate,TouristsID) values (2018-11-24,2018-12-05,0,$USERID)");
+	if (!$result){
+		echo 'Failed to insert arrange: ', mysqli_error($link);
+		mysqli_close($link);
+		exit;
     }
     mysqli_close($link);//close database
 ?>
@@ -45,6 +53,6 @@ header("Content-Type: text/html; charset=utf8");
 <head>
     <meta charset="UTF-8">
     <!-- refresh after 2 second -->
-    <meta http-equiv="refresh" content="2;url=../Login.php">
+    <meta http-equiv="refresh" content="4;url=../Login.php">
     <title>Jumping...</title>
 </head>

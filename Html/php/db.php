@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("mysql.comp.polyu.edu.hk", "17083686d", "fdtwjmfn", "17083686d");
+$link = mysqli_connect("mysql.comp.polyu.edu.hk", "16098537d", "iqdobdiy", "16098537d");
 
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;

@@ -1,13 +1,11 @@
 <?php
 session_start();
 
-//if( isset($_SESSION['login_tourist']))
-//{
- $servername = "mysql.comp.polyu.edu.hk";
-$username = "17083686d";//need to change to xiajialu's
-$password = "fdtwjmfn";
-$dbname="17083686d";
- 
+    $servername = "mysql.comp.polyu.edu.hk";
+    $username = "16098537d";//need to change to xiajialu's
+$password = "iqdobdiy";
+$dbname="16098537d";
+
 // CONNECT
 $conn = new mysqli($servername, $username, $password,$dbname);
 //$id = $_SESSION['login_tourist'];
@@ -34,9 +32,10 @@ if(isset($_POST['time']))
     $time=$_POST['time'];
 else
     echo"no time";
-$id=2;
-$USERID=$id;
-$sql="SELECT ArrangeId FROM Arrange WHERE TouristsID='$USERID' and Activate=0";
+$USERID=$_SESSION['login_tourist'];
+#$id=2;
+#$USERID=$id;
+$sql="SELECT ArrangeId FROM Arrange WHERE TouristsID='$USERID' AND Activate=0";
  $result = mysqli_query($conn, $sql);
  $row = mysqli_fetch_assoc($result);
  $arrangeid=$row['ArrangeId'];
@@ -50,4 +49,11 @@ mysqli_query($conn, $sql);
 echo "done";
 ?>
 
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- refresh after 2 second -->
+    <meta http-equiv="refresh" content="2;url=../Html/attraction.php">
+    <title>Jumping...</title>
+</head>

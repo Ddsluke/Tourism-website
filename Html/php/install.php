@@ -30,7 +30,7 @@ require('./db.php');
 finish("connecting database");
 
 start("creating all tables and sample data");
-$query = file_get_contents("17083686d.sql");
+$query = file_get_contents("16098537d.sql");
 
 /* execute multi query */
 if (mysqli_multi_query($link, $query)) {
