@@ -28,7 +28,7 @@
 
 <script type="text/javascript">
 // Add active class to the current button (highlight it)
-$( ".wrapper .topnav .topmenu a" ).on( "click", function () {
+$( ".wrapper .topnav .topmenu li a" ).on( "click", function () {
 	$( ".wrapper .topnav .topmenu" ).find( "li.active" ).removeClass( "active" );
 	$( this ).parent( "li" ).addClass( "active" );
 });
