@@ -79,10 +79,62 @@ require('topnav.php');
 			  }
 			  ?>
 			</table><br>
-			<h1>Data</h1><hr>
+                        <h1>Summary</h1>
+                        <h1>Total users:</h1><?php 
+                         $sql="SELECT count(DISTINCT TouristsID)as User FROM Tourists";
+                          $result = mysqli_query($link, $sql);
+                        $row = mysqli_fetch_assoc($result);
+                        echo $row['User'];    
+                        ?>
+                        <br>
+                        <h1>Total active users:</h1><?php 
+                        $sql="SELECT count(DISTINCT TouristsID)as AUser FROM Arrange where Activate=0";
+                        $result = mysqli_query($link, $sql);
+                        $row = mysqli_fetch_assoc($result);
+                        echo $row['AUser'];     
+                        ?>
+                        <br>
+                         <h1>Total 3 active users:</h1><?php 
+                        $sql="SELECT Arrange.TouristsID as I,Username,count(ArrangeID) as c FROM Arrange join Tourists WHERE Arrange.TouristsID=Tourists.TouristsID GROUP BY Arrange.TouristsID order by c limit 3";
+                        $result = mysqli_query($link, $sql);
+                        $row = mysqli_fetch_assoc($result);
+                        while($row = mysqli_fetch_assoc($result)){
+                            $uid=$row['i'];
+                            $uname=$row['Username'];
+                            $times=$row['c'];
+                         echo "
+			  <tr>
+				<td><h3>$uid</h3></td>
+				<td><h3>$uname</h3></td>
+                                <td><h3>times:$c</h3></td>
+			  </tr>";
+			  }
+                        ?>
+                        <br>
+                        <h1>Hot choices:</h1><?php 
+                         $sql="SELECT AName,count(RecommandAttraction.AID) AS A FROM RecommandAttraction JOIN Attraction where RecommandAttraction.AID=Attraction.AID order by A limit 1";
+                          $result = mysqli_query($link, $sql);
+                        $row = mysqli_fetch_assoc($result);
+                        echo "Attraction".$row['AName'];    
+                        ?>
+                        <br>
+                        <?php 
+                         $sql="SELECT HName,count(RecommandHotel.HID) AS A FROM RecommandHotel JOIN Hotel where RecommandHotel.HID=Hotel.HID order by A limit 1";
+                          $result = mysqli_query($link, $sql);
+                        $row = mysqli_fetch_assoc($result);
+                        echo "Hotel: ".$row['HName'];
+                        ?>
+                        <br>
+                        <?php 
+                         $sql="SELECT RName,count(RecommandRes.RID) AS A FROM RecommandRes JOIN Restaurant where RecommandRes.RID=Restaurant.RID order by A limit";
+                          $result = mysqli_query($link, $sql);
+                        $row = mysqli_fetch_assoc($result);
+                        echo "Restaurant".$row['RName'];    
+                        ?>
+                        <br>
+                        <h1>Data</h1><hr>
 			<h2>Attraction<a href="attraction.php">(Click here for reference)</a></h2>
-			<div class="searchbar">  
-				<div class="search-container">
+			<div class="searchbar">   1
 				<form action="/action_page#.php">
 					<input type="text" placeholder="Keyword..." name="search">
 					<button type="submit">Search</button>
