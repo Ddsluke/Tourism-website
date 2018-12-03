@@ -26,53 +26,86 @@
  
       <?php
 	  session_start();
-
-	  $conn = new mysqli("mysql.comp.polyu.edu.hk", "16098537d", "iqdobdiy", "16098537d");
-	  $key = $_SESSION['login_tourist'];
+	  require('php/connect.php');
+	  $USERID = $_SESSION['login_tourist'];
 	  
-	  $sql="SELECT AName, Date, Time
+	  $sql1="SELECT AName, ADate, ATime
 			FROM RecommandAttraction as RA, Arrange as AR, Attraction as A
-			WHERE AR.arrangeId = RA.arrangeId AND A.AID = RA.AID AND AR.touristsId = $key;";
-	  
-	  if ($stmt = mysqli_prepare($conn, $sql)) {
-
+			WHERE AR.arrangeId = RA.arrangeId AND A.AID = RA.AID AND AR.touristsId = $USERID;";
+	  $sql2 = "SELECT RName, RDate, RTime
+			FROM RecommandRes as RR, Arrange as AR, Restaurant as R
+			WHERE AR.arrangeId = RR.arrangeId AND R.RID = RR.RID AND AR.touristsId = $USERID;";
+	  $sql3 = "SELECT HName, HDate
+			FROM RecommandHotel as RH, Arrange as AR, Hotel as H
+			WHERE AR.arrangeId = RH.arrangeId AND H.HID = RH.HID AND AR.touristsId = $USERID;";
+	  /* Display Selected Attraction */
+	  if ($stmt = mysqli_prepare($link, $sql1)) {
         /* execute statement */
         mysqli_stmt_execute($stmt);
-
         /* bind result variables */
-        mysqli_stmt_bind_result($stmt, $AName, $Date, $Time);
-
+        mysqli_stmt_bind_result($stmt, $AName, $ADate, $ATime);
         /* fetch values */
-        $n = 0;
         while (mysqli_stmt_fetch($stmt)) {
-			
-            $n++;
-			$start = $Date;
-			$end = $Date;
-			
-			if ($Time == 'MORN') {
+			$start = $ADate;
+			$end = $ADate;
+			if ($ATime == 'MORN') {
 				$start .=  "T09:00:00";
 				$end .= "T12:00:00";
 			} else {
 				$start .= "T14:00:00";
 				$end .= "T18:00:00";
 			}
-			
             echo "{
 			  title: '$AName',
 			  start: '$start',
 			  end: '$end',
 			},";
-        
 		}
-
         /* close statement */
         mysqli_stmt_close($stmt);
-    } else {
-        echo "Error: " . mysqli_error($conn);
-    }
-    mysqli_close($conn);
+    } 
 	
+	/* Display Selected Restaurant */
+	if ($stmt = mysqli_prepare($link, $sql2)) {
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $RName, $RDate, $RTime);
+        while (mysqli_stmt_fetch($stmt)) {
+			$start = $RDate;
+			$end = $RDate;
+			if ($RTime == 'MORN') {
+				$start .=  "T012:00:00";
+				$end .= "T14:00:00";
+			} else {
+				$start .= "T18:00:00";
+				$end .= "T20:00:00";
+			}
+            echo "{
+			  title: '$RName',
+			  start: '$start',
+			  end: '$end',
+			},";
+		}
+        mysqli_stmt_close($stmt);
+    }
+	
+	
+	/* Display Selected Hotel */
+	if ($stmt = mysqli_prepare($link, $sql3)) {
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $AName, $ADate, $ATime);
+        while (mysqli_stmt_fetch($stmt)) {
+			$start = $HDate . "T22:00:00";
+			$end = $HDate .  "T23:59:59";
+            echo "{
+			  title: '$HName',
+			  start: '$start',
+			  end: '$end',
+			},";
+		}
+        mysqli_stmt_close($stmt);
+    }
+	
+    mysqli_close($link);
 	?>
 	
       ]

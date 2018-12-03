@@ -156,8 +156,8 @@ DROP TABLE IF EXISTS `16098537d`.`RecommandRes` ;
 
 CREATE TABLE IF NOT EXISTS `16098537d`.`RecommandRes` (
   `RecRID` INT NOT NULL AUTO_INCREMENT,
-  `Date` DATE NOT NULL,
-  `Time` ENUM('MORN', 'EVEN') NOT NULL,
+  `RDate` DATE NOT NULL,
+  `RTime` ENUM('MORN', 'EVEN') NOT NULL,
   `ArrangeId` INT NULL,
   `RID` INT NOT NULL,
   PRIMARY KEY (`RecRID`),
@@ -197,7 +197,7 @@ DROP TABLE IF EXISTS `16098537d`.`RecommandHotel` ;
 
 CREATE TABLE IF NOT EXISTS `16098537d`.`RecommandHotel` (
   `RecHID` INT NOT NULL AUTO_INCREMENT,
-  `Date` DATE NOT NULL,
+  `HDate` DATE NOT NULL,
   `ArrangeId` INT NULL,
   `HID` INT NOT NULL,
   PRIMARY KEY (`RecHID`),
@@ -289,8 +289,8 @@ DROP TABLE IF EXISTS `16098537d`.`RecommandAttraction` ;
 
 CREATE TABLE IF NOT EXISTS `16098537d`.`RecommandAttraction` (
   `RecAID` INT NOT NULL AUTO_INCREMENT,
-  `Date` DATE NOT NULL,
-  `Time` ENUM('MORN', 'EVEN') NOT NULL,
+  `ADate` DATE NOT NULL,
+  `ATime` ENUM('MORN', 'EVEN') NOT NULL,
   `ArrangeId` INT NULL,
   `AID` INT NOT NULL,
   PRIMARY KEY (`RecAID`),
@@ -535,15 +535,15 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `16098537d`;
-INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('1', '2018-11-24', 'MORN', '1', '1');
-INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('2', '2018-11-24', 'EVEN', '1', '2');
-INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('3', '2018-11-24', 'MORN', '1', '3');
-INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('4', '2018-11-25', 'MORN', '1', '4');
-INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('5', '2018-11-25', 'EVEN', '1', '5');
-INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('6', '2018-11-26', 'MORN', '1', '6');
-INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('7', '2018-11-26', 'EVEN', '1', '7');
-INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('8', '2018-11-27', 'MORN', '1', '8');
-INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `Date`, `Time`, `ArrangeId`, `AID`) VALUES ('9', '2018-11-27', 'EVEN', '1', '9');
+INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `ADate`, `ATime`, `ArrangeId`, `AID`) VALUES ('1', '2018-11-24', 'MORN', '1', '1');
+INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `ADate`, `ATime`, `ArrangeId`, `AID`) VALUES ('2', '2018-11-24', 'EVEN', '1', '2');
+INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `ADate`, `ATime`, `ArrangeId`, `AID`) VALUES ('3', '2018-11-24', 'MORN', '1', '3');
+INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `ADate`, `ATime`, `ArrangeId`, `AID`) VALUES ('4', '2018-11-25', 'MORN', '1', '4');
+INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `ADate`, `ATime`, `ArrangeId`, `AID`) VALUES ('5', '2018-11-25', 'EVEN', '1', '5');
+INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `ADate`, `ATime`, `ArrangeId`, `AID`) VALUES ('6', '2018-11-26', 'MORN', '1', '6');
+INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `ADate`, `ATime`, `ArrangeId`, `AID`) VALUES ('7', '2018-11-26', 'EVEN', '1', '7');
+INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `ADate`, `ATime`, `ArrangeId`, `AID`) VALUES ('8', '2018-11-27', 'MORN', '1', '8');
+INSERT INTO `16098537d`.`RecommandAttraction` (`RecAID`, `ADate`, `ATime`, `ArrangeId`, `AID`) VALUES ('9', '2018-11-27', 'EVEN', '1', '9');
 
 COMMIT;
 
@@ -553,15 +553,15 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `16098537d`;
-INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('1', '2018-11-24', 'MORN', '1', '1');
-INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('2', '2018-11-24', 'EVEN', '1', '2');
-INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('3', '2018-11-24', 'MORN', '1', '3');
-INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('4', '2018-11-25', 'MORN', '1', '4');
-INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('5', '2018-11-25', 'EVEN', '1', '5');
-INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('6', '2018-11-26', 'MORN', '1', '6');
-INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('7', '2018-11-26', 'EVEN', '1', '7');
-INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('8', '2018-11-27', 'MORN', '1', '8');
-INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `Date`, `Time`, `ArrangeId`, `RID`) VALUES ('9', '2018-11-27', 'EVEN', '1', '9');
+INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `RDate`, `RTime`, `ArrangeId`, `RID`) VALUES ('1', '2018-11-24', 'MORN', '1', '1');
+INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `RDate`, `RTime`, `ArrangeId`, `RID`) VALUES ('2', '2018-11-24', 'EVEN', '1', '2');
+INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `RDate`, `RTime`, `ArrangeId`, `RID`) VALUES ('3', '2018-11-24', 'MORN', '1', '3');
+INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `RDate`, `RTime`, `ArrangeId`, `RID`) VALUES ('4', '2018-11-25', 'MORN', '1', '4');
+INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `RDate`, `RTime`, `ArrangeId`, `RID`) VALUES ('5', '2018-11-25', 'EVEN', '1', '5');
+INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `RDate`, `RTime`, `ArrangeId`, `RID`) VALUES ('6', '2018-11-26', 'MORN', '1', '6');
+INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `RDate`, `RTime`, `ArrangeId`, `RID`) VALUES ('7', '2018-11-26', 'EVEN', '1', '7');
+INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `RDate`, `RTime`, `ArrangeId`, `RID`) VALUES ('8', '2018-11-27', 'MORN', '1', '8');
+INSERT INTO `16098537d`.`RecommandRes` (`RecRID`, `RDate`, `RTime`, `ArrangeId`, `RID`) VALUES ('9', '2018-11-27', 'EVEN', '1', '9');
 
 COMMIT;
 
@@ -571,8 +571,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `16098537d`;
-INSERT INTO `16098537d`.`RecommandHotel` (`RecHID`, `Date`, `ArrangeId`, `HID`) VALUES ('1', '2018-11-24', '1', '1');
-INSERT INTO `16098537d`.`RecommandHotel` (`RecHID`, `Date`, `ArrangeId`, `HID`) VALUES ('2', '2018-11-25', '1', '1');
-INSERT INTO `16098537d`.`RecommandHotel` (`RecHID`, `Date`, `ArrangeId`, `HID`) VALUES ('3', '2018-11-26', '1', '2');
-INSERT INTO `16098537d`.`RecommandHotel` (`RecHID`, `Date`, `ArrangeId`, `HID`) VALUES ('4', '2018-11-27', '1', '2');
+INSERT INTO `16098537d`.`RecommandHotel` (`RecHID`, `HDate`, `ArrangeId`, `HID`) VALUES ('1', '2018-11-24', '1', '1');
+INSERT INTO `16098537d`.`RecommandHotel` (`RecHID`, `HDate`, `ArrangeId`, `HID`) VALUES ('2', '2018-11-25', '1', '1');
+INSERT INTO `16098537d`.`RecommandHotel` (`RecHID`, `HDate`, `ArrangeId`, `HID`) VALUES ('3', '2018-11-26', '1', '2');
+INSERT INTO `16098537d`.`RecommandHotel` (`RecHID`, `HDate`, `ArrangeId`, `HID`) VALUES ('4', '2018-11-27', '1', '2');
 COMMIT; 
