@@ -1,19 +1,55 @@
-
 <?php
-    $con=mysqli_connect("mysql.comp.polyu.edu.hk","17083686d","fdtwjmfn","17083686d");
+    //connection
+    $servername = "mysql.comp.polyu.edu.hk";
+    $username = "16098537d";
+    $password = "iqdobdiy";
+    $link = mysqli_connect($servername, $username, $password);
     // Check connection
-    if (mysqli_connect_errno())
-    {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    if (!$link) {
+        echo "Error: Unable to connect to MySQL." . PHP_EOL;
+        echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+        echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+        mysqli_close($link);
+        exit;
     }
-    $HName=$_POST["HName"];
-    $Area=$_POST["Area"];
-    $Level=$_POST["Level"];
+    echo "<p>Connected successfully</p>";
+    //Registr Tourists
+    header("Content-Type: text/html; charset=utf8");
+    mysqli_select_db($link,'16098537d');            //Select database
     
-    mysqli_query($con," insert into Hotel (HName,Area,Level) values ('$HName','$Area','$Level')");
-                 
-                 // Print auto-generated id
-    echo "New record has id: " . mysqli_insert_id($con);
-                 
-    mysqli_close($con);
+    $HName=$_POST['HName'];
+    $Area=$_POST['Area'];
+    $Level=$_POST['Level'];
+    $Price=$_POST['Price'];
+    $RoomType=$_POST['RoomType'];
+    
+    $in1="insert into Hotel (HName,Area,Level,HImage) values ('$HName','$Area','$Level','hotel/rosedale_hotel.jpg')";      //insert
+    $reslut=mysqli_query($link,$in1);
+    
+    if (!$reslut){
+        echo 'Failed to insert HOTEL: ', mysqli_error($link);
+        mysqli_close($link);
+        exit;
+    }else{
+        $Hotel_HID = mysqli_insert_id($link);
+        echo "insert successfully<br>";      //success
+        echo "hotel ID is: " . $Hotel_HID;   //success
+    }
+    
+    $in2= "insert into RoomInfor (RoomType, Price, Hotel_HID) values ('$RoomType','$Price','$Hotel_HID') ";
+    
+    $result=mysqli_query($link,$in2);
+    
+    if (!$result){
+        echo 'Failed to insert roominfor: ', mysqli_error($link);
+        mysqli_close($link);
+        exit;
+    }
+    else{
+        echo "<br>hotel name ". $HName;
+        echo "<br>Room type ID is: " . mysqli_insert_id($link);   //success
+        echo "<br>type name". $RoomType;
+    }
+    
+    mysqli_close($link);      //close database
     ?>

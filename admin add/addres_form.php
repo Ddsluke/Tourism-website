@@ -77,6 +77,19 @@ function checkPrice() {
 </li>
 
 <li>
+<label for="">FoodType</label>
+<select id="type" name="FoodType" onclick="checkType()">
+<option value="default">--Please choose--</option>
+<option value="Western-style">Western-style</option>
+<option value="Cantonese style">Cantonese-style</option>
+<option value="Korean style">Korean style</option>
+<option value="Hong Kong style">Hong Kong style</option>
+<option value="Japanese style">Japanese style</option>
+<option value="German style">German style</option>
+<option value="Italian style">Italian style</option>
+</select>
+
+<li>
 <!--
 <label for="" onclick="checkPrice()">Price</label>
 <input type="text" id="price" name="AveragePrice" placeholder="restaurant's price (e.g. 100.00).." title="No longer than 50 characters" maxlength="50">
