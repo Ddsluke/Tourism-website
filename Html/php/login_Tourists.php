@@ -34,7 +34,7 @@ header("Content-Type: text/html; charset=utf8");
 		?>
 				 
 				 Missing Tourists ID or Password or Username, Please 
-				 <a href="../login.php">
+				 <a href="../login_Tourists.php">
 				 try again.
 				 </a>.
 				 

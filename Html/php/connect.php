@@ -1,8 +1,8 @@
 <?php
     $servername = "mysql.comp.polyu.edu.hk";
     $username = "16098537d";//need to change to xiajialu's
-$password = "iqdobdiy";
-$dbname = "16098537d";
+	$password = "iqdobdiy";
+	$dbname = "16098537d";
 
 
    // Create connection
@@ -17,5 +17,5 @@ $dbname = "16098537d";
 }
 /*echo "<p>Connected successfully</p>";*/
 
-    mysqli_select_db($link,'17083686d');//Select database
+#    mysqli_select_db($link,'17083686d');//Select database
 ?>
