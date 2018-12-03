@@ -13,7 +13,7 @@
 <div class="wrapper">
 	<!-- topbar navigation menu -->
 	<?php
-	require('topbar.php');
+	require('topbarres.php');
 	?>
 	<!-- end topbar -->
 </div>
@@ -64,6 +64,16 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 if ($conn->connect_error) {
     die("CAN'T CONNECT : " . $conn->connect_error);
 } 
+if(isset($_GET['search']))
+{
+ 
+    $key=$_GET['search'];
+    $attribute=" AND RName LIKE '%$key%'";
+}
+else
+{
+    $attribute="";
+}
   if(!isset($_GET['Type'])){
 	  $Type = 'all';
        
@@ -80,19 +90,19 @@ if(!isset($_GET['Area']))
     
     
   if($Type == 'all'&& $area=='all')
-          {$sql = "select * from Restaurant join Restaurant_Foodtype join FoodType where Restaurant.RID=Restaurant_Foodtype.RID AND Restaurant_Foodtype.FID=FoodType.FID;";
+          {$sql = "select * from Restaurant join Restaurant_Foodtype join FoodType where Restaurant.RID=Restaurant_Foodtype.RID AND Restaurant_Foodtype.FID=FoodType.FID".$attribute;
      $title="ALL RESTAURANT";
           } 
           else if($area=='all' && $Type!='all'){
               $title="SEARCH BY Type";
          
-$sql = "select * from Restaurant join Restaurant_Foodtype join FoodType where Restaurant.RID=Restaurant_Foodtype.RID AND Restaurant_Foodtype.FID=FoodType.FID AND FoodType=$Type;";
+$sql = "select * from Restaurant join Restaurant_Foodtype join FoodType where Restaurant.RID=Restaurant_Foodtype.RID AND Restaurant_Foodtype.FID=FoodType.FID AND FoodType=$Type".$attribute;
              
  }
  else if($area!='all' && $Type=='all')
  {
      $title="SEARCH BY AREA";
-    $sql = "select * from Restaurant join Restaurant_Foodtype join FoodType where Restaurant.RID=Restaurant_Foodtype.RID AND Restaurant_Foodtype.FID=FoodType.FID AND  Area=$area;";
+    $sql = "select * from Restaurant join Restaurant_Foodtype join FoodType where Restaurant.RID=Restaurant_Foodtype.RID AND Restaurant_Foodtype.FID=FoodType.FID AND  Area=$area".$attribute;
      
  }
   ?>
@@ -134,7 +144,12 @@ $sql = "select * from Restaurant join Restaurant_Foodtype join FoodType where Re
 
   <form action="insertres.php" method="post">
       Date: <input type="date" name="date" />
-           <select id="type" name="recname" onclick="checkType()">
+      <select id="type" name="time">
+          <option value="MORN">morning</option>
+          <option value="EVEN">evening</option>
+      </select>
+		   
+		   <select id="type" name="recname" onclick="checkType()">
                <?php 
                for($i=0;$i<count($name);$i++)
                {

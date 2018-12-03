@@ -99,6 +99,29 @@ $sql = "select AName,Area,AImage from Attraction join AttractionsType join Attra
  }
  ?>
   <h1><?php echo $title?></h1><hr><br>
+  
+  <h3>Add Attractions to Your Plan</h3>
+
+  <form action="insertatr.php" method="post">
+      Date: <input type="date" name="date" /><br>
+      Time: <select id="type" name="time">
+			  <option value="MORN">morning</option>
+			  <option value="EVEN">afternoon</option>
+			</select><br>
+      
+      Attraction Name: <select id="type" name="atrname" onclick="checkType()">
+               <?php 
+               for($i=0;$i<count($name);$i++)
+               {
+               echo"<option value='$name[$i]'>--$name[$i]--</option>";
+               }
+               ?>
+               </select><br>
+    <div class="button">
+		<input type="submit" value="add"/>
+	</div>
+  </form>
+  
  <?php
  $result = mysqli_query($conn, $sql);
  if(!$result)
@@ -132,25 +155,7 @@ $sql = "select AName,Area,AImage from Attraction join AttractionsType join Attra
   } else
       echo "NO RESULT FOUND";
     ?>  
-   <P>SELECT WHAT YOU LIKE REMEMBER TO CHOOSE THE DATE</P>
 
-  <form action="insertatr.php" method="post">
-      Date: <input type="date" name="date" />
-      <select id="type" name="time">
-          <option value="MORN">morning</option>
-          <option value="EVEN">evening</option>
-      </select>
-      
-           <select id="type" name="atrname" onclick="checkType()">
-               <?php 
-               for($i=0;$i<count($name);$i++)
-               {
-               echo"<option value='$name[$i]'>--$name[$i]--</option>";
-               }
-               ?>
-               </select>
-      <div id="submit">
-	<input type="submit" value="add"/>
      
 			
  <?php        
@@ -160,7 +165,7 @@ $conn->close();
   
 <!-- footer -->
 <?php
-//require('footer.php');
+require('footer.php');
 ?>
 <!-- end footer -->
 

@@ -116,6 +116,16 @@ function checkPrice() {
 <div id="area_error" class="error">Please choose a roomtype.</div>
 </li>
 
+<li>
+<!--
+<label for="" onclick="checkPrice()">Price</label>
+<input type="text" id="price" name="Price" placeholder="restaurant's price (e.g. 100.00).." title="No longer than 50 characters" maxlength="50">
+-->
+<label>Price HK$</label>
+<input id="price" type="number" name="Price" onlick="checkPrice()" placeholder="0" required name="price" min="0" value="0" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$">
+</li>
+
+
 <div id="submit">
 <input type="submit" value="Submit"/>
 </div>

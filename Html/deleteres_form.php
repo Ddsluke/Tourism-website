@@ -11,37 +11,6 @@ Author: Code Apes.
 <link type="text/css" rel="stylesheet" href="css/formStyle.css">
 <script>
 <!-- Space for javascript uses-->
-function checkType(){
-    if (document.getElementById("type").value == "default"){
-        document.getElementById("type_error").style.display='block';
-        document.getElementById("confirm").disabled = true;
-    }
-    else{
-        document.getElementById("type_error").style.display='none';
-        document.getElementById("confirm").disabled = false;
-    }
-}
-function checkArea(){
-    if (document.getElementById("area").value == "default"){
-        document.getElementById("area_error").style.display='block';
-        document.getElementById("confirm").disabled = true;
-    }
-    else{
-        document.getElementById("area_error").style.display='none';
-        document.getElementById("confirm").disabled = false;
-    }
-}
-function checkPrice() {
-    var n = document.getElementById("price").value;
-    if (!isNaN(parseFloat(n)) && isFinite(n)) {
-        document.getElementById("price_error").style.display='block';
-        document.getElementById("confirm").disabled = true;
-    }
-    else {
-        document.getElementById("price_error").style.display='none';
-        document.getElementById("confirm").disabled = false;
-    }
-}
 
 </script>
 </head>

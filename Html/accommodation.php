@@ -13,7 +13,7 @@
 <div class="wrapper">
 	<!-- topbar navigation menu -->
 	<?php
-	require('topbar.php');
+	require('topbaracc.php');
 	?>
 	<!-- end topbar -->
 </div>
@@ -58,6 +58,18 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 if ($conn->connect_error) {
     die("CAN'T CONNECT : " . $conn->connect_error);
 } 
+if(isset($_GET['search']))
+{
+ 
+    $key=$_GET['search'];
+    $attribute=" AND HName LIKE '%$key%'";
+	$attribute1=" where HName LIKE '%$key%'";
+}
+else
+{
+    $attribute="";
+	$attribute1="";
+}
   if(!isset($_GET['Level'])){
 	  $Level = 'all';
        
@@ -74,19 +86,19 @@ if(!isset($_GET['Area']))
     
     
   if($Level == 'all'&& $area=='all')
-          {$sql = "select HName,Area,Level,HImage from Hotel;";
+          {$sql = "select HName,Area,Level,HImage from Hotel".$attribute1;
      $title="ALL HOTEL";
           } 
           else if($area=='all' && $Level!='all'){
               $title="SEARCH BY LEVEL";
          
-$sql = "select HName,Area,HImage,Level from Hotel WHERE Level=$Level;";
+$sql = "select HName,Area,HImage,Level from Hotel WHERE Level=$Level".$attribute;
              
  }
  else if($area!='all' && $Level=='all')
  {
      $title="SEARCH BY AREA";
-     $sql = "select HName,Area,HImage,Level from  Hotel where Area=$area;";
+     $sql = "select HName,Area,HImage,Level from  Hotel where Area=$area".$attribute;
      
  }
   ?>

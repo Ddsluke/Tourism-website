@@ -1,34 +1,68 @@
 <?php
-    $con=mysqli_connect("mysql.comp.polyu.edu.hk","17083686d","fdtwjmfn","17083686d");
+    //connection
+    $servername = "mysql.comp.polyu.edu.hk";
+    $username = "16098537d";
+    $password = "iqdobdiy";
+    // Create connection
+    $link = mysqli_connect($servername, $username, $password);
     // Check connection
-    if (mysqli_connect_errno())
-    {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    if (!$link) {
+        echo "Error: Unable to connect to MySQL." . PHP_EOL;
+        echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+        echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+        mysqli_close($link);
+        exit;
     }
+    echo "<p>Connected successfully</p>";
+    //Registr Tourists
+    header("Content-Type: text/html; charset=utf8");
+    mysqli_select_db($link,'16098537d');            //Select database
     
     $AID=$_POST['AID'];
     $AName=$_POST['AName'];
     $Area=$_POST['Area'];
     $Price=$_POST['Price'];
-    $ATID=$_POST['ATID'];
+    $Type=$_POST['Type'];
+
+    $in1="UPDATE Attraction SET AName='$AName', Area='$Area', Price='$Price' WHERE AID='$AID'";
+    $reslut=mysqli_query($link,$in1);
     
-    mysqli_autocommit($con,FALSE);
+    if (!$reslut){
+        echo 'Failed to update attraction: ', mysqli_error($link);
+        mysqli_close($link);
+        exit;
+    }else{
+        echo "<br>";   //success
+    }
     
-    mysqli_query($con,"UPDATE Attraction SET AName='$AName' Area='$Area' Price='$Price' where AID='$AID'");
-    mysqli_query($con,"UPDATE Attraction_Type SET ATID='$ATID' where AID='$AID'");
-    
-    echo "Record edited successfully";
-    
-    mysqli_commit($con);
-    
-    mysqli_close($con);
-    ?>
-<script type="text/javascript">
- function closeWindow() {
-    setTimeout(function() {
-    window.close();
-    }, 2000);
+    if(mysqli_affected_rows($link)==0){
+        echo 'no such id exists, please check', mysqli_error($link);
+        mysqli_close($link);
+        exit;
+    }else{
+        echo "id exists <br>";
     }
 
-    window.onload = closeWindow();
-    </script>
+    $se2="select ATID from AttractionsType where Type='$Type'";
+    
+    $result=mysqli_query($link,$se2);
+    $row=mysqli_fetch_row($result);
+    $ATID=$row[0];
+    
+    $in2= "UPDATE Attractions_Type SET ATID='$ATID' where AID='$AID'";
+    
+    $result=mysqli_query($link,$in2);
+    
+    if (!$result){
+        echo 'Failed to update the type: ', mysqli_error($link);
+        mysqli_close($link);
+        exit;
+    }
+    else{
+        echo "<br>attraction name ". $AName;
+        echo "<br>type ID is: " . $ATID;   //success
+        echo "<br>type name: ". $Type;
+    }
+    
+    mysqli_close($link);      //close database
+    ?>

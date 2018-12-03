@@ -83,18 +83,25 @@ function checkPrice() {
 </li>
 
 <li>
-<!--
-<label for="" onclick="checkPrice()">Price</label>
-<input type="text" id="price" name="AveragePrice" placeholder="restaurant's price (e.g. 100.00).." title="No longer than 50 characters" maxlength="50">
--->
-<label>Price HK$</label>
-<input id="price" type="number" name="Price" onclick="checkPrice()" placeholder="0" required name="price" min="0" value="0" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$">
+<label for="">Attraction Type</label>
+<select id="type" name="Type" onclick="checkType()">
+<option value="default">--Please choose--</option>
+<option value="Entertainment">Entertainment</option>
+<option value="Viewing">Viewing</option>
+<option value="Shopping">Shopping</option>
+</select>
+<div id="type_error" class="error">Please choose a type.</div>
 </li>
 
 <li>
-<label for="">attractiontypeID</label>
-<input type="text" id="atid" name="ATID" placeholder="AttractionType's ID.." title="No longer than 8 characters" maxlength="8">
+<!--
+<label for="" onclick="checkPrice()">Price</label>
+<input type="text" id="price" name="Price" placeholder="attraction's price (e.g. 100.00).." title="No longer than 50 characters" maxlength="50">
+-->
+<label>Price HK$</label>
+<input id="price" type="number" name="Price" onlick="checkPrice()" placeholder="0" required name="price" min="0" value="0" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$">
 </li>
+
 
 <div id="submit">
 <input type="submit" value="Submit"/>
