@@ -38,14 +38,7 @@ require('topnav.php');
 			echo "$ID"?></h1>
 			<a href="php/logout.php"><div class="button btn btn-small">Log out</div></a>
 			<h1>User</h1><hr>
-			<div class="searchbar">  
-				<div class="search-container">
-				<form action="/action_page#.php">
-					<input type="text" placeholder="Keyword..." name="search">
-					<button type="submit">Search</button>
-				</form>
-				</div>
-			</div>
+			<a href="Nonactivate.php"><div class="button btn btn-small">Deactivate</div></a>
 			<table>
 			  <tr>
 				<td><h2>UserID</h2></td>
@@ -94,20 +87,22 @@ require('topnav.php');
                         echo $row['AUser'];     
                         ?>
                         <br>
-                         <h1>Total 3 active users:</h1><?php 
+                         <h1> Active users:</h1><?php 
                         $sql="SELECT Arrange.TouristsID as I,Username,count(ArrangeID) as c FROM Arrange join Tourists WHERE Arrange.TouristsID=Tourists.TouristsID GROUP BY Arrange.TouristsID order by c limit 3";
                         $result = mysqli_query($link, $sql);
                         $row = mysqli_fetch_assoc($result);
                         while($row = mysqli_fetch_assoc($result)){
-                            $uid=$row['i'];
+                            $uid=$row['I'];
                             $uname=$row['Username'];
                             $times=$row['c'];
                          echo "
+			  <table>
 			  <tr>
 				<td><h3>$uid</h3></td>
 				<td><h3>$uname</h3></td>
-                                <td><h3>times:$c</h3></td>
-			  </tr>";
+                <td><h3>Times: $times</h3></td>
+			  </tr>
+			  </table>";
 			  }
                         ?>
                         <br>
@@ -126,7 +121,7 @@ require('topnav.php');
                         ?>
                         <br>
                         <?php 
-                         $sql="SELECT RName,count(RecommandRes.RID) AS A FROM RecommandRes JOIN Restaurant where RecommandRes.RID=Restaurant.RID order by A limit";
+                         $sql="SELECT RName,count(RecommandRes.RID) AS A FROM RecommandRes JOIN Restaurant where RecommandRes.RID=Restaurant.RID order by A limit 1";
                           $result = mysqli_query($link, $sql);
                         $row = mysqli_fetch_assoc($result);
                         echo "Restaurant".$row['RName'];    
@@ -134,13 +129,6 @@ require('topnav.php');
                         <br>
                         <h1>Data</h1><hr>
 			<h2>Attraction<a href="attraction.php">(Click here for reference)</a></h2>
-			<div class="searchbar">   1
-				<form action="/action_page#.php">
-					<input type="text" placeholder="Keyword..." name="search">
-					<button type="submit">Search</button>
-				</form>
-				</div>
-			</div>
 			<table>
 			  <tr>
 				<td><div class="button"><a href="addattr_form.php" target="_blank" class="btn btn-small">Add</a></div></td><td></td>
@@ -149,14 +137,6 @@ require('topnav.php');
 			  </tr>
 			</table>
 			<h2>Restaurant<a href="restaurant.php">(Click here for reference)</a></h2>
-			<div class="searchbar">
-				<div class="search-container">
-				<form action="/action_page#.php">
-					<input type="text" placeholder="Keyword..." name="search">
-					<button type="submit">Search</button>
-				</form>
-				</div>
-			</div>
 			<table>
 			  <tr>
 				<td><div class="button"><a href="addres_form.php" target="_blank" class="btn btn-small">Add</a></div></td><td></td>
@@ -165,14 +145,6 @@ require('topnav.php');
 			  </tr>
 			</table>
 			<h2>Accommodation<a href="accommodation.php">(Click here for reference)</a></h2>
-			<div class="searchbar">  
-				<div class="search-container">
-				<form action="/action_page#.php">
-					<input type="text" placeholder="Keyword..." name="search">
-					<button type="submit">Search</button>
-				</form>
-				</div>
-			</div> 
 			<table>
 			  <tr>
 				<td><div class="button"><a href="addhotel_form.php" target="_blank" class="btn btn-small">Add</a></div></td><td></td>
