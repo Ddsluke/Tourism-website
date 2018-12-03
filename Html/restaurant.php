@@ -7,6 +7,9 @@
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 	<link type="text/css" rel="stylesheet" href="css/itemDisplay.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		a:hover { color:#BB4348; }
+	</style>
 </head>
 
 <body>
@@ -106,7 +109,10 @@ $sql = "select * from Restaurant join Restaurant_Foodtype join FoodType where Re
      
  }
   ?>
-  <h1><?php echo $title?></h1><hr><br>
+  <h1><?php echo $title?></h1><hr>
+  
+  <a href="#addToPlan"><div class="button btn btn-small" style="margin-bottom:30px;">Add Restaurants To Plan</div></a><br>
+
  <?php
  $result = mysqli_query($conn, $sql);
  if(!$result)
@@ -140,32 +146,32 @@ $sql = "select * from Restaurant join Restaurant_Foodtype join FoodType where Re
   } else
       echo "NO RESULT FOUND";
   ?>
- <P>SELECT WHAT YOU LIKE REMEMBER TO CHOOSE THE DATE</P>
+  <h2 id="addToPlan">Add Restaurants to Your Plan</h2>
 
   <form action="insertres.php" method="post">
-      Date: <input type="date" name="date" />
-      <select id="type" name="time">
-          <option value="MORN">morning</option>
-          <option value="EVEN">evening</option>
-      </select>
+      Date: <input type="date" name="date" /><br>
+      Time: <select id="type" name="time">
+				<option value="MORN">Lunch</option>
+				<option value="EVEN">Dinner</option>
+			</select><br>
 		   
-		   <select id="type" name="recname" onclick="checkType()">
+	  Restaurant Name: <select id="type" name="recname" onclick="checkType()">
                <?php 
                for($i=0;$i<count($name);$i++)
                {
                echo"<option value='$name[$i]'>--$name[$i]--</option>";
                }
                ?>
-               </select>
-      <div id="submit">
-	<input type="submit" value="add"/>
+               </select><br>
+	  <input type="submit" value="Add"/>
      
-			
+	</form>  		
  <?php        
       
 $conn->close();
   ?>
-  
+</div>
+</main>
 <!-- footer -->
 <?php
 require('footer.php');

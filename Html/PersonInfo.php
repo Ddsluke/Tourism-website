@@ -210,7 +210,6 @@ require('topnav.php');
 		<p>Currently nothing here..<p>
 		</div>
 	</main>
-</div>
 <?php
 require('footer.php');
 mysqli_close($link);

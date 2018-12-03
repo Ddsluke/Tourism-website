@@ -47,7 +47,7 @@ It should be used in conjunction with a second class or ID
 }
 
 /* padding a sub-setion page */
-.container{padding:150px 120px 100px 100px;}
+.container{padding:140px 120px 100px 100px;}
 
 /* convenient for element's position justify */
 .fl_left, .imgl{float:left;}
@@ -79,28 +79,37 @@ It should be used in conjunction with a second class or ID
 }
 
 .searchbar {
+	font-family:Verdana, Geneva, sans-serif;
   position: relative;
-  padding: 0.5rem 1rem;
+  padding: 6px 18px;
   background-color: #f8f9fa !important;
   text-align:right;
 }
 
 .searchbar input[type=text] {
   padding: 5px;
-  font-size: 17px;
-  border: none;
+  font-size: 15px;
+  border: 1px solid #EBEBEB;
+  margin-top:6px;
+  margin-bottom:6px;
 }
 
 .searchbar .search-container button {
-  padding: 5px 10px;
-  margin-right: 5px;
+  padding: 6px 10px;
   color:#FFFFFF; 
   background-color:#BB4348;
-  font-size: 17px;
+  font-weight:bold;
+  font-size: 15px;
   border: none;
   cursor: pointer;
   text-decoration:none;
 }
+
+.searchbar a, .searchbar a:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
 
 #logo{
 	margin: -5px 20px 0px 25px;
@@ -318,4 +327,35 @@ li.active > a {
 .active a{
 	color: #BB4348;
 	background-color: #fff;
+}
+
+input[type=submit]{
+	font-family:Verdana, Geneva, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+    background-color: #BB4348;
+    color: white;
+    padding: 8px 14px;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover{
+	font-weight: bold;
+	background-color:transparent; 
+    padding: 6px 12px;
+	border-color:#BB4348;
+	color: #BB4348;
+	border:2px solid;
+}
+
+input[type=text], input[type=date], select {
+	font-family:Verdana, Geneva, sans-serif;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
