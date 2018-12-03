@@ -107,32 +107,32 @@ $sql = "select * from Restaurant join Restaurant_Foodtype join FoodType where Re
    
    elseif ($num=mysqli_num_rows($result) > 0)
   {
+        $name=array($num);
+        $i=0;
       while($row = mysqli_fetch_assoc($result))
   {
-             $name=array($num);
-             $i=0;
    ?>
           <div class="item">
 					<img src=<?php echo "img/".$row['RImage']?> alt="#">
 					<div class="right-block">
 						<h2><?php echo $row['RName'] ?></h2>
-                                                <h3>Region: <?php echo $row['Area'] ?></h3>
-                                                <h3>Food Type: <?php echo $row['FoodType'] ?></h3>
+                        <h3>Region: <?php echo $row['Area'] ?></h3>
+                        <h3>Food Type: <?php echo $row['FoodType'] ?></h3>
 					</div>
 				</div>
      <?php
        $name[$i]=$row['RName'];
        $i=$i+1;
        ?>
-     <?php                   
-                    
+	   
+     <?php          
     }     
   } else
       echo "NO RESULT FOUND";
   ?>
  <P>SELECT WHAT YOU LIKE REMEMBER TO CHOOSE THE DATE</P>
 
-  <form action="insertrec.php" method="post">
+  <form action="insertres.php" method="post">
       Date: <input type="date" name="date" />
            <select id="type" name="recname" onclick="checkType()">
                <?php 

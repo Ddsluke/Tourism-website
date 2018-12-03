@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Attractions#</title>
+	<title>Attractions</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link type="text/css" rel="stylesheet" href="css/style.css">
@@ -47,10 +47,10 @@
 			
   
   <?php
-$servername = "mysql.comp.polyu.edu.hk";
-$username = "16098537d";//need to change to xiajialu's
-$password = "iqdobdiy";
-$dbname="16098537d";
+    $servername = "mysql.comp.polyu.edu.hk";
+    $username = "16098537d";
+	$password = "iqdobdiy";
+	$dbname="16098537d";
  
 // CONNECT
 $conn = new mysqli($servername, $username, $password,$dbname);
@@ -58,16 +58,6 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 if ($conn->connect_error) {
     die("CAN'T CONNECT : " . $conn->connect_error);
 } 
-if(isset($_GET['search']))
-{
- 
-    $key=$_GET['search'];
-    $attribute=" AND AName LIKE '%$key%'";
-}
-else
-{
-    $attribute="";
-}
   if(!isset($_GET['Type'])){
 	  $type = 'all';
        
@@ -84,17 +74,17 @@ if(!isset($_GET['Area']))
     
     
   if($type == 'all'&& $area=='all')
-          {$sql = "select AName,Area,AImage from Attraction join Attractions_Type where Attraction.AID=Attractions_Type.AID".$attribute;
+          {$sql = "select AName,Area,AImage from Attraction join Attractions_Type where Attraction.AID=Attractions_Type.AID;";
      $title="All Attraction";
           } 
           else if($area=='all' && $type!='all'){
          $title="search by type";
-$sql = "select AName,Area,AImage from Attraction join AttractionsType join Attractions_Type where Type= $type and Attraction.AID=Attractions_Type.AID and Attractions_Type.ATID=AttractionsType.ATID".$attribute;
+$sql = "select AName,Area,AImage from Attraction join AttractionsType join Attractions_Type where Type= $type and Attraction.AID=Attractions_Type.AID and Attractions_Type.ATID=AttractionsType.ATID;";
              
  }
  else if($area!='all' && $type=='all')
  {$title="search by area";
-     $sql = "select AName,Area,Type,AImage from Attraction join AttractionsType join Attractions_Type where Area=$area and Attraction.AID=Attractions_Type.AID and Attractions_Type.ATID=AttractionsType.ATID".$attribute;
+     $sql = "select AName,Area,Type,AImage from Attraction join AttractionsType join Attractions_Type where Area=$area and Attraction.AID=Attractions_Type.AID and Attractions_Type.ATID=AttractionsType.ATID;";
      
  }
  ?>
@@ -118,7 +108,7 @@ $sql = "select AName,Area,AImage from Attraction join AttractionsType join Attra
 					<img src=<?php echo "img/".$row['AImage']?> alt="#">
 					<div class="right-block">
 						<h2><?php echo $row['AName'] ?></h2>
-                                                <h3>Region: <?php echo $row['Area'] ?></h3>
+                        <h3>Region: <?php echo $row['Area'] ?></h3>
 					
 					</div>
 				</div>
@@ -138,7 +128,7 @@ $sql = "select AName,Area,AImage from Attraction join AttractionsType join Attra
       Date: <input type="date" name="date" />
       <select id="type" name="time">
           <option value="MORN">morning</option>
-          <option value="EVEN">evening</option>
+          <option value="EVEN">afternoon</option>
       </select>
       
            <select id="type" name="atrname" onclick="checkType()">

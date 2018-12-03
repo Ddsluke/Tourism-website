@@ -92,7 +92,7 @@
 	/* Display Selected Hotel */
 	if ($stmt = mysqli_prepare($link, $sql3)) {
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $AName, $ADate, $ATime);
+        mysqli_stmt_bind_result($stmt, $HName, $HDate);
         while (mysqli_stmt_fetch($stmt)) {
 			$start = $HDate . "T22:00:00";
 			$end = $HDate .  "T23:59:59";

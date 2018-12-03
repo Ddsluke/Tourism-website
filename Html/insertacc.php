@@ -4,9 +4,9 @@ session_start();
 //if( isset($_SESSION['login_tourist']))
 //{
  $servername = "mysql.comp.polyu.edu.hk";
-$username = "17083686d";//need to change to xiajialu's
-$password = "fdtwjmfn";
-$dbname="17083686d";
+$username = "16098537d";//need to change to xiajialu's
+$password = "iqdobdiy";
+$dbname="16098537d";
  
 // CONNECT
 $conn = new mysqli($servername, $username, $password,$dbname);
@@ -30,8 +30,9 @@ if(isset($_POST['accname']))
 else
     echo"no name";
 echo $name;
-$id=2;
-$USERID=$id;
+#$id=2;
+#$USERID=$id;
+$USERID=$_SESSION['login_tourist'];
 $sql="SELECT ArrangeId FROM Arrange WHERE TouristsID='$USERID' and Activate=0";
  $result = mysqli_query($conn, $sql);
  $row = mysqli_fetch_assoc($result);
@@ -41,15 +42,17 @@ $sql="SELECT ArrangeId FROM Arrange WHERE TouristsID='$USERID' and Activate=0";
  $row = mysqli_fetch_assoc($result);
  $rid=$row['HID'];
  echo $rid;
-$sql="INSERT INTO RecommandHotel (Date,ArrangeId,HID)VALUES('$day',$arrangeid,$rid)";
+$sql="INSERT INTO RecommandHotel (HDate,ArrangeId,HID)VALUES('$day',$arrangeid,$rid)";
 mysqli_query($conn, $sql);
 echo "done";
+
+mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <!-- refresh after 2 second -->
-    <meta http-equiv="refresh" content="2;url=../attraction.php">
+    <meta http-equiv="refresh" content="2;url=../Html/accommodation.php">
     <title>Jumping...</title>
 </head>

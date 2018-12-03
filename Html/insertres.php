@@ -1,11 +1,13 @@
 <?php
 session_start();
 
-    $servername = "mysql.comp.polyu.edu.hk";
-    $username = "16098537d";//need to change to xiajialu's
+if( isset($_SESSION['login_tourist']))
+{
+ $servername = "mysql.comp.polyu.edu.hk";
+$username = "16098537d";//need to change to xiajialu's
 $password = "iqdobdiy";
 $dbname="16098537d";
-
+ 
 // CONNECT
 $conn = new mysqli($servername, $username, $password,$dbname);
 //$id = $_SESSION['login_tourist'];
@@ -23,8 +25,8 @@ else {
     
     echo"No date";
 }
-if(isset($_POST['atrname']))
-    $name=$_POST['atrname'];
+if(isset($_POST['recname']))
+    $name=$_POST['recname'];
 else
     echo"no name";
 echo $name;
@@ -33,29 +35,28 @@ if(isset($_POST['time']))
 else
     echo"no time";
 $USERID=$_SESSION['login_tourist'];
-#$id=2;
-#$USERID=$id;
-$sql="SELECT ArrangeId FROM Arrange WHERE TouristsID='$USERID' AND Activate=0";
+$sql="SELECT ArrangeId FROM Arrange WHERE TouristsID='$USERID' and Activate=0";
  $result = mysqli_query($conn, $sql);
  $row = mysqli_fetch_assoc($result);
  $arrangeid=$row['ArrangeId'];
- $sql="SELECT * FROM Attraction  WHERE AName='$name'";
+ $sql="SELECT * FROM Restaurant WHERE RName='$name'";
  $result = mysqli_query($conn, $sql);
  $row = mysqli_fetch_assoc($result);
- $aid=$row['AID'];
- echo $aid;
-$sql="INSERT INTO RecommandAttraction (ADate,ATime,ArrangeId,AID)VALUES('$day','$time',$arrangeid,$aid)";
+ $rid=$row['RID'];
+ echo $rid;
+$sql="INSERT INTO RecommandRes (RDate,RTime,ArrangeId,RID)VALUES('$day','$time',$arrangeid,$rid)";
 mysqli_query($conn, $sql);
 echo "done";
-
-mysqli_close($conn);
+$conn->close();
+}
+else
+    {
+?>
+    <a href="Login.php">Please Login first</a>
+    <?Php
+}
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- refresh after 2 second -->
-    <meta http-equiv="refresh" content="2;url=../Html/attraction.php">
-    <title>Jumping...</title>
-</head>
+
+
+
