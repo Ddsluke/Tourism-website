@@ -5,7 +5,7 @@
 	if (isset($_POST['uname'])){
 		$uname = $_POST['uname'];		
 		try{
-			mysqli_query(&link, "UPDATE Tourists SET Username='$uname' where TouristsID='$ID'");
+			mysqli_query($link, "UPDATE Tourists SET Username='$uname' where TouristsID='$ID'");
 			echo "Success!";			
 		}
 		catch(Exception $e){
