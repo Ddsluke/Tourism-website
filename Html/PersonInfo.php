@@ -145,7 +145,7 @@ require('topnav.php');
 </div>
 <?php
 require('footer.php');
-$link.close();
+mysqli_close($link);
 ?>
 </body>
 </html>
