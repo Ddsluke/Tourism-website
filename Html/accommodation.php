@@ -153,7 +153,7 @@ $sql = "select HName,Area,HImage,Level from Hotel WHERE Level=$Level".$attribute
                }
                ?>
                </select><br>
-	<input type="submit" value="add"/>
+	<input type="submit" value="Add"/>
      
 			
 	</form>  		
