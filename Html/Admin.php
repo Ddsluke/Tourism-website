@@ -38,14 +38,7 @@ require('topnav.php');
 			echo "$ID"?></h1>
 			<a href="php/logout.php"><div class="button btn btn-small">Log out</div></a>
 			<h1>User</h1><hr>
-			<div class="searchbar">  
-				<div class="search-container">
-				<form action="/action_page#.php">
-					<input type="text" placeholder="Keyword..." name="search">
-					<button type="submit">Search</button>
-				</form>
-				</div>
-			</div>
+			<a href="Nonactivate.php"><div class="button btn btn-small">Deactivate</div></a>
 			<table>
 			  <tr>
 				<td><h2>UserID</h2></td>
@@ -107,7 +100,7 @@ require('topnav.php');
 			  <tr>
 				<td><h3>$uid</h3></td>
 				<td><h3>$uname</h3></td>
-                <td><h3>times:$times</h3></td>
+                <td><h3>Times: $times</h3></td>
 			  </tr>
 			  </table>";
 			  }
@@ -136,13 +129,6 @@ require('topnav.php');
                         <br>
                         <h1>Data</h1><hr>
 			<h2>Attraction<a href="attraction.php">(Click here for reference)</a></h2>
-			<div class="searchbar">   1
-				<form action="/action_page#.php">
-					<input type="text" placeholder="Keyword..." name="search">
-					<button type="submit">Search</button>
-				</form>
-				</div>
-			</div>
 			<table>
 			  <tr>
 				<td><div class="button"><a href="addattr_form.php" target="_blank" class="btn btn-small">Add</a></div></td><td></td>
@@ -151,14 +137,6 @@ require('topnav.php');
 			  </tr>
 			</table>
 			<h2>Restaurant<a href="restaurant.php">(Click here for reference)</a></h2>
-			<div class="searchbar">
-				<div class="search-container">
-				<form action="/action_page#.php">
-					<input type="text" placeholder="Keyword..." name="search">
-					<button type="submit">Search</button>
-				</form>
-				</div>
-			</div>
 			<table>
 			  <tr>
 				<td><div class="button"><a href="addres_form.php" target="_blank" class="btn btn-small">Add</a></div></td><td></td>
@@ -167,14 +145,6 @@ require('topnav.php');
 			  </tr>
 			</table>
 			<h2>Accommodation<a href="accommodation.php">(Click here for reference)</a></h2>
-			<div class="searchbar">  
-				<div class="search-container">
-				<form action="/action_page#.php">
-					<input type="text" placeholder="Keyword..." name="search">
-					<button type="submit">Search</button>
-				</form>
-				</div>
-			</div> 
 			<table>
 			  <tr>
 				<td><div class="button"><a href="addhotel_form.php" target="_blank" class="btn btn-small">Add</a></div></td><td></td>

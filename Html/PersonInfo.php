@@ -80,7 +80,7 @@ Author: Code Apes.
 		document.getElementById("age").innerHTML = document.getElementById("ageInput").value;
 		// And send it to database, or else throw error;
 	}
-	-	$document.ready(function(){
+		$document.ready(function(){
 		$("#unameEdit").click(function(){
 			if ($("#unameEdit").html() == 'Confirm'){
 				var postUname = {
