@@ -1,26 +1,64 @@
-
 <?php
-    $con=mysqli_connect("mysql.comp.polyu.edu.hk","17083686d","fdtwjmfn","17083686d");
+    //connection
+    $servername = "mysql.comp.polyu.edu.hk";
+    $username = "16098537d";
+    $password = "iqdobdiy";
+    // Create connection
+    $link = mysqli_connect($servername, $username, $password);
     // Check connection
-    if (mysqli_connect_errno())
-    {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    if (!$link) {
+        echo "Error: Unable to connect to MySQL." . PHP_EOL;
+        echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+        echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+        mysqli_close($link);
+        exit;
     }
-    $HID=$_POST["HID"];
-    $HName=$_POST["HName"];
-    $Area=$_POST["Area"];
-    $Level=$_POST["Level"];
-    $RoomType=$_POST["RoomType"];
+    echo "<p>Connected successfully</p>";
     
-    mysqli_autocommit($con,FALSE);
+    //Registr Tourists
+    header("Content-Type: text/html; charset=utf8");
+    mysqli_select_db($link,'16098537d');            //Select database
     
-    mysqli_query($con,"UPDATE Hotel SET HName='$HName' Area='$Area' Level='$Level' where HID='$HID'");
-    mysqli_query($con,"UPDATE RoomInfor SET RoomType='$RoomType' where HID='$HID'");
+    $HID=$_POST['HID'];
+    $HName=$_POST['HName'];
+    $Area=$_POST['Area'];
+    $Level=$_POST['Level'];
+    $Price=$_POST['Price'];
+    $RoomType=$_POST['RoomType'];
     
-
-    echo "Record edited successfully";
+    $in1="UPDATE Hotel SET HName='$HName', Area='$Area', Level='$Level' WHERE HID='$HID'";
+    $reslut=mysqli_query($link,$in1);
     
-    mysqli_commit($con);
+    if (!$reslut){
+        echo 'Failed to update attraction: ', mysqli_error($link);
+        mysqli_close($link);
+        exit;
+    }else{
+        echo "<br>";   //success
+    }
     
-    mysqli_close($con);
-    ?>
+    if(mysqli_affected_rows($link)==0){
+        echo 'no such id exists, please check', mysqli_error($link);
+        mysqli_close($link);
+        exit;
+    }else{
+        echo "id exists <br>";
+    }
+    
+    $in2= "UPDATE RoomInfor SET RoomType='$RoomType', Price='$Price' where Hotel_HID='$HID'";
+    
+    $result=mysqli_query($link,$in2);
+    
+    if (!$result){
+        echo 'Failed to update the type: ', mysqli_error($link);
+        mysqli_close($link);
+        exit;
+    }
+    else{
+        echo "<br>restaurant name ". $HName;
+        echo "<br>type ID is: " . $HID;        //success
+        echo "<br>type name: ". $RoomType;
+    }
+    
+    mysqli_close($link);      //close database
+?>
