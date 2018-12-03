@@ -1,22 +1,5 @@
 <?php
-//connection
-    $servername = "mysql.comp.polyu.edu.hk";
-    $username = "16098537d";//need to change to xiajialu's
-$password = "iqdobdiy";
-
-// Create connection
-$link = mysqli_connect($servername, $username, $password);
-// Check connection
-if (!$link) {
-    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-	mysqli_close($link);
-    exit;
-}
-echo "<p>Connected successfully</p>";
-
-//Registr Tourists
+//Register Tourists
 header("Content-Type: text/html; charset=utf8");
     include('connect.php');//connect to database
 	//get Tourists's Id

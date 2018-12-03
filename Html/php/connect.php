@@ -16,4 +16,6 @@
     exit;
 }
 /*echo "<p>Connected successfully</p>";*/
+
+#    mysqli_select_db($link,'17083686d');//Select database
 ?>
