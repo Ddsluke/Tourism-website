@@ -217,18 +217,12 @@ require('topnav.php');
 </div>
 
 <?php
-    $servername = "mysql.comp.polyu.edu.hk";
-    $username = "16098537d";//need to change to xiajialu's
-    $password = "iqdobdiy";
-    $dbname="16098537d";
-
-    // CONNECT
-    $conn = new mysqli($servername, $username, $password,$dbname);
+ 
     $key = $_SESSION['login_tourist'];
 
     // Check connection
-    if ($conn->connect_error) {
-        die("CAN'T CONNECT : " . $conn->connect_error);
+    if ($link->connect_error) {
+        die("CAN'T CONNECT : " . $link->connect_error);
     } 
     $sql=" select * from Message WHERE TouristsID = $key ORDER BY creat_time";
 ?>
@@ -238,7 +232,7 @@ require('topnav.php');
 </div>
 
 <?php
-    $result = mysqli_query($conn, $sql);
+    $result = mysqli_query($link, $sql);
     if(!$result)
     {
         echo "No result";
@@ -263,6 +257,7 @@ require('topnav.php');
     }     
   } else
       echo "NO RESULT FOUND";
+	$link->close();
     ?>
 		
 	
