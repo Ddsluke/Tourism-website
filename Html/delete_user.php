@@ -1,4 +1,3 @@
-
 <?php
     //connection
     $servername = "mysql.comp.polyu.edu.hk";
@@ -22,11 +21,11 @@
     
     $TouristsID=$_POST['TouristsID'];
     
-    $in1="DELETE FROM Tourists WHERE TouristsID='$TouristsID'";
-    $reslut=mysqli_query($link,$in1);
+    $se0="select ArrangeId from Arrange WHERE TouristsID='$TouristsID'";
+    $result=mysqli_query($link,$se0);
     
-    if (!$reslut){
-        echo 'Failed to update attraction: ', mysqli_error($link);
+    if (!$result){
+        echo 'Failed to update user: ', mysqli_error($link);
         mysqli_close($link);
         exit;
     }else{
@@ -38,7 +37,90 @@
         mysqli_close($link);
         exit;
     }else{
-        echo "id exists delete successfully <br>";
+        echo "id exists <br>";
     }
+
+    $row=mysqli_fetch_row($result);
+    $ArrangeId=$row[0];
+    
+    $se1="SELECT * FROM RecommandRes WHERE ArrangeId='$ArrangeId'";
+    if(mysqli_affected_rows($link)>0){
+        $de1="DELETE FROM RecommandRes WHERE ArrangeId='$ArrangeId'";
+        $reslut=mysqli_query($link,$de1);
+        if (!$reslut){
+            echo 'Failed to update res: ', mysqli_error($link);
+            mysqli_close($link);
+            exit;
+        }else{
+            echo "delete res<br>";   //success
+        }
+    }
+    else{
+        echo '  ';
+    }
+    
+    $se2="SELECT * FROM RecommandHotel WHERE ArrangeId='$ArrangeId'";
+    if(mysqli_affected_rows($link)>0){
+        $de2="DELETE FROM RecommandHotel WHERE ArrangeId='$ArrangeId'";
+        $reslut=mysqli_query($link,$de2);
+        if (!$reslut){
+            echo 'Failed to update hotel: ', mysqli_error($link);
+            mysqli_close($link);
+            exit;
+        }else{
+            echo "delete hotel<br>";   //success
+        }
+    }
+    else{
+        echo '  ';
+    }
+    
+    $se3="SELECT * FROM RecommandAttraction WHERE ArrangeId='$ArrangeId'";
+    if(mysqli_affected_rows($link)>0){
+        $de3="DELETE FROM RecommandAttraction WHERE ArrangeId='$ArrangeId'";
+        $reslut=mysqli_query($link,$de3);
+        if (!$reslut){
+            echo 'Failed to update attr: ', mysqli_error($link);
+            mysqli_close($link);
+            exit;
+        }else{
+            echo "delete attr<br>";   //success
+        }
+    }
+    else{
+        echo '  ';
+    }
+
+    $de0="DELETE FROM Arrange WHERE TouristsID='$TouristsID'";
+    $reslut=mysqli_query($link,$de0);
+    if (!$reslut){
+        echo 'Failed to update arrange: ', mysqli_error($link);
+        mysqli_close($link);
+        exit;
+    }else{
+        echo "delete arrange<br>";   //success
+    }
+    
+    $de4="DELETE FROM Message WHERE TouristsID='$TouristsID'";
+    $reslut=mysqli_query($link,$de4);
+    if (!$reslut){
+        echo 'Failed to update message: ', mysqli_error($link);
+        mysqli_close($link);
+        exit;
+    }else{
+        echo "message delete<br>";   //success
+    }
+    
+    $de5="DELETE FROM Tourists WHERE TouristsID='$TouristsID'";
+    $result=mysqli_query($link,$de5);
+    if (!$result){
+        echo 'Failed to update the tourists: ', mysqli_error($link);
+        mysqli_close($link);
+        exit;
+    }
+    else{
+        echo "<br>DELETE ID is: " . $TouristsID;        //success
+    }
+    
     mysqli_close($link);      //close database
     ?>

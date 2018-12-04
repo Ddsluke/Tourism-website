@@ -38,9 +38,12 @@ require('topnav.php');
 			echo "$ID"?></h1>
 			<a href="php/logout.php"><div class="button btn btn-small">Log out</div></a>
 			<h1>User</h1><hr>
-			<a href="deleteuser_form.php"><div class="button btn btn-small">Delete</div></a>
-			<a href="edituser_form.php"><div class="button btn btn-small">Edit</div></a>
-			<a href="Nonactivate.php"><div class="button btn btn-small">Deactivate</div></a>
+			<table>
+			  <tr>
+				<td><a href="deleteuser_form.php"><div class="button btn btn-small">Delete</div></a></td>
+				<td><a href="edituser_form.php"><div class="button btn btn-small">Edit</div></a></td>
+				<td><a href="Nonactivate.php"><div class="button btn btn-small">Deactivate</div></a></td>
+			  </tr>
 			<table>
 			  <tr>
 				<td><h2>UserID</h2></td>
