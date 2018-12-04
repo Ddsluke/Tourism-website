@@ -218,13 +218,11 @@ require('topnav.php');
 
 <?php
  
-    $key = $_SESSION['login_tourist'];
-
     // Check connection
     if ($link->connect_error) {
         die("CAN'T CONNECT : " . $link->connect_error);
     } 
-    $sql=" select * from Message WHERE TouristsID = $key ORDER BY creat_time";
+    $sql=" select * from Message WHERE TouristsID = $ID ORDER BY creat_time";
 ?>
 
 <div class="content" style="text-align:center;">
