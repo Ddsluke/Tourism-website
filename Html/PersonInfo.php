@@ -178,7 +178,7 @@ require('topnav.php');
     if ($conn->connect_error) {
         die("CAN'T CONNECT : " . $conn->connect_error);
     } 
-    $sql=" select * from Message WHERE TouristsID = $key";
+    $sql=" select * from Message WHERE TouristsID = $key ORDER BY create_time";
 ?>
 
 <div class="content" style="text-align:center;">
