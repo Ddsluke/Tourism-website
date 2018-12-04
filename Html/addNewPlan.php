@@ -73,7 +73,7 @@ if ($conn->connect_error) {
     die("CAN'T CONNECT : " . $conn->connect_error);
 } 
 $result=mysqli_query($conn, $sql);
-$message = "INSERT INTO Message(Message, TouristsID) values ('You have successfully added to your plan.', '$id')";
+$message = "INSERT INTO Message(Message, AdmID,TouristsID) values ('You have successfully added to your plan.', '6','$id')";
 mysqli_query($conn,$message);
         echo "Success!";	
 #if($result)
