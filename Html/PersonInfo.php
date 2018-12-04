@@ -47,7 +47,19 @@ Author: Code Apes.
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-}
+	}
+
+	input[type=submit]{
+	display:inline-block; 
+	padding:5px 20px; 
+	font-weight: bold;
+	color:#FFFFFF; 
+	background-color:#BB4348;
+	font-size: 15px;
+	border: none;
+	cursor: pointer;
+	text-decoration:none;
+	}
 </style>
 	<script>
 	function EditUname(){
@@ -114,7 +126,7 @@ require('topnav.php');
 		$row = mysqli_fetch_assoc($result);
 		?>
 		<tr>
-		<form method="post" action="testing.php">
+		<form method="post" action="PersonInfo.php">
 		  <td>
 		  	<h3>Username:</h3>
 		  </td>
@@ -124,7 +136,7 @@ require('topnav.php');
 		  </td>
 		  <td>
 		  	<div class="button btn btn-small" onclick="EditUname()" id="unameEdit">Edit</div>
-			<input type='hidden' value='Confirm' id='unameSub'>
+			<input type='hidden' value='Confirm' id='unameSub' class="button btn btn-small">
 		  </td>
 		  <td id="unameimg"></td>
 		</form>
@@ -151,8 +163,8 @@ require('topnav.php');
 		  <td>
 		    <h3 id="gender"><?php echo $row['Gender']?></h3>
 			<select id="genderInput" name="genderInput" style="display:none">
-				<option value="Male">Male</option>
-				<option value="Female">Female</option>
+				<option value="M">Male</option>
+				<option value="F">Female</option>
 				<option value="Other">Other</option>
 			</select>
 		  </td>
