@@ -4,6 +4,7 @@ session_start();
 if (!(isset($_SESSION['login_tourist']) || isset($_SESSION['login_admin']))){
 	header("Location:Login.php");
 }
+$ID = $_SESSION['login_tourist'];
 ?>
 <?php
 	if(isset($_POST['unameInput'])){
@@ -53,6 +54,7 @@ Author: Code Apes.
 		var content = document.getElementById("uname").innerHTML;
 		document.getElementById("unameSub").type="submit";
 		document.getElementById("uname").style="display:none";
+		document.getElementById("unameEdit").style = "display:none";
 		document.getElementById("unameInput").value=content;
 		document.getElementById("unameInput").type="text";
 	}
@@ -61,7 +63,8 @@ Author: Code Apes.
 	function EditFname(){
 		var content = document.getElementById("fname").innerHTML;
 		document.getElementById("fnameSub").type = "submit";
-		document.getElementById("fname").style ="display:none"; 
+		document.getElementById("fname").style ="display:none";
+		document.getElementById("fnameEdit").style = "display:none"; 
 		document.getElementById("fnameInput").value=content;
 		document.getElementById("fnameInput").type="text";
 	}
@@ -70,12 +73,14 @@ Author: Code Apes.
 		document.getElementById("genderSub").type="submit";
 		document.getElementById("gender").style = "display:none";
 		document.getElementById("genderInput").style="display:default";
+		document.getElementById("genderEdit").style = "display:none";
 	}
 	
 	function EditAge(){
 		document.getElementById("ageSub").type="submit";		
 		document.getElementById("age").style = "display:none";
 		document.getElementById("ageInput").style="display:default";
+		document.getElementById("ageEdit").style = "display:none";
 	}
 	</script>
 </head>
@@ -99,7 +104,6 @@ require('topnav.php');
 		<tr>
 		  <td><h3>User ID:</h3></td>
 		  <td><h3 id="uid"><?php 
-		  $ID = $_SESSION['login_tourist'];
 		  echo "$ID";
 		  ?></h3></td><!-- User ID cannot be changed-->
 		  <td></td>
