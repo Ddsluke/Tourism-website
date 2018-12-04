@@ -48,18 +48,6 @@ Author: Code Apes.
     border-radius: 4px;
     box-sizing: border-box;
 	}
-
-	input[type=submit]{
-	display:inline-block; 
-	padding:5px 20px; 
-	font-weight: bold;
-	color:#FFFFFF; 
-	background-color:#BB4348;
-	font-size: 15px;
-	border: none;
-	cursor: pointer;
-	text-decoration:none;
-	}
 </style>
 	<script>
 	function EditUname(){

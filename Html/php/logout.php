@@ -9,7 +9,7 @@ echo "Log out successfully!";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- refresh after 2 second -->
-    <meta http-equiv="refresh" content="2;url=../Login.php">
+    <!-- refresh after 1 second -->
+    <meta http-equiv="refresh" content="1;url=../Login.php">
     <title>Logout successfully...</title>
 </head>

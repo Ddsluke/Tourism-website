@@ -1,8 +1,8 @@
 <?php
 //Register Tourists
-header("Content-Type: text/html; charset=utf8");
+	session_start();
+	header("Content-Type: text/html; charset=utf8");
     include('connect.php');//connect to database
-	//get Tourists's Id
 	$Username = $_POST['username'];//get Tourists's Username
     $Name =$_POST['fullname'];//get Tourists's name
     $Password = $_POST['password'];//get Tourists's password
@@ -22,6 +22,7 @@ header("Content-Type: text/html; charset=utf8");
 		$USERID = mysqli_insert_id($link);
         echo "Register successfully<br>";//success
 		echo "Your UserId for Login is: " . $USERID;//success
+		$_SESSION['login_tourist'] = $USERID;
 		$message = "insert into Message(Message, TouristsID) values ('You have successfully created an account.', '$USERID')";
                 mysqli_query($link,$message);
                 echo "Success!";
@@ -38,7 +39,7 @@ header("Content-Type: text/html; charset=utf8");
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- refresh after 2 second -->
-    <meta http-equiv="refresh" content="2;url=../Login.php">
+    <!-- refresh after 1 second -->
+    <meta http-equiv="refresh" content="1;url=../Login.php">
     <title>Jumping...</title>
 </head>
