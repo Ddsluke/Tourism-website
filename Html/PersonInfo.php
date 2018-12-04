@@ -233,6 +233,7 @@ require('topnav.php');
     }     
   } else
       echo "NO RESULT FOUND";
+	$link->close();
     ?>
 		
 	
