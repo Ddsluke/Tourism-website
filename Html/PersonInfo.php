@@ -17,19 +17,20 @@ Author: Code Apes.
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 	<link type="text/css" rel="stylesheet" href="css/loginPage.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 	function EditUname(){
 		var content = document.getElementById("uname").innerHTML;
 		document.getElementById("unameEdit").onclick=RevertUname;
 		document.getElementById("unameEdit").innerHTML='Confirm';
+		document.getElementById("unameEdit").id="unameConfirm";
 		document.getElementById("uname").innerHTML=
 		'<input type="text" id="unameInput" maxlength="16" placeholder="Your username.." onkeydown="if(event.keyCode==13){RevertUname()}" onchange="RevertUname()">';
 		document.getElementById("unameInput").value=content;
 	}
 	function RevertUname(){
-		document.getElementById("unameEdit").onclick=EditUname;
-		document.getElementById("unameEdit").innerHTML='Edit';
+		document.getElementById("unameConfirm").onclick=EditUname;
+		document.getElementById("unameConfirm").innerHTML='Edit';
+		document.getElementById("unameConfirm").id="unameEdit";
 		document.getElementById("uname").innerHTML = document.getElementById("unameInput").value;
 		// And send it to database, or else throw error;
 	}
@@ -38,19 +39,22 @@ Author: Code Apes.
 		var content = document.getElementById("fname").innerHTML;
 		document.getElementById("fnameEdit").onclick=RevertFname;
 		document.getElementById("fnameEdit").innerHTML='Confirm';
+		document.getElementById("fnameEdit").id="fnameConfirm";
 		document.getElementById("fname").innerHTML = 
 		'<input type="text" id="fnameInput" maxlength="16" placeholder="Your full name.." onkeydown="if(event.keyCode==13){RevertFname()}" onchange="RevertFname()">';
 		document.getElementById("fnameInput").value=content;
 	}
 	function RevertFname(){
-		document.getElementById("fnameEdit").onclick=EditFname;
-		document.getElementById("fnameEdit").innerHTML='Edit';
+		document.getElementById("fnameConfirm").onclick=EditFname;
+		document.getElementById("fnameConfirm").innerHTML='Edit';
+		document.getElementById("unameConfirm").id="unameEdit";
 		document.getElementById("fname").innerHTML = document.getElementById("fnameInput").value;
 		// And send it to database, or else throw error, and return the value before;
 	}
 	
 	function EditGender(){
-		document.getElementById("genderEdit").innerHTML='Confirm';
+		document.getElementById("genderEdit").innerHTML='<a>Confirm<>';
+		document.getElementById("genderEdit").id="genderConfirm";
 		document.getElementById("genderEdit").onclick=RevertGender;
 		document.getElementById("gender").innerHTML = 
 		'<select id="genderInput">'
@@ -60,8 +64,9 @@ Author: Code Apes.
 		+ '</select>';
 	}
 	function RevertGender(){
-		document.getElementById("genderEdit").innerHTML='Edit';
-		document.getElementById("genderEdit").onclick=EditGender;
+		document.getElementById("genderConfirm").innerHTML='Edit';
+		document.getElementById("genderConfirm").id="genderEdit";
+		document.getElementById("genderConfirm").onclick=EditGender;
 		document.getElementById("gender").innerHTML = document.getElementById("genderInput").value;
 		// And send it to database, or else throw error;
 	}
@@ -81,69 +86,6 @@ Author: Code Apes.
 		document.getElementById("age").innerHTML = document.getElementById("ageInput").value;
 		// And send it to database, or else throw error;
 	}
-	
-	$document.ready(function(){
-		$("#unameEdit").click(function(){
-			if ($("#unameEdit").html() == 'Confirm'){
-				var postUname = {
-					'uname':$("#unameInput").val();
-				};
-				$.ajax({
-					url:'unameEdit.php',
-					type:'POST',
-					data: postUname,
-					success:function(data, status){
-						$("#unameimg").html(data);
-					}
-				});
-			}
-		});
-		$("#fnameEdit").click(function(){
-			if ($("#fnameEdit").html() == 'Confirm'){
-				var postFname = {
-					'fname':$("#fnameInput").val();
-				};
-				$.ajax({
-					url:'fnameEdit.php',
-					type:'POST',
-					data: postFname,
-					success:function(data, status){
-						$("#fnameimg").html(data);
-					}
-				});
-			}
-		});
-		$("#genderEdit").click(function(){
-			if ($("#genderEdit").html() == 'Confirm'){
-				var postGender = {
-					'gender':$("#genderInput").val();
-				};
-				$.ajax({
-					url:'genderEdit.php',
-					type:'POST',
-					data: postGender,
-					success:function(data, status){
-						$("#genderimg").html(data);
-					}
-				});
-			}
-		});
-		$("#ageEdit").click(function(){
-			if ($("#ageEdit").html() == 'Confirm'){
-				var postAge = {
-					'age':$("#ageInput").val();
-				};
-				$.ajax({
-					url:'ageEdit.php',
-					type:'POST',
-					data: postAge,
-					success:function(data, status){
-						$("#ageimg").html(data);
-					}
-				});
-			}
-		});
-	});
 	</script>
 </head>
 <body>
@@ -156,7 +98,9 @@ require('topnav.php');
 	<!-- main body -->
 	<main class="hoc container clear">
 	  <div class="sidebar">
-	    <h3>Account Information</h3>
+	  <h3>Personal Account</h3>
+            <a href="PersonInfo.php">Personal Information</a>
+            <a href="PersonInfo.php">Read News</a>
 	  </div>
 		<div class="content" style="text-align:center;">
 		<h1>Account Information</h1><hr>
@@ -176,28 +120,36 @@ require('topnav.php');
 		$row = mysqli_fetch_assoc($result);
 		?>
 		<tr>
+		  <form method="post">
 		  <td><h3>Username:</h3></td>
 		  <td><h3 id="uname"><?php echo $row['Username']?></h3></td>
-		  <td><div class="button btn btn-small" onclick="EditUname()" id="unameEdit">Edit</div></td>
+		  <td id="unameSub"><div class="button btn btn-small" onclick="EditUname()" id="unameEdit">Edit</div></td>
 		  <td id="unameimg"></td>
+		  </form>
 		</tr>
 		<tr>
+		  <form method="post">
 		  <td><h3>Full name:</h3></td>
 		  <td><h3 id="fname"><?php echo $row['Name']?></h3></td>
-		  <td><div class="button btn btn-small" onclick="EditFname()" id="fnameEdit">Edit</div></td>
+		  <td id="fnameSub"><div class="button btn btn-small" onclick="EditFname()" id="fnameEdit">Edit</div></td>
 		  <td id="fnameimg"></td>
+		  </form>
 		</tr>
 		<tr>
+		  <form method="post">
 		  <td><h3>Gender:</h3></td>
 		  <td><h3 id="gender"><?php echo $row['Gender']?></h3></td>
-		  <td><div class="button btn btn-small" onclick="EditGender()" id="genderEdit">Edit</div></td>
+		  <td id="genderSub"><div class="button btn btn-small" onclick="EditGender()" id="genderEdit">Edit</div></td>
 		  <td id="genderimg"></td>
+		  </form>
 		</tr>
 		<tr>
+		  <form method="post">
 		  <td><h3>Age:</h3></td>
 		  <td><h3 id="age"><?php echo $row['Age']?></h3></td>
-		  <td><div class="button btn btn-small" onclick="EditAge()" id="ageEdit">Edit</div></td>
+		  <td id="ageSub"><div class="button btn btn-small" onclick="EditAge()" id="ageEdit">Edit</div></td>
 		  <td id="ageimg"></td>
+		  </form>
 		</tr>
 		<tr>
 		  <td><h3>My Plan</h3></td>
@@ -206,13 +158,64 @@ require('topnav.php');
 		</tr>
 		</table><br>
 		<a href="php/logout.php"><div class="button btn btn-small">Log out</div></a><br>
-		<h1>Notice Board</h1><hr>
-		<p>Currently nothing here..<p>
 		</div>
 	</main>
+
+
+</div>
+
+<?php
+    $servername = "mysql.comp.polyu.edu.hk";
+    $username = "16098537d";//need to change to xiajialu's
+    $password = "iqdobdiy";
+    $dbname="16098537d";
+
+    // CONNECT
+    $conn = new mysqli($servername, $username, $password,$dbname);
+    $key = $_SESSION['login_tourist'];
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("CAN'T CONNECT : " . $conn->connect_error);
+    } 
+    $sql=" select * from Message WHERE TouristsID = $key";
+?>
+
+<div class="content" style="text-align:center;">
+<h1 id = "Read News">Notice Board</h1><hr>
+</div>
+
+<?php
+    $result = mysqli_query($conn, $sql);
+    if(!$result)
+    {
+        echo "No result";
+    }
+    elseif ($num=mysqli_num_rows($result) > 0)
+    {
+        $name=array($num);
+        $i=0;
+        while($row = mysqli_fetch_assoc($result))
+        {
+          ?>
+          
+          <div class="content">
+               <h2><?php echo $row['Message'] ?></h2>	
+          </div>        			
+     <?php
+       $name[$i]=$row['Message'];
+       $i=$i+1;
+       ?>
+     <?php        
+     
+    }     
+  } else
+      echo "NO RESULT FOUND";
+    ?>
+		
+	
 <?php
 require('footer.php');
-mysqli_close($link);
 ?>
 </body>
 </html>
