@@ -237,4 +237,5 @@ if($flag==0)
 $conn->close();
 ?>
 </div>
-<>
+</body>
+</html>

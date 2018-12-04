@@ -127,7 +127,7 @@ require('topnav.php');
                         echo "Restaurant".$row['RName'];    
                         ?>
                         <br>
-                        <h1>Data</h1><hr>
+                        <h1>Data <a href="SearchID_form.php">(Search for data)</a></h1><hr>
 			<h2>Attraction<a href="attraction.php">(Click here for reference)</a></h2>
 			<table>
 			  <tr>
