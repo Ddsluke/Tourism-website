@@ -23,7 +23,7 @@
         echo "Register successfully<br>";//success
 		echo "Your UserId for Login is: " . $USERID;//success
 		$_SESSION['login_tourist'] = $USERID;
-		$message = "insert into Message(Message,AdminID,TouristsID) values ('You have successfully created an account.', '6',"$USERID")";
+		$message = "insert into Message(Message,AdminID,TouristsID) values ('You have successfully created an account.', '6',$USERID)";
                 mysqli_query($link,$message);
                 echo "\nSuccess!";
     }
