@@ -34,9 +34,7 @@ header("Content-Type: text/html; charset=utf8");
 		?>
 				 
 				 Missing Tourists ID or Password or Username, Please 
-				 <a href="../login_Tourists.php">
-				 try again.
-				 </a>.
+				 <a href="../login_Tourists.php">try again</a> .
 				 
 				 <?php
 		exit;
@@ -74,8 +72,8 @@ header("Content-Type: text/html; charset=utf8");
 	
 		?>
 				 
-				 Tourists Id or password or Username is wrong, Please 
-				 <a href="../login.php">
+				 Tourists ID or password is wrong, Please 
+				 <a href="../Login.php">
 				 try again.
 				 </a>.
 				 

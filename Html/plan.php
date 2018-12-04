@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['login_tourist'])){
+	echo "Only login users can schedule travel plan. Please login first!";
+	header("Refresh:2; url=Login.php");
+} else {
+	require('php/connect.php');
+	$USERID = $_SESSION['login_tourist'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,17 +27,13 @@
         center: 'title',
         right: 'month,agendaWeek,agendaDay,listWeek'
       },
-      defaultDate: '2018-12-05',
+      defaultDate: '2018-12-06',
       navLinks: true, // can click day/week names to navigate views
       editable: true,
       eventLimit: true, // allow "more" link when too many events
       events: [
  
       <?php
-	  session_start();
-	  require('php/connect.php');
-	  $USERID = $_SESSION['login_tourist'];
-	  
 	  $sql1="SELECT AName, ADate, ATime
 			FROM RecommandAttraction as RA, Arrange as AR, Attraction as A
 			WHERE AR.arrangeId = RA.arrangeId AND A.AID = RA.AID AND AR.touristsId = $USERID;";
@@ -139,12 +144,23 @@
 <div class="wrapper" id="top">
 	<!-- main body -->
 	<main class="hoc container clear">
+		<div class="sidebar">
+			<h3>Plan</h3>
+			<a href="addNewPlan.php">Add New Plan</a>
+			<a href="plan.php">My Plan</a>
+		</div>
+		
+	    <div class="content">
+		
 		<h1>Plan Schedule</h1><hr>
 		<div id='calendar'></div>
+		</div>
 	</main> 
 	<!-- end main body -->
 </div>
 
 </body>
 </html>
-
+<?php
+}
+?>

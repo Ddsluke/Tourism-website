@@ -13,18 +13,19 @@
 <div class="wrapper">
 	<!-- topbar navigation menu -->
 	<?php
-	require('topbar.php');
+	//require('topbar.php');
 	?>
 	<!-- end topbar -->
 </div>
     <?PHP
     $servername = "mysql.comp.polyu.edu.hk";
     $username = "16098537d";//need to change to xiajialu's
-    $password = "iqdobdiy";
-    $dbname="16098537d";
+$password = "iqdobdiy";
+$dbname="16098537d";
  
 // CONNECT
 $conn = new mysqli($servername, $username, $password,$dbname);
+
 // Check connection
 if ($conn->connect_error) {
     die("CAN'T CONNECT : " . $conn->connect_error);
@@ -32,7 +33,6 @@ if ($conn->connect_error) {
 if(isset($_POST["type"]))
 {
     $stype=$_POST["type"];
-   
 }
 if(isset($_POST["name"]))
 {
@@ -43,19 +43,14 @@ if(isset($_POST["name"]))
 
 if(isset($_POST['price']))
 {
-    $pricerange=$_POST['price'];
-    $sprice=$pricerange[0];
-    $upper=$sprice+300;
-    $sprice2=$pricerange[count($pricerange)-1];
-    $upper2=$sprice2+300;
-    
+    $sprice=$_POST['price'];
+    $sprice2=$sprice-300;
 }
 $sql=array(";",";",";",";",";",";",";",";",";");
-$flag=0;
 if($stype=="male")
 {
     
-    if($sprice2!="901"){
+    if($sprice!="901"){
        if(isset($_POST['area']))
 {
     
@@ -64,7 +59,7 @@ if($stype=="male")
     for($i=0;$i<count($area);$i++)
     {
         $sarea=$area[$i];
-    $sql[$i]="SELECT * FROM Attraction JOIN Attractions_Type WHERE Attraction.AID=Attractions_Type.AID AND AName LIKE '%$sname%' AND ((Price>=$sprice AND Price<$upper) or( Price >=$sprice2 AND Price <$upper2)) AND Area LIKE '%$sarea%'";
+    $sql[$i]="SELECT * FROM Attraction WHERE AName LIKE '%$sname%' AND Price<$sprice AND Price>='$sprice2' AND Area LIKE '%$sarea%'";
     }
 }
    
@@ -80,7 +75,7 @@ if($stype=="male")
     for($i=0;$i<count($area);$i++)
     {
         $sarea=$area[$i];
-    $sql[$i]="SELECT * FROM Attraction WHERE AName LIKE '%$sname%' AND ((Price>=$sprice AND Price<=$upper) or Price>=$sprice2)  AND Area LIKE '%$sarea%'";
+    $sql[$i]="SELECT * FROM Attraction WHERE AName LIKE '%$sname%' AND Price>=$sprice  AND Area LIKE '%$sarea%'";
     }
 }
         }
@@ -89,32 +84,38 @@ if($stype=="male")
                $result = mysqli_query($conn, $sql[$i]);
  if(!$result)
  {
-     echo "no result found ";
+     
  }
  
    
   elseif (mysqli_num_rows($result) > 0)
   {
-      $flag=1;
       while($row = mysqli_fetch_assoc($result))
   {
-        
-     ?>
-    <div class="item">
-					<img src=<?php echo "img/".$row['AImage']?> alt="#">
-					<div class="right-block">
-						<h2><?php echo $row['AName'] ?></h2>
-                                                <h3>Region: <?php echo $row['Area'] ?></h3>
-					
-					</div>
-				</div>
-          <?php          
+   echo"
+       <table align='center'>
+       <tr>
+       <td>
+           <h2 align='center'>{$row['AName']}</h2>
+               Area:<p align='center'>{$row['Area']}</p>
+             <p align='center'>{$row['Price']}</p>
+        </td>
+      </tr>
+            </table>
+            <a href='insert.php'><button align='center'> 
+        Add to plan
+        </button></a>";
+            
+ 
+   $src=$row['AImage'];
+           echo '<img src=img/$src,alt="#">'; 
+                    
     }     
   } 
         }
 }
-elseif ($stype=="female") {
-     if($sprice2!="901"){
+elseif ($stype="female") {
+     if($sprice!="901"){
        if(isset($_POST['area']))
 {
     
@@ -123,8 +124,7 @@ elseif ($stype=="female") {
     for($i=0;$i<count($area);$i++)
     {
         $sarea=$area[$i];
-    $sql[$i]="SELECT * FROM Hotel join RoomInfor WHERE Hotel.HID=RoomInfor.Hotel_HID AND HName LIKE '%$sname%' AND ((Price>=$sprice AND Price<$upper) or (Price>=$sprice2 AND Price<$upper2)) AND Area LIKE '%$sarea%'";
-    
+    $sql[$i]="SELECT * FROM Hotel WHERE HName LIKE '%$sname%' AND Price<$sprice AND Price>='$sprice2' AND Area LIKE '%$sarea%'";
     }
 }
    
@@ -140,7 +140,7 @@ elseif ($stype=="female") {
     for($i=0;$i<count($area);$i++)
     {
         $sarea=$area[$i];
-    $sql[$i]="SELECT * FROM Hotel join RoomInfor WHERE Hotel.HID=RoomInfor.Hotel_HID AND HName LIKE '%$sname%'AND ((Price>=$sprice AND Price<=$upper) or Price>=$sprice2)  AND Area LIKE '%$sarea%'";
+    $sql[$i]="SELECT * FROM Hotel WHERE HName LIKE '%$sname%' AND Price>=$sprice  AND Area LIKE '%$sarea%'";
     }
 }
         }
@@ -149,32 +149,40 @@ elseif ($stype=="female") {
                $result = mysqli_query($conn, $sql[$i]);
  if(!$result)
  {
-     echo "no result found";
+     
  }
  
    
   elseif (mysqli_num_rows($result) > 0)
-  {$flag=1;
+  {
       while($row = mysqli_fetch_assoc($result))
   {
-          ?>
-   <div class="item">
-					<img src=<?php "img/".$row['HImage']?> alt="#">
-					<div class="right-block">
-						<h2><?php echo $row['HName'] ?></h2>
-                                                <h3>Region: <?php echo $row['Area'] ?></h3>
-                                                <h3>RoomType: <?php echo $row['RoomType'] ?></h3>
-					</div>
-				</div>
-         <?php         
+   echo"
+       <table align='center'>
+       <tr>
+       <td>
+           <h2 align='center'>{$row['HName']}</h2>
+               <p align='center'>{$row['Area']}</p>
+             <p align='center'>{$row['Price']}</p>
+        </td>
+      </tr>
+            </table>
+            <a  href='insert.php'><button align='center'> 
+        Add to plan
+        </button></a>";
+            
+ 
+   $src=$row['HImage'];
+           echo '<img src=$src,alt="#">'; 
+                    
     }     
   } 
         }
 
 }
-elseif($stype=="other")
+elseif($stype="other")
 {
-      if($sprice2!="901"){
+      if($sprice!="901"){
        if(isset($_POST['area']))
 {
     
@@ -183,9 +191,8 @@ elseif($stype=="other")
     for($i=0;$i<count($area);$i++)
     {
         $sarea=$area[$i];
-    $sql[$i]="SELECT * FROM Restaurant WHERE RName LIKE '%$sname%' AND ((AveragePrice>=$sprice AND AveragePrice<$upper) or (AveragePrice>=$sprice2 AND AveragePrice<$upper2)) AND Area LIKE '%$sarea%'";
+    $sql[$i]="SELECT * FROM Restuarant WHERE RName LIKE '%$sname%' AND AveragePrice<$sprice AND AveragePrice>='$sprice2' AND Area LIKE '%$sarea%'";
     }
-    
 }
    
         }
@@ -200,7 +207,7 @@ elseif($stype=="other")
     for($i=0;$i<count($area);$i++)
     {
         $sarea=$area[$i];
-    $sql[$i]="SELECT * FROM Restaurant WHERE RName LIKE '%$sname%' AND ((AveragePrice>=$sprice AND AveragePrice<=$upper) or AveragePrice>=$sprice2)  AND Area LIKE '%$sarea%'";
+    $sql[$i]="SELECT * FROM Restaurant WHERE RName LIKE '%$sname%' AND AveragePrice>=$sprice  AND Area LIKE '%$sarea%'";
     }
 }
         }
@@ -209,31 +216,37 @@ elseif($stype=="other")
                $result = mysqli_query($conn, $sql[$i]);
  if(!$result)
  {
-     echo" no result found";
+     
  }
  
    
   elseif (mysqli_num_rows($result) > 0)
   {
-      $flag=1;
       while($row = mysqli_fetch_assoc($result))
   {
-          ?>
-   <div class="item">
-					<img src=<?php "img/".$row['RImage']?> alt="#">
-					<div class="right-block">
-						<h2><?php echo $row['RName'] ?></h2>
-                                                <h3>Region: <?php echo $row['Area'] ?></h3>
-					
-					</div>
-				</div>
-      <?php              
+   echo"
+       <table align='center'>
+       <tr>
+       <td>
+           <h2 align='center'>{$row['RName']}</h2>
+               <p align='center'>{$row['Area']}</p>
+             <p align='center'>{$row['Price']}</p>
+        </td>
+      </tr>
+            </table>
+            <a  href='insert.php'><button align='center'> 
+        Add to plan
+        </button></a>";
+            
+ 
+   $src=$row['RImage'];
+           echo '<img src=$src,alt="#">'; 
+                    
     }     
   } 
         }
 }
-if($flag==0)
-    echo"no result found";
+
       
 $conn->close();
 ?>

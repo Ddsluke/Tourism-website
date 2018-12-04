@@ -7,8 +7,6 @@ Author: Code Apes.
 	<title>Sign In Your Account</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-	<link type="text/css" rel="stylesheet" href="css/loginPage.css">
-	<link type="text/css" rel="stylesheet" href="css/about.css">
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
 <style>
@@ -22,22 +20,9 @@ Author: Code Apes.
 </style>
 <body>
 <div class="wrapper">
-		<nav class="topnav">
-			<div id="logo" class="fl_left">
-				<a href="home.html"><img src="img/logo.jpg" alt="Homepage"></a>
-			</div>
-			<div class="topmenu">
-				<li><a href="home.html">Home</a></li>
-				<li><a href="attractions.html">Attractions</a></li>
-				<li><a href="accommodation.html">Accommodation</a></li>
-				<li><a href="food.html">Food</a></li>
-				<li><a href="plan.html">Plan</a></li>
-				<li class="current"><a href="about.html">About</a></li>
-			<div id="account" class="fl_right"><li>
-				<a href="Login.html"><img src="img/account_icon.png" alt="account"></a>
-			</li></div>
-				</div>
-		</nav>
+	<?php
+	require('topnav.php');
+	?>
 </div>
 
 <div class="wrapper">
@@ -45,12 +30,10 @@ Author: Code Apes.
 	<main class="hoc container clear">
 		<div class="sidebar"> <!-- sidebar: sub-menu of the sub-section (float on the left of the page) -->
 			<h3>ABOUT</h3>
-			<ul>
-			  <li><a href="#about">About Us</a></li>
-			  <li><a href="#goal">Our Goal</a></li>
-			  <li><a href="#use">Use Guidelines</a></li>
-			  <li><a href="#contact">Contact Us</a></li>
-			</ul>
+			<a href="#about">About Us</a>
+			<a href="#goal">Our Goal</a>
+			<a href="#use">Use Guidelines</a>
+			<a href="#contact">Contact Us</a>
 		</div>
   
 		<div class="content"> <!-- The main content of the page -->
@@ -72,12 +55,12 @@ Our goal is to open a door for users to explore Hong Kong. It introduces some ba
 <br>2. Information that endangers national security, leaks state secrets, subverts state power and undermines national unity;
 <br>3. Information that damages the honor and interest of the country;
 <br>4. Information that instigates ethnic hatred, ethnic discrimination and undermines ethnic solidarity; 
-<br>5. Information that undermines the country’s religious polices and promotes cults and feudal superstitions; 
+<br>5. Information that undermines the country's religious polices and promotes cults and feudal superstitions; 
 <br>6. Information that spreads rumor, disrupts social order and undermines social stability; 
 <br>7. Information that spreads obscenity, pornography, gambling, violence, murder, terrorism or abets crimes;
 <br>8. Information that insults or defames others and infringes the legal rights of others;
 <br>9. Information that contains false, harmful, coercive, privacy-infringing, harassing, aggressive, slanderous, vulgar, obscene content or other morally objectionable content;
-<br>10. Information that’s restricted or prohibited by Chinese laws, rules, regulations, ordinances and any other specifications with legal force. 
+<br>10. Information that's restricted or prohibited by Chinese laws, rules, regulations, ordinances and any other specifications with legal force. 
 </p>
 
 			<h2 id="contact">Contact Us</h2>

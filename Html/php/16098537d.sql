@@ -524,7 +524,11 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `16098537d`;
-INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('1', '2018-11-24', '2018-11-27', '0', '2');
+INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('1', '2018-12-05', '2018-12-10', '0', '1');
+INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('2', '2018-12-05', '2018-12-10', '0', '2');
+INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('3', '2018-12-05', '2018-12-10', '0', '3');
+INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('4', '2018-12-05', '2018-12-10', '0', '4');
+INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('5', '2018-12-05', '2018-12-10', '0', '5');
 
 COMMIT;
 

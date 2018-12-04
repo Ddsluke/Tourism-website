@@ -120,13 +120,13 @@ $sql = "select AName,Area,AImage from Attraction join AttractionsType join Attra
   {
 		  ?>
 		  <div class="item">
-					<img src=<?php echo "img/".$row['AImage']?> alt="#">
-					<div class="right-block">
-						<h2><?php echo $row['AName'] ?></h2>
-												<h3>Region: <?php echo $row['Area'] ?></h3>
+				<img src=<?php echo "img/".$row['AImage']?> alt="#">
+				<div class="right-block">
+					<h2><?php echo $row['AName'] ?></h2>
+						<h3>Region: <?php echo $row['Area'] ?></h3>
 					
-					</div>
 				</div>
+		  </div>
 	 <?php
 	   $name[$i]=$row['AName'];
 	   $i=$i+1;
