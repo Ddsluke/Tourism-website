@@ -101,7 +101,6 @@ require('topnav.php');
 	  <h3>Personal Account</h3>
             <a href="PersonInfo.php">Personal Information</a>
             <a href="PersonInfo.php">Read News</a>
-	    <h3>Account Information</h3>
 	  </div>
 		<div class="content" style="text-align:center;">
 		<h1>Account Information</h1><hr>
@@ -115,17 +114,7 @@ require('topnav.php');
 		  <td></td>
 		</tr>
 		<?php 
-		$servername = "mysql.comp.polyu.edu.hk";
-		$username = "17082705d";//need to change to xiajialu's
-		$password = "bfbpnejr";
-		$dbname="17082705d";
-	
-		// CONNECT
-		$conn = new mysqli($servername, $username, $password,$dbname);
-		// Check connection
-		if ($conn->connect_error) {
-			die("CAN'T CONNECT : " . $conn->connect_error);
-		} 
+		require('php/connect.php');
 		$sql=" select * from Tourists where TouristsID = $ID";
 		$result = mysqli_query($link,$sql);
 		$row = mysqli_fetch_assoc($result);
@@ -177,9 +166,9 @@ require('topnav.php');
 
 <?php
     $servername = "mysql.comp.polyu.edu.hk";
-    $username = "17082705d";//need to change to xiajialu's
-    $password = "bfbpnejr";
-    $dbname="17082705d";
+    $username = "16098537d";//need to change to xiajialu's
+    $password = "iqdobdiy";
+    $dbname="16098537d";
 
     // CONNECT
     $conn = new mysqli($servername, $username, $password,$dbname);
@@ -227,7 +216,6 @@ require('topnav.php');
 	
 <?php
 require('footer.php');
-mysqli_close($link);
 ?>
 </body>
 </html>
