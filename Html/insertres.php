@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 if(isset($_POST['date']))
 {
     $day=$_POST['date'];
-    echo $day;
+#    echo $day;
 }
 else {
     
@@ -29,7 +29,7 @@ if(isset($_POST['recname']))
     $name=$_POST['recname'];
 else
     echo"no name";
-echo $name;
+#echo $name;
 if(isset($_POST['time']))
     $time=$_POST['time'];
 else
@@ -43,20 +43,25 @@ $sql="SELECT ArrangeId FROM Arrange WHERE TouristsID='$USERID' and Activate=0";
  $result = mysqli_query($conn, $sql);
  $row = mysqli_fetch_assoc($result);
  $rid=$row['RID'];
- echo $rid;
-$sql="INSERT INTO RecommandRes (RDate,RTime,ArrangeId,RID)VALUES('$day','$time',$arrangeid,$rid)";
-mysqli_query($conn, $sql);
-echo "done";
+# echo $rid;
+if ($day == "") {
+	echo "You need to select date! Please try again.";
+	header("Refresh:1.5; url=restaurant.php#addToPlan");
+}
+else {
+	$sql="INSERT INTO RecommandRes (RDate,RTime,ArrangeId,RID)VALUES('$day','$time',$arrangeid,$rid)";
+	mysqli_query($conn, $sql);
+	echo "Success!";
+	header("Refresh:0.5; url=restaurant.php#addToPlan");
+}
 $conn->close();
 }
 else
     {
 ?>
-    <a href="Login.php">Please Login first</a>
-    <?Php
+
+<a href="Login.php">Please Login first</a>
+<?php
+	header("Refresh:1.5; url=Login.php");
 }
 ?>
-
-
-
-

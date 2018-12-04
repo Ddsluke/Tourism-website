@@ -78,7 +78,7 @@ if (!isset($_SESSION['login_tourist'])){
 			$start = $RDate;
 			$end = $RDate;
 			if ($RTime == 'MORN') {
-				$start .=  "T012:00:00";
+				$start .=  "T12:00:00";
 				$end .= "T14:00:00";
 			} else {
 				$start .= "T18:00:00";
@@ -92,7 +92,6 @@ if (!isset($_SESSION['login_tourist'])){
 		}
         mysqli_stmt_close($stmt);
     }
-	
 	
 	/* Display Selected Hotel */
 	if ($stmt = mysqli_prepare($link, $sql3)) {
@@ -150,7 +149,7 @@ if (!isset($_SESSION['login_tourist'])){
 			<a href="plan.php">My Plan</a>
 		</div>
 		
-	    <div class="content">
+	    <div class="content" style="margin-left:24%;">
 		
 		<h1>Plan Schedule</h1><hr>
 		<div id='calendar'></div>

@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-//if( isset($_SESSION['login_tourist']))
-//{
+if( isset($_SESSION['login_tourist']))
+{
  $servername = "mysql.comp.polyu.edu.hk";
 $username = "16098537d";//need to change to xiajialu's
 $password = "iqdobdiy";
@@ -19,17 +19,16 @@ if ($conn->connect_error) {
 if(isset($_POST['date']))
 {
     $day=$_POST['date'];
-    echo $day;
+#    echo $day;
 }
 else {
-    
     echo"No date";
 }
 if(isset($_POST['accname']))
     $name=$_POST['accname'];
 else
     echo"no name";
-echo $name;
+#echo $name;
 #$id=2;
 #$USERID=$id;
 $USERID=$_SESSION['login_tourist'];
@@ -41,18 +40,27 @@ $sql="SELECT ArrangeId FROM Arrange WHERE TouristsID='$USERID' and Activate=0";
  $result = mysqli_query($conn, $sql);
  $row = mysqli_fetch_assoc($result);
  $rid=$row['HID'];
- echo $rid;
-$sql="INSERT INTO RecommandHotel (HDate,ArrangeId,HID)VALUES('$day',$arrangeid,$rid)";
-mysqli_query($conn, $sql);
-echo "done";
+# echo $rid;
+
+if ($day == "") {
+	echo "You need to select date! Please try again.";
+	header("Refresh:1.5; url=accommodation.php#addToPlan");
+}
+else {
+	$sql="INSERT INTO RecommandHotel (HDate,ArrangeId,HID)VALUES('$day',$arrangeid,$rid)";
+	mysqli_query($conn, $sql);
+	echo "Success!";
+	header("Refresh:0.5; url=accommodation.php#addToPlan");
+}
 
 mysqli_close($conn);
+}
+else
+    {
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- refresh after 2 second -->
-    <meta http-equiv="refresh" content="2;url=../Html/accommodation.php">
-    <title>Jumping...</title>
-</head>
+
+<a href="Login.php">Please Login first</a>
+<?php
+	header("Refresh:1.5; url=Login.php");
+}
+?>

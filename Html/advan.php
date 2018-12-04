@@ -11,12 +11,11 @@
 
 <body>
 <div class="wrapper">
-	<!-- topbar navigation menu -->
 	<?php
 	require('topbar.php');
 	?>
-	<!-- end topbar -->
 </div>
+<div class="container">
     <?PHP
     $servername = "mysql.comp.polyu.edu.hk";
     $username = "16098537d";//need to change to xiajialu's
@@ -237,3 +236,5 @@ if($flag==0)
       
 $conn->close();
 ?>
+</div>
+<>
