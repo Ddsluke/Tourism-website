@@ -36,6 +36,6 @@ header("Content-Type: text/html; charset=utf8");
 <head>
     <meta charset="UTF-8">
     <!-- refresh after 2 second -->
-    <meta http-equiv="refresh" content="4;url=../Login.php">
+    <meta http-equiv="refresh" content="2;url=../Login.php">
     <title>Jumping...</title>
 </head>

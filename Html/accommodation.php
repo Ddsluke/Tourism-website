@@ -27,7 +27,7 @@
 	<!-- sidebar navigation menu -->
 	<div class="sidebar">
 		<h3>Accommodation</h3>
-                <a href="accommodation.php">All</a>
+        <a href="accommodation.php">All</a>
 		<a class="dropdown">By Level<i class="fa fa-caret-down"></i></a>
 			<div class="dropdown-container">
 				<a href="accommodation.php?Level=2">Level 2</a>

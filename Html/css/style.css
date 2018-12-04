@@ -47,7 +47,7 @@ It should be used in conjunction with a second class or ID
 }
 
 /* padding a sub-setion page */
-.container{padding:140px 120px 100px 100px;}
+.container{padding:140px 100px 100px 80px;}
 
 /* convenient for element's position justify */
 .fl_left, .imgl{float:left;}
@@ -281,7 +281,7 @@ It should be used in conjunction with a second class or ID
 }
 
 .content {
-	margin-left:29%;
+	margin-left:26%;
 	background-color: #FFFFFF;
 	color: #151517;
 	line-height: 200%;
