@@ -23,6 +23,10 @@ $ID = $_SESSION['login_tourist'];
 		$age = $_POST['ageInput'];
 		$result = mysqli_query($link, "UPDATE Tourists SET Age='$age' where TouristsID = '$ID'");
 	}
+	if(isset($_POST['emailInput'])){
+		$email = $_POST['emailInput'];
+		$result = mysqli_query($link, "UPDATE Tourists SET Email='$email' where TouristsID = '$ID'");
+	}
 ?>
 
 
@@ -38,7 +42,7 @@ Author: Code Apes.
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 	<style>
 	
-	input[type=text], input[type=password], select {
+	input[type=text], input[type=password], input[type=email], select {
 	font-family:Verdana, Geneva, sans-serif;
     width: 100%;
     padding: 12px 20px;
@@ -82,6 +86,15 @@ Author: Code Apes.
 		document.getElementById("ageInput").style="display:default";
 		document.getElementById("ageEdit").style = "display:none";
 	}
+
+	function EditEmail(){
+		var content = document.getElementById("email").innerHTML;
+		document.getElementById("emailSub").type="submit";
+		document.getElementById("email").style = "display:none";
+		document.getElementById("emailEdit").style = "display:none";
+		document.getElementById("emailInput").value=content;
+		document.getElementById("emailInput").type="email";
+	}
 	</script>
 </head>
 <body>
@@ -124,10 +137,24 @@ require('topnav.php');
 		  </td>
 		  <td>
 		  	<div class="button btn btn-small" onclick="EditUname()" id="unameEdit">Edit</div>
-			<input type='hidden' value='Confirm' id='unameSub' class="button btn btn-small">
+				<input type='hidden' value='Confirm' id='unameSub' class="button btn btn-small">
 		  </td>
-		  <td id="unameimg"></td>
 		</form>
+		</tr>
+		<tr>
+			<form method="post" action="PersonInfo.php">
+			<td>
+				<h3>Email:</h3>
+			</td>
+			<td>
+				<h3 id="email"><?php echo $row['Email']?></h3>
+				<input type="hidden" id="emailInput" name="emailInput" placeholder="Your email..">
+			</td>
+			<td>
+			<div class="button btn btn-small" onclick="EditEmail()" id="emailEdit">Edit</div>
+			<input type='hidden' value='Confirm' id='emailSub' class="button btn btn-small">
+			</td>
+			</form>
 		</tr>
 		<tr>
 		  <form method="post" action="PersonInfo.php">
@@ -140,7 +167,6 @@ require('topnav.php');
 			<div class="button btn btn-small" onclick="EditFname()" id="fnameEdit">Edit</div>
 			<input type='hidden' value='Confirm' id='fnameSub'>
 		  </td>
-		  <td id="fnameimg"></td>
 		  </form>
 		</tr>
 		<tr>
@@ -160,7 +186,6 @@ require('topnav.php');
 			<div class="button btn btn-small" onclick="EditGender()" id="genderEdit">Edit</div>
 			<input type='hidden' value='Confirm' id='genderSub'>
 		  </td>
-		  <td id="genderimg"></td>
 		  </form>
 		</tr>
 		<tr>
@@ -178,7 +203,6 @@ require('topnav.php');
 			<div class="button btn btn-small" onclick="EditAge()" id="ageEdit">Edit</div>
 			<input type='hidden' value='Confirm' id='ageSub'>
 		  </td>
-		  <td id="ageimg"></td>
 		  </form>
 		</tr>
 		<tr>

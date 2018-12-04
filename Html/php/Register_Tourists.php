@@ -25,7 +25,7 @@
 		$_SESSION['login_tourist'] = $USERID;
 		$message = "insert into Message(Message, TouristsID) values ('You have successfully created an account.', '$USERID')";
                 mysqli_query($link,$message);
-                echo "Success!";
+                echo "\nSuccess!";
     }
 	$result=mysqli_query($link,"insert into Arrange(ArriveDay,LeaveDay,Activate,TouristsID) values (2018-11-24,2018-12-05,0,$USERID)");
 	if (!$result){
@@ -41,5 +41,5 @@
     <meta charset="UTF-8">
     <!-- refresh after 1 second -->
     <meta http-equiv="refresh" content="1;url=../Login.php">
-    <title>Jumping...</title>
+    <title>Logging in...</title>
 </head>
