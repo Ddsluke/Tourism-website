@@ -35,7 +35,7 @@ if (!isset($_SESSION['login_tourist'])){
 		</div>
 		
 	    <div class="content">
-			<form action="plan.php" method="post"> 
+			<form action="addNewPlan.php" method="post"> 
 			  Arrival Date: <input type="date" name="arrivedate" /><br>
 			  Departure Date: <input type="date" name="leavedate" /><br>
 			  <input type="submit" value="add"/>
