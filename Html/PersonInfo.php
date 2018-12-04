@@ -20,92 +20,42 @@ Author: Code Apes.
 	<script>
 	function EditUname(){
 		var content = document.getElementById("uname").innerHTML;
-<<<<<<< HEAD
-<<<<<<< HEAD
 		document.getElementById("unameEdit").onclick=RevertUname;
 		document.getElementById("unameEdit").innerHTML='Confirm';
 		document.getElementById("unameEdit").id="unameConfirm";
-=======
-		document.getElementById("unameEdit").innerHTML=
-		'<div class="button btn btn-small" onclick="RevertUname()">Confirm</div>';
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
-=======
-		document.getElementById("unameEdit").innerHTML=
-		'<div class="button btn btn-small" onclick="RevertUname()">Confirm</div>';
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 		document.getElementById("uname").innerHTML=
 		'<input type="text" id="unameInput" maxlength="16" placeholder="Your username.." onkeydown="if(event.keyCode==13){RevertUname()}" onchange="RevertUname()">';
 		document.getElementById("unameInput").value=content;
 	}
 	function RevertUname(){
-<<<<<<< HEAD
-<<<<<<< HEAD
 		document.getElementById("unameConfirm").onclick=EditUname;
 		document.getElementById("unameConfirm").innerHTML='Edit';
 		document.getElementById("unameConfirm").id="unameEdit";
-=======
-		document.getElementById("unameEdit").innerHTML= 
-		'<div class="button btn btn-small" onclick="EditUname()">Edit</div>';
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
-=======
-		document.getElementById("unameEdit").innerHTML= 
-		'<div class="button btn btn-small" onclick="EditUname()">Edit</div>';
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 		document.getElementById("uname").innerHTML = document.getElementById("unameInput").value;
 		// And send it to database, or else throw error;
 	}
 	
 	function EditFname(){
 		var content = document.getElementById("fname").innerHTML;
-<<<<<<< HEAD
-<<<<<<< HEAD
 		document.getElementById("fnameEdit").onclick=RevertFname;
 		document.getElementById("fnameEdit").innerHTML='Confirm';
 		document.getElementById("fnameEdit").id="fnameConfirm";
-=======
-		document.getElementById("fnameEdit").innerHTML=
-		'<div class="button btn btn-small" onclick="RevertFname()">Confirm</div>'
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
-=======
-		document.getElementById("fnameEdit").innerHTML=
-		'<div class="button btn btn-small" onclick="RevertFname()">Confirm</div>'
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 		document.getElementById("fname").innerHTML = 
 		'<input type="text" id="fnameInput" maxlength="16" placeholder="Your full name.." onkeydown="if(event.keyCode==13){RevertFname()}" onchange="RevertFname()">';
 		document.getElementById("fnameInput").value=content;
 	}
 	function RevertFname(){
-<<<<<<< HEAD
-<<<<<<< HEAD
 		document.getElementById("fnameConfirm").onclick=EditFname;
 		document.getElementById("fnameConfirm").innerHTML='Edit';
 		document.getElementById("unameConfirm").id="unameEdit";
-=======
-		document.getElementById("fnameEdit").innerHTML= 
-		'<div class="button btn btn-small" onclick="EditFname()">Edit</div>';
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
-=======
-		document.getElementById("fnameEdit").innerHTML= 
-		'<div class="button btn btn-small" onclick="EditFname()">Edit</div>';
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 		document.getElementById("fname").innerHTML = document.getElementById("fnameInput").value;
 		// And send it to database, or else throw error, and return the value before;
 	}
 	
 	function EditGender(){
-<<<<<<< HEAD
-<<<<<<< HEAD
 		document.getElementById("genderEdit").innerHTML='<a>Confirm<>';
 		document.getElementById("genderEdit").id="genderConfirm";
 		document.getElementById("genderEdit").onclick=RevertGender;
-=======
-		document.getElementById("genderEdit").innerHTML=
-		'<div class="button btn btn-small" onclick="RevertGender()">Confirm</div>'
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
-=======
-		document.getElementById("genderEdit").innerHTML=
-		'<div class="button btn btn-small" onclick="RevertGender()">Confirm</div>'
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 		document.getElementById("gender").innerHTML = 
 		'<select id="genderInput">'
 		+ '<option value="Male">Male</option>'
@@ -114,59 +64,44 @@ Author: Code Apes.
 		+ '</select>';
 	}
 	function RevertGender(){
-<<<<<<< HEAD
-<<<<<<< HEAD
 		document.getElementById("genderConfirm").innerHTML='Edit';
 		document.getElementById("genderConfirm").id="genderEdit";
 		document.getElementById("genderConfirm").onclick=EditGender;
-=======
-		document.getElementById("genderEdit").innerHTML= 
-		'<div class="button btn btn-small" onclick="EditGender()">Edit</div>';
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
-=======
-		document.getElementById("genderEdit").innerHTML= 
-		'<div class="button btn btn-small" onclick="EditGender()">Edit</div>';
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 		document.getElementById("gender").innerHTML = document.getElementById("genderInput").value;
 		// And send it to database, or else throw error;
 	}
 	
 	function EditAge(){
-		document.getElementById("ageEdit").innerHTML=
-		'<div class="button btn btn-small" onclick="RevertAge()">Confirm</div>'
+		document.getElementById("ageEdit").innerHTML='Confirm';
+		document.getElementById("ageEdit").onclick=RevertAge;
 		document.getElementById("age").innerHTML = 
 		'<select id="ageInput">'
 		 + '<option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option><option value="61">61</option><option value="62">62</option><option value="63">63</option><option value="64">64</option><option value="65">65</option><option value="66">66</option><option value="67">67</option><option value="68">68</option><option value="69">69</option><option value="70">70</option><option value="71">71</option><option value="72">72</option><option value="73">73</option><option value="74">74</option><option value="75">75</option><option value="76">76</option><option value="77">77</option><option value="78">78</option><option value="79">79</option><option value="80">80</option><option value="81">81</option><option value="82">82</option><option value="83">83</option><option value="84">84</option><option value="85">85</option><option value="86">86</option><option value="87">87</option><option value="88">88</option><option value="89">89</option><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option><option value="100">100</option>'
 		 + '</select>';	
 	}
+	
 	function RevertAge(){
-		document.getElementById("ageEdit").innerHTML= 
-		'<div class="button btn btn-small" onclick="EditAge()">Edit</div>';
+		document.getElementById("ageEdit").innerHTML=Edit;
+		document.getElementById("ageEdit").onclick=EditAge;
 		document.getElementById("age").innerHTML = document.getElementById("ageInput").value;
 		// And send it to database, or else throw error;
 	}
-<<<<<<< HEAD
-=======
-	
-<<<<<<< HEAD
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
-=======
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 	</script>
 </head>
 <body>
 <div class="wrapper">
 <?php
-//require('topnav.php');
+require('topnav.php');
 ?>
 </div>
 <div class="wrapper">
 	<!-- main body -->
 	<main class="hoc container clear">
 	  <div class="sidebar">
-	    <h3>Personal Account</h3>
+	  <h3>Personal Account</h3>
             <a href="PersonInfo.php">Personal Information</a>
             <a href="PersonInfo.php">Read News</a>
+	    <h3>Account Information</h3>
 	  </div>
 		<div class="content" style="text-align:center;">
 		<h1>Account Information</h1><hr>
@@ -181,16 +116,16 @@ Author: Code Apes.
 		</tr>
 		<?php 
 		$servername = "mysql.comp.polyu.edu.hk";
-    $username = "17082705d";//need to change to xiajialu's
-    $password = "bfbpnejr";
-    $dbname="17082705d";
-
-    // CONNECT
-    $conn = new mysqli($servername, $username, $password,$dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("CAN'T CONNECT : " . $conn->connect_error);
-    } 
+		$username = "17082705d";//need to change to xiajialu's
+		$password = "bfbpnejr";
+		$dbname="17082705d";
+	
+		// CONNECT
+		$conn = new mysqli($servername, $username, $password,$dbname);
+		// Check connection
+		if ($conn->connect_error) {
+			die("CAN'T CONNECT : " . $conn->connect_error);
+		} 
 		$sql=" select * from Tourists where TouristsID = $ID";
 		$result = mysqli_query($link,$sql);
 		$row = mysqli_fetch_assoc($result);
@@ -199,65 +134,33 @@ Author: Code Apes.
 		  <form method="post">
 		  <td><h3>Username:</h3></td>
 		  <td><h3 id="uname"><?php echo $row['Username']?></h3></td>
-<<<<<<< HEAD
-<<<<<<< HEAD
-		  <td><div class="button btn btn-small" onclick="EditUname()" id="unameEdit">Edit</div></td>
+		  <td id="unameSub"><div class="button btn btn-small" onclick="EditUname()" id="unameEdit">Edit</div></td>
 		  <td id="unameimg"></td>
 		  </form>
-=======
-		  <td id="unameEdit"><div class="button btn btn-small" onclick="EditUname()">Edit</div></td>
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
-=======
-		  <td id="unameEdit"><div class="button btn btn-small" onclick="EditUname()">Edit</div></td>
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 		</tr>
 		<tr>
 		  <form method="post">
 		  <td><h3>Full name:</h3></td>
 		  <td><h3 id="fname"><?php echo $row['Name']?></h3></td>
-<<<<<<< HEAD
-<<<<<<< HEAD
-		  <td><div class="button btn btn-small" onclick="EditFname()" id="fnameEdit">Edit</div></td>
+		  <td id="fnameSub"><div class="button btn btn-small" onclick="EditFname()" id="fnameEdit">Edit</div></td>
 		  <td id="fnameimg"></td>
 		  </form>
-=======
-		  <td id="fnameEdit"><div class="button btn btn-small" onclick="EditFname()">Edit</div></td>
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
-=======
-		  <td id="fnameEdit"><div class="button btn btn-small" onclick="EditFname()">Edit</div></td>
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 		</tr>
 		<tr>
 		  <form method="post">
 		  <td><h3>Gender:</h3></td>
 		  <td><h3 id="gender"><?php echo $row['Gender']?></h3></td>
-<<<<<<< HEAD
-<<<<<<< HEAD
-		  <td><div class="button btn btn-small" onclick="EditGender()" id="genderEdit">Edit</div></td>
+		  <td id="genderSub"><div class="button btn btn-small" onclick="EditGender()" id="genderEdit">Edit</div></td>
 		  <td id="genderimg"></td>
 		  </form>
-=======
-		  <td id="genderEdit"><div class="button btn btn-small" onclick="EditGender()">Edit</div></td>
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
-=======
-		  <td id="genderEdit"><div class="button btn btn-small" onclick="EditGender()">Edit</div></td>
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 		</tr>
 		<tr>
 		  <form method="post">
 		  <td><h3>Age:</h3></td>
 		  <td><h3 id="age"><?php echo $row['Age']?></h3></td>
-<<<<<<< HEAD
-<<<<<<< HEAD
-		  <td><div class="button btn btn-small" onclick="EditAge()" id="ageEdit">Edit</div></td>
+		  <td id="ageSub"><div class="button btn btn-small" onclick="EditAge()" id="ageEdit">Edit</div></td>
 		  <td id="ageimg"></td>
 		  </form>
-=======
-		  <td id="ageEdit"><div class="button btn btn-small" onclick="EditAge()">Edit</div></td>
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
-=======
-		  <td id="ageEdit"><div class="button btn btn-small" onclick="EditAge()">Edit</div></td>
->>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 		</tr>
 		<tr>
 		  <td><h3>My Plan</h3></td>
@@ -266,8 +169,10 @@ Author: Code Apes.
 		</tr>
 		</table><br>
 		<a href="php/logout.php"><div class="button btn btn-small">Log out</div></a><br>
-                </div>
+		</div>
 	</main>
+
+
 </div>
 
 <?php
@@ -319,9 +224,10 @@ Author: Code Apes.
       echo "NO RESULT FOUND";
     ?>
 		
-		
+	
 <?php
 require('footer.php');
+mysqli_close($link);
 ?>
 </body>
 </html>
