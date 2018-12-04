@@ -116,9 +116,9 @@ require('topnav.php');
 		</tr>
 		<?php 
 		$servername = "mysql.comp.polyu.edu.hk";
-		$username = "16098537d";//need to change to xiajialu's
-		$password = "iqdobdiy";
-		$dbname="16098537d";
+		$username = "17082705d";//need to change to xiajialu's
+		$password = "bfbpnejr";
+		$dbname="17082705d";
 	
 		// CONNECT
 		$conn = new mysqli($servername, $username, $password,$dbname);
@@ -177,9 +177,9 @@ require('topnav.php');
 
 <?php
     $servername = "mysql.comp.polyu.edu.hk";
-    $username = "16098537d";//need to change to xiajialu's
-    $password = "iqdobdiy";
-    $dbname="16098537d";
+    $username = "17082705d";//need to change to xiajialu's
+    $password = "bfbpnejr";
+    $dbname="17082705d";
 
     // CONNECT
     $conn = new mysqli($servername, $username, $password,$dbname);
