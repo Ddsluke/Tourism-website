@@ -244,7 +244,8 @@ require('topnav.php');
           ?>
           
           <div class="content">
-               <h2><?php echo $row['Message'] ?></h2>	
+               <h2><?php echo $row['Message']." ON ".$row['creat_time'] ?></h2>	
+		  <br>
           </div>        			
      <?php
        $name[$i]=$row['Message'];
