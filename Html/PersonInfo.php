@@ -21,9 +21,14 @@ Author: Code Apes.
 	function EditUname(){
 		var content = document.getElementById("uname").innerHTML;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		document.getElementById("unameEdit").onclick=RevertUname;
 		document.getElementById("unameEdit").innerHTML='Confirm';
 		document.getElementById("unameEdit").id="unameConfirm";
+=======
+		document.getElementById("unameEdit").innerHTML=
+		'<div class="button btn btn-small" onclick="RevertUname()">Confirm</div>';
+>>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 =======
 		document.getElementById("unameEdit").innerHTML=
 		'<div class="button btn btn-small" onclick="RevertUname()">Confirm</div>';
@@ -34,9 +39,14 @@ Author: Code Apes.
 	}
 	function RevertUname(){
 <<<<<<< HEAD
+<<<<<<< HEAD
 		document.getElementById("unameConfirm").onclick=EditUname;
 		document.getElementById("unameConfirm").innerHTML='Edit';
 		document.getElementById("unameConfirm").id="unameEdit";
+=======
+		document.getElementById("unameEdit").innerHTML= 
+		'<div class="button btn btn-small" onclick="EditUname()">Edit</div>';
+>>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 =======
 		document.getElementById("unameEdit").innerHTML= 
 		'<div class="button btn btn-small" onclick="EditUname()">Edit</div>';
@@ -48,9 +58,14 @@ Author: Code Apes.
 	function EditFname(){
 		var content = document.getElementById("fname").innerHTML;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		document.getElementById("fnameEdit").onclick=RevertFname;
 		document.getElementById("fnameEdit").innerHTML='Confirm';
 		document.getElementById("fnameEdit").id="fnameConfirm";
+=======
+		document.getElementById("fnameEdit").innerHTML=
+		'<div class="button btn btn-small" onclick="RevertFname()">Confirm</div>'
+>>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 =======
 		document.getElementById("fnameEdit").innerHTML=
 		'<div class="button btn btn-small" onclick="RevertFname()">Confirm</div>'
@@ -61,9 +76,14 @@ Author: Code Apes.
 	}
 	function RevertFname(){
 <<<<<<< HEAD
+<<<<<<< HEAD
 		document.getElementById("fnameConfirm").onclick=EditFname;
 		document.getElementById("fnameConfirm").innerHTML='Edit';
 		document.getElementById("unameConfirm").id="unameEdit";
+=======
+		document.getElementById("fnameEdit").innerHTML= 
+		'<div class="button btn btn-small" onclick="EditFname()">Edit</div>';
+>>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 =======
 		document.getElementById("fnameEdit").innerHTML= 
 		'<div class="button btn btn-small" onclick="EditFname()">Edit</div>';
@@ -74,9 +94,14 @@ Author: Code Apes.
 	
 	function EditGender(){
 <<<<<<< HEAD
+<<<<<<< HEAD
 		document.getElementById("genderEdit").innerHTML='<a>Confirm<>';
 		document.getElementById("genderEdit").id="genderConfirm";
 		document.getElementById("genderEdit").onclick=RevertGender;
+=======
+		document.getElementById("genderEdit").innerHTML=
+		'<div class="button btn btn-small" onclick="RevertGender()">Confirm</div>'
+>>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 =======
 		document.getElementById("genderEdit").innerHTML=
 		'<div class="button btn btn-small" onclick="RevertGender()">Confirm</div>'
@@ -90,9 +115,14 @@ Author: Code Apes.
 	}
 	function RevertGender(){
 <<<<<<< HEAD
+<<<<<<< HEAD
 		document.getElementById("genderConfirm").innerHTML='Edit';
 		document.getElementById("genderConfirm").id="genderEdit";
 		document.getElementById("genderConfirm").onclick=EditGender;
+=======
+		document.getElementById("genderEdit").innerHTML= 
+		'<div class="button btn btn-small" onclick="EditGender()">Edit</div>';
+>>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 =======
 		document.getElementById("genderEdit").innerHTML= 
 		'<div class="button btn btn-small" onclick="EditGender()">Edit</div>';
@@ -118,6 +148,9 @@ Author: Code Apes.
 <<<<<<< HEAD
 =======
 	
+<<<<<<< HEAD
+>>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
+=======
 >>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 	</script>
 </head>
@@ -167,9 +200,13 @@ Author: Code Apes.
 		  <td><h3>Username:</h3></td>
 		  <td><h3 id="uname"><?php echo $row['Username']?></h3></td>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		  <td><div class="button btn btn-small" onclick="EditUname()" id="unameEdit">Edit</div></td>
 		  <td id="unameimg"></td>
 		  </form>
+=======
+		  <td id="unameEdit"><div class="button btn btn-small" onclick="EditUname()">Edit</div></td>
+>>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 =======
 		  <td id="unameEdit"><div class="button btn btn-small" onclick="EditUname()">Edit</div></td>
 >>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
@@ -179,9 +216,13 @@ Author: Code Apes.
 		  <td><h3>Full name:</h3></td>
 		  <td><h3 id="fname"><?php echo $row['Name']?></h3></td>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		  <td><div class="button btn btn-small" onclick="EditFname()" id="fnameEdit">Edit</div></td>
 		  <td id="fnameimg"></td>
 		  </form>
+=======
+		  <td id="fnameEdit"><div class="button btn btn-small" onclick="EditFname()">Edit</div></td>
+>>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 =======
 		  <td id="fnameEdit"><div class="button btn btn-small" onclick="EditFname()">Edit</div></td>
 >>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
@@ -191,9 +232,13 @@ Author: Code Apes.
 		  <td><h3>Gender:</h3></td>
 		  <td><h3 id="gender"><?php echo $row['Gender']?></h3></td>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		  <td><div class="button btn btn-small" onclick="EditGender()" id="genderEdit">Edit</div></td>
 		  <td id="genderimg"></td>
 		  </form>
+=======
+		  <td id="genderEdit"><div class="button btn btn-small" onclick="EditGender()">Edit</div></td>
+>>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 =======
 		  <td id="genderEdit"><div class="button btn btn-small" onclick="EditGender()">Edit</div></td>
 >>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
@@ -203,9 +248,13 @@ Author: Code Apes.
 		  <td><h3>Age:</h3></td>
 		  <td><h3 id="age"><?php echo $row['Age']?></h3></td>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		  <td><div class="button btn btn-small" onclick="EditAge()" id="ageEdit">Edit</div></td>
 		  <td id="ageimg"></td>
 		  </form>
+=======
+		  <td id="ageEdit"><div class="button btn btn-small" onclick="EditAge()">Edit</div></td>
+>>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
 =======
 		  <td id="ageEdit"><div class="button btn btn-small" onclick="EditAge()">Edit</div></td>
 >>>>>>> 21e6639f9917ea5b16e30bc150fd4f652a6f27b7
