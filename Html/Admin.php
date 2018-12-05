@@ -95,27 +95,28 @@ require('topnav.php');
                          <h1> Active users:</h1><?php 
                         $sql="SELECT Arrange.TouristsID as I,Username,count(ArrangeID) as c FROM Arrange join Tourists WHERE Arrange.TouristsID=Tourists.TouristsID GROUP BY Arrange.TouristsID order by c limit 3";
                         $result = mysqli_query($link, $sql);
-                        $row = mysqli_fetch_assoc($result);
+												echo "<table>";
                         while($row = mysqli_fetch_assoc($result)){
-                            $uid=$row['I'];
+														$uid=$row['I'];
+														echo $uid;
                             $uname=$row['Username'];
-                            $times=$row['c'];
+														$times=$row['c'];
+														
                          echo "
-			  <table>
 			  <tr>
 				<td><h3>$uid</h3></td>
 				<td><h3>$uname</h3></td>
         <td><h3>Times: $times</h3></td>
-			  </tr>
-			  </table>";
-			  }
+			  </tr>";
+				}
+				echo "</table>";
                         ?>
                         <br>
                         <h1>Hot choices:</h1><?php 
                          $sql="SELECT AName,count(RecommandAttraction.AID) AS A FROM RecommandAttraction JOIN Attraction where RecommandAttraction.AID=Attraction.AID order by A limit 1";
                           $result = mysqli_query($link, $sql);
                         $row = mysqli_fetch_assoc($result);
-                        echo "Attraction".$row['AName'];    
+                        echo "Attraction: ".$row['AName'];    
                         ?>
                         <br>
                         <?php 
@@ -129,7 +130,7 @@ require('topnav.php');
                          $sql="SELECT RName,count(RecommandRes.RID) AS A FROM RecommandRes JOIN Restaurant where RecommandRes.RID=Restaurant.RID order by A limit 1";
                           $result = mysqli_query($link, $sql);
                         $row = mysqli_fetch_assoc($result);
-                        echo "Restaurant".$row['RName'];    
+                        echo "Restaurant: ".$row['RName'];    
                         ?>
                         <br>
                         <h1>Data <a href="SearchID_form.php">(Search for data)</a></h1><hr>
