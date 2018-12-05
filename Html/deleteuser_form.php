@@ -25,7 +25,7 @@ Author: Code Apes.
 
 <div class="form_container">
 <h1>Delete user information</h1>
-<form action="delete_user.php" method="post">
+<form action="php/delete_user.php" method="post">
 <ul class="form_input">
 
 <li>
