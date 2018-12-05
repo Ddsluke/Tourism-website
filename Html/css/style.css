@@ -196,7 +196,6 @@ It should be used in conjunction with a second class or ID
 	text-align:left; 
 }
 
-#intro article {}
 #intro article h2{
 	font-size:52px; 
 	font-family: Verdana, sans-serif;
@@ -351,7 +350,7 @@ input[type=submit]:hover{
 	border:2px solid;
 }
 
-input[type=text], input[type=date], select {
+input[type=text], input[type=date], input[type=number], input[type=email], select {
 	font-family:Verdana, Geneva, sans-serif;
     padding: 12px 20px;
     margin: 8px 0;
