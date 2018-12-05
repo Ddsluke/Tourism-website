@@ -11,11 +11,14 @@
 
 <body>
 <div class="wrapper">
+	<!-- topbar navigation menu -->
 	<?php
 	require('topnav.php');
 	?>
+	<!-- end topbar -->
+	
+	<div class="container">
 </div>
-<div class="container">
     <?PHP
     $servername = "mysql.comp.polyu.edu.hk";
     $username = "16098537d";//need to change to xiajialu's
@@ -42,11 +45,49 @@ if(isset($_POST["name"]))
 
 if(isset($_POST['price']))
 {
+    $sprice=0;
+    $sprice1=0;
+    $sprice2=0;
+    $sprice3=0;
     $pricerange=$_POST['price'];
+    $length=count($pricerange);
+    if($length==1||$length==2)
+    {
     $sprice=$pricerange[0];
     $upper=$sprice+300;
     $sprice2=$pricerange[count($pricerange)-1];
     $upper2=$sprice2+300;
+    $sprice3=$sprice;
+        $upper3=$upper;
+        $sprice1=$sprice;
+        $upper1=$upper;
+    
+    }
+    if($length==3)
+    {
+        $sprice=$pricerange[0];
+         $upper=$sprice+300;
+        $sprice2=$pricerange[count($pricerange)-1];
+        $upper2=$sprice2+300;
+        $sprice1=$pricerange[1];
+        $upper1=$sprice1+300;
+        $sprice3=$sprice;
+        $upper3=$upper;
+        
+    }
+    if($length==4)
+    {
+        $sprice=$pricerange[0];
+         $upper=$sprice+300;
+        $sprice2=$pricerange[count($pricerange)-1];
+        $upper2=$sprice2+300;
+        $sprice1=$pricerange[1];
+        $upper1=$sprice1+300;
+        $sprice3=$pricerange[2];
+        $upper3=$sprice3+300;
+        
+    }
+   
     
 }
 $sql=array(";",";",";",";",";",";",";",";",";");
@@ -63,7 +104,7 @@ if($stype=="male")
     for($i=0;$i<count($area);$i++)
     {
         $sarea=$area[$i];
-    $sql[$i]="SELECT * FROM Attraction JOIN Attractions_Type WHERE Attraction.AID=Attractions_Type.AID AND AName LIKE '%$sname%' AND ((Price>=$sprice AND Price<$upper) or( Price >=$sprice2 AND Price <$upper2)) AND Area LIKE '%$sarea%'";
+    $sql[$i]="SELECT * FROM Attraction JOIN Attractions_Type WHERE Attraction.AID=Attractions_Type.AID AND AName LIKE '%$sname%' AND ((Price>=$sprice AND Price<$upper) or( Price >=$sprice2 AND Price <$upper2) or ( Price >=$sprice1 AND Price <$upper1) or( Price >=$sprice3 AND Price <$upper3)) AND Area LIKE '%$sarea%'";
     }
 }
    
@@ -79,7 +120,7 @@ if($stype=="male")
     for($i=0;$i<count($area);$i++)
     {
         $sarea=$area[$i];
-    $sql[$i]="SELECT * FROM Attraction WHERE AName LIKE '%$sname%' AND ((Price>=$sprice AND Price<=$upper) or Price>=$sprice2)  AND Area LIKE '%$sarea%'";
+    $sql[$i]="SELECT * FROM Attraction WHERE AName LIKE '%$sname%' AND ((Price>=$sprice AND Price<=$upper) or ( Price >=$sprice1 AND Price <$upper1) or( Price >=$sprice3 AND Price <$upper3) or Price>=$sprice2)  AND Area LIKE '%$sarea%'";
     }
 }
         }
@@ -122,7 +163,7 @@ elseif ($stype=="female") {
     for($i=0;$i<count($area);$i++)
     {
         $sarea=$area[$i];
-    $sql[$i]="SELECT * FROM Hotel join RoomInfor WHERE Hotel.HID=RoomInfor.Hotel_HID AND HName LIKE '%$sname%' AND ((Price>=$sprice AND Price<$upper) or (Price>=$sprice2 AND Price<$upper2)) AND Area LIKE '%$sarea%'";
+    $sql[$i]="SELECT * FROM Hotel join RoomInfor WHERE Hotel.HID=RoomInfor.Hotel_HID AND HName LIKE '%$sname%' AND ((Price>=$sprice AND Price<$upper) or( Price >=$sprice2 AND Price <$upper2) or ( Price >=$sprice1 AND Price <$upper1) or( Price >=$sprice3 AND Price <$upper3)) AND Area LIKE '%$sarea%'";
     
     }
 }
@@ -139,7 +180,7 @@ elseif ($stype=="female") {
     for($i=0;$i<count($area);$i++)
     {
         $sarea=$area[$i];
-    $sql[$i]="SELECT * FROM Hotel join RoomInfor WHERE Hotel.HID=RoomInfor.Hotel_HID AND HName LIKE '%$sname%'AND ((Price>=$sprice AND Price<=$upper) or Price>=$sprice2)  AND Area LIKE '%$sarea%'";
+    $sql[$i]="SELECT * FROM Hotel join RoomInfor WHERE Hotel.HID=RoomInfor.Hotel_HID AND HName LIKE '%$sname%'AND ((Price>=$sprice AND Price<=$upper) or ( Price >=$sprice1 AND Price <$upper1) or( Price >=$sprice3 AND Price <$upper3) or Price>=$sprice2)  AND Area LIKE '%$sarea%'";
     }
 }
         }
@@ -182,7 +223,7 @@ elseif($stype=="other")
     for($i=0;$i<count($area);$i++)
     {
         $sarea=$area[$i];
-    $sql[$i]="SELECT * FROM Restaurant WHERE RName LIKE '%$sname%' AND ((AveragePrice>=$sprice AND AveragePrice<$upper) or (AveragePrice>=$sprice2 AND AveragePrice<$upper2)) AND Area LIKE '%$sarea%'";
+    $sql[$i]="SELECT * FROM Restaurant WHERE RName LIKE '%$sname%' AND ((AveragePrice>=$sprice AND AveragePrice<$upper) or( AveragePrice >=$sprice2 AND AveragePrice <$upper2) or ( AveragePrice >=$sprice1 AND AveragePrice <$upper1) or( AveragePrice >=$sprice3 AND AveragePrice <$upper3)) AND Area LIKE '%$sarea%'";
     }
     
 }
@@ -199,7 +240,7 @@ elseif($stype=="other")
     for($i=0;$i<count($area);$i++)
     {
         $sarea=$area[$i];
-    $sql[$i]="SELECT * FROM Restaurant WHERE RName LIKE '%$sname%' AND ((AveragePrice>=$sprice AND AveragePrice<=$upper) or AveragePrice>=$sprice2)  AND Area LIKE '%$sarea%'";
+    $sql[$i]="SELECT * FROM Restaurant WHERE RName LIKE '%$sname%' AND ((AveragePrice>=$sprice AND AveragePrice<=$upper) or ( AveragePrice >=$sprice1 AND AveragePrice <$upper1) or( AveragePrice >=$sprice3 AND AveragePrice <$upper3)or AveragePrice>=$sprice2)  AND Area LIKE '%$sarea%'";
     }
 }
         }
@@ -236,6 +277,7 @@ if($flag==0)
       
 $conn->close();
 ?>
+
 </div>
 </body>
 </html>
