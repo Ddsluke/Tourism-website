@@ -65,22 +65,25 @@ Author: Code Apes.
 		</li>
 	
 		<li>
-		<label for="">Region</label>
-		<input type="checkbox" name="area[]" value="Hung Hom">Hung Hom<br>
-		<input type="checkbox" name="area[]" value="Disneyland">Disneyland<br>
-                <input type="checkbox" name="area[]" value="Mong Kok">Mong Kok<br>
-                <input type="checkbox" name="area[]" value="Ocean Park">Ocean Park<br>
-                <input type="checkbox" name="area[]" value="Tsim Sha Tsui">Tsim Sha Tsui<br>
-                <input type="checkbox" name="area[]" value="Victoria Peak">Victoria Peak<br>
-		<input type="checkbox" name="area[]" value="Homantin">Homantin
+		<table>
+		<tr><label for="">Region</label></tr>
+		<tr><td><input type="checkbox" name="area[]" value="Disneyland">Disneyland</td>
+		<td><input type="checkbox" name="area[]" value="Hung Hom">Hung Hom</td></tr>
+		<tr><td><input type="checkbox" name="area[]" value="Tsim Sha Tsui">Tsim Sha Tsui</td>
+		<td><input type="checkbox" name="area[]" value="Ocean Park">Ocean Park</td></tr>
+		<tr><td><input type="checkbox" name="area[]" value="Homantin">Homantin</td>
+		<td><input type="checkbox" name="area[]" value="Victoria Peak">Victoria Peak</td></tr>
+		<table>
 		</li>
 		
 		<li>
 		<label for="">Price Range</label>
-		<input type="checkbox" name="price[]" value="0">0~300 
-		<input type="checkbox" name="price[]" value="300">300~600 <br>
-		<input type="checkbox" name="price[]" value="600">600~900 
-		<input type="checkbox" name="price[]" value="901">>1000 
+		<table>
+		<tr><td><input type="checkbox" name="price[]" value="0">0~300 </td>
+		<td><input type="checkbox" name="price[]" value="300">300~600 </td></tr>
+		<tr><td><input type="checkbox" name="price[]" value="600">600~900 </td>
+		<td><input type="checkbox" name="price[]" value="901">>1000 </td></tr>
+		</table>
 		</li>
 
 	    <div id="submit">
