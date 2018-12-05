@@ -43,6 +43,7 @@
     $ArrangeId=$row[0];
     
     $se1="SELECT * FROM RecommandRes WHERE ArrangeId='$ArrangeId'";
+    mysqli_query($link,$se1);
     if(mysqli_affected_rows($link)>0){
         $de1="DELETE FROM RecommandRes WHERE ArrangeId='$ArrangeId'";
         $reslut=mysqli_query($link,$de1);
@@ -59,6 +60,7 @@
     }
     
     $se2="SELECT * FROM RecommandHotel WHERE ArrangeId='$ArrangeId'";
+    mysqli_query($link,$se2);
     if(mysqli_affected_rows($link)>0){
         $de2="DELETE FROM RecommandHotel WHERE ArrangeId='$ArrangeId'";
         $reslut=mysqli_query($link,$de2);
@@ -75,6 +77,7 @@
     }
     
     $se3="SELECT * FROM RecommandAttraction WHERE ArrangeId='$ArrangeId'";
+    mysqli_query($link,$se3);
     if(mysqli_affected_rows($link)>0){
         $de3="DELETE FROM RecommandAttraction WHERE ArrangeId='$ArrangeId'";
         $reslut=mysqli_query($link,$de3);
@@ -120,6 +123,6 @@
     else{
         echo "<br>DELETE ID is: " . $TouristsID;        //success
     }
-    header("refresh:3;url=../deleteuser_form.php");
+    header("refresh:3;url=deleteuser_form.php");
     mysqli_close($link);      //close database
     ?>
