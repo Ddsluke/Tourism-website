@@ -26,7 +26,7 @@ function finish($msg)
 }
 
 start("connecting database");
-require('./db.php');
+require('connect.php');
 finish("connecting database");
 
 start("creating all tables and sample data");

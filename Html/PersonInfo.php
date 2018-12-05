@@ -260,11 +260,11 @@ require('topnav.php');
     }     
   } else
       echo "NO RESULT FOUND";
-	$link->close();
     ?>
 		
 	
 <?php
+$link->close();
 require('footer.php');
 ?>
 </body>

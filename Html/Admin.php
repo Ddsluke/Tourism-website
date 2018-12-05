@@ -130,7 +130,9 @@ require('topnav.php');
                          $sql="SELECT RName,count(RecommandRes.RID) AS A FROM RecommandRes JOIN Restaurant where RecommandRes.RID=Restaurant.RID order by A limit 1";
                           $result = mysqli_query($link, $sql);
                         $row = mysqli_fetch_assoc($result);
-                        echo "Restaurant: ".$row['RName'];    
+                        echo "Restaurant: ".$row['RName'];   
+						
+						mysqli_close($link);					
                         ?>
                         <br>
                         <h1>Data <a href="SearchID_form.php">(Search for data)</a></h1><hr>

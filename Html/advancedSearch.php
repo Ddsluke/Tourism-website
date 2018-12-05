@@ -90,8 +90,6 @@ Author: Code Apes.
 	</ul>
   </form>
 </div>
-        <?PHP
-        ?>
 
 </body>
 

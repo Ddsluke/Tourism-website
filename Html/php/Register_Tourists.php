@@ -2,7 +2,6 @@
 //Register Tourists
 	session_start();
 	header("Content-Type: text/html; charset=utf8");
-    include('connect.php');//connect to database
 	$Username = $_POST['username'];//get Tourists's Username
     $Name =$_POST['fullname'];//get Tourists's name
     $Password = $_POST['password'];//get Tourists's password

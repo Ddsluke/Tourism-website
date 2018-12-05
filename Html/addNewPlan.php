@@ -4,7 +4,7 @@ if (!isset($_SESSION['login_tourist'])){
 	echo "Only login users can schedule travel plan. Please login first!";
 	header("Refresh:2; url=Login.php");
 } else {
-	require('php/connect.php');
+#	require('php/connect.php');
 	$id = $_SESSION['login_tourist'];
 ?>
 
