@@ -67,7 +67,7 @@ require('topnav.php');
 
 <div class="input_container">
   <h1>Create Your Account</h1>
-  <a href="Login.php"><h4>Already a member?</h4></a>
+  <h4><a href="Login.php">Already a member?</a></h4>
   <form action="php/Register_Tourists.php" method="post">
 	<br>Email
 	<input type="text" id="email" name="email" placeholder="Your email.." onchange="checkEmail()" required="required">

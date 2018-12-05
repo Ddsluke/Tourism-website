@@ -37,7 +37,7 @@
 		<a class="dropdown">By Region<i class="fa fa-caret-down"></i></a>
 			<div class="dropdown-container">
 							<a href="attraction.php?Area='Hung Hom'">Hung Hom</a>
-				<a href="attraction.php?Area='Disnyland'">Disnyland</a>
+				<a href="attraction.php?Area='Disneyland'">Disneyland</a>
 				<a href="attraction.php?Area='Homantin'">Homantin</a>
 								<a href="attraction.php?Area='Mong Kok'">Mong Kok</a>
 								<a href="attraction.php?Area='Ocean Park'">Ocean Park</a>

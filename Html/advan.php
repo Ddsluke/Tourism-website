@@ -16,9 +16,10 @@
 	require('topnav.php');
 	?>
 	<!-- end topbar -->
-	
-	<div class="container">
 </div>
+<div class="wrapper" id="top">
+<main class="container">
+<div class="content">
     <?PHP
     $servername = "mysql.comp.polyu.edu.hk";
     $username = "16098537d";//need to change to xiajialu's
@@ -325,11 +326,12 @@ if(!$isset)
 }
 
 if($flag==0)
-    echo "<main> NO RESULT FOUND </main>";
+    echo "NO RESULT FOUND";
       
 $conn->close();
 ?>
-
+</div>
+</main>
 </div>
 </body>
 </html>

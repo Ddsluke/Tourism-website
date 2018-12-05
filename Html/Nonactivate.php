@@ -18,7 +18,7 @@ if($result = mysqli_query($conn, $sql)){
 else
     echo "No changes";
 $conn->close();
-header("Location:Admin.php");
+header("refresh:1;url=Admin.php");
 ?>
 
 

@@ -44,7 +44,7 @@
 		<a class="dropdown">By Region<i class="fa fa-caret-down"></i></a>
 			<div class="dropdown-container">
 				<a href="restaurant.php?Area='Hung Hom'">Hung Hom</a>
-				<a href="restaurant.php?Area='Disneyland'">Disnyland</a>
+				<a href="restaurant.php?Area='Disneyland'">Disneyland</a>
 				<a href="restaurant.php?Area='Homantin'">Homantin</a>
                                 <a href="restaurant.php?Area='Mong Kok'">Mong Kok</a>
                                 <a href="restaurant.php?Area='Ocean park'">Ocean Park</a>

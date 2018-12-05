@@ -67,7 +67,7 @@ Author: Code Apes.
 		<li>
 		<label for="">Region</label>
 		<input type="checkbox" name="area[]" value="Hung Hom">Hung Hom<br>
-		<input type="checkbox" name="area[]" value="Disnyland">Disnyland<br>
+		<input type="checkbox" name="area[]" value="Disneyland">Disneyland<br>
                 <input type="checkbox" name="area[]" value="Mong Kok">Mong Kok<br>
                 <input type="checkbox" name="area[]" value="Ocean Park">Ocean Park<br>
                 <input type="checkbox" name="area[]" value="Tsim Sha Tsui">Tsim Sha Tsui<br>
