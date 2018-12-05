@@ -1,7 +1,7 @@
 <div class="wrapper">
 		<nav class="topnav">
 			<div id="logo" class="fl_left">
-				<a href="index.html"><img src="img/logo.jpg" alt="Homepage"></a>
+				<a href="index.php"><img src="img/logo.jpg" alt="Homepage"></a>
 			</div>
 			<div class="topmenu" id="topmenu">
 				<li><a href="index.php">Home</a></li>

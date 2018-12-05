@@ -31,17 +31,26 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 if ($conn->connect_error) {
     die("CAN'T CONNECT : " . $conn->connect_error);
 } 
+$isset=1;
 if(isset($_POST["type"]))
 {
     $stype=$_POST["type"];
    
 }
+else{
+    $isset=0;
+}
+
 if(isset($_POST["name"]))
 {
     $sname=$_POST["name"];
     
 }
-
+else
+{
+$sname="";
+$isset=0;
+}
 
 if(isset($_POST['price']))
 {
@@ -90,6 +99,17 @@ if(isset($_POST['price']))
    
     
 }
+else{
+    $sprice=0;
+    $upper=0;
+    $sprice1=0;
+    $upper1=0;
+    $sprice2=0;
+    $upper2=0;
+    $sprice3=0;
+    $upper3=0;
+    $isset=0;
+}
 $sql=array(";",";",";",";",";",";",";",";",";");
 $flag=0;
 if($stype=="male")
@@ -107,6 +127,10 @@ if($stype=="male")
     $sql[$i]="SELECT * FROM Attraction JOIN Attractions_Type WHERE Attraction.AID=Attractions_Type.AID AND AName LIKE '%$sname%' AND ((Price>=$sprice AND Price<$upper) or( Price >=$sprice2 AND Price <$upper2) or ( Price >=$sprice1 AND Price <$upper1) or( Price >=$sprice3 AND Price <$upper3)) AND Area LIKE '%$sarea%'";
     }
 }
+else{
+    $area=array();
+    $isset=0;
+}
    
         }
         else
@@ -122,6 +146,10 @@ if($stype=="male")
         $sarea=$area[$i];
     $sql[$i]="SELECT * FROM Attraction WHERE AName LIKE '%$sname%' AND ((Price>=$sprice AND Price<=$upper) or ( Price >=$sprice1 AND Price <$upper1) or( Price >=$sprice3 AND Price <$upper3) or Price>=$sprice2)  AND Area LIKE '%$sarea%'";
     }
+}
+else{
+    $area=array();
+    $isset=0;
 }
         }
         for($i=0;$i<count($area);$i++)
@@ -167,6 +195,10 @@ elseif ($stype=="female") {
     
     }
 }
+else{
+    $area=array();
+    $isset=0;
+}
    
         }
         else
@@ -182,6 +214,10 @@ elseif ($stype=="female") {
         $sarea=$area[$i];
     $sql[$i]="SELECT * FROM Hotel join RoomInfor WHERE Hotel.HID=RoomInfor.Hotel_HID AND HName LIKE '%$sname%'AND ((Price>=$sprice AND Price<=$upper) or ( Price >=$sprice1 AND Price <$upper1) or( Price >=$sprice3 AND Price <$upper3) or Price>=$sprice2)  AND Area LIKE '%$sarea%'";
     }
+}
+else{
+    $area=array();
+    $isset=0;
 }
         }
         for($i=0;$i<count($area);$i++)
@@ -227,6 +263,10 @@ elseif($stype=="other")
     }
     
 }
+else{
+    $area=array();
+    $isset=0;
+}
    
         }
         else
@@ -242,6 +282,10 @@ elseif($stype=="other")
         $sarea=$area[$i];
     $sql[$i]="SELECT * FROM Restaurant WHERE RName LIKE '%$sname%' AND ((AveragePrice>=$sprice AND AveragePrice<=$upper) or ( AveragePrice >=$sprice1 AND AveragePrice <$upper1) or( AveragePrice >=$sprice3 AND AveragePrice <$upper3)or AveragePrice>=$sprice2)  AND Area LIKE '%$sarea%'";
     }
+}
+else{
+    $area=array();
+    $isset=0;
 }
         }
         for($i=0;$i<count($area);$i++)
@@ -272,8 +316,16 @@ elseif($stype=="other")
   } 
         }
 }
+else
+$isset=0;
+if(!$isset)
+{
+    echo"Please select all the attribute";
+    header("refresh:1;url=advancedSearch.php");
+}
+
 if($flag==0)
-    echo"no result found";
+    echo "<main> NO RESULT FOUND </main>";
       
 $conn->close();
 ?>

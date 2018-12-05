@@ -12,16 +12,14 @@ if ($conn->connect_error) {
 } 
 $date= date("Y-m-d");
 $sql="update Arrange SET Activate=1 WHERE Arrange.LeaveDay<$date";
-if($result = mysqli_query($conn, $sql))
-echo "done";
+if($result = mysqli_query($conn, $sql)){
+    echo "Success!";
+}
 else
     echo "No changes";
 $conn->close();
+header("Location:Admin.php");
 ?>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
