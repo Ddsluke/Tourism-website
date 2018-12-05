@@ -52,6 +52,10 @@ Author: Code Apes.
     border-radius: 4px;
     box-sizing: border-box;
 	}
+	
+	input[type=submit] {
+		margin-top:0px;
+	}
 </style>
 	<script>
 	function EditUname(){

@@ -13,8 +13,6 @@
         mysqli_close($link);
         exit;
     }
-    echo "<p>Connected successfully</p>";
-    
     //Registr Tourists
     header("Content-Type: text/html; charset=utf8");
     mysqli_select_db($link,'16098537d');            //Select database
@@ -44,6 +42,6 @@
         echo "id exists <br> update successfully";
     }
     
-    
+    header("refresh:3;url=edituser_form.php");
     mysqli_close($link);      //close database
 ?>

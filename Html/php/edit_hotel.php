@@ -13,7 +13,6 @@
         mysqli_close($link);
         exit;
     }
-    echo "<p>Connected successfully</p>";
     
     //Registr Tourists
     header("Content-Type: text/html; charset=utf8");
@@ -59,6 +58,6 @@
         echo "<br>type ID is: " . $HID;        //success
         echo "<br>type name: ". $RoomType;
     }
-    
+    header("refresh:3;url=edithotel_form.php");
     mysqli_close($link);      //close database
 ?>

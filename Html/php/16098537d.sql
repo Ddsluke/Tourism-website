@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `16098537d`.`Tourists` (
   `Username` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`TouristsID`));
 
-ALTER TABLE Tourists AUTO_INCREMENT = 100;
+ALTER TABLE Tourists AUTO_INCREMENT = 10000;
 
 
 -- -----------------------------------------------------
@@ -320,11 +320,11 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `16098537d`;
-INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (10000, '00000001@qq.com', '00000001', 'M', 023, '00000001', 'DingDing');
-INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (10001, '00000002@qq.com', '00000002', 'M', 44, '00000002', 'YuYu');
-INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (10002, '00000003@qq.com', '00000002', 'F', 25, '00000003', 'GaoGao');
-INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (10003, '00000004@qq.com', '00000002', 'F', 56, '00000004', 'DaiDai');
-INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (10004, '00000005@qq.com', '00000002', 'M', 36, '00000005', 'QinQin');
+INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (10001, '00000001@qq.com', '11111111', 'M', 023, '00000001', 'DingDing');
+INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (10002, '00000002@qq.com', '22222222', 'M', 44, '00000002', 'YuYu');
+INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (10003, '00000003@qq.com', '33333333', 'F', 25, '00000003', 'GaoGao');
+INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (10004, '00000004@qq.com', '44444444', 'F', 56, '00000004', 'DaiDai');
+INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (10005, '00000005@qq.com', '55555555', 'M', 36, '00000005', 'QinQin');
 
 COMMIT;
 
