@@ -123,6 +123,6 @@
     else{
         echo "<br>DELETE ID is: " . $TouristsID;        //success
     }
-    header("refresh:3;url=deleteuser_form.php");
+    header("refresh:3;url=../deleteuser_form.php");
     mysqli_close($link);      //close database
     ?>
