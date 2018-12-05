@@ -158,7 +158,7 @@ elseif ($stype=="female") {
   {
           ?>
    <div class="item">
-					<img src=<?php "img/".$row['HImage']?> alt="#">
+					<img src=<?php echo "img/".$row['HImage']?> alt="#">
 					<div class="right-block">
 						<h2><?php echo $row['HName'] ?></h2>
                                                 <h3>Region: <?php echo $row['Area'] ?></h3>
@@ -219,7 +219,7 @@ elseif($stype=="other")
   {
           ?>
    <div class="item">
-					<img src=<?php "img/".$row['RImage']?> alt="#">
+					<img src=<?php echo "img/".$row['RImage']?> alt="#">
 					<div class="right-block">
 						<h2><?php echo $row['RName'] ?></h2>
                                                 <h3>Region: <?php echo $row['Area'] ?></h3>
