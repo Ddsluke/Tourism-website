@@ -10,6 +10,7 @@ if (!isset($_SESSION['login_tourist'])){
 <!DOCTYPE html>
 <html>
 <head>
+<title>Plan | ExploreHK</title>
 <meta charset='utf-8' />
 <link type="text/css" rel="stylesheet" href="css/style.css">
 <link href='css/fullcalendar.min.css' rel='stylesheet' />

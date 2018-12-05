@@ -4,7 +4,7 @@ Author: Code Apes.
 -->
 <html>
 <head>
-<title>add Item</title>
+<title>Edit Item | ExploreHK</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link type="text/css" rel="stylesheet" href="css/style.css">
@@ -54,7 +54,7 @@ function checkPrice() {
 </div>
 
 <div class="form_container">
-<h1>edit Attraction information</h1>
+<h1>Edit Attraction Information</h1>
 <form action="php/edit_attr.php" method="post">
 <ul class="form_input">
 

@@ -4,7 +4,7 @@ Author: Code Apes.
 -->
 <html>
 <head>
-	<title>Sign Up for A New Account</title>
+	<title>Sign Up for A New Account | ExploreHK</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link type="text/css" rel="stylesheet" href="css/loginPage.css">
@@ -70,7 +70,7 @@ require('topnav.php');
   <a href="Login.php"><h4>Already a member?</h4></a>
   <form action="php/Register_Tourists.php" method="post">
 	<br>Email
-	<input type="text" id="email" name="email" placeholder="Your email.." onchange="checkEmail()"required="required">
+	<input type="text" id="email" name="email" placeholder="Your email.." onchange="checkEmail()" required="required">
 	<div id="email_error" style=
 	"display:none;
 	font-family:Verdana, Geneva, sans-serif;    width: 100%;

@@ -4,7 +4,7 @@ Author: Code Apes.
 -->
 <html>
 <head>
-<title>Add Item</title>
+<title>Edit Item | ExploreHK</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link type="text/css" rel="stylesheet" href="css/style.css">
@@ -49,7 +49,7 @@ function checkEmail() {
 </div>
 
 <div class="form_container">
-<h1>Edit User information</h1>
+<h1>Edit User Information</h1>
 <form action="edit_user.php" method="post">
 <ul class="form_input">
 
