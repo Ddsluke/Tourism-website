@@ -21,7 +21,7 @@ if (!$link) {
 //login Tourists
 header("Content-Type: text/html; charset=utf8");
 
-    include('connect.php');//connect to database
+ #   include('connect.php');//connect to database
    $TouristsID = $_POST['userid'];//get user's ID
     $Password = $_POST['password'];//get user's password
 	/*$Username = $_POST['username'];//get user's Username*/
