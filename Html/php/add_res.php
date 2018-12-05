@@ -59,6 +59,6 @@
         echo "<br>type ID is: " . $FID;   //success
         echo "<br>type name". $FoodType;
     }
-    header("refresh:3;url=addres_form.php");
+    header("refresh:3;url=../addres_form.php");
     mysqli_close($link);      //close database
 ?>
