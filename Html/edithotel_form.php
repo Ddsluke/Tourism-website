@@ -37,7 +37,7 @@ function checkroomtype(){
         document.getElementById("confirm").disabled = true;
     }
     else{
-        document.getElementById("roomtype").style.display='none';
+        document.getElementById("roomtype_").style.display='none';
         document.getElementById("confirm").disabled = false;
     }
 }
@@ -111,7 +111,7 @@ function checkPrice() {
 <option value="Single room">Single room</option>
 
 </select>
-<div id="area_error" class="error">Please choose a roomtype.</div>
+<div id="roomtype_error" class="error">Please choose a roomtype.</div>
 </li>
 
 <li>

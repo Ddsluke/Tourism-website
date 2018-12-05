@@ -42,6 +42,6 @@
         echo "id exists <br> update successfully";
     }
     
-    header("refresh:3;url=edituser_form.php");
+    header("refresh:3;url=../edituser_form.php");
     mysqli_close($link);      //close database
 ?>

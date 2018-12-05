@@ -24,13 +24,13 @@ Author: Code Apes.
 </div>
 
 <div class="form_container">
-<h1>Delete User Information</h1>
-<form action="delete_user.php" method="post">
+<h1>Delete user information</h1>
+<form action="php/delete_user.php" method="post">
 <ul class="form_input">
 
 <li>
 <label for="">ID</label>
-<input type="text" id="id" name="TouristsID" placeholder="Tourist's ID.." title="No longer than 8 characters" maxlength="8">
+<input type="text" id="id" name="TouristsID" placeholder="Tourist's ID.." title="No longer than 8 characters" maxlength="8" required="required">
 </li>
 
 

@@ -56,7 +56,7 @@
          echo "<br>type ID is: " . $ATID;   //success
          echo "<br>type name". $Type;
     }
-    header("refresh:3;url=addattr_form.php");
+    header("refresh:3;url=../addattr_form.php");
     mysqli_close($link);      //close database
 ?>
 

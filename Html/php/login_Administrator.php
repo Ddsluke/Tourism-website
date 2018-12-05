@@ -69,7 +69,7 @@ header("Content-Type: text/html; charset=utf8");
 		?>
 				 
 				 Administor Id or password is wrong, Please 
-				 <a href="login.php">
+				 <a href="../Login.php">
 				 try again.
 				 </a>.
 				 

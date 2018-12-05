@@ -58,6 +58,6 @@
         echo "<br>type ID is: " . $HID;        //success
         echo "<br>type name: ". $RoomType;
     }
-    header("refresh:3;url=edithotel_form.php");
+    header("refresh:3;url=../edithotel_form.php");
     mysqli_close($link);      //close database
 ?>
