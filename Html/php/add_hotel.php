@@ -54,6 +54,6 @@
         echo "<br>Room type ID is: " . mysqli_insert_id($link);   //success
         echo "<br>type name". $RoomType;
     }
-    header("refresh:3;url=addhotel_form.php");
+    header("refresh:3;url=../addhotel_form.php");
     mysqli_close($link);      //close database
     ?>
