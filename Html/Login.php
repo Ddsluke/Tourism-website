@@ -48,7 +48,7 @@ require('topnav.php');
 <div class="input_container">
   <h1>Login as <label id="loginLabel">Tourist</label></h1>
   <button id="button" onclick='change()'>For Admin</button>
-  <a id="reg" href="Registration.php"><h4>Register Now!</h4></a>
+  <h4><a id="reg" href="Registration.php">Register Now!</a></h4>
   <form id="form" action="php/login_Tourists.php" method="post">
 	<label for="uid">UserID</label>
 	<input type="text" id="userid" name="userid" placeholder="Your username.." 
