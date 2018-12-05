@@ -38,12 +38,10 @@ if (!isset($_SESSION['login_tourist'])){
 			<form action="addNewPlan.php" method="post"> 
 			  Arrival Date: <input type="date" name="arrivedate" /><br>
 			  Departure Date: <input type="date" name="leavedate" /><br>
-			  <input type="submit" value="add"/>
+			  <input type="submit" value="Add"/>
 			</form>
-		</div>
-	</main> 
-	<!-- end main body -->
-</div>
+
+
 
 <?php
 #$id=5;
@@ -82,5 +80,8 @@ $conn->close();
 }
 }
 ?>
-
+		</div>
+	</main> 
+	<!-- end main body -->
+</div>
 
