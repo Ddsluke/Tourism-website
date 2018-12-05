@@ -90,7 +90,7 @@ if(!isset($_GET['Area']))
     
   if($Level == 'all'&& $area=='all')
           {$sql = "select HName,Area,Level,HImage from Hotel".$attribute1;
-     $title="ALL HOTEL";
+     $title="ALL HOTELS";
           } 
           else if($area=='all' && $Level!='all'){
               $title="SEARCH BY LEVEL";

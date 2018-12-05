@@ -87,7 +87,7 @@ if(!isset($_GET['Area']))
 	
   if($type == 'all'&& $area=='all')
 		  {$sql = "select AName,Area,AImage from Attraction join Attractions_Type where Attraction.AID=Attractions_Type.AID".$attribute;
-	 $title="All Attraction";
+	 $title="ALL ATTRACTIONS";
 		  } 
 		  else if($area=='all' && $type!='all'){
 		 $title="search by type";

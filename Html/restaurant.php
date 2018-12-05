@@ -94,7 +94,7 @@ if(!isset($_GET['Area']))
     
   if($Type == 'all'&& $area=='all')
           {$sql = "select * from Restaurant join Restaurant_Foodtype join FoodType where Restaurant.RID=Restaurant_Foodtype.RID AND Restaurant_Foodtype.FID=FoodType.FID".$attribute;
-     $title="ALL RESTAURANT";
+     $title="ALL RESTAURANTS";
           } 
           else if($area=='all' && $Type!='all'){
               $title="SEARCH BY Type";
