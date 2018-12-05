@@ -14,7 +14,6 @@
         mysqli_close($link);
         exit;
     }
-    echo "<p>Connected successfully</p>";
     
     //Registr Tourists
     header("Content-Type: text/html; charset=utf8");
@@ -53,6 +52,6 @@
     else{
         echo "<br>DELETE ID is: " . $HID;        //success
     }
-    
+    header("refresh:3;url=deletehotel_form.php");
     mysqli_close($link);      //close database
     ?>

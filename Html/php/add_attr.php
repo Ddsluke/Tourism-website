@@ -13,7 +13,6 @@
         mysqli_close($link);
         exit;
     }
-    echo "<p>Connected successfully</p>";
     //Registr Tourists
     header("Content-Type: text/html; charset=utf8");
     mysqli_select_db($link,'16098537d');            //Select database
@@ -23,14 +22,16 @@
     $Price=$_POST['Price'];
     $Type=$_POST['Type'];
     
-    $in1=" insert into Attraction (AName,Area,Price,AImage) values ('$AName','$Area','$Price','attraction/victoriaharbour_attraction.jpg')";//insert
+    
+    $in1="insert into Attraction (AName,Area,Price,AImage) values ('$AName','$Area','$Price','attraction/victoriaharbour_attraction.jpg')";                //insert
     $reslut=mysqli_query($link,$in1);
     
     if (!$reslut){
         echo 'Failed to insert tourist: ', mysqli_error($link);
         mysqli_close($link);
         exit;
-    }else{
+    }
+    else{
         $AID = mysqli_insert_id($link);
         echo "insert successfully<br>";   //success
         echo "Attraction ID is: " . $AID;   //success
@@ -55,6 +56,7 @@
          echo "<br>type ID is: " . $ATID;   //success
          echo "<br>type name". $Type;
     }
-    
+    header("refresh:3;url=addattr_form.php");
     mysqli_close($link);      //close database
 ?>
+

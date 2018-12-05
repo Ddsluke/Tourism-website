@@ -71,18 +71,17 @@ function checkPrice() {
 
 <li>
 <label for="">ID</label>
-<input type="text" id="id" name="HID" placeholder="Hotel's ID.." title="No longer than 8 characters" maxlength="8">
+<input type="text" id="id" name="HID" placeholder="Hotel's ID.." title="No longer than 8 characters" maxlength="8" required="required">
 </li>
 
 <li>
 <label for="">Name</label>
-<input type="text" id="name" name="HName" placeholder="Hotel's name.." title="No longer than 50 characters" maxlength="50">
+<input type="text" id="name" name="HName" placeholder="Hotel's name.." title="No longer than 50 characters" maxlength="50" required="required">
 </li>
 
 <li>
 <label for="">Level</label>
 <select id="level" name="Level" onclick="checkLevel()">
-<option value="default">--Please choose--</option>
 <option value="1">Level 1</option>
 <option value="2">Level 2</option>
 <option value="3">Level 3</option>
@@ -95,12 +94,11 @@ function checkPrice() {
 <li>
 <label for="">Region</label>
 <select id="area" name="Area" onclick="checkArea()">
-<option value="default">--Please choose--</option>
+<option value="other">other</option>
 <option value="Hung Hom">Hung Hom</option>
 <option value="Homantin">Homantin</option>
 <option value="Mong Kok">Mong Kok</option>
 <option value="Causeway Bay">Causeway Bay</option>
-<option value="other">other</option>
 </select>
 <div id="area_error" class="error">Please choose a region.</div>
 </li>
@@ -108,10 +106,10 @@ function checkPrice() {
 <li>
 <label for="">RoomType</label>
 <select id="roomtype" name="RoomType" onclick="checkroomtype()">
-<option value="default">--Please choose--</option>
+<option value="other">other</option>
 <option value="Double room">Double room</option>
 <option value="Single room">Single room</option>
-<option value="other">other</option>
+
 </select>
 <div id="area_error" class="error">Please choose a roomtype.</div>
 </li>
@@ -119,10 +117,10 @@ function checkPrice() {
 <li>
 <!--
 <label for="" onclick="checkPrice()">Price</label>
-<input type="text" id="price" name="Price" placeholder="restaurant's price (e.g. 100.00).." title="No longer than 50 characters" maxlength="50">
+<input type="text" id="price" name="Price" placeholder="restaurant's price (e.g. 100.00).." title="No longer than 50 characters" maxlength="50" required="required">
 -->
 <label>Price HK$</label>
-<input id="price" type="number" name="Price" onlick="checkPrice()" placeholder="0" required name="price" min="0" value="0" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$">
+<input id="price" type="number" name="Price" onlick="checkPrice()" placeholder="0" required name="price" min="0" value="0" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" required="required">
 </li>
 
 

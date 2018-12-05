@@ -12,7 +12,6 @@
         mysqli_close($link);
         exit;
     }
-    echo "<p>Connected successfully</p>";
     //Registr Tourists
     header("Content-Type: text/html; charset=utf8");
     mysqli_select_db($link,'16098537d');            //Select database
@@ -28,6 +27,11 @@
     
     if (!$reslut){
         echo 'Failed to insert HOTEL: ', mysqli_error($link);
+        mysqli_close($link);
+        exit;
+    }
+    else if(mysqli_affected_rows($link)==0){
+        echo 'please insert something', mysqli_error($link);
         mysqli_close($link);
         exit;
     }else{
@@ -50,6 +54,6 @@
         echo "<br>Room type ID is: " . mysqli_insert_id($link);   //success
         echo "<br>type name". $RoomType;
     }
-    
+    header("refresh:3;url=addhotel_form.php");
     mysqli_close($link);      //close database
     ?>

@@ -29,7 +29,7 @@ Author: Code Apes.
 
 <li>
 <label for="">ID</label>
-<input type="text" id="id" name="RID" placeholder="restaurant's ID.." title="No longer than 8 characters" maxlength="8">
+<input type="text" id="id" name="RID" placeholder="restaurant's ID.." title="No longer than 8 characters" maxlength="8" required="required">
 </li>
 
 
