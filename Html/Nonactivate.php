@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("CAN'T CONNECT : " . $conn->connect_error);
 } 
 $date= date("Y-m-d");
-$sql="update Arrange SET Activate=1 WHERE Arrange.LeaveDay>$date";
+$sql="update Arrange SET Activate=1 WHERE Arrange.LeaveDay<$date";
 if($result = mysqli_query($conn, $sql))
 echo "done";
 else

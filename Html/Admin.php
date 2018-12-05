@@ -78,27 +78,26 @@ require('topnav.php');
 			  ?>
 			</table><br>
                         <h1>Summary</h1>
-                        <h1>Total users:</h1><?php 
+                        <h1>Total No of Users:</h1><?php 
                          $sql="SELECT count(DISTINCT TouristsID)as User FROM Tourists";
                           $result = mysqli_query($link, $sql);
                         $row = mysqli_fetch_assoc($result);
                         echo $row['User'];    
                         ?>
                         <br>
-                        <h1>Total active users:</h1><?php 
+                        <h1>No of Users Currently in HK:</h1><?php 
                         $sql="SELECT count(DISTINCT TouristsID)as AUser FROM Arrange where Activate=0";
                         $result = mysqli_query($link, $sql);
                         $row = mysqli_fetch_assoc($result);
                         echo $row['AUser'];     
                         ?>
                         <br>
-                         <h1> Active users:</h1><?php 
+                         <h1>No of Users with Plans:</h1><?php 
                         $sql="SELECT Arrange.TouristsID as I,Username,count(ArrangeID) as c FROM Arrange join Tourists WHERE Arrange.TouristsID=Tourists.TouristsID GROUP BY Arrange.TouristsID order by c limit 3";
                         $result = mysqli_query($link, $sql);
 												echo "<table>";
                         while($row = mysqli_fetch_assoc($result)){
 														$uid=$row['I'];
-														echo $uid;
                             $uname=$row['Username'];
 														$times=$row['c'];
 														
