@@ -52,6 +52,6 @@
     else{
         echo "<br>DELETE ID is: " . $RID;        //success
     }
-    header("refresh:3;url=deleteres_form.php");
+    header("refresh:3;url=../deleteres_form.php");
     mysqli_close($link);      //close database
     ?>
