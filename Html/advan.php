@@ -12,7 +12,7 @@
 <body>
 <div class="wrapper">
 	<?php
-	require('topbar.php');
+	require('topnav.php');
 	?>
 </div>
 <div class="container">
