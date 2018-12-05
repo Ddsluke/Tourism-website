@@ -32,6 +32,8 @@ CREATE TABLE IF NOT EXISTS `16098537d`.`Tourists` (
   `Username` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`TouristsID`));
 
+ALTER TABLE Tourists AUTO_INCREMENT = 100;
+
 
 -- -----------------------------------------------------
 -- Table `16098537d`.`timestamps`
@@ -318,11 +320,11 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `16098537d`;
-INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (00000001, '00000001@qq.com', '00000001', 'M', 023, '00000001', 'DingDing');
-INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (00000002, '00000002@qq.com', '00000002', 'M', 44, '00000002', 'YuYu');
-INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (00000003, '00000003@qq.com', '00000002', 'F', 25, '00000003', 'GaoGao');
-INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (00000004, '00000004@qq.com', '00000002', 'F', 56, '00000004', 'DaiDai');
-INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (00000005, '00000005@qq.com', '00000002', 'M', 36, '00000005', 'QinQin');
+INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (10000, '00000001@qq.com', '00000001', 'M', 023, '00000001', 'DingDing');
+INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (10001, '00000002@qq.com', '00000002', 'M', 44, '00000002', 'YuYu');
+INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (10002, '00000003@qq.com', '00000002', 'F', 25, '00000003', 'GaoGao');
+INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (10003, '00000004@qq.com', '00000002', 'F', 56, '00000004', 'DaiDai');
+INSERT INTO `16098537d`.`Tourists` (`TouristsID`, `Email`, `Password`, `Gender`, `Age`, `Name`, `Username`) VALUES (10004, '00000005@qq.com', '00000002', 'M', 36, '00000005', 'QinQin');
 
 COMMIT;
 
@@ -336,17 +338,6 @@ INSERT INTO `16098537d`.`Administrator` (`AdmID`, `Name`, `Password`) VALUES (00
 INSERT INTO `16098537d`.`Administrator` (`AdmID`, `Name`, `Password`) VALUES (00000007, '00000007', '00000007');
 INSERT INTO `16098537d`.`Administrator` (`AdmID`, `Name`, `Password`) VALUES (00000008, '00000008', '00000008');
 INSERT INTO `16098537d`.`Administrator` (`AdmID`, `Name`, `Password`) VALUES (00000009, '00000009', '00000009');
-
-COMMIT;
-
-
--- -----------------------------------------------------
--- Data for table `16098537d`.`Message`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `16098537d`;
-INSERT INTO `16098537d`.`Message` (`MID`, `Message`, `creat_time`, `AdmID`, `TouristsID`) VALUES (1, '111', NOW(), 00000006, 00000001);
-INSERT INTO `16098537d`.`Message` (`MID`, `Message`, `creat_time`, `AdmID`, `TouristsID`) VALUES (2, '222', NOW(), 00000007, 00000002);
 
 COMMIT;
 
@@ -524,11 +515,11 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `16098537d`;
-INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('1', '2018-12-05', '2018-12-10', '0', '1');
-INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('2', '2018-12-05', '2018-12-10', '0', '2');
-INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('3', '2018-12-05', '2018-12-10', '0', '3');
-INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('4', '2018-12-05', '2018-12-10', '0', '4');
-INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('5', '2018-12-05', '2018-12-10', '0', '5');
+INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('1', '2018-12-05', '2018-12-10', '0', '10000');
+INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('2', '2018-12-05', '2018-12-10', '0', '10001');
+INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('3', '2018-12-05', '2018-12-10', '0', '10002');
+INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('4', '2018-12-05', '2018-12-10', '0', '10003');
+INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('5', '2018-12-05', '2018-12-10', '0', '10004');
 
 COMMIT;
 
