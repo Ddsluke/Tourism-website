@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `16098537d`.`Tourists` (
   `Username` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`TouristsID`));
 
-ALTER TABLE Tourists AUTO_INCREMENT = 10000;
+ALTER TABLE Tourists AUTO_INCREMENT = 10001;
 
 
 -- -----------------------------------------------------
@@ -515,11 +515,11 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `16098537d`;
-INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('1', '2018-12-05', '2018-12-10', '0', '10000');
-INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('2', '2018-12-05', '2018-12-10', '0', '10001');
-INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('3', '2018-12-05', '2018-12-10', '0', '10002');
-INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('4', '2018-12-05', '2018-12-10', '0', '10003');
-INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('5', '2018-12-05', '2018-12-10', '0', '10004');
+INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('1', '2018-12-05', '2018-12-10', '0', '10001');
+INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('2', '2018-12-05', '2018-12-10', '0', '10002');
+INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('3', '2018-12-05', '2018-12-10', '0', '10003');
+INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('4', '2018-12-05', '2018-12-10', '0', '10004');
+INSERT INTO `16098537d`.`Arrange` (`ArrangeId`, `ArriveDay`, `LeaveDay`, `Activate`, `TouristsID`) VALUES ('5', '2018-12-05', '2018-12-10', '0', '10005');
 
 COMMIT;
 
