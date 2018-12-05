@@ -113,7 +113,7 @@ require('topnav.php');
 	  <div class="sidebar">
 	  <h3>Personal Account</h3>
             <a href="PersonInfo.php">Personal Information</a>
-            <a href="PersonInfo.php">Read News</a>
+            <a href="#readNews">Read News</a>
 	  </div>
 		<div class="content" style="text-align:center;">
 		<h1>Account Information</h1><hr>
@@ -227,7 +227,7 @@ require('topnav.php');
 ?>
 
 <div class="content" style="text-align:center;">
-<h1 id = "Read News">Notice Board</h1><hr>
+<h1 id = "readNews">Notice Board</h1><hr>
 </div>
 <div class="content">
 <?php

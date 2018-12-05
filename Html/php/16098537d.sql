@@ -464,7 +464,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `16098537d`;
-INSERT INTO `16098537d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000001, 'Disnyland', 500.00, 'attraction/disnyland_attraction.jpg', 'Disnyland');
+INSERT INTO `16098537d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000001, 'Disneyland', 500.00, 'attraction/disnyland_attraction.jpg', 'Disneyland');
 INSERT INTO `16098537d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000002, 'Ocean Park', 400.00, 'attraction/oceanpark_attraction.jpg', 'Ocean Park');
 INSERT INTO `16098537d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000003, 'Sky Wheel', 23.23, 'attraction/skywheel_attraction.jpg', ' Causeway Bay');
 INSERT INTO `16098537d`.`Attraction` (`AID`, `AName`, `Price`, `AImage`, `Area`) VALUES (00000004, 'Victoria Peak', 77.67, 'attraction/victoriapeak_attraction.jpg', 'Victoria Peak');
