@@ -4,7 +4,7 @@ Author: Code Apes.
 -->
 <html>
 <head>
-<title>add Item</title>
+<title>Add Item | ExploreHK</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link type="text/css" rel="stylesheet" href="css/style.css">
@@ -50,11 +50,11 @@ function checkPrice() {
 <div class="wrapper">
 <?php
     require('topnav.php');
-    ?>
+?>
 </div>
 
 <div class="form_container">
-<h1>Add Attraction information</h1>
+<h1>Add Attraction Information</h1>
 <form action="php/add_attr.php" method="post">
 <ul class="form_input">
 <li>
@@ -78,7 +78,7 @@ function checkPrice() {
 
 
 <li>
-<label for="">Attraction Type</label>
+<label for="">Type</label>
 <select id="type" name="Type" onclick="checkType()">
 <option value="default">--Please choose--</option>
 <option value="Entertainment">Entertainment</option>

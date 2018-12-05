@@ -36,7 +36,7 @@ Author: Code Apes.
 -->
 <html>
 <head>
-	<title>Account Information</title>
+	<title>Account Information | ExploreHK</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link type="text/css" rel="stylesheet" href="css/style.css">
@@ -133,7 +133,7 @@ require('topnav.php');
 		  </td>
 		  <td>
 		  	<h3 id="uname"><?php echo $row['Username']?></h3>
-			<input type="hidden" id="unameInput" name="unameInput" maxlength="16" placeholder="Your username.." >
+			<input type="hidden" id="unameInput" name="unameInput" maxlength="16" placeholder="Your username.." required="required">
 		  </td>
 		  <td>
 		  	<div class="button btn btn-small" onclick="EditUname()" id="unameEdit">Edit</div>
@@ -148,7 +148,7 @@ require('topnav.php');
 			</td>
 			<td>
 				<h3 id="email"><?php echo $row['Email']?></h3>
-				<input type="hidden" id="emailInput" name="emailInput" placeholder="Your email..">
+				<input type="hidden" id="emailInput" name="emailInput" placeholder="Your email.." required="required">
 			</td>
 			<td>
 			<div class="button btn btn-small" onclick="EditEmail()" id="emailEdit">Edit</div>
@@ -161,7 +161,7 @@ require('topnav.php');
 		  <td><h3>Full name:</h3></td>
 		  <td>
 		  	<h3 id="fname"><?php echo $row['Name']?></h3>
-			<input type="hidden" id="fnameInput" name="fnameInput" maxlength="16" placeholder="Your full name.." >
+			<input type="hidden" id="fnameInput" name="fnameInput" maxlength="16" placeholder="Your full name.." required="required">
 		  </td>
 		  <td>
 			<div class="button btn btn-small" onclick="EditFname()" id="fnameEdit">Edit</div>

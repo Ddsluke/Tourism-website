@@ -15,7 +15,7 @@ if (isset($_SESSION['login_admin'])){
 	header("Location:Admin.php");
 }
 ?>
-	<title>Sign In Your Account</title>
+	<title>Sign In Your Account | ExploreHK</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link type="text/css" rel="stylesheet" href="css/loginPage.css">

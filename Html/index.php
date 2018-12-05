@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ExploreHK</title>
+<title>Home | ExploreHK</title>
 
 <!-- metadata -->
 <meta charset="utf-8">
