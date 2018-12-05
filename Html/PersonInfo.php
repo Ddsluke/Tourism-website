@@ -217,9 +217,6 @@ require('topnav.php');
 		</table><br>
 		<a href="php/logout.php"><div class="button btn btn-small">Log out</div></a><br>
 		</div>
-	</main>
-</div>
-
 <?php
  
     // Check connection
@@ -232,7 +229,7 @@ require('topnav.php');
 <div class="content" style="text-align:center;">
 <h1 id = "Read News">Notice Board</h1><hr>
 </div>
-
+<div class="content">
 <?php
     $result = mysqli_query($link, $sql);
     if(!$result)
@@ -247,10 +244,10 @@ require('topnav.php');
         {
           ?>
           
-          <div class="content">
+          
                <h2><?php echo $row['Message']." ON ".$row['creat_time'] ?></h2>	
 		  <br>
-          </div>        			
+       			
      <?php
        $name[$i]=$row['Message'];
        $i=$i+1;
@@ -261,8 +258,9 @@ require('topnav.php');
   } else
       echo "NO RESULT FOUND";
     ?>
-		
-	
+	</div>
+	</main> 
+</div>	
 <?php
 $link->close();
 require('footer.php');
