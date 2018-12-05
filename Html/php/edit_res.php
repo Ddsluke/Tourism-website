@@ -10,7 +10,7 @@
         echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
         echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
         mysqli_close($link);
-        exit;
+        exit;}
 
     //Registr Tourists
     header("Content-Type: text/html; charset=utf8");
