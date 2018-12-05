@@ -50,7 +50,7 @@ function checkEmail() {
 
 <div class="form_container">
 <h1>Edit User Information</h1>
-<form action="edit_user.php" method="post">
+<form action="php/edit_user.php" method="post">
 <ul class="form_input">
 
 <li>
